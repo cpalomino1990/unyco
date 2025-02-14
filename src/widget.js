@@ -71,9 +71,6 @@ function initWidget(accountId) {
   let currentText = "";
   let speech;
 
-  /**
-   * Inicia la lectura en voz alta del texto seleccionado.
-   */
   function speakText() {
     if (currentText.length === 0) return;
 
