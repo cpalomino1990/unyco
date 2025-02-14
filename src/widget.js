@@ -1,4 +1,6 @@
 import './styles/widget.css';
+import {toggleFontFamily} from'./button/buttonToggleFont';
+import {toggleReadingBar} from './button/buttonToggleReandingBar';
 
 /**
  * Alterna el modo de alto contraste en el cuerpo del documento.
@@ -17,7 +19,7 @@ function resetSettings() {
 
 /**
  * Inicializa el widget de accesibilidad.
- * @param {string} accountId - ID de la cuenta del usuario.
+ * @param {string} accountId 
  */
 function initWidget(accountId) {
   const widgetContainer = document.createElement('div');
@@ -32,20 +34,19 @@ function initWidget(accountId) {
       <button id="close-menu" class="close-btn">X</button>
       <div class="button-columns">
         <div class="button-column">
+         <button id="toggle-reading-bar">Activar Barra de lectura</button>
           <button id="reset">Restablecer</button>
           <button id="toggle-contrast">Alto Contraste</button>
           <button id="increase-text-size">Aumentar Texto</button>
           <button id="decrease-text-size">Disminuir Texto</button>
           <button id="toggle-dark-mode">Modo Oscuro</button>
-          <button id="toggle-reading-bar">Barra de lectura</button>
         </div>
         <div class="button-column">
           <button id="read-text-aloud">Leer en voz alta</button>
-          <button id="voice-button1">Voz 1</button>
-          <button id="voice-button2">Voz 2</button>
-          <button id="voice-button3">Voz 3</button>
+          <button id="change-voice">Voz: Predeterminada</button>
           <button id="increase-pitch">Aumentar tono</button>
           <button id="decrease-pitch">Disminuir tono</button>
+          <button id="toggle-font"> Cambiar letras</button>
           <button id="pause-resume">Pausar/Reanudar</button>
         </div>
       </div>
@@ -54,29 +55,46 @@ function initWidget(accountId) {
 
   document.body.appendChild(widgetContainer);
 
-  // Manejo de eventos de los botones
   document.getElementById("accessibility-button").addEventListener("click", function() {
     document.getElementById("accessibility-menu").classList.toggle("hidden");
   });
+
+  document.getElementById("toggle-font").addEventListener("click", toggleFontFamily);
   document.getElementById("toggle-contrast").addEventListener("click", toggleContrast);
   document.getElementById("close-menu").addEventListener("click", function() {
     document.getElementById("accessibility-menu").classList.add("hidden");
   });
   document.getElementById("reset").addEventListener("click", resetSettings);
-  
+  document.getElementById("toggle-reading-bar").addEventListener("click", toggleReadingBar);
+
   let pitch = 1;
-  let selectedVoice = null;
+  let selectedVoiceIndex = 0;
   let isSpeaking = false;
   let isPaused = false;
   let currentText = "";
   let speech;
+  let voices = [];
+  const voiceIndexes = [3, 4, 9]; // Índices de las tres voces permitidas
+
+  function loadVoices() {
+    voices = window.speechSynthesis.getVoices().filter((_, index) => voiceIndexes.includes(index));
+    updateVoiceButton();
+  }
+
+  function updateVoiceButton() {
+    const voiceButton = document.getElementById("change-voice");
+    if (voices.length > 0) {
+      voiceButton.textContent = `Voz: ${voices[selectedVoiceIndex].name}`;
+      console.log(voices)
+    }
+  }
 
   function speakText() {
     if (currentText.length === 0) return;
 
     speech = new SpeechSynthesisUtterance(currentText);
     speech.lang = 'es-ES';
-    speech.voice = selectedVoice || window.speechSynthesis.getVoices()[0];
+    speech.voice = voices[selectedVoiceIndex] || voices[0];
     speech.pitch = pitch;
 
     speech.onend = () => {
@@ -115,47 +133,19 @@ function initWidget(accountId) {
     }
   });
 
+  document.getElementById("change-voice").addEventListener("click", () => {
+    selectedVoiceIndex = (selectedVoiceIndex + 1) % voices.length;
+    updateVoiceButton();
+    if (isSpeaking) restartSpeech();
+  });
+
   function restartSpeech() {
     window.speechSynthesis.cancel();
     speakText();
   }
 
-  function changeVoice(voiceIndex) {
-    const voices = window.speechSynthesis.getVoices();
-    selectedVoice = voices[voiceIndex] || voices[0];
-    if (isSpeaking) restartSpeech();
-  }
-
-  document.getElementById("voice-button1").addEventListener("click", () => changeVoice(3));
-  document.getElementById("voice-button2").addEventListener("click", () => changeVoice(4));
-  document.getElementById("voice-button3").addEventListener("click", () => changeVoice(9));
-
-  document.getElementById("toggle-reading-bar").addEventListener("click", () => {
-    document.body.classList.toggle("reading-bar-active");
-  });
-
-  // Estilo para la barra de lectura que sigue el cursor
-  const style = document.createElement('style');
-  style.innerHTML = `
-    .reading-bar {
-      position: fixed;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: rgba(0, 0, 0, 0.5);
-      pointer-events: none;
-      z-index: 9999;
-    }
-  `;
-  document.head.appendChild(style);
-
-  const readingBar = document.createElement('div');
-  readingBar.classList.add('reading-bar');
-  document.body.appendChild(readingBar);
-
-  document.addEventListener('mousemove', (event) => {
-    readingBar.style.top = `${event.clientY}px`;
-  });
+  window.speechSynthesis.onvoiceschanged = loadVoices;
+  loadVoices();
 }
 
 initWidget("123434");
