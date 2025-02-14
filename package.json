@@ -1,0 +1,23 @@
+{
+  "name": "widget-project",
+  "version": "1.0.0",
+  "description": "A basic widget that can be embedded in any webpage.",
+  "main": "src/widget.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack serve --open"
+  },
+  "devDependencies": {
+    "css-loader": "^6.11.0",
+    "style-loader": "^3.3.4",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^4.10.0"
+  },
+  "keywords": [
+    "widget",
+    "embed",
+    "javascript"
+  ],
+  "author": "",
+  "license": "MIT"
+}

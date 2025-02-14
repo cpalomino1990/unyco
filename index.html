@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            color: white;
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        .main-content {
+            width: 70%;
+        }
+
+        .sidebar {
+            width: 25%;
+            background-color: #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .post {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .post h2 {
+            color: #333;
+        }
+
+        .post p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>Blog Básico</h1>
+        <p>Bienvenido a mi blog personal</p>
+    </header>
+
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Sobre mí</a>
+        <a href="#">Contacto</a>
+        <a href="#">Archivo</a>
+    </nav>
+
+    <div class="container">
+        <div class="main-content">
+            <!-- Artículo 1 -->
+            <div class="post">
+                <h2>Hey Omar ves a sentarte</h2>
+                <p><strong>Fecha:</strong> 11 de febrero, 2025</p>
+                <p>Bienvenidos a mi primer artículo en el blog. este block trata de los articulos que vende la tienda del bigote...</p>
+            </div>
+
+            <!-- Artículo 2 -->
+            <div class="post">
+                <h2>Un día en la vida</h2>
+                <p><strong>Fecha:</strong> 10 de febrero, 2025</p>
+                <p>Hoy les contaré cómo es un día típico en mi vida. Cada mañana me levanto temprano para aprovechar al
+                    máximo las horas productivas. Mi rutina incluye...</p>
+            </div>
+
+            <!-- Artículo 3 -->
+            <div class="post">
+                <h2>Reflexiones sobre la creatividad</h2>
+                <p><strong>Fecha:</strong> 8 de febrero, 2025</p>
+                <p>La creatividad es una de las habilidades más importantes que podemos cultivar. En este artículo,
+                    comparto algunas reflexiones sobre cómo encontrar inspiración y cómo mejorar nuestra creatividad en
+                    la vida diaria...</p>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <h3>Enlaces útiles</h3>
+            <ul>
+                <li><a href="#">Recursos para bloggers</a></li>
+                <li><a href="#">Herramientas para escritores</a></li>
+                <li><a href="#">Mi página de Pinterest</a></li>
+            </ul>
+            <h3>Archivo del blog</h3>
+            <ul>
+                <li><a href="#">Enero 2025</a></li>
+                <li><a href="#">Diciembre 2024</a></li>
+                <li><a href="#">Noviembre 2024</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Blog Básico. Todos los derechos reservados.</p>
+    </footer>
+
+
+    <script src="dist/widget.js"></script>
+   
+</body>
+
+</html>
