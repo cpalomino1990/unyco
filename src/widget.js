@@ -27,32 +27,31 @@ function initWidget(accountId) {
   widgetContainer.className = 'widget-container';
   
   widgetContainer.innerHTML = `
-    <button id="accessibility-button">
-      <img src="security_11769361.png" alt="" style="width: 50px; height: 50px;" />
-    </button>
-    <div id="accessibility-menu" class="hidden">
-      <button id="close-menu" class="close-btn">X</button>
-      <div class="button-columns">
-        <div class="button-column">
-         <button id="toggle-reading-bar">Activar Barra de lectura</button>
-          <button id="reset">Restablecer</button>
-          <button id="toggle-contrast">Alto Contraste</button>
-          <button id="increase-text-size">Aumentar Texto</button>
-          <button id="decrease-text-size">Disminuir Texto</button>
-          <button id="toggle-dark-mode">Modo Oscuro</button>
-        </div>
-        <div class="button-column">
-          <button id="read-text-aloud">Leer en voz alta</button>
-          <button id="change-voice">Voz: Predeterminada</button>
-          <button id="increase-pitch">Aumentar tono</button>
-          <button id="decrease-pitch">Disminuir tono</button>
-          <button id="toggle-font"> Cambiar letras</button>
-          <button id="pause-resume">Pausar/Reanudar</button>
-        </div>
+  <button id="accessibility-button">
+    <img src="security_11769361.png" alt="" style="width: 50px; height: 50px;" />
+  </button>
+  <div id="accessibility-menu" class="hidden">
+    <button id="close-menu" class="close-btn">X</button>
+    <div class="button-columns">
+      <div class="button-column">
+       <button id="toggle-reading-bar">Activar Barra de lectura</button>
+        <button id="reset">Restablecer</button>
+        <button id="toggle-contrast">Alto Contraste</button>
+        <button id="increase-text-size">Aumentar Texto</button>
+        <button id="decrease-text-size">Disminuir Texto</button>
+        <button id="toggle-dark-mode">Modo Oscuro</button>
+      </div>
+      <div class="button-column">
+        <button id="read-text-aloud">Leer en voz alta</button>
+        <button id="change-voice">Voz: Predeterminada</button>
+        <button id="increase-pitch">Aumentar tono</button>
+        <button id="decrease-pitch">Disminuir tono</button>
+        <button id="toggle-font"> Cambiar letras</button>
+        <button id="pause-resume">Pausar/Reanudar</button>
       </div>
     </div>
-  `;
-
+  </div>
+`;
   document.body.appendChild(widgetContainer);
 
   document.getElementById("accessibility-button").addEventListener("click", function() {
@@ -66,6 +65,22 @@ function initWidget(accountId) {
   });
   document.getElementById("reset").addEventListener("click", resetSettings);
   document.getElementById("toggle-reading-bar").addEventListener("click", toggleReadingBar);
+
+  let textSize = 16; // Default text size
+  document.getElementById("increase-text-size").addEventListener("click", () => {
+    textSize += 2;
+    document.body.style.fontSize = `${textSize}px`;
+  });
+  document.getElementById("decrease-text-size").addEventListener("click", () => {
+    textSize -= 2;
+    document.body.style.fontSize = `${textSize}px`;
+  });
+
+  const darkModeButton = document.getElementById('toggle-dark-mode');
+  darkModeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
+
 
   let pitch = 1;
   let selectedVoiceIndex = 0;
@@ -149,3 +164,4 @@ function initWidget(accountId) {
 }
 
 initWidget("123434");
+
