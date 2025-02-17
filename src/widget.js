@@ -167,51 +167,6 @@ function initWidget(accountId) {
   window.speechSynthesis.onvoiceschanged = loadVoices;
   loadVoices();
 
-  function highlightUrl() {
-    const url = window.location.href;
-  
-    // Crea un campo de texto temporal para copiar la URL
-    const textarea = document.createElement('textarea');
-    textarea.value = url;
-    document.body.appendChild(textarea);
-  
-    // Selecciona el contenido del campo de texto
-    textarea.select();
-    textarea.setSelectionRange(0, 99999); // Para dispositivos móviles
-  
-    // Copia la URL al portapapeles
-    document.execCommand('copy');
-    document.body.removeChild(textarea);
-  
-    alert("¡URL copiada al portapapeles!");
-  }
-
-  let linksHighlighted = false;  // Estado para saber si los enlaces están resaltados
-
-  // Función para alternar el resalte de los enlaces
-  function toggleHighlightLinks() {
-    const links = document.querySelectorAll("a");
-    if (linksHighlighted) {
-      // Si están resaltados, eliminamos el resalte
-      links.forEach(link => {
-        link.style.backgroundColor = "";
-        link.style.color = "";
-        link.style.padding = "";
-      });
-    } else {
-      // Si no están resaltados, los resaltamos
-      links.forEach(link => {
-        link.style.backgroundColor = "yellow";
-        link.style.color = "red";
-        link.style.padding = "2px";
-      });
-    }
-    // Cambiar el estado
-    linksHighlighted = !linksHighlighted;
-  }
-
-  // Asignamos la función al botón de "Alternar Resalte Enlaces"
-  document.getElementById("highlight-links").addEventListener("click", toggleHighlightLinks);
 }
 
 
