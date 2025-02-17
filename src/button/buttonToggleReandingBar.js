@@ -1,4 +1,6 @@
 
+
+
   /**
    * Alterna la barra de lectura activándola o desactivándola y cambia el texto del botón.
    */
@@ -19,17 +21,7 @@
    function activateReadingBar() {
   const style = document.createElement('style');
   style.id = 'reading-bar-style';
-  style.innerHTML = `
-    .reading-bar {
-      position: fixed;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: rgba(0, 0, 0, 0.5);
-      pointer-events: none;
-      z-index: 9999;
-    }
-  `;
+
   document.head.appendChild(style);
 
   const readingBar = document.createElement('div');

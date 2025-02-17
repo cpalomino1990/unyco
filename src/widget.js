@@ -1,13 +1,11 @@
 import './styles/widget.css';
 import {toggleFontFamily} from'./button/buttonToggleFont';
 import {toggleReadingBar} from './button/buttonToggleReandingBar';
+import {highlightLinks} from './button/highlightLinks'
+import {resetAllSettings} from './button/buttonReset'
 
-/**
- * Alterna el modo de alto contraste en el cuerpo del documento.
- */
-function toggleContrast() {
-  document.body.classList.toggle("high-contrast");
-}
+
+
 
 /**
  * Restablece la configuración de accesibilidad eliminando el alto contraste y el tamaño de fuente personalizado.
@@ -15,6 +13,13 @@ function toggleContrast() {
 function resetSettings() {
   document.body.style.fontSize = "";
   document.body.classList.remove("high-contrast");
+}
+
+/**
+ * Alterna el modo de alto contraste en el cuerpo del documento.
+ */
+function toggleContrast() {
+  document.body.classList.toggle("high-contrast");
 }
 
 /**
@@ -35,7 +40,7 @@ function initWidget(accountId) {
       <div class="button-columns">
         <div class="button-column">
          <button id="toggle-reading-bar">Activar Barra de lectura</button>
-          <button id="reset">Restablecer</button>
+          <button id="reset-all">Restablecer Todo</button>
           <button id="toggle-contrast">Alto Contraste</button>
           <button id="increase-text-size">Aumentar Texto</button>
           <button id="decrease-text-size">Disminuir Texto</button>
@@ -48,14 +53,18 @@ function initWidget(accountId) {
           <button id="decrease-pitch">Disminuir tono</button>
           <button id="toggle-font"> Cambiar letras</button>
           <button id="pause-resume">Pausar/Reanudar</button>
-          <button id="highlight-url">Resaltar URL</button> <!-- New button -->
-          <button id="highlight-links">Resaltar Enlaces</button>
+          <button id="highlight-links">Resaltar enlaces</button> <!-- Nuevo botón para resaltar -->
+          <button id="toggles-sin-animaciones">Detener Animaciones</button> <!-- Nuevo botón -->
+          
+         
         </div>
       </div>
     </div>
   `;
 
   document.body.appendChild(widgetContainer);
+
+  document.getElementById("reset-all").addEventListener("click", resetAllSettings);
 
   document.getElementById("accessibility-button").addEventListener("click", function() {
     document.getElementById("accessibility-menu").classList.toggle("hidden");
@@ -64,7 +73,8 @@ function initWidget(accountId) {
   document.getElementById("toggle-font").addEventListener("click", toggleFontFamily);
   document.getElementById("toggle-contrast").addEventListener("click", toggleContrast);
   document.getElementById("close-menu").addEventListener("click", function() {
-    document.getElementById("accessibility-menu").classList.add("hidden");
+  document.getElementById("accessibility-menu").classList.add("hidden");
+  //document.getElementById('toggles-sin-animaciones').addEventListener("click",noneAnimation)
   });
 
   let textSize = 16; // Default text size
@@ -81,11 +91,30 @@ function initWidget(accountId) {
   darkModeButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
   });
-  
-  document.getElementById("highlight-url").addEventListener("click", highlightUrl);
-  document.getElementById("reset").addEventListener("click", resetSettings);
+
+// Activar desactivación de animaciones
+  const noneAnimation = document.getElementById('toggles-sin-animaciones')
+   noneAnimation.addEventListener('click',()=>{
+    document.body.classList.toggle('sin-animaciones');
+   })
+// O
+document.body.classList.remove('sin-animaciones'); // Reactivar animaciones
+
+
   document.getElementById("toggle-reading-bar").addEventListener("click", toggleReadingBar);
+
   document.getElementById("highlight-links").addEventListener("click", highlightLinks);
+
+
+  /*
+//stop animation//
+  document.getElementById("stop-animations").addEventListener("click", function() {
+    document.body.style.animation = "none";
+    document.body.style.transition = "none";
+    document.body.style.keyframes = "none"
+    
+  });
+  */
 
   let pitch = 1;
   let selectedVoiceIndex = 0;
@@ -168,6 +197,8 @@ function initWidget(accountId) {
   loadVoices();
 
  
+ 
+
 }
 
 

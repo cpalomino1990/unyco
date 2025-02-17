@@ -28,29 +28,13 @@
     color: white;
 }
 
-/*CONSTRAST */
-
-.high-contrast {
-    background-color: black;
-    /* Fondo oscuro */
-    color: white;
-    /* Texto blanco */
-}
-
-.high-contrast a {
-    color: yellow;
-    /* Enlaces amarillos para que resalten */
-    text-decoration: underline;
-    /* Subrayado de enlaces */
-}
-
 .high-contrast h1,
 .high-contrast h2,
 .high-contrast h3,
 .high-contrast h4,
 .high-contrast h5,
 .high-contrast h6 {
-    color: yellow;
+    color: rgb(255, 0, 0);
     /* Encabezados amarillos */
 }
 
@@ -65,18 +49,7 @@
     /* Aumenta el tamaño de la fuente de los párrafos */
 }
 
-.high-contrast button {
-    background-color: yellow;
-    /* Botones amarillos */
-    color: black;
-    /* Texto en botones negro */
-    border: none;
-    /* Sin borde */
-    padding: 10px 20px;
-    /* Espaciado dentro del botón */
-    cursor: pointer;
-    /* Cursor en forma de mano para indicar que es clickeable */
-}
+
 
 .high-contrast button:hover {
     background-color: white;
@@ -237,10 +210,7 @@
     filter: invert(1) hue-rotate(180deg); /* Invertir colores */
 }
 
-.highlight-links a {
-    background-color: yellow; /* Resaltar con color de fondo */
-    color: red; /* Cambiar el color del texto */
-}
+
 
 #read-text-aloud {
     background-color: #4CAF50; /* Fondo verde */
@@ -261,3 +231,32 @@
   }
 
 
+  .highlight {
+    background-color: rgb(26, 26, 21);
+    color: rgb(208, 255, 0);
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+    
+  }
+  
+
+  /* Barra de lectura */
+.reading-bar {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+
+.sin-animaciones * {
+  animation: none !important;
+  transition: none !important;
+  opacity: none !important;
+
+}
