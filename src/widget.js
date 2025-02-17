@@ -167,6 +167,7 @@ function initWidget(accountId) {
   window.speechSynthesis.onvoiceschanged = loadVoices;
   loadVoices();
 
+ 
 }
 
 
