@@ -45,6 +45,7 @@ function initWidget(accountId) {
           <button id="increase-text-size">Aumentar Texto</button>
           <button id="decrease-text-size">Disminuir Texto</button>
           <button id="toggle-dark-mode">Modo Oscuro</button>
+          <button id="toggles-sin-animaciones">Detener Animaciones</button> <!-- Nuevo botón -->
         </div>
         <div class="button-column">
           <button id="read-text-aloud">Leer en voz alta</button>
@@ -54,7 +55,7 @@ function initWidget(accountId) {
           <button id="toggle-font"> Cambiar letras</button>
           <button id="pause-resume">Pausar/Reanudar</button>
           <button id="highlight-links">Resaltar enlaces</button> <!-- Nuevo botón para resaltar -->
-          <button id="toggles-sin-animaciones">Detener Animaciones</button> <!-- Nuevo botón -->
+          
           
          
         </div>
@@ -106,7 +107,15 @@ document.body.classList.remove('sin-animaciones'); // Reactivar animaciones
   document.getElementById("highlight-links").addEventListener("click", highlightLinks);
 
 
-
+  /*
+//stop animation//
+  document.getElementById("stop-animations").addEventListener("click", function() {
+    document.body.style.animation = "none";
+    document.body.style.transition = "none";
+    document.body.style.keyframes = "none"
+    
+  });
+  */
 
   let pitch = 1;
   let selectedVoiceIndex = 0;
