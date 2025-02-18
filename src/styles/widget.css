@@ -65,7 +65,7 @@
 
 /* Establecemos el tamaño del menú cuando se muestre */
 #accessibility-menu {
-    z-index: 16;
+    z-index: 9999;
     margin-top: 10px;
     padding: 10px;
     width: 25%;
@@ -255,7 +255,7 @@
 
 
 .sin-animaciones * {
-  animation: none !important;
+  animation: 1 !important;
   transition: none !important;
   opacity: none !important;
 

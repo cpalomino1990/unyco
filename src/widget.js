@@ -106,15 +106,7 @@ document.body.classList.remove('sin-animaciones'); // Reactivar animaciones
   document.getElementById("highlight-links").addEventListener("click", highlightLinks);
 
 
-  /*
-//stop animation//
-  document.getElementById("stop-animations").addEventListener("click", function() {
-    document.body.style.animation = "none";
-    document.body.style.transition = "none";
-    document.body.style.keyframes = "none"
-    
-  });
-  */
+
 
   let pitch = 1;
   let selectedVoiceIndex = 0;
