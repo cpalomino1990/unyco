@@ -45,17 +45,15 @@ function initWidget(accountId) {
           <button id="increase-text-size">Aumentar Texto</button>
           <button id="decrease-text-size">Disminuir Texto</button>
           <button id="toggle-dark-mode">Modo Oscuro</button>
-          <button id="toggles-sin-animaciones">Detener Animaciones</button> <!-- Nuevo botón -->
+          
         </div>
         <div class="button-column">
           <button id="read-text-aloud">Leer en voz alta</button>
-          <button id="change-voice">Voz: Predeterminada</button>
-          <button id="increase-pitch">Aumentar tono</button>
-          <button id="decrease-pitch">Disminuir tono</button>
+          <button id="change-voice">Voz: Predeterminada</button>    
           <button id="toggle-font"> Cambiar letras</button>
           <button id="pause-resume">Pausar/Reanudar</button>
           <button id="highlight-links">Resaltar enlaces</button> <!-- Nuevo botón para resaltar -->
-          
+          <button id="toggles-none-animation">Detener Animaciones</button> <!-- Nuevo botón -->
           
          
         </div>
@@ -69,13 +67,12 @@ function initWidget(accountId) {
 
   document.getElementById("accessibility-button").addEventListener("click", function() {
     document.getElementById("accessibility-menu").classList.toggle("hidden");
-  });
 
   document.getElementById("toggle-font").addEventListener("click", toggleFontFamily);
   document.getElementById("toggle-contrast").addEventListener("click", toggleContrast);
   document.getElementById("close-menu").addEventListener("click", function() {
   document.getElementById("accessibility-menu").classList.add("hidden");
-  //document.getElementById('toggles-sin-animaciones').addEventListener("click",noneAnimation)
+  //document.getElementById('toggles-none-animation').addEventListener("click",noneAnimation)
   });
 
   let textSize = 16; // Default text size
@@ -94,12 +91,12 @@ function initWidget(accountId) {
   });
 
 // Activar desactivación de animaciones
-  const noneAnimation = document.getElementById('toggles-sin-animaciones')
+  const noneAnimation = document.getElementById('toggles-none-animation')
    noneAnimation.addEventListener('click',()=>{
-    document.body.classList.toggle('sin-animaciones');
+    document.body.classList.toggle('none-animation');
    })
 // O
-document.body.classList.remove('sin-animaciones'); // Reactivar animaciones
+document.body.classList.remove('none-animation'); // Reactivar animaciones
 
 
   document.getElementById("toggle-reading-bar").addEventListener("click", toggleReadingBar);
@@ -107,15 +104,7 @@ document.body.classList.remove('sin-animaciones'); // Reactivar animaciones
   document.getElementById("highlight-links").addEventListener("click", highlightLinks);
 
 
-  /*
-//stop animation//
-  document.getElementById("stop-animations").addEventListener("click", function() {
-    document.body.style.animation = "none";
-    document.body.style.transition = "none";
-    document.body.style.keyframes = "none"
-    
-  });
-  */
+  
 
   let pitch = 1;
   let selectedVoiceIndex = 0;
@@ -139,6 +128,54 @@ document.body.classList.remove('sin-animaciones'); // Reactivar animaciones
     }
   }
 
+  
+    function  contanetLoaded() {
+      document.addEventListener('DOMContentLoaded', () => {
+        let speech;
+        let voices = [];
+        let selectedVoiceIndex = 0;
+        let pitch = 1;
+      });
+    }
+    
+      
+
+    function loadVoices() {
+      voices = window.speechSynthesis.getVoices();
+    }
+  
+    function speakText(text) {
+      if (!text) return;
+      
+      speech = new SpeechSynthesisUtterance(text);
+      speech.lang = 'es-ES';
+      speech.voice = voices[selectedVoiceIndex] || voices[0];
+      speech.pitch = pitch;
+  
+      window.speechSynthesis.speak(speech);
+    }
+  
+    function setupHoverReading() {
+      document.querySelectorAll('div, button').forEach(element => {
+        element.addEventListener('mouseenter', () => {
+          if (window.speechSynthesis.speaking) {
+            window.speechSynthesis.cancel();
+          }
+          speakText(element.innerText);
+        });
+  
+        element.addEventListener('mouseleave', () => {
+          window.speechSynthesis.cancel();
+        });
+      });
+    }
+  
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+    loadVoices();
+    setupHoverReading();
+  });
+  
+
   function speakText() {
     if (currentText.length === 0) return;
 
@@ -157,53 +194,16 @@ document.body.classList.remove('sin-animaciones'); // Reactivar animaciones
   }
 
   document.getElementById("read-text-aloud").addEventListener("click", () => {
-    currentText = window.getSelection().toString();
-    speakText();
+    currentText = window.getSelection().toString().setupHoverReading();
+    speakText().contanetLoaded();
   });
 
-  document.getElementById("increase-pitch").addEventListener("click", () => {
-    pitch = Math.min(2, pitch + 0.1);
-    if (isSpeaking) restartSpeech();
-  });
 
-  document.getElementById("decrease-pitch").addEventListener("click", () => {
-    pitch = Math.max(0.5, pitch - 0.1);
-    if (isSpeaking) restartSpeech();
-  });
 
-  document.getElementById("pause-resume").addEventListener("click", () => {
-    if (isSpeaking) {
-      if (isPaused) {
-        window.speechSynthesis.resume();
-        isPaused = false;
-      } else {
-        window.speechSynthesis.pause();
-        isPaused = true;
-      }
-    }
-  });
 
-  document.getElementById("change-voice").addEventListener("click", () => {
-    selectedVoiceIndex = (selectedVoiceIndex + 1) % voices.length;
-    updateVoiceButton();
-    if (isSpeaking) restartSpeech();
-  });
 
-  function restartSpeech() {
-    window.speechSynthesis.cancel();
-    speakText();localStorage
-  }
-
-  window.speechSynthesis.onvoiceschanged = loadVoices;
-  loadVoices();
-
- 
- 
 
 }
-
-
-
 
 initWidget("123434");
  

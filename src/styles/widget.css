@@ -1,3 +1,5 @@
+/*{Boton principal del widget} */
+
 #accessibility-button {
     position: fixed;
     bottom: 18px;
@@ -14,6 +16,21 @@
 
 .hidden {
     display: none;
+}
+
+/*{modelo hidden }*/
+#accessibility-menu {
+    z-index: 16;
+    margin-top: 10px;
+    padding: 10px;
+    width: 25%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 #main-view {
@@ -48,19 +65,7 @@
     background-color: #4053ff;
 }
 
-#accessibility-menu {
-    z-index: 16;
-    margin-top: 10px;
-    padding: 10px;
-    width: 25%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: 0;
-    background-color: #ffffff;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
+
 
 #accessibility-menu button {
     display: block;
@@ -172,26 +177,46 @@
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
+ /*{barra para apoyo de lectura  }*/
+.reading-bar {
+    position:absolute;
+    left: 50%; 
+    width: 30%; 
+    height: 7px;
+    background: rgba(0, 0, 0, 0.774);
+    pointer-events: none;
+    z-index: 9999;
+    border-top: 2px solid rgb(255, 115, 0);
+    border-bottom: 2px solid rgb(0, 255, 64);
+    border-radius: 100px;
+}
+/*{boton detener animaciones}*/
+
+.none-animation * {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;  
+}
+
 
 .reading-bar {
     position: fixed;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: rgba(0, 0, 0, 0.5);
+    width: 500px; /* Ancho de la barra */
+    height: 5px;  /* Altura de la barra */
+    background: rgba(0, 0, 0, 0.959);
     pointer-events: none;
     z-index: 9999;
     border-top: 2px solid rgb(208, 255, 0);
     border-bottom: 2px solid rgb(0, 255, 64);
 }
 
-.sin-animaciones * {
-    animation: none !important;
-    transition: none !important;
-    opacity: 1 !important;
-
-   
+.center-element {
+    position: absolute; 
+    font-size: 24px;  
+    color: white;  
+    pointer-events: none;  
+    z-index: 10000; 
+    top: -20px; 
+       
 }
-
-
 
