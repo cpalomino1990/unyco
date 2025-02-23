@@ -1,209 +1,142 @@
 import './styles/widget.css';
-import {toggleFontFamily} from'./button/buttonToggleFont';
-import {toggleReadingBar} from './button/buttonToggleReandingBar';
-import {highlightLinks} from './button/highlightLinks'
-import {resetAllSettings} from './button/buttonReset'
+import { toggleFontFamily } from './button/buttonToggleFont';
+import { toggleReadingBar } from './button/buttonToggleReadingBar';
+import { highlightLinks } from './button/highlightLinks';
+import { resetAllSettings } from './button/buttonReset';
+import {toggleContrast} from './button/buttonHighContrast';
+import {toggleDarkMode} from './button/buttonDarkMode';
+import {toggleAnimations} from './button/buttonNoneAnimation';
+import {changeTextSize} from './button/buttonChangeTextSize';
 
-
-
-
-/**
- * Restablece la configuración de accesibilidad eliminando el alto contraste y el tamaño de fuente personalizado.
- */
-function resetSettings() {
-  document.body.style.fontSize = "";
-  document.body.classList.remove("high-contrast");
+function toggleMenu() {
+  const menu = document.getElementById("accessibility-menu");
+  menu.classList.toggle("hidden");
+  menu.setAttribute("aria-hidden", menu.classList.contains("hidden"));
 }
 
-/**
- * Alterna el modo de alto contraste en el cuerpo del documento.
- */
-function toggleContrast() {
-  document.body.classList.toggle("high-contrast");
+function switchView(viewId) {
+  document.querySelectorAll(".accessibility-view, .main-menu").forEach(element => {
+    element.classList.add("hidden");
+    element.setAttribute("aria-hidden", "true");
+  });
+  const activeView = document.getElementById(viewId);
+  if (activeView) {
+    activeView.classList.remove("hidden");
+    activeView.setAttribute("aria-hidden", "false");
+  }
 }
 
-/**
- * Inicializa el widget de accesibilidad.
- * @param {string} accountId 
- */
+function createButton(id, text, onClick, isCategoryButton = false) {
+  const button = document.createElement("button");
+  button.id = id;
+  button.textContent = text;
+  button.classList.add("toggle-button");
+
+  button.addEventListener("click", function() {
+    if (!isCategoryButton) {
+      this.classList.toggle("active");
+      updateCategoryButtons();
+    }
+    onClick();
+  });
+
+  return button;
+}
+
+function updateCategoryButtons() {
+  const categories = {
+    "btn-visual": ["toggle-contrast", "increase-text-size", "decrease-text-size", "toggle-dark-mode"],
+    "btn-auditory": ["read-text-aloud", "toggle-font"],
+    "btn-navigation": ["highlight-links", "toggle-animations", "toggle-reading-bar"]
+  };
+
+  Object.entries(categories).forEach(([categoryButtonId, buttonIds]) => {
+    const categoryButton = document.getElementById(categoryButtonId);
+    const hasActiveButton = buttonIds.some(id => document.getElementById(id)?.classList.contains("active"));
+
+    if (hasActiveButton) {
+      categoryButton.classList.add("active");
+    } else {
+      categoryButton.classList.remove("active");
+    }
+  });
+}
+
+function resetAllButtons() {
+  document.querySelectorAll(".toggle-button").forEach(button => {
+    button.classList.remove("active");
+  });
+  document.body.classList.remove("dark-mode", "high-contrast", "none-animation");
+  updateCategoryButtons();
+  location.reload();
+}
+
+function createResetButton() {
+  return createButton("reset-all", "🔄 Restablecer", resetAllButtons);
+}
+
 function initWidget(accountId) {
-  const widgetContainer = document.createElement('div');
-  widgetContainer.id = 'my-widget';
-  widgetContainer.className = 'widget-container';
-  
-  widgetContainer.innerHTML = `
-    <button id="accessibility-button">
-      <img src="security_11769361.png" alt="" style="width: 50px; height: 50px;" />
-    </button>
-    <div id="accessibility-menu" class="hidden">
-      <button id="close-menu" class="close-btn">X</button>
-      <div class="button-columns">
-        <div class="button-column">
-         <button id="toggle-reading-bar">Activar Barra de lectura</button>
-          <button id="reset-all">Restablecer Todo</button>
-          <button id="toggle-contrast">Alto Contraste</button>
-          <button id="increase-text-size">Aumentar Texto</button>
-          <button id="decrease-text-size">Disminuir Texto</button>
-          <button id="toggle-dark-mode">Modo Oscuro</button>
-          
-        </div>
-        <div class="button-column">
-          <button id="read-text-aloud">Leer en voz alta</button>
-          <button id="change-voice">Voz: Predeterminada</button>    
-          <button id="toggle-font"> Cambiar letras</button>
-          <button id="pause-resume">Pausar/Reanudar</button>
-          <button id="highlight-links">Resaltar enlaces</button> <!-- Nuevo botón para resaltar -->
-          <button id="toggles-none-animation">Detener Animaciones</button> <!-- Nuevo botón -->
-          
-         
-        </div>
-      </div>
-    </div>
-  `;
+  const widgetContainer = document.createElement("div");
+  widgetContainer.id = "my-widget";
+  widgetContainer.className = "widget-container";
 
+  const accessibilityButton = createButton("accessibility-button", "", toggleMenu);
+
+  const accessibilityMenu = document.createElement("div");
+  accessibilityMenu.id = "accessibility-menu";
+  accessibilityMenu.classList.add("hidden");
+  accessibilityMenu.setAttribute("role", "dialog");
+
+  const closeButton = createButton("close-menu", "❌ Cerrar", toggleMenu);
+  accessibilityMenu.appendChild(closeButton);
+
+  const mainMenu = document.createElement("div");
+  mainMenu.id = "main-menu";
+  mainMenu.classList.add("main-menu");
+  mainMenu.append(
+    createButton("btn-visual", "Visual", () => switchView("view-visual"), true),
+    createButton("btn-auditory", "Auditivo", () => switchView("view-auditory"), true),
+    createButton("btn-navigation", "Navegación", () => switchView("view-navigation"), true)
+  );
+
+  const views = ["visual", "auditory", "navigation"].map(view => {
+    const div = document.createElement("div");
+    div.id = `view-${view}`;
+    div.classList.add("accessibility-view", "hidden");
+    div.setAttribute("aria-hidden", "true");
+    div.appendChild(createButton("back-to-menu", "⬅ Volver", () => switchView("main-menu")));
+    div.appendChild(createResetButton());
+    return div;
+  });
+
+  views[0].append(
+    createButton("toggle-contrast", "Alto Contraste", toggleContrast),
+    createButton("increase-text-size", "Aumentar Texto", () => changeTextSize(true)),
+    createButton("decrease-text-size", "Disminuir Texto", () => changeTextSize(false)),
+    createButton("toggle-dark-mode", "Modo Oscuro", toggleDarkMode)
+  );
+
+  views[1].append(
+    createButton("read-text-aloud", "Leer en voz alta", () => {}),
+    createButton("toggle-font", "Cambiar Letras", toggleFontFamily)
+  );
+
+  views[2].append(
+    createButton("highlight-links", "Resaltar Enlaces", highlightLinks),
+    createButton("toggle-animations", "Detener Animaciones", toggleAnimations),
+    createButton("toggle-reading-bar", "Activar Barra de Lectura", toggleReadingBar)
+  );
+
+  accessibilityMenu.append(mainMenu, ...views);
+  widgetContainer.append(accessibilityButton, accessibilityMenu);
   document.body.appendChild(widgetContainer);
 
-  document.getElementById("reset-all").addEventListener("click", resetAllSettings);
-
-  document.getElementById("accessibility-button").addEventListener("click", function() {
-    document.getElementById("accessibility-menu").classList.toggle("hidden");
-
-  document.getElementById("toggle-font").addEventListener("click", toggleFontFamily);
-  document.getElementById("toggle-contrast").addEventListener("click", toggleContrast);
-  document.getElementById("close-menu").addEventListener("click", function() {
-  document.getElementById("accessibility-menu").classList.add("hidden");
-  //document.getElementById('toggles-none-animation').addEventListener("click",noneAnimation)
-  });
-
-  let textSize = 16; // Default text size
-  document.getElementById("increase-text-size").addEventListener("click", () => {
-    textSize += 2;
-    document.body.style.fontSize = `${textSize}px`;
-  });
-  document.getElementById("decrease-text-size").addEventListener("click", () => {
-    textSize -= 2;
-    document.body.style.fontSize = `${textSize}px`;
-  });
-
-  const darkModeButton = document.getElementById('toggle-dark-mode');
-  darkModeButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-  });
-
-// Activar desactivación de animaciones
-  const noneAnimation = document.getElementById('toggles-none-animation')
-   noneAnimation.addEventListener('click',()=>{
-    document.body.classList.toggle('none-animation');
-   })
-// O
-document.body.classList.remove('none-animation'); // Reactivar animaciones
-
-
-  document.getElementById("toggle-reading-bar").addEventListener("click", toggleReadingBar);
-
-  document.getElementById("highlight-links").addEventListener("click", highlightLinks);
-
-
-  
-
-  let pitch = 1;
-  let selectedVoiceIndex = 0;
-  let isSpeaking = false;
-  let isPaused = false;
-  let currentText = "";
-  let speech;
-  let voices = [];
-  const voiceIndexes = [3, 4, 9]; // Índices de las tres voces permitidas
-
-  function loadVoices() {
-    voices = window.speechSynthesis.getVoices().filter((_, index) => voiceIndexes.includes(index));
-    updateVoiceButton();
-  }
-
-  function updateVoiceButton() {
-    const voiceButton = document.getElementById("change-voice");
-    if (voices.length > 0) {
-      voiceButton.textContent = `Voz: ${voices[selectedVoiceIndex].name}`;
-      console.log(voices)
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      accessibilityMenu.classList.add("hidden");
+      accessibilityMenu.setAttribute("aria-hidden", "true");
     }
-  }
-
-  
-    function  contanetLoaded() {
-      document.addEventListener('DOMContentLoaded', () => {
-        let speech;
-        let voices = [];
-        let selectedVoiceIndex = 0;
-        let pitch = 1;
-      });
-    }
-    
-      
-
-    function loadVoices() {
-      voices = window.speechSynthesis.getVoices();
-    }
-  
-    function speakText(text) {
-      if (!text) return;
-      
-      speech = new SpeechSynthesisUtterance(text);
-      speech.lang = 'es-ES';
-      speech.voice = voices[selectedVoiceIndex] || voices[0];
-      speech.pitch = pitch;
-  
-      window.speechSynthesis.speak(speech);
-    }
-  
-    function setupHoverReading() {
-      document.querySelectorAll('div, button').forEach(element => {
-        element.addEventListener('mouseenter', () => {
-          if (window.speechSynthesis.speaking) {
-            window.speechSynthesis.cancel();
-          }
-          speakText(element.innerText);
-        });
-  
-        element.addEventListener('mouseleave', () => {
-          window.speechSynthesis.cancel();
-        });
-      });
-    }
-  
-    window.speechSynthesis.onvoiceschanged = loadVoices;
-    loadVoices();
-    setupHoverReading();
   });
-  
-
-  function speakText() {
-    if (currentText.length === 0) return;
-
-    speech = new SpeechSynthesisUtterance(currentText);
-    speech.lang = 'es-ES';
-    speech.voice = voices[selectedVoiceIndex] || voices[0];
-    speech.pitch = pitch;
-
-    speech.onend = () => {
-      isSpeaking = false;
-      isPaused = false;
-    };
-
-    window.speechSynthesis.speak(speech);
-    isSpeaking = true;
-  }
-
-  document.getElementById("read-text-aloud").addEventListener("click", () => {
-    currentText = window.getSelection().toString().setupHoverReading();
-    speakText().contanetLoaded();
-  });
-
-
-
-
-
-
 }
 
 initWidget("123434");
- 
