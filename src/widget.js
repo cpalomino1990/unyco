@@ -156,7 +156,7 @@ document.body.classList.remove('none-animation'); // Reactivar animaciones
     }
   
     function setupHoverReading() {
-      document.querySelectorAll('div, button').forEach(element => {
+      document.querySelectorAll('div, button, p, h1, h2, h3, h4, a ').forEach(element => {
         element.addEventListener('mouseenter', () => {
           if (window.speechSynthesis.speaking) {
             window.speechSynthesis.cancel();
@@ -199,6 +199,47 @@ document.body.classList.remove('none-animation'); // Reactivar animaciones
   });
 
 
+  function speakText(text, element) {
+    if (!text) return;
+    
+    let words = text.split(/(\s+)/); // Divide el texto en palabras conservando espacios
+    let index = 0;
+    let utterance = new SpeechSynthesisUtterance();
+    utterance.lang = 'es-ES';
+    utterance.voice = voices[selectedVoiceIndex] || voices[0];
+    utterance.pitch = pitch;
+
+    function highlightNextWord() {
+        if (index >= words.length) {
+            element.innerHTML = text; // Restablece el texto original
+            return;
+        }
+        
+        let highlightedText = words.map((word, i) => 
+            i === index ? `<span class='highlight'>${word}</span>` : word
+        ).join('');
+        element.innerHTML = highlightedText;
+
+        utterance.text = words[index];
+        utterance.onend = () => {
+            index++;
+            highlightNextWord();
+        };
+
+        window.speechSynthesis.speak(utterance);
+    }
+
+    highlightNextWord();
+}
+
+document.getElementById("read-text-aloud").addEventListener("click", () => {
+    let selectedText = window.getSelection().toString();
+    let selectedElement = window.getSelection().anchorNode.parentElement;
+    
+    if (selectedText && selectedElement) {
+        speakText(selectedText, selectedElement);
+    }
+});
 
 
 
