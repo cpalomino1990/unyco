@@ -136,7 +136,125 @@ function initWidget(accountId) {
       accessibilityMenu.classList.add("hidden");
       accessibilityMenu.setAttribute("aria-hidden", "true");
     }
+
   });
+
+  }
+
+  
+    function  contanetLoaded() {
+      document.addEventListener('DOMContentLoaded', () => {
+        let speech;
+        let voices = [];
+        let selectedVoiceIndex = 0;
+        let pitch = 1;
+      });
+    }
+    
+      
+
+    function loadVoices() {
+      voices = window.speechSynthesis.getVoices();
+    }
+  
+    function speakText(text) {
+      if (!text) return;
+      
+      speech = new SpeechSynthesisUtterance(text);
+      speech.lang = 'es-ES';
+      speech.voice = voices[selectedVoiceIndex] || voices[0];
+      speech.pitch = pitch;
+  
+      window.speechSynthesis.speak(speech);
+    }
+  
+    function setupHoverReading() {
+      document.querySelectorAll('div, button, p, h1, h2, h3, h4, a ').forEach(element => {
+        element.addEventListener('mouseenter', () => {
+          if (window.speechSynthesis.speaking) {
+            window.speechSynthesis.cancel();
+          }
+          speakText(element.innerText);
+        });
+  
+        element.addEventListener('mouseleave', () => {
+          window.speechSynthesis.cancel();
+        });
+      });
+    }
+  
+    window.speechSynthesis.onvoiceschanged = loadVoices;
+    loadVoices();
+    setupHoverReading();
+  ;
+  
+
+  function speakText() {
+    if (currentText.length === 0) return;
+
+    speech = new SpeechSynthesisUtterance(currentText);
+    speech.lang = 'es-ES';
+    speech.voice = voices[selectedVoiceIndex] || voices[0];
+    speech.pitch = pitch;
+
+    speech.onend = () => {
+      isSpeaking = false;
+      isPaused = false;
+    };
+
+    window.speechSynthesis.speak(speech);
+    isSpeaking = true;
+  }
+
+  document.getElementById("read-text-aloud").addEventListener("click", () => {
+    currentText = window.getSelection().toString().setupHoverReading();
+    speakText().contanetLoaded();
+  });
+
+
+  function speakText(text, element) {
+    if (!text) return;
+    
+    let words = text.split(/(\s+)/); // Divide el texto en palabras conservando espacios
+    let index = 0;
+    let utterance = new SpeechSynthesisUtterance();
+    utterance.lang = 'es-ES';
+    utterance.voice = voices[selectedVoiceIndex] || voices[0];
+    utterance.pitch = pitch;
+
+    function highlightNextWord() {
+        if (index >= words.length) {
+            element.innerHTML = text; // Restablece el texto original
+            return;
+        }
+        
+        let highlightedText = words.map((word, i) => 
+            i === index ? `<span class='highlight'>${word}</span>` : word
+        ).join('');
+        element.innerHTML = highlightedText;
+
+        utterance.text = words[index];
+        utterance.onend = () => {
+            index++;
+            highlightNextWord();
+        };
+
+        window.speechSynthesis.speak(utterance);
+    }
+
+    highlightNextWord();
 }
+
+document.getElementById("read-text-aloud").addEventListener("click", () => {
+    let selectedText = window.getSelection().toString();
+    let selectedElement = window.getSelection().anchorNode.parentElement;
+    
+    if (selectedText && selectedElement) {
+        speakText(selectedText, selectedElement);
+    }
+});
+
+
+
 
 initWidget("123434");
