@@ -1,11 +1,12 @@
 {
   "name": "widget-project",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A basic widget that can be embedded in any webpage.",
   "main": "src/widget.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack serve --open"
+    "start": "webpack serve --open",
+    "dev": "webpack --watch"
   },
   "devDependencies": {
     "css-loader": "^6.11.0",
@@ -19,5 +20,13 @@
     "javascript"
   ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@speechify/api-sdk": "^2.4.1",
+    "@tailwindcss/vite": "^4.0.12",
+    "crypto-browserify": "^3.12.1",
+    "dotenv": "^16.4.7",
+    "sweetalert2": "^11.21.1",
+    "tailwindcss": "^4.0.12"
+  }
 }

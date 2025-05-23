@@ -1,0 +1,167 @@
+/*---------------------------> Inicio <--------------------------------*/
+/* Fuente Nunito */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+/* Botón principal del widget */
+:root {
+  --primaryColor: #1e67e7;
+  --secondaryColor: #74c5f2;
+  --reverseColor: #5d04d8;
+  --textColor: #1B1F31;
+}
+
+* {
+  font-family: "Nunito", sans-serif;
+}
+
+#accessibility-button {
+  position: fixed;
+  bottom: 18px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hit-the-floor {
+  color: #fff;
+  font-size: 12em;
+  font-weight: bold;
+  font-family: Helvetica;
+}
+
+.hit-the-floor {
+  text-align: center;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Menú de accesibilidad */
+#accessibility-menu {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 16;
+  width: 500px;
+  max-width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  /* background: #fff; */
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  border: 1px solid #ffffff1a;
+  background: #e1eaf869;
+  box-shadow: 0px 0px 20px 10px #00000059;
+}
+
+#accessibility-main-menu {
+  padding: 10px;
+  height: 100%;
+}
+
+.toggle-button.active {
+  background-color: #a7e4fc !important; /* Color cuando está activo */
+  color: black !important;
+  border: 2px solid #6ea8ff !important;
+}
+
+#accessibility-menu button:hover {
+  /* background-color: #04c4d9; */
+}
+
+/* Botón de cierre del menú */
+.close-btn {
+  color: rgb(26, 57, 197);
+}
+
+.close-btn:hover {
+  background-color: #c9c5c5;
+}
+
+
+
+
+
+/* Barra de lectura */
+.reading-bar {
+  position: fixed;
+  width: 500px;
+  height: 5px;
+  background: rgba(0, 0, 0, 0.959);
+  pointer-events: none;
+  z-index: 9999;
+  border-top: 2px solid rgb(208, 255, 0);
+  border-bottom: 2px solid rgb(0, 255, 64);
+}
+
+/* Detener animaciones */
+.none-animation * :not(#my-widget):not(#my-widget *) {
+  animation: none !important;
+  transition: none !important;
+  opacity: 1 !important;
+}
+
+/* Subrayar enlaces */
+
+
+/*{barra para apoyo de lectura  }*/
+.reading-bar {
+  position: absolute;
+  left: 50%;
+  width: 30%;
+  height: 7px;
+  background: rgba(0, 0, 0, 0.774);
+  pointer-events: none;
+  z-index: 9999;
+  border-top: 2px solid rgb(255, 115, 0);
+  border-bottom: 2px solid rgb(0, 255, 64);
+  border-radius: 100px;
+}
+
+.center-element {
+  position: absolute;
+  font-size: 38px;
+  color: rgba(0, 0, 0, 0.699);
+  pointer-events: none;
+  z-index: 10000;
+  top: -20px;
+}
+
+.highlight {
+  background-color: rgb(26, 26, 21);
+  color: rgb(208, 255, 0);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Scroll personalizado */
+.accessibility-custom-scroll::-webkit-scrollbar {
+  width: 7px;
+  padding: 20px 0;
+}
+.accessibility-custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+.accessibility-custom-scroll::-webkit-scrollbar-thumb {
+  background: var(--primaryColor);
+  border-radius: 10px;
+}
+.accessibility-custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--primaryColor, 50%);
+}

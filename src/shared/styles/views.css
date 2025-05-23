@@ -1,0 +1,489 @@
+a {
+  color: var(--primaryColor);
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+#view-initial {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 10px;
+  overflow: auto;
+  height: calc(100% - 20px);
+}
+
+.accessibility-view-buttons-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+#accessibility-content-profiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px 4px;
+}
+
+#accessibility-buttons-active {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 4px;
+}
+#accessibility-visual-view,
+#accessibility-mental-view,
+#accessibility-auditory-view,
+#accessibility-physical-view,
+#accessibility-cognitive-view,
+#accessibility-custom-view,
+#accessibility-user-login-view,
+#accessibility-user-profile-view,
+#accessibility-user-register-view,
+#accessibility-user-image-view,
+#accessibility-user-terms-view-1,
+#accessibility-user-terms-view-2,
+#accessibility-languages-view {
+  padding: 10px;
+  overflow: auto;
+  height: calc(100% - 20px);
+}
+
+#accessibility-content-others-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px 4px;
+}
+
+/* ESTILOS DE LA VISTA DE USUAIROS - LOGIN - REGISTER */
+.accessibility-user-view-content {
+  padding: 10px 20px;
+}
+
+.accessibility-user-view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.accessibility-home-button {
+  color: var(--primaryColor);
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accessibility-home-button svg {
+  width: 35px;
+  height: 35px;
+}
+
+.accessibility-user-view-header-left {
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.accessibility-user-view-header-left p {
+  margin: 0;
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--textColor);
+  user-select: none;
+}
+
+.accessibility-user-login-view-content-text .accessibility-title-card-text {
+  margin: 0;
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 45px;
+  color: var(--textColor);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accessibility-user-login-view-content-text .accessibility-title-card-text span {
+  margin-left: 10px;
+}
+.accessibility-user-login-view-content-text .accessibility-title-card-text span img {
+  width: 45px;
+}
+
+.accessibility-user-login-view-content-text .accessibility-description-card-text {
+  margin: 0;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--textColor);
+  text-align: center;
+}
+
+.accessibility-user-login-view-content-form a {
+  text-align: right;
+  margin: 0;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.accessibility-user-login-view-content-footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.accessibility-user-login-view-content-footer p {
+  margin: 0;
+}
+
+.accessibility-user-login-view-content-footer p a {
+  margin: 0;
+  cursor: pointer;
+}
+
+.accessibility-user-login-view-content-footer-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.accessibility-icon-button {
+  background-color: var(--primaryColor);
+  border: none;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.accessibility-icon-button img {
+  width: 25px;
+  height: 25px;
+}
+
+/* ESTILOS DE LA VISTA DE REGISTRO DE USUARIOS */
+.accessibility-user-register-view-content {
+  margin-top: 20px;
+}
+
+.accessibility-user-button-edit-img {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  color: var(--primaryColor);
+  user-select: none;
+}
+
+.accessibility-user-button-edit-img span {
+  color: var(--primaryColor);
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accessibility-button-theme {
+  width: 100%;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 15px;
+  border: none;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--primaryColor) 80%, transparent) 0%,
+    var(--primaryColor) 100%
+  );
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.accessibility-button-theme:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ESTILOS DE LA VISTA DE AGREGAR IMAGEN */
+.accessibility-user-image-view-content-text {
+  text-align: center;
+}
+
+.accessibility-user-image-view-content-text h2 {
+  font-size: 30px;
+}
+
+/* ESTILOS DE LA VISTA DE TERMINOS Y CONDICIONES */
+.accessibility-user-terms-content {
+  height: calc(100vh - 500px);
+  overflow: auto;
+  margin-bottom: 25px;
+}
+
+.accessibility-user-terms-content h1 {
+  font-size: 20px;
+}
+
+.accessibility-user-terms-content h2 {
+  font-size: 16px;
+}
+
+.accessibility-user-terms-content p {
+  font-size: 14px;
+}
+
+.accessibility-user-terms-content li {
+  font-size: 14px;
+}
+
+.accessibility-helper-text {
+  color: red;
+  margin: 0;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 10px;
+  /* text-decoration: underline; */
+  margin-bottom: 10px;
+}
+
+/* Estilos de la vista de alerta */
+#accessibility-alert-message-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  height: 100%;
+  gap: 30px;
+  user-select: none;
+}
+
+.accessibility-alert-message-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: color-mix(in srgb, var(--primaryColor) 50%, transparent) 0%;
+  color: var(--primaryColor);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.accessibility-alert-message-title {
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--primaryColor);
+}
+
+.accessibility-alert-message-message {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  text-align: center;
+  color: #707070;
+}
+
+/* Estilos de la vista de recuperacion de contraseña */
+#accessibility-user-reset-password-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  gap: 20px;
+  overflow: auto;
+  max-height: calc(100% - 60px);
+}
+
+#accessibility-user-reset-password-view .accessibility-user-reset-password-icon {
+  color: var(--primaryColor);
+  user-select: none;
+}
+
+#accessibility-user-reset-password-view .accessibility-user-reset-password-title {
+  font-weight: 700;
+  font-size: 32px;
+  text-align: center;
+  color: var(--primaryColor);
+  margin: 20px 0;
+  user-select: none;
+}
+
+#accessibility-user-reset-password-view .accessibility-user-reset-password-content {
+  width: 100%;
+  margin-bottom: 10px;
+  user-select: none;
+}
+
+#accessibility-user-reset-password-view .accessibility-user-reset-password-button-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  user-select: none;
+}
+
+/* ESTILOS DE LA VISTA DE SELECCION DE IDIOMAS  */
+.accessibility-languages-view-content {
+  height: 100%;
+}
+.accessibility-languages-view-content .accessibility-languages-view-head {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  color: var(--primaryColor);
+}
+
+.accessibility-languages-view-content .accessibility-languages-view-body {
+  height: calc(100% - 50px);
+}
+.accessibility-languages-view-content .accessibility-languages-view-body .title {
+  font-weight: 800;
+  font-size: 32px;
+}
+
+.accessibility-languages-view-content .accessibility-languages-view-body .subtitle {
+  font-weight: 600;
+  font-size: 20px;
+  color: #707070;
+}
+
+.accessibility-languages-view-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  overflow: scroll;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  min-height: 200px;
+  max-height: calc(100% - 200px);
+}
+
+.accessibility-languages-view-item {
+  display: flex;
+  align-items: center;
+  box-shadow: 4px 2px 16px 0px #7070707a;
+  box-shadow: -4px -2px 16px 0px #ffffff;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  border-radius: 30px;
+  border: 1px solid #7070701a;
+  user-select: none;
+  cursor: pointer;
+  color: #707070;
+}
+
+.accessibility-languages-view-item:hover {
+  background-color: #cacaca;
+}
+
+.accessibility-languages-view-item.active {
+  box-shadow: none;
+  box-shadow: -4px -2px 8px 0px #ffffff80 inset;
+  box-shadow: 4px 2px 8px 0px #7070707a inset;
+  color: var(--primaryColor);
+}
+
+.accessibility-languages-view-list .accessibility-languages-view-item .flag {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.accessibility-languages-view-list .accessibility-languages-view-item p {
+  /* width: 100%; */
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+/* ESTILOS DE LA VISTA DEL PERFIL DE USUARIO */
+.accessibility-user-profile-view-info .title {
+  font-weight: bold;
+}
+
+.accessibility-user-profile-view-info .subtitle {
+  color: #707070;
+}
+
+.accessibility-user-profile-view-info .list-checks {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+}
+
+.accessibility-user-profile-view-info .list-checks {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+}
+
+.accessibility-user-profile-view-info .list-checks .accessibility-check {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border: 1px solid;
+  border: none;
+  user-select: none;
+}
+
+.accessibility-user-profile-view-info .list-checks .accessibility-check {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.accessibility-user-profile-view-info .list-checks .accessibility-check .accessibility-check-external {
+  width: 25px;
+  height: 25px;
+}
+
+.accessibility-user-profile-view-info
+  .list-checks
+  .accessibility-check
+  .accessibility-check-external
+  .accessibility-check-internal {
+  width: 17px;
+  height: 17px;
+}
+

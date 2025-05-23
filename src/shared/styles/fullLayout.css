@@ -1,0 +1,106 @@
+#accessibility-full-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#accessibility-header {
+  background: #ffffffda;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 20px;
+  /* box-shadow: 0px 0px 3px 1px #00000059 inset; */
+}
+
+#accessibility-header #accessibility-header-logo {
+  width: 40px;
+  display: flex;
+  align-items: end;
+}
+#accessibility-header #accessibility-header-logo span {
+  font-weight: 900;
+  font-size: 10px;
+  line-height: 10px;
+  text-align: center;
+}
+
+#accessibility-header #accessibility-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#accessibility-main {
+  background: #ffffffda;
+  overflow: hidden;
+  padding: 10px;
+  border: 1px solid #dee2e6;
+  border-radius: 20px;
+  height: 100%;
+  margin: 10px 0;
+}
+
+#accessibility-footer {
+  background: #ffffffda;
+  border-top: 1px solid #dee2e6;
+  padding: 20px;
+  margin-top: auto;
+  padding: 15px;
+  border: 1px solid #dee2e6;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+#accessibility-footer #accessibility-footer-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Estilos de botones */
+.accessibility-circle-button {
+  width: 40px;
+  height: 40px;
+  background-color: var(--primaryColor);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border: 2px solid #ffffff4d;
+  box-shadow: 4px 2px 16px 0px #5f9de77a;
+  box-shadow: -4px -2px 16px 0px #ffffff;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.accessibility-circle-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.accessibility-circle-button-sm {
+  width: 30px;
+  height: 30px;
+  background-color: var(--primaryColor);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border: 2px solid #ffffff4d;
+  box-shadow: 4px 2px 16px 0px #5f9de77a;
+  box-shadow: -4px -2px 16px 0px #ffffff;
+  padding: 10px;
+  color: white;
+}
+
+.accessibility-flag-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+}

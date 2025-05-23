@@ -1,0 +1,201 @@
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 44px;
+    margin-bottom: 108px;
+    z-index: 100000;
+}
+.loader {
+    background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
+    width: 170px;
+    height: 170px;
+    animation: spinning82341 1.7s linear infinite;
+    text-align: center;
+    border-radius: 85px;
+    filter: blur(1px);
+    box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+    margin-bottom: -100px;
+    position: relative;
+
+  }
+  
+  .loader1 {
+    background-color: rgb(36, 36, 36);
+    width: 170px;
+    height: 170px;
+    border-radius: 100px;
+    filter: blur(10px);
+  }
+  
+  @keyframes spinning82341 {
+    to {
+      transform: rotate(380deg);
+    }
+  }
+
+
+.loader2 {
+width: 48px;
+height: 48px;
+border-radius: 50%;
+display: inline-block;
+border-top: 4px solid #FFF;
+border-right: 4px solid transparent;
+box-sizing: border-box;
+animation: rotation 1s linear infinite;
+margin: 42px;
+margin-bottom: -32px;
+}
+.loader2::after {
+content: '';  
+box-sizing: border-box;
+position: absolute;
+left: 0;
+top: 0;
+width: 48px;
+height: 48px;
+border-radius: 50%;
+border-bottom: 4px solid rgb(186, 66, 255);
+border-left: 4px solid transparent;
+}
+@keyframes rotation {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+} 
+
+
+.loader3 {
+    background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
+    width: 170px;
+    height: 170px;
+    animation: spinning82341 1.7s linear infinite;
+    text-align: center;
+    border-radius: 85px;
+    filter: blur(1px);
+    box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+    margin-bottom: -100px;
+    position: relative;
+
+}
+
+.calibration-instructions {
+  position: relative;
+  background:   #ffffffda;
+  padding: 40px;
+  border-radius: 16px;
+  max-width: 500px;
+  width: 100%;
+  text-align: left;
+  box-shadow: 0 10px 30px #ffffffda;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  color: #e0e0e0;
+  animation: fadeIn 0.5s ease-in-out;
+  margin: auto;
+  overflow: hidden; /* importante para contener las luces */
+}
+
+.calibration-instructions::before,
+.calibration-instructions::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(209, 230, 230, 0.3), transparent 70%);
+  filter: blur(80px);
+  opacity: 0.7;
+  animation: moveLights cubic-bezier(0.6, -0.28, 0.735, 0.045) ease-in-out infinite;
+  z-index: 0;
+}
+
+.calibration-instructions::before {
+  top: -100px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(224, 210, 224, 0.3), transparent 70%);
+}
+
+.calibration-instructions::after {
+  bottom: -100px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(244, 250, 255, 0.3), transparent 70%);
+}
+
+@keyframes moveLights {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(30px, 30px);
+  }
+}
+
+
+.calibration-title {
+  margin-top: 0;
+  color: #1e67e7;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #1e67e7;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.calibration-list {
+  padding-left: 20px;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #000
+}
+
+.calibration-list ul {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 20px;
+  
+}
+
+.calibration-list ul::before {
+  content: "💠";
+  color: #1e67e7;
+  font-size: 0.9rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.calibration-button {
+  display: inline-block;
+  margin-top: 25px;
+  background: linear-gradient(135deg, #1e67e7, #0d3f96);
+  border: none;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.calibration-button:hover {
+  background: linear-gradient(135deg, #0d3f96, #1e67e7);
+  transform: translateY(-2px);
+}
+
+/* Animación suave al mostrar */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
