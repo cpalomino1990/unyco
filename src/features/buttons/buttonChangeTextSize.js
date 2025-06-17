@@ -7,7 +7,7 @@ const sizeLevels = [
 ];
 
 let currentSizeIndex = 0;
-let sizeButton = null;
+
 
 export function FontsizeChange() {
   let styleTag = document.getElementById("letter-size-style");
@@ -42,10 +42,10 @@ function applyLetterSize(fontsize) {
   }
 
   styleTag.innerHTML = `
-    body *:not(#my-widget):not(#my-widget *)
-    {
-      font-size: ${fontsize} !important;
-    }
+    body *:not(#my-widget):not(#my-widget *):not(#text-magnifier-tooltip) {
+  font-size: ${fontsize} !important;
+      }
+
   `;
   
   document.head.appendChild(styleTag);

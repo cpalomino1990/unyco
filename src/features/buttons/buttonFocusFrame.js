@@ -16,8 +16,11 @@
       document.body.removeEventListener("mouseover", applyFocusFrame);
       document.body.removeEventListener("mouseout", removeFocusFrame);
     }
-  }
 
+    const highlightedElements = document.querySelectorAll(".focus-highlight");
+    highlightedElements.forEach(el => el.classList.remove("focus-highlight"));
+  }
+  
   // Aplica estilo al pasar el cursor
   function applyFocusFrame(event) {
     const tagsToHighlight = ['H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'P', 'SPAN', 'A', 'BUTTON', 'B'];
@@ -29,6 +32,7 @@
   // Quita estilo al salir del cursor
   function removeFocusFrame(event) {
     event.target.classList.remove("focus-highlight");
+
   }
 
   // Inyecta estilos al documento

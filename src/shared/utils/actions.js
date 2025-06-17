@@ -1,12 +1,16 @@
+import { getDynamicTranslation } from "../../widget";
 import { activateButtons, allButtons, unactivateButtons } from "../components/allButtons/allButtons";
+import { filterForInitIcons } from "./canvas";
 import { createCardTitle } from "./createElements";
 
 export async function ChangeTheme(value, customColor) {
   document.documentElement.setAttribute("data-theme", value);
+  document.documentElement.setAttribute("data-theme-hex", customColor);
 
   updateLogoAndIcons(value);
-
+  filterForInitIcons();
   document.documentElement.style.setProperty("--primaryColor", customColor);
+  document.documentElement.style.setProperty("--colorRotate", value === "purple" ? "120deg" : "90deg");
 }
 
 function updateLogoAndIcons(theme) {
@@ -18,14 +22,14 @@ function updateLogoAndIcons(theme) {
     logo.setAttribute("data-base-src", baseLogo);
   }
 
-  const icons = document.querySelectorAll(".accessibility-card-button-icon img");
-  console.log(icons);
-  icons.forEach((img) => {
-    const baseSrc = img.getAttribute("data-base-src") || img.getAttribute("src");
-    const newSrc = baseSrc.replace(/(Blue|Purple)/, capitalize(theme === "custom" ? "blue" : theme));
-    img.setAttribute("src", newSrc);
-    img.setAttribute("data-base-src", baseSrc);
-  });
+  // const icons = document.querySelectorAll(".accessibility-card-button-icon img");
+  // console.log(icons);
+  // icons.forEach((img) => {
+  //   const baseSrc = img.getAttribute("data-base-src") || img.getAttribute("src");
+  //   const newSrc = baseSrc.replace(/(Blue|Purple)/, capitalize(theme === "custom" ? "blue" : theme));
+  //   img.setAttribute("src", newSrc);
+  //   img.setAttribute("data-base-src", baseSrc);
+  // });
 }
 
 function capitalize(str) {
@@ -79,7 +83,8 @@ export const ToggleActiveProfiles = (id, title, idCard) => {
     // Agregar título del perfil
     const titleElement = createCardTitle({
       id: `accessibility-title-profile-select-${id}`,
-      text: title,
+      text: getDynamicTranslation(title),
+      text_i18n: title,
       btnBack: false,
       collapse: false,
     });

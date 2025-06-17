@@ -1,5 +1,3 @@
-
-
 import { initEyeCursorControl } from "./buttonEyeCursorControl.js";
 import "../../shared/styles/loading.css";
 
@@ -11,14 +9,36 @@ let faceMesh = null;
 let camera = null;
 let videoElement = null;
 
-export async function startCalibration() {
+let faceDetected = true;
+let lostFaceTimeout = null;
+let hasLookedAway = false;
 
-  const isActive = document.body.classList.toggle("calibrationInProgress");
-  
-  console.log(isActive)
-  localStorage.setItem("calibrationInProgress",isActive ? "true" : "false"
-  
-  )
+export async function startCalibration() {
+ await requestWakeLock();
+  let wakeLock = null;
+
+async function requestWakeLock() {
+  try {
+    if ('wakeLock' in navigator) {
+      wakeLock = await navigator.wakeLock.request('screen');
+      console.log("🔒 Pantalla activa: Wake Lock activado");
+
+      // Si se libera el wake lock por pérdida de visibilidad, vuelve a solicitarlo
+      document.addEventListener("visibilitychange", async () => {
+        if (wakeLock !== null && document.visibilityState === "visible") {
+          wakeLock = await navigator.wakeLock.request('screen');
+          console.log("🔄 Wake Lock restaurado");
+        }
+      });
+    } else {
+      console.warn("Wake Lock API no soportada en este navegador.");
+    }
+  } catch (err) {
+    console.error("Error al activar Wake Lock:", err);
+  }
+  await requestWakeLock();
+}
+
   if (calibrationInProgress) return;
 
   calibrationInProgress = true;
@@ -40,15 +60,13 @@ export async function startCalibration() {
     zIndex: 100000,
     color: "#fff",
     fontSize: "1.5rem",
-    flexDirection: "column",
     flexDirection: "column-reverse"
   });
 
   const message = document.createElement("div");
   message.textContent = "Mira el punto en la pantalla para calibrar el cursor ocular";
   overlay.appendChild(message);
-  
-  // Crear el punto de calibración
+
   const dot = document.createElement("div");
   dot.id = "calibration-dot";
   Object.assign(dot.style, {
@@ -57,15 +75,13 @@ export async function startCalibration() {
     width: "12px",
     height: "12px",
     borderRadius: "50%",
-    
     marginTop: "20px",
-    bborderRadius: "50%",
     background: "linear-gradient(135deg, #00f0ff, #8a2be2)",
     boxShadow: "0 0 15px rgba(138,43,226,0.6), 0 0 20px rgba(0,240,255,0.5)",
     animation: "pulseCursor 1.5s ease-in-out infinite",
-    zIndex: 999999, 
-    pointerEvents: "none", 
-    opacity: 0, 
+    zIndex: 999999,
+    pointerEvents: "none",
+    opacity: 0,
     transform: "scale(0)",
     transition: "opacity 0.5s ease, transform 0.5s ease"
   });
@@ -74,29 +90,24 @@ export async function startCalibration() {
     dot.style.opacity = 1;
     dot.style.transform = "scale(1.5)";
     setTimeout(() => dot.style.transform = "scale(1)", 300);
-    
   });
-  
-  const loaderContainer = document.createElement("div")
-  loaderContainer.className = "loader-container"
+
+  const loaderContainer = document.createElement("div");
+  loaderContainer.className = "loader-container";
 
   const loader = document.createElement("div");
-  loader.className = "loader"; 
+  loader.className = "loader";
 
   const loader1 = document.createElement("div");
   loader1.className = "loader1";
-     
+
   loader.appendChild(loader1);
-  loaderContainer.appendChild(loader)
-  loaderContainer.appendChild(dot)
-    
-  // Añadir al overlay
-  overlay.appendChild(loaderContainer)
+  loaderContainer.appendChild(loader);
+  loaderContainer.appendChild(dot);
+
+  overlay.appendChild(loaderContainer);
   overlay.appendChild(message);
-  
-  // Añadir al body
   document.body.appendChild(overlay);
-  
 
   // Crear video oculto
   videoElement = document.createElement("video");
@@ -105,13 +116,11 @@ export async function startCalibration() {
 
   const samples = [];
 
-  // Cargar FaceMesh y CameraUtils
   await Promise.all([
     loadScript("https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.min.js"),
     loadScript("https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js")
   ]);
 
-  // Inicializar FaceMesh
   faceMesh = new window.FaceMesh({
     locateFile: file => `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/${file}`
   });
@@ -123,14 +132,54 @@ export async function startCalibration() {
     minTrackingConfidence: 0.5
   });
 
-  faceMesh.onResults(results => {
-    if (results.multiFaceLandmarks?.[0]?.[468]) {
-      const iris = results.multiFaceLandmarks[0][468];
+ let gazeAwayStartTime = null;
+let gazeAwayTimeout = isMobileDevice() ? 5000 : 3000; // ms
+let recalibrationScheduled = false;
+
+faceMesh.onResults(results => {
+  if (results.multiFaceLandmarks?.[0]) {
+    const landmarks = results.multiFaceLandmarks[0];
+
+    const iris = landmarks[468];
+    const leftEye = landmarks[33];
+    const rightEye = landmarks[263];
+    const nose = landmarks[1];
+
+    const eyeCenterX = (leftEye.x + rightEye.x) / 2;
+    const deltaX = iris.x - eyeCenterX;
+    const deltaY = iris.y - nose.y;
+
+    const horizontalThreshold = 0.05;
+    const verticalThreshold = 0.06;
+
+    const isLookingAway =
+      Math.abs(deltaX) > horizontalThreshold || Math.abs(deltaY) > verticalThreshold;
+
+    if (isLookingAway) {
+      if (!gazeAwayStartTime) {
+        gazeAwayStartTime = Date.now();
+      } else if (
+        !recalibrationScheduled &&
+        Date.now() - gazeAwayStartTime > gazeAwayTimeout
+      ) {
+        recalibrationScheduled = true;
+        startAutoRecalibration();
+      }
+    } else {
+      // Si estaba fuera y volvió antes de recalibrar
+      if (gazeAwayStartTime && !recalibrationScheduled) {
+        showReturnedMessage(); // Mostrar aviso
+      }
+      gazeAwayStartTime = null;
+    }
+
+    // Guardar muestras si estamos calibrando
+    if (calibrationInProgress && iris) {
       samples.push({ x: iris.x, y: iris.y });
     }
-  });
+  }
+});
 
-  // Iniciar cámara
   camera = new window.Camera(videoElement, {
     onFrame: async () => {
       await faceMesh.send({ image: videoElement });
@@ -141,7 +190,6 @@ export async function startCalibration() {
 
   camera.start();
 
-  // Esperar 6 segundos para recolectar muestras
   setTimeout(() => {
     camera.stop();
     overlay.remove();
@@ -156,7 +204,6 @@ export async function startCalibration() {
     initEyeCursorControl();
     calibrationInProgress = false;
 
-    // Mostrar pantalla de calibración falsa
     const fakeCalibrating = document.createElement("div");
     fakeCalibrating.id = "fake-calibration";
     fakeCalibrating.textContent = "Finalizando calibración...";
@@ -174,34 +221,24 @@ export async function startCalibration() {
       color: "#fff",
       fontSize: "1.5rem",
       flexDirection: "column",
-      pading: "20px",
-    
-  }); 
-    
+      padding: "20px"
+    });
+
     const loadin2 = document.createElement("div");
     loadin2.className = "loader2";
 
-    fakeCalibrating.appendChild(dot)
+    fakeCalibrating.appendChild(dot);
     fakeCalibrating.appendChild(loadin2);
 
     document.body.appendChild(fakeCalibrating);
 
-  
     setTimeout(() => {
       fakeCalibrating.remove();
-      
-    }, 3000);
+    }, 4000);
 
-  }, 9000);
+  }, 10000);
 }
 
-export function localstartCalibration(){
-  if(localStorage.getItem("calibrationInProgress")=== true);
-  document.body.classLinst.add("calibrationInProgress")
-
-}
-
-// Cargar scripts dinámicamente
 function loadScript(src) {
   return new Promise(resolve => {
     const script = document.createElement("script");
@@ -222,4 +259,96 @@ export function applyCalibration(iris) {
 export function resetCalibration() {
   isCalibrated = false;
   calibrationOffset = { x: 0, y: 0 };
+}
+
+function isMobileDevice() {
+  return /Mobi|Android|iPhone|iPad|iPod|Tablet/i.test(navigator.userAgent);
+}
+
+function startAutoRecalibration() {
+  const warning = document.createElement("div");
+  warning.id = "recalibration-warning";
+  warning.textContent = "Has dejado de mirar la pantalla. Recalibrando el cursor ocular...";
+  Object.assign(warning.style, {
+    position: "fixed",
+    top: "20%",
+    left: "50%",
+    transform: "translateX(-50%)",
+    backgroundColor: "#c62828",
+    color: "#fff",
+    padding: "20px 30px",
+    borderRadius: "12px",
+    zIndex: 100001,
+    fontSize: "1.2rem",
+    textAlign: "center",
+    boxShadow: "0 0 20px rgba(0,0,0,0.5)"
+  });
+  document.body.appendChild(warning);
+
+  setTimeout(() => {
+    warning.remove();
+    resetCalibration();
+    startCalibration();
+  }, 3000);
+}
+
+function showReturnedMessage() {
+  const returnedMessage = document.createElement("div");
+  returnedMessage.textContent = "Has vuelto a mirar la pantalla. Continuamos.";
+  Object.assign(returnedMessage.style, {
+    position: "fixed",
+    top: "10%",
+    left: "50%",
+    transform: "translateX(-50%)",
+    backgroundColor: "#4caf50",
+    color: "#fff",
+    padding: "12px 20px",
+    borderRadius: "8px",
+    zIndex: 100001,
+    fontSize: "1rem",
+    boxShadow: "0 0 15px rgba(0,0,0,0.3)"
+  });
+  document.body.appendChild(returnedMessage);
+  setTimeout(() => returnedMessage.remove(), 2500);
+}
+
+//funcion para matener la pantalla activa
+let iosVideo = null;
+
+function startIOSKeepAwake() {
+  iosVideo = document.createElement("video");
+  iosVideo.src = "data:video/mp4;base64,AAAAHGZ0eXBtcDQyAAAAAG1wNDFtcDQxaXNvbWF2YzEAAAAMbXNnAAAAAA==";
+  iosVideo.loop = true;
+  iosVideo.muted = true;
+  iosVideo.playsInline = true;
+  iosVideo.style.position = "fixed";
+  iosVideo.style.width = "1px";
+  iosVideo.style.height = "1px";
+  iosVideo.style.opacity = "0";
+  iosVideo.style.pointerEvents = "none";
+  document.body.appendChild(iosVideo);
+
+  iosVideo.play().then(() => {
+    console.log("▶️ Video iOS oculto en reproducción para evitar suspensión");
+  }).catch(err => {
+    console.warn("⚠️ No se pudo iniciar el video oculto:", err);
+  });
+}
+
+function stopIOSKeepAwake() {
+  if (iosVideo) {
+    iosVideo.pause();
+    iosVideo.remove();
+    iosVideo = null;
+    console.log("⏹️ Video iOS oculto detenido");
+  }
+}
+export function releaseWakeLock() {
+  if (wakeLock !== null) {
+    wakeLock.release().then(() => {
+      wakeLock = null;
+      console.log("🔓 Wake Lock liberado");
+    });
+  }
+  stopIOSKeepAwake();
 }

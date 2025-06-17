@@ -1,0 +1,484 @@
+{
+  "fullLayout": {
+    "slogan": "Prisijungta su Jumis"
+  },
+  "bannerUser": {
+    "welcome": "Sveiki",
+    "subwelcome": "Kviečiame registruotis, kad gautumėte individualizuotą patirtį"
+  },
+  "category": {
+    "visual": {
+      "title": "Vizualinis",
+      "description": "Unikalūs aplinkos suvokimo ar interpretacijos būdai per regėjimą."
+    },
+    "mental": {
+      "title": "Psichosocialinis",
+      "description": "Autentiški sąveikos, jausmų ir santykių su pasauliu būdai."
+    },
+    "auditory": {
+      "title": "Klausos",
+      "description": "Įvairūs aplinkos garsų patyrimo ir su jais ryšio būdai."
+    },
+    "physical": {
+      "title": "Fizinė",
+      "description": "Asmeniniai judėjimo, kūno išraiškos ir koordinacijos stiliai."
+    },
+    "cognitive": {
+      "title": "Pažinimo",
+      "description": "Unikalūs mąstymo, mokymosi, atminties ir dėmesio procesai."
+    },
+    "custom": {
+      "title": "Individualizuotas",
+      "description": "Sukurtas pagal jūsų individualius poreikius ir pageidavimus pritaikyta patirtis."
+    }
+  },
+  "viewCategory": {
+    "title1": "Įvairūs gebėjimų profiliai",
+    "title2": "Daugiau nustatymų",
+    "visual": {
+      "profile1": {
+        "title": "Silpnas regėjimas",
+        "description": "Unikali regėjimo patirtis, praturtinanti aplinkos suvokimo būdą."
+      },
+      "profile2": {
+        "title": "Apakimas",
+        "description": "Suvokimo forma, teikianti pirmenybę kitiems pojūčiams interpretuojant pasaulį."
+      },
+      "profile3": {
+        "title": "Spalvų aklumas",
+        "description": "Unikali spalvų suvokimas ir atskyrimas."
+      }
+    },
+    "mental": {
+      "profile1": {
+        "title": "ASD",
+        "description": "Išskirtiniai būdai susikaupti į interesus, bendravimą ir santykius."
+      },
+      "profile2": {
+        "title": "Dauno sindromas",
+        "description": "Asmeninis ir vertingas būdas patirti asmeninį ir socialinį vystymąsi."
+      },
+      "profile3": {
+        "title": "Disleksija",
+        "description": "Specifinis teksto struktūros suvokimo ir dekodavimo būdas."
+      },
+      "profile4": {
+        "title": "Epilepsija",
+        "description": "Unikalūs neurologinio funkcionavimo pasireiškimai, reprezentuojantys įvairovę."
+      },
+      "profile5": {
+        "title": "ADHD",
+        "description": "Specifinė dėmesio, energijos ir dirgiklių apdorojimo dinamika."
+      }
+    },
+    "auditory": {
+      "profile1": {
+        "title": "Kurčiųjų negalia",
+        "description": "Išskirtiniai gyvenimo ir bendravimo su kitais supratimo būdai."
+      }
+    },
+    "physical": {
+      "profile1": {
+        "title": "Viršutinės kūno dalies judrumas",
+        "description": "Ypatingi viršutinės kūno dalies judesių ir išraiškos būdai."
+      }
+    },
+    "cognitive": {
+      "profile1": {
+        "title": "Autizmas",
+        "description": "Unikalus aplinkos ir žmonių suvokimo, apdorojimo ir ryšių su jais stilius."
+      },
+      "profile2": {
+        "title": "TVC",
+        "description": "Intensyvus ir struktūrizuotas mąstymo ir veiksmų organizavimas."
+      }
+    },
+    "custom": {}
+  },
+  "functionalityButtons": {
+    "button1": {
+      "title": "Pažymėjimo režimas",
+      "description": "Pažymi svarbų turinį."
+    },
+    "button2": {
+      "title": "Pažymėti tekstą",
+      "description": "Pažymi matomą tekstą."
+    },
+    "button3": {
+      "title": "Didinamoji stiklinė",
+      "description": "Padidina tekstą užvedus pelės žymeklį."
+    },
+    "button4": {
+      "title": "Padidinti tekstą",
+      "description": "Padidina puslapio teksto dydį."
+    },
+    "button5": {
+      "title": "Padidinti tarpų",
+      "description": "Pagerina teksto tarpų išdėstymą."
+    },
+    "button6": {
+      "title": "Skaityti garsiai",
+      "description": "Skaito puslapio tekstą užvedus pelės žymeklį."
+    },
+    "button7": {
+      "title": "Pažymėti nuorodas",
+      "description": "Pažymi puslapio nuorodas."
+    },
+    "button8": {
+      "title": "Sustabdyti animacijas",
+      "description": "Išjungia visas puslapio animacijas."
+    },
+    "button9": {
+      "title": "Aktyvuoti skaitymo juostą",
+      "description": "Rodo juostą, palengvinančią skaitymą."
+    },
+    "button10": {
+      "title": "Didelis žymeklis",
+      "description": "Padidina kursoriaus dydį."
+    },
+    "button11": {
+      "title": "Lengvai skaitomas šriftas",
+      "description": "Pakeičia teksto šriftą į lengviau skaitomą."
+    },
+    "button12": {
+      "title": "Skaitymo greitis",
+      "description": "Reguliuoja teksto skaitymo greitį."
+    },
+    "button13": {
+      "title": "Pažymėjimo spalvos",
+      "description": "Pakeičia paryškinimo spalvas, kad pagerintų matomumą."
+    },
+    "button14": {
+      "title": "Garso reguliavimas",
+      "description": "Reguliuoja ekrano skaitytuvo garsą."
+    },
+    "button15": {
+      "title": "Protanopija",
+      "description": "Spalvų korekcija raudonų spalvų suvokimo sutrikimui."
+    },
+    "button16": {
+      "title": "Deuteranopija",
+      "description": "Spalvų korekcija žalių spalvų suvokimo sutrikimui."
+    },
+    "button17": {
+      "title": "Tritanopija",
+      "description": "Spalvų korekcija mėlynų spalvų suvokimo sutrikimui."
+    },
+    "button18": {
+      "title": "Protanomalija",
+      "description": "Dalinė raudonų spalvų korekcija."
+    },
+    "button19": {
+      "title": "Deuteranomalija",
+      "description": "Dalinė žalių spalvų korekcija."
+    },
+    "button20": {
+      "title": "Tritanomalija",
+      "description": "Dalinis mėlynos spalvos koregavimas."
+    },
+    "button21": {
+      "title": "Achromatomalija",
+      "description": "Dalinis juodos ir baltos spalvos koregavimas."
+    },
+    "button22": {
+      "title": "Achromatopsija",
+      "description": "Visiškas pilkos spalvos koregavimas."
+    },
+    "button23": {
+      "title": "Židinio rėmelis",
+      "description": "Pažymi elementą, kuris yra sufokusuotas."
+    },
+    "button24": {
+      "title": "Selektyvus kontrastas",
+      "description": "Perjungia puslapį į tamsiąją režimą."
+    },
+    "button25": {
+      "title": "Pauzėta skaitymo funkcija",
+      "description": "Suaktyvina žodžių skaitymą."
+    },
+    "button26": {
+      "title": "Susikaupimo režimas",
+      "description": "Pašalina blaškančius vaizdus ir vaizdo įrašus."
+    },
+    "button27": {
+      "title": "Nutildyti garsą",
+      "description": "Nutildo puslapio garsą."
+    },
+    "button28": {
+      "title": "Skaitymo kaukė",
+      "description": "Pridėta kaukė, palengvinanti skaitymą."
+    },
+    "button29": {
+      "title": "Disleksijos šriftas",
+      "description": "Pakeičia šriftą į skirtą disleksijai."
+    },
+    "button30": {
+      "title": "Slinkties valdymas",
+      "description": "Valdo puslapio slinkimą, kad būtų išvengta staigių šuolių."
+    },
+    "button31": {
+      "title": "Žemas kontrastas",
+      "description": "Suaktyvina žemo kontrasto režimą, kad pagerėtų skaitomumas."
+    },
+    "button32": {
+      "title": "Akies valdymas",
+      "description": "Suaktyvina pelės navigaciją sekant akis."
+    },
+    "button33": {
+      "title": "Gestų kalbos vertėjas",
+      "description": "Suaktyvina puslapio gestų kalbos režimą."
+    },
+    "button34": {
+      "title": "Ekrano klaviatūra",
+      "description": "Suaktyvina ekrano klaviatūrą, kad būtų lengviau rašyti."
+    },
+    "button35": {
+      "title": "Keisti teksto spalvą",
+      "description": "Leidžia keisti puslapio teksto spalvą."
+    },
+    "button36": {
+      "title": "Sulygiuoti tekstą dešinėn",
+      "description": "Leidžia sulygiuoti tekstą dešinėje."
+    },
+    "button37": {
+      "title": "Sulygiuoti tekstą kairėn",
+      "description": "Leidžia sulygiuoti tekstą kairėje."
+    },
+    "button38": {
+      "title": "Sulygiuoti tekstą centre",
+      "description": "Leidžia centruoti tekstą."
+    },
+    "button39": {
+      "title": "Eilučių tarpas",
+      "description": "Reguliuoja eilučių tarpą tekste."
+    }
+  },
+  "loginView": {
+    "title": "Prisijungti",
+    "welcome": "Sveiki atvykę",
+    "subwelcome": "Pasirinkite bet kurį iš šių variantų, kad prisijungtumėte arba sukurtumėte paskyrą.",
+    "input": {
+      "placeholderEmail": "Įveskite savo el. paštą",
+      "placeholderPass": "Įveskite savo slaptažodį"
+    },
+    "forgotPass": "Pamiršote slaptažodį?",
+    "buttonLogin": "Prisijungti",
+    "notAccount": {
+      "subtext1": "Neturite paskyros?",
+      "subtext2": "Registruotis",
+      "subtext3": "Arba galite prisijungti naudodami"
+    }
+  },
+  "accountView": {
+    "title": "Paskyros informacija",
+    "welcome": "Sveiki atvykę",
+    "subwelcome": "Sukurkite savo paskyrą",
+    "input": {
+      "placeholderEmail": "Įveskite savo el. paštą",
+      "placeholderConfirmEmail": "Patvirtinkite savo el. paštą",
+      "placeholderPass": "Įveskite savo slaptažodį",
+      "placeholderConfirmPass": "Patvirtinkite savo slaptažodį"
+    },
+    "button": "Išsaugoti ir tęsti"
+  },
+  "registerView": {
+    "title": "Profilio informacija",
+    "welcome": "Sveiki",
+    "subwelcome": "Norėdami sukurti savo profilį, užpildykite visus laukus.",
+    "edit": "Redaguoti paveikslėlį",
+    "subtitle1": "Pagrindinė asmeninė informacija",
+    "subtitle2": "Prieinamumo informacija",
+    "input": {
+      "labelName": "Pilnas vardas",
+      "placeholderName": "Įveskite savo pilną vardą",
+      "labelDocumentType": "Dokumento tipas",
+      "optionDocumentType": {
+        "option1": "Pasirinkti",
+        "option2": "Pilietybės pažymėjimas",
+        "option3": "Asmens tapatybės kortelė",
+        "option4": "Pasas",
+        "option5": "Užsienio piliečio asmens dokumentas",
+        "option6": "Kita",
+        "option7": "Asmens tapatybės dokumentas"
+      },
+      "labelNDocument": "Dokumento numeris",
+      "placeholderNDocument": "Įveskite savo dokumento numerį",
+      "labelEmail": "El. paštas",
+      "placeholderEmail": "Įveskite savo el. paštą",
+      "labelBirthdate": "Gimimo data",
+      "placeholderBirthdate": "Įveskite savo gimimo datą",
+      "labelResidenceArea": "Gyvenamoji vieta",
+      "optionResidenceArea": {
+        "option1": "Pasirinkite",
+        "option2": "Miestietiškas",
+        "option3": "Kaimiškas",
+        "option4": "Priemiesčio"
+      },
+      "labelEducationalLevel": "Išsilavinimo lygis",
+      "optionEducationalLevel": {
+        "option1": "Pasirinkite",
+        "option2": "Jokio",
+        "option3": "Pradinis",
+        "option4": "Vidurinis",
+        "option5": "Aukštasis",
+        "option6": "Podiplominis"
+      },
+      "labelOcupacion": "Profesinė padėtis",
+      "optionOcupacion": {
+        "option1": "Pasirinkite",
+        "option2": "Dirbantis",
+        "option3": "Bedarbis",
+        "option4": "Studentas",
+        "option5": "Pensininkas",
+        "option6": "Savarankiškai dirbantis"
+      },
+      "labelDisability": "Ar turite skirtingų gebėjimų?",
+      "optionDisability": {
+        "option1": "Pasirinkite",
+        "option2": "Taip",
+        "option3": "Ne"
+      },
+      "labelDisabilityType": "Įvairių gebėjimų tipas",
+      "optionDisabilityType": {
+        "option1": "Pasirinkite",
+        "option2": "Regos",
+        "option3": "Klausos",
+        "option4": "Motorinis",
+        "option5": "Pažinimo",
+        "option6": "Psichosocialinis",
+        "option7": "Kelių"
+      },
+      "labelDisabilityLevel": "Įvairių gebėjimų lygis",
+      "optionDisabilityLevel": {
+        "option1": "Pasirinkite",
+        "option2": "Lengvas",
+        "option3": "Vidutinis",
+        "option4": "Sunkus"
+      }
+    },
+    "button": "Išsaugoti ir tęsti"
+  },
+  "userTermsView": {
+    "title": "Naudojimo sąlygos",
+    "title2": "Sutikimas dėl asmens duomenų tvarkymo – U platforma",
+    "intro": "Registruodamasis U platformoje, aš laisvai, informuotai, konkrečiai ir nedviprasmiškai patvirtinu ir sutinku, kad mano asmens duomenys bus renkami, tvarkomi ir saugomi laikantis tarptautinių privatumo ir duomenų apsaugos standartų, remiantis šiomis sąlygomis:",
+    "section1Title": "1. Duomenų valdytojas",
+    "section1Text": "„U“, 201.Dsoft Innovate S.A.S. (toliau – „U“), juridinis adresas [juridinis adresas], veikiantis kaip duomenų valdytojas, tvarkys mano duomenis pagal šį įgaliojimą.",
+    "section2Title": "2. Tvarkymo tikslas",
+    "section2Text": "Mano asmens duomenys bus tvarkomi šiais tikslais:",
+    "section2List": {
+      "item1": "Personalizuoti prieinamumo patirtį „U“ valdiklyje.",
+      "item2": "Leisti analizuoti ir pateikti apibendrintą ataskaitą apie prieinamumo įrankių naudojimą (nenustatant vartotojo individualiai).",
+      "item3": "Teikti techninę pagalbą ir individualizuotą stebėseną, kai reikia.",
+      "item4": "Laikytis teisės aktų ir reglamentų dėl prieinamumo, įtraukties ir nediskriminavimo.",
+      "item5": "Siųsti techninius, informacinius ar komercinius atnaujinimus tik tuo atveju, jei tam daviau aiškų sutikimą."
+    },
+    "section3Title": "3. Teisinis pagrindas tvarkymui",
+    "section3Text": "„U“ asmens duomenų tvarkymą grindžia:",
+    "section3List": {
+      "item1": "Aiškiu vartotojo sutikimu.",
+      "item2": "Pagrįstu interesu gerinti prieinamumo paslaugas, visada gerbiant vartotojo privatumą.",
+      "item3": "Vietinių ir tarptautinių reglamentų, įskaitant GDPR (ES), CCPA (Kalifornija), LGPD (Brazilija) ir kitus taikomus duomenų apsaugos įstatymus, laikymusi."
+    },
+    "section4Title": "4. Tarptautinis duomenų perdavimas",
+    "section4Text": "Duomenys gali būti perduodami ir (arba) saugomi skirtingose šalyse esančiuose serveriuose. „Unyco“ garantuoja, kad tokiu atveju bus taikomos standartinės sutarčių sąlygos ir tinkamos techninės priemonės, siekiant apsaugoti duomenis pagal GDPR ir kitus taikomus reglamentus.",
+    "section5Title": "5. Vartotojo teisės",
+    "section5Text": "Kaip duomenų savininkas, turiu teisę:",
+    "section5List": {
+      "item1": "Prieiti prie, taisyti, riboti, ištrinti arba perkelti savo asmens duomenis.",
+      "item2": "Bet kuriuo metu atšaukti savo sutikimą.",
+      "item3": "Pateikti skundą vietos duomenų apsaugos institucijai (pvz., SIC Kolumbijoje, EDPB ES arba FTC JAV)."
+    },
+    "section6Title": "6. Duomenų saugojimo laikotarpis",
+    "section6Text": "Duomenys bus saugomi tik tiek, kiek būtina nurodytiems tikslams arba tol, kol paskyra bus aktyvi. Vėliau jie bus ištrinti arba anonimizuoti laikantis minimalizavimo principų.",
+    "section7Title": "7. Kontaktinė informacija teisių įgyvendinimui",
+    "section7Text1": "Savo teises galite įgyvendinti rašydami adresu: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>",
+    "section7Text2": "Arba apsilankę formoje, kurią rasite čia: <a href=\"https://www.u.app/privacy\">www.u.app/privacy</a>",
+    "helperText": "Prieš sutikdami, prašome perskaityti visą dokumentą.",
+    "checkboxLabel": "Pareiškimu, kad perskaičiau ir sutinku su čia išdėstytomis asmens duomenų tvarkymo sąlygomis.",
+    "button": "Patvirtinti"
+  },
+  "userTermsView2": {
+    "title": "Sąlygos ir nuostatos",
+    "title2": "Informuotas sutikimas dėl duomenų naudojimo – Widget U",
+    "intro": "U kompanijoje gerbiame jūsų privatumą ir norime, kad žinotumėte, kaip tiksliai naudojame jūsų duomenis.",
+    "accept": "Registruodamiesi mūsų platformoje ir naudodami valdiklį, jūs sutinkate, kad renkame ir naudojame tam tikrą informaciją šiais tikslais:",
+    "section1Title": "Kokių duomenų renkame?",
+    "section1Text": "Renkame tik tuos duomenis, kurie yra būtini, kad galėtume suteikti jums prieinamą ir personalizuotą patirtį. Tai gali apimti:",
+    "section1List": {
+      "item1": "Jūsų kontaktinius duomenis (vardą, el. pašto adresą).",
+      "item2": "Jūsų šalį, kalbą ir reikiamą prieinamumo lygį.",
+      "item3": "Jūsų negalios tipą (jei nuspręsite juo pasidalinti).",
+      "item4": "Jūsų valdiklyje aktyvuotus nustatymus (pvz., teksto didinimą, ekrano skaitytuvo įjungimą ir pan.)."
+    },
+    "section1Note": "Mes nerengiame bankinių duomenų ir neprieiname prie jūsų asmeninio turinio internete.",
+    "section2Title": "Kodėl naudojame šią informaciją?",
+    "section2List": {
+      "item1": "Automatiškai pritaikyti valdiklį prie Jūsų poreikių.",
+      "item2": "Generuoti anonimines ir statistines ataskaitas, padedančias gerinti skaitmeninę prieigą.",
+      "item3": "Apsaugoti Jūsų prieinamumo teises, pagal tokius standartus kaip WCAG 2.2, GDPR, CCPA ir kitus vietos įstatymus.",
+      "item4": "Jei sutinkate gauti naujienas, atsiųsime Jums atnaujinimus apie naujas funkcijas ar valdiklio patobulinimus."
+    },
+    "section3Title": "Kas gali matyti Jūsų duomenis?",
+    "section3Text1": "Prieigą prie Jūsų asmeninių nustatymų turi tik Jūs ir sistema.",
+    "section3Text2": "Jei nuspręsite pasidalinti savo duomenimis su įstaiga (pavyzdžiui, universitetu, kuris įdiegė Unyco), jie gaus tik apibendrintas ir anonimines ataskaitas, niekada ne individualius duomenis be Jūsų leidimo.",
+    "section4Title": "Kokią kontrolę turite savo informacijos atžvilgiu?",
+    "section4List": {
+      "item1": "Bet kuriuo metu galite keisti arba ištrinti savo paskyrą.",
+      "item2": "Galite paprašyti duomenų kopijos, kurią turime apie Jus.",
+      "item3": "Šį sutikimą galite atšaukti parašydami adresu: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>"
+    },
+    "helperText": "Prieš sutikdami, prašome perskaityti visą dokumentą.",
+    "checkboxLabel": "Pareiškiu, kad perskaičiau ir sutinku su čia išdėstytomis asmens duomenų tvarkymo sąlygomis.",
+    "button": "Patvirtinti"
+  },
+  "userProfileView": {
+    "title": "Profilio informacija",
+    "editImage": "Redaguoti paveikslėlį",
+    "name": "Vardas",
+    "email": "El. paštas",
+    "birthDate": "Gimimo data",
+    "id": "Asmens kodas",
+    "allData": "Visi duomenys",
+    "theme": "Tema",
+    "editProfile": "Redaguoti profilį",
+    "logout": "Atsijungti"
+  },
+  "resetPasswordView": {
+    "title": "Atkurti slaptažodį",
+    "labelEmail": "Įveskite savo el. paštą",
+    "placeholderEmail": "Įveskite savo el. paštą",
+    "buttonSend": "Siųsti",
+    "titleCode": "Saugos patvirtinimas",
+    "labelCode": "Įveskite patvirtinimo kodą, atsiųstą į jūsų el. pašto adresą",
+    "resend": "Negavau kodo.",
+    "resendLink": "Siųsti iš naujo",
+    "timer": "Liko {{time}} sekundės",
+    "timerExpired": "Kodas pasibaigė. Prašome užsisakyti naują.",
+    "titleNewPass": "Įveskite naują slaptažodį",
+    "labelNewPass": "Įveskite savo naują slaptažodį",
+    "placeholderNewPass": "Naujas slaptažodis",
+    "labelConfirmPass": "Patvirtinkite savo naują slaptažodį",
+    "placeholderConfirmPass": "Naujas slaptažodis",
+    "buttonAccept": "Pateikti",
+    "buttonCancel": "Atšaukti",
+    "successTitle": "Slaptažodžio keitimas",
+    "successMessage": "Jūsų slaptažodis buvo sėkmingai atnaujintas."
+  },
+  "positionView": {
+    "title": "Pasirinkite valdiklio vietą",
+    "subtitle": "Prašome pasirinkti pageidaujamą vietą."
+  },
+  "languagesView": {
+    "title": "Pasirinkite kalbą",
+    "subtitle": "Pasirinkite pageidaujamą arba gimtąją kalbą."
+  },
+  "error": {
+    "helperText": {
+      "emailError1": "El. pašto adresai nesutampa",
+      "emailError2": "El. pašto adresas neteisingas",
+      "passError1": "Slaptažodžiai nesutampa",
+      "passError2": "Slaptažodis turi turėti daugiau nei 6 simbolius"
+    }
+  }
+}

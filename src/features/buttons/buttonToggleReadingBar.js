@@ -24,20 +24,25 @@ function activateReadingBar() {
     style.innerHTML = `
       .reading-bar {
         position: absolute;
-        width: 100%;
-        height: 40px;
-        background-color: rgba(255, 255, 0, 0.2);
-        border-top: 1px solid rgba(0, 0, 0, 0.3);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        width: 500px;
+        height: 10px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, rgb(191, 30, 231) 0%, rgb(191, 30, 231) 100%);
+        
         z-index: 9999;
         pointer-events: none;
       }
       .reading-bar .center-element {
         position: absolute;
-        top: 10px;
-        font-size: 22px;
-        color: #333;
-        pointer-events: none;
+        top: -19%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 20px solid rgb(191, 30, 231);
+        box-shadow: 0 0 5px ytasurgba(0, 0, 0, 0);
       }
     `;
     document.head.appendChild(style);
@@ -47,9 +52,8 @@ function activateReadingBar() {
 
     const centerElement = document.createElement('span');
     centerElement.classList.add('center-element');
-    centerElement.textContent = '•';
-
     readingBar.appendChild(centerElement);
+
     document.body.appendChild(readingBar);
 
     document.addEventListener('mousemove', moveReadingBar);

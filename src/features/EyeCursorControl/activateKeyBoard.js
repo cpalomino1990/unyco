@@ -4,6 +4,7 @@ let removeKeyboardListeners;
 // Activa o desactiva el teclado virtual según su estado actual
 export function toggleVirtualKeyboard() {
 
+
     const isActive = document.body.classList.toggle("virtual-keyboard");
     localStorage.setItem("virtualKeyboard", isActive ? "true" : "false");
     if (!isActive) {
@@ -169,6 +170,7 @@ export function initVirtualKeyboard() {
          let cursorEnd = input.selectionEnd;
  
          switch (key) {
+            
              case 'Backspace':
                  if (cursorStart > 0) {
                      input.setRangeText("", cursorStart - 1, cursorEnd, "end");
@@ -202,6 +204,13 @@ export function initVirtualKeyboard() {
                  currentTheme = currentTheme === 'auto' ? 'dark' : currentTheme === 'dark' ? 'light' : 'auto';
                  updateTheme();
                  break;
+             case 'Close':
+                if (removeKeyboardListeners) removeKeyboardListeners();
+                virtualKeyboard = null;
+                document.body.classList.remove("virtual-keyboard");
+                localStorage.setItem("virtualKeyboard", "false");
+                break;
+
              default:
                  let char = key;
                  if (isShift && shiftMap[char]) {
@@ -259,4 +268,4 @@ export function initVirtualKeyboard() {
          document.body.removeChild(keyboard);
      };
  }
- 
+

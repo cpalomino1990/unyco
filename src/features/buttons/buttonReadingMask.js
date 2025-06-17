@@ -54,7 +54,7 @@ function createReadingMask() {
           rgba(0, 0, 0, 0.8) 100%
         );
         transition: background 0.2s ease;
-        z-index: 9998;
+        z-index: 9999;
       }
     `;
     document.head.appendChild(readingMaskStyle);

@@ -1,9 +1,50 @@
 import { renderFullLayout } from "./view.js";
 import "./shared/styles/widget.css";
 import { animationInitButton } from "./shared/utils/animationInitButton";
-import { initAccessibilitySettings } from "./shared/components/allFuntion.js";
+import i18next from "i18next";
+import HttpBackend from "i18next-http-backend";
+import { filterForInitIcons } from "./shared/utils/canvas.js";
 
+const URL_LOCALES = process.env.URL_LOCALES;
 
+// Inicializa i18next
+i18next
+  .use(HttpBackend) // Carga recursos desde archivos JSON
+  .init(
+    {
+      lng: navigator.language.slice(0, 2) ?? "es", // Idioma del usuario (p.ej. 'es', 'en')
+      fallbackLng: "en", // Idioma por defecto si no hay traducción
+      debug: false,
+      backend: {
+        loadPath: `${URL_LOCALES}/{{lng}}.json`, // Ruta de los archivos JSON
+      },
+    },
+    (err, t) => {
+      if (err) return console.error("Error al cargar i18next:", err);
+      // Una vez cargado, traduce el contenido
+      localStorage.setItem("u-i18n", navigator.language.slice(0, 2));
+      applyTranslations();
+    }
+  );
+
+// Función para aplicar las traducciones
+export function applyTranslations() {
+  document.querySelectorAll("[data-u-i18n]").forEach((element) => {
+    const key = element.getAttribute("data-u-i18n");
+    element.textContent = i18next.t(key);
+  });
+
+  document.querySelectorAll("[data-u-i18n-placeholder]").forEach((element) => {
+    const key = element.getAttribute("data-u-i18n-placeholder");
+    const translated = i18next.t(key);
+    element.setAttribute("placeholder", translated);
+  });
+}
+
+export function getDynamicTranslation(key, options = {}) {
+  const translate = i18next.t(`${key}`, options);
+  return translate;
+}
 
 // fetch("https://ipapi.co/json/")
 //   .then(res => res.json())
@@ -57,50 +98,85 @@ export function toggleMenu() {
   const menu = document.getElementById("accessibility-menu");
   menu.classList.toggle("hidden");
   menu.setAttribute("aria-hidden", menu.classList.contains("hidden"));
+
+  const anyVisible = document.querySelector(".accessibility-view:not(.hidden)");
+  if (!anyVisible) {
+    const initialView = document.getElementById("view-initial");
+    if (initialView) {
+      initialView.classList.remove("hidden");
+      initialView.setAttribute("aria-hidden", "false");
+    }
+  }
 }
 
 let historyViews = [];
 
-// Función para cambiar entre las vistas (Visual, Auditiva, etc.)
+const protectedViews = ["accessibility-user-profile-view"];
+
+function isUserLoggedIn() {
+  // Reemplaza esto con tu lógica real de autenticación
+  return Boolean(localStorage.getItem("isAuth") === "true");
+}
+
+function hideAllViews() {
+  document.querySelectorAll(".accessibility-view").forEach((element) => {
+    if (!element.classList.contains("hidden")) {
+      element.classList.add("hidden");
+      element.setAttribute("aria-hidden", "true");
+    }
+  });
+}
+
+function showView(viewId) {
+  const view = document.getElementById(viewId);
+  if (view) {
+    view.classList.remove("hidden");
+    view.setAttribute("aria-hidden", "false");
+  }
+}
+
 export function switchView(viewId) {
   document.querySelector("#accessibility-close-menu").focus();
+
   if (viewId === -1) {
-    const previusViewId = historyViews[historyViews.length - 1];
-    document.querySelectorAll(".accessibility-view").forEach((element) => {
-      if (!element.classList.contains("hidden")) {
-        element.classList.add("hidden");
-        element.setAttribute("aria-hidden", "true");
-      }
-    });
-
-    const activeView = document.getElementById(previusViewId);
-    if (activeView) {
-      activeView.classList.remove("hidden");
-      activeView.setAttribute("aria-hidden", "false");
-    }
-
+    let viewToShow = historyViews[historyViews.length - 1];
     historyViews.pop();
-  } else {
-    document.querySelectorAll(".accessibility-view").forEach((element) => {
-      if (!element.classList.contains("hidden")) {
-        element.classList.add("hidden");
-        element.setAttribute("aria-hidden", "true");
 
-        const index = historyViews.findIndex((id) => id === viewId);
-        if (index !== -1) {
-          historyViews.splice(index);
-        } else {
-          historyViews.push(element.id);
-        }
+    if (viewToShow) {
+      hideAllViews();
+      // Validación de seguridad
+      if (protectedViews.includes(viewId) && !isUserLoggedIn()) {
+        // Redirige al login si no está autenticado
+        viewToShow = "accessibility-user-login-view";
+      } else if (viewToShow === "accessibility-user-login-view") {
+        viewToShow = "view-initial";
       }
-    });
-
-    const activeView = document.getElementById(viewId);
-    if (activeView) {
-      activeView.classList.remove("hidden");
-      activeView.setAttribute("aria-hidden", "false");
+      showView(viewToShow);
     }
+    return;
   }
+
+  // Validación de seguridad
+  if (protectedViews.includes(viewId) && !isUserLoggedIn()) {
+    // Redirige al login si no está autenticado
+    viewId = "accessibility-user-login-view";
+  } else if (viewId === "accessibility-user-login-view") {
+    viewId = "view-initial";
+  }
+
+  const currentVisible = document.querySelector(".accessibility-view:not(.hidden)");
+
+  if (currentVisible && currentVisible.id !== viewId) {
+    historyViews.push(currentVisible.id);
+  }
+
+  const index = historyViews.indexOf(viewId);
+  if (index !== -1) {
+    historyViews.splice(index);
+  }
+
+  hideAllViews();
+  showView(viewId);
 }
 
 // Función para crear un botón con un id, texto y función asociada
@@ -148,19 +224,8 @@ export function updateCategoryButtons() {
 
     "btn-total-blindness": ["daltonismo-protanopia", "focus-frame"],
 
-    "btn-total-blindness": [
-      "read-read-speed",
-      "create-volume-control",
-      "read-text-aloud",
-      "selective-contrast",
-    ],
-    "btn-aspergers": [
-      "Guided-Reading",
-      "toggle-animationss",
-      "toggle-Disléxica",
-      "toggle-animations",
-      "toggle-mute",
-    ],
+    "btn-total-blindness": ["read-read-speed", "create-volume-control", "read-text-aloud", "selective-contrast"],
+    "btn-aspergers": ["Guided-Reading", "toggle-animationss", "toggle-Disléxica", "toggle-animations", "toggle-mute"],
     "btn-hyperActivity": ["toggle-Reading-Mask", "eyes-cursor"],
     "btn-epilepsy": ["control-scroll", "low-contrast"],
   };
@@ -168,9 +233,7 @@ export function updateCategoryButtons() {
   // Iterar sobre cada categoría para actualizar los botones dentro de ella
   Object.entries(categories).forEach(([categoryButtonId, buttonIds]) => {
     const categoryButton = document.getElementById(categoryButtonId); // Obtener el botón de la categoría
-    const hasActiveButton = buttonIds.some((id) =>
-      document.getElementById(id)?.classList.contains("active")
-    ); // Comprobar si algún botón de la categoría está activo
+    const hasActiveButton = buttonIds.some((id) => document.getElementById(id)?.classList.contains("active")); // Comprobar si algún botón de la categoría está activo
 
     // Si algún botón está activo, agregar la clase 'active' a la categoría
     if (hasActiveButton) {
@@ -189,15 +252,34 @@ export function createCategoryView(categoryName, buttons, returnToView) {
   div.setAttribute("aria-hidden", "false"); // Asegurar la accesibilidad
 
   // Crear un botón de "Volver" para regresar a la vista anterior
-  const backButton = createButton("back-to-menu", "⬅ Volver", () =>
-    switchView(returnToView)
-  );
+  const backButton = createButton("back-to-menu", "⬅ Volver", () => switchView(returnToView));
 
   div.appendChild(backButton); // Añadir el botón de "Volver" a la vista
   div.appendChild(createResetButton()); // Añadir el botón de "Restablecer" a la vista
   buttons.forEach((button) => div.appendChild(button)); // Añadir los botones de la categoría a la vista
 
   return div; // Devolver la vista creada
+}
+
+// funcion para Reestructuracion de svg
+export function svgStructure() {
+  const accessibilityMenu = document.querySelector("#accessibility-menu");
+  const svgs = accessibilityMenu.querySelectorAll("svg");
+  const listIdPatterns = [];
+  svgs.forEach((element, idx) => {
+    const rect = element.querySelector("rect");
+    const defs = element.querySelector("defs");
+    const pattern = defs?.querySelector("pattern");
+    if (pattern) {
+      if (listIdPatterns.includes(pattern.id)) {
+        listIdPatterns.push(`${pattern.id}-${idx}`);
+        pattern.id = `${pattern.id}-${idx}`;
+        rect.setAttribute("fill", `url(#${pattern.id})`);
+      } else {
+        listIdPatterns.push(`${pattern.id}`);
+      }
+    }
+  });
 }
 
 // Función para inicializar el widget de accesibilidad
@@ -211,17 +293,17 @@ export async function initWidget(accountId) {
   widgetContainer.id = "my-widget"; // Asignar un id único al contenedor del widget
   widgetContainer.className = "widget-container"; // Asignar una clase para el estilo del widget
 
-  const accessibilityButton = createButton(
-    "accessibility-button",
-    "",
-    toggleMenu
-  ); // Crear el botón de accesibilidad
+  const accessibilityButton = createButton("accessibility-button", "", toggleMenu); // Crear el botón de accesibilidad
+  accessibilityButton.setAttribute("data-direction", "bottom-right"); // Establecer la dirección inicial del botón
+  accessibilityButton.classList.add("bottom-right"); // Asignar la clase para la posición inicial del botón
   animationInitButton(); // Inicializar la animación del botón
 
   const accessibilityMenu = document.createElement("div"); // Crear el menú de accesibilidad
   accessibilityMenu.id = "accessibility-menu"; // Asignar un id al menú
-  accessibilityMenu.classList.add("hidden"); // Ocultar el menú inicialmente
+
   accessibilityMenu.setAttribute("role", "dialog", true); // Establecer el rol ARIA del menú
+  accessibilityMenu.setAttribute("data-direction", "right"); // Establecer la dirección inicial del menu
+  accessibilityMenu.classList.add("right");
 
   const resetaAll = createButton(
     "reset-all",
@@ -248,4 +330,22 @@ export async function initWidget(accountId) {
       accessibilityMenu.setAttribute("aria-hidden", "false"); // Cambiar atributo ARIA para accesibilidad
     }
   });
+
+  svgStructure();
+  filterForInitIcons();
+  // Ocultar el menú inicialmente solo si no viene el parámetro #widgetu en la URL
+  if (window.location.hash.includes("#widgetu")) {
+    const anyVisible = document.querySelector(".accessibility-view:not(.hidden)");
+    if (!anyVisible) {
+      const initialView = document.getElementById("view-initial");
+      if (initialView) {
+        initialView.classList.remove("hidden");
+        initialView.setAttribute("aria-hidden", "false");
+      }
+    }
+  } else {
+    accessibilityMenu.classList.add("hidden");
+  }
 }
+
+console.log("Widget de accesibilidad cargado correctamente.");

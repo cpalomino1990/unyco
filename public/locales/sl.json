@@ -1,0 +1,484 @@
+{
+  "fullLayout": {
+    "slogan": "Povezano z vami"
+  },
+  "bannerUser": {
+    "welcome": "Dobrodošli",
+    "subwelcome": "Vabimo vas, da se registrirate za personalizirano izkušnjo"
+  },
+  "category": {
+    "visual": {
+      "title": "Vizualno",
+      "description": "Edinstveni načini zaznavanja ali interpretiranja okolja z vidom."
+    },
+    "mental": {
+      "title": "Psihosocialno",
+      "description": "Avtentični načini interakcije, čutenja in povezovanja z svetom."
+    },
+    "auditory": {
+      "title": "Slušno",
+      "description": "Različni načini doživljanja in povezovanja z zvoki okolja."
+    },
+    "physical": {
+      "title": "Fizično",
+      "description": "Osebni stili gibanja, izražanja telesa in koordinacije."
+    },
+    "cognitive": {
+      "title": "Kognitivno",
+      "description": "Edinstveni procesi razmišljanja, učenja, spomina in pozornosti."
+    },
+    "custom": {
+      "title": "Prilagojeno",
+      "description": "Nastavite izkušnjo, prilagojeno vašim individualnim potrebam in željam."
+    }
+  },
+  "viewCategory": {
+    "title1": "Različni profili sposobnosti",
+    "title2": "Več nastavitev",
+    "visual": {
+      "profile1": {
+        "title": "Slab vid",
+        "description": "Edinstvena vizualna izkušnja, ki obogati način zaznavanja okolja."
+      },
+      "profile2": {
+        "title": "Slepota",
+        "description": "Oblika zaznavanja, ki pri interpretaciji sveta daje prednost drugim čutilom."
+      },
+      "profile3": {
+        "title": "Barvna slepota",
+        "description": "Edinstvena izkušnja pri zaznavanju in razlikovanju barv."
+      }
+    },
+    "mental": {
+      "profile1": {
+        "title": "AS",
+        "description": "Posebni načini osredotočanja na interese, komunikacijo in odnose."
+      },
+      "profile2": {
+        "title": "Downov sindrom",
+        "description": "Osebni in dragoceni način doživljanja osebnega in socialnega razvoja."
+      },
+      "profile3": {
+        "title": "Disleksija",
+        "description": "Poseben način zaznavanja in dekodiranja strukture besedil."
+      },
+      "profile4": {
+        "title": "Epilepsija",
+        "description": "Edinstvene manifestacije nevrološkega delovanja, ki predstavljajo raznolikost."
+      },
+      "profile5": {
+        "title": "ADHD",
+        "description": "Posebna dinamika pozornosti, energije in procesiranja dražljajev."
+      }
+    },
+    "auditory": {
+      "profile1": {
+        "title": "Gluhota",
+        "description": "Posebni načini življenja in razumevanja komunikacije z drugimi."
+      }
+    },
+    "physical": {
+      "profile1": {
+        "title": "Zgornja gibljivost",
+        "description": "Posebni načini gibanja in izražanja v zgornjem delu telesa."
+      }
+    },
+    "cognitive": {
+      "profile1": {
+        "title": "Avtizem",
+        "description": "Edinstven slog zaznavanja, procesiranja in navezovanja na okolje in ljudi."
+      },
+      "profile2": {
+        "title": "OKP",
+        "description": "Intenzivni in strukturirani načini organiziranja misli in dejanj."
+      }
+    },
+    "custom": {}
+  },
+  "functionalityButtons": {
+    "button1": {
+      "title": "Način poudarjanja",
+      "description": "Poudari pomembno vsebino."
+    },
+    "button2": {
+      "title": "Poudari besedilo",
+      "description": "Poudari vidno besedilo."
+    },
+    "button3": {
+      "title": "Povečevalno steklo",
+      "description": "Poveča besedilo ob prehodu miške."
+    },
+    "button4": {
+      "title": "Povečaj besedilo",
+      "description": "Poveča velikost besedila na strani."
+    },
+    "button5": {
+      "title": "Povečaj razmik",
+      "description": "Izboljša razmik med besedilom."
+    },
+    "button6": {
+      "title": "Branje na glas",
+      "description": "Prebere besedilo strani ob prehodu miške."
+    },
+    "button7": {
+      "title": "Poudari povezave",
+      "description": "Poudari povezave na strani."
+    },
+    "button8": {
+      "title": "Ustavi animacije",
+      "description": "Onemogoči vse animacije na strani."
+    },
+    "button9": {
+      "title": "Aktiviraj bralno vrstico",
+      "description": "Prikaže vrstico, ki olajša branje."
+    },
+    "button10": {
+      "title": "Velik kazalec",
+      "description": "Spremeni velikost kazalca na večjo."
+    },
+    "button11": {
+      "title": "Berljivo pisavo",
+      "description": "Spremeni pisavo besedila v bolj berljivo."
+    },
+    "button12": {
+      "title": "Hitrost branja",
+      "description": "Prilagodi hitrost branja besedila."
+    },
+    "button13": {
+      "title": "Barve označevanja",
+      "description": "Spremeni barve označevanja za boljšo vidljivost."
+    },
+    "button14": {
+      "title": "Nadzor glasnosti",
+      "description": "Prilagodi glasnost bralnika zaslona."
+    },
+    "button15": {
+      "title": "Protanopia",
+      "description": "Prilagoditev barv za pomanjkanje zaznavanja rdeče barve."
+    },
+    "button16": {
+      "title": "Deuteranopia",
+      "description": "Prilagoditev barv za pomanjkanje zaznavanja zelene barve."
+    },
+    "button17": {
+      "title": "Tritanopia",
+      "description": "Prilagoditev barv za pomanjkanje zaznavanja modre barve."
+    },
+    "button18": {
+      "title": "Protanomalija",
+      "description": "Delna korekcija rdeče barve."
+    },
+    "button19": {
+      "title": "Deuteranomalija",
+      "description": "Delna korekcija zelene barve."
+    },
+    "button20": {
+      "title": "Tritanomalija",
+      "description": "Delna korekcija modre barve."
+    },
+    "button21": {
+      "title": "Achromatomalija",
+      "description": "Delna nastavitev črno-bele barve."
+    },
+    "button22": {
+      "title": "Achromatopsija",
+      "description": "Popolna nastavitev sive lestvice."
+    },
+    "button23": {
+      "title": "Okvir ostrenja",
+      "description": "Označi element v ostrenju."
+    },
+    "button24": {
+      "title": "Selektivni kontrast",
+      "description": "Preklopi stran v temen način."
+    },
+    "button25": {
+      "title": "Začasno ustavljeno branje",
+      "description": "Aktivira branje beseda za besedo."
+    },
+    "button26": {
+      "title": "Način ostrenja",
+      "description": "Odstrani moteče slike in videoposnetke."
+    },
+    "button27": {
+      "title": "Izključi zvok",
+      "description": "Utiša zvok strani."
+    },
+    "button28": {
+      "title": "Maska za branje",
+      "description": "Doda masko za lažje branje."
+    },
+    "button29": {
+      "title": "Pisava za disleksijo",
+      "description": "Spremeni pisavo v pisavo, zasnovano za disleksijo."
+    },
+    "button30": {
+      "title": "Nadzor pomikanja",
+      "description": "Nadzoruje pomikanje strani, da se prepreči nenadno preskakovanje."
+    },
+    "button31": {
+      "title": "Nizek kontrast",
+      "description": "Aktivira način nizkega kontrasta za boljšo berljivost."
+    },
+    "button32": {
+      "title": "Nadzor z očmi",
+      "description": "Aktivira navigacijo z miško s pomočjo sledenja očem."
+    },
+    "button33": {
+      "title": "Prevajalnik znakovnega jezika",
+      "description": "Aktivira način znakovnega jezika na strani."
+    },
+    "button34": {
+      "title": "Zaslonska tipkovnica",
+      "description": "Aktivira zaslonsko tipkovnico za lažje tipkanje."
+    },
+    "button35": {
+      "title": "Spremeni barvo besedila",
+      "description": "Dovoljuje spreminjanje barve besedila na strani."
+    },
+    "button36": {
+      "title": "Poravnaj besedilo desno",
+      "description": "Dovoljuje poravnavo besedila desno."
+    },
+    "button37": {
+      "title": "Poravnaj besedilo levo",
+      "description": "Dovoljuje poravnavo besedila levo."
+    },
+    "button38": {
+      "title": "Poravnaj besedilo na sredino",
+      "description": "Dovoljuje centriranje besedila."
+    },
+    "button39": {
+      "title": "Razmik med vrsticami",
+      "description": "Nastavlja razmik med vrsticami v besedilu."
+    }
+  },
+  "loginView": {
+    "title": "Prijava",
+    "welcome": "Dobrodošli",
+    "subwelcome": "Izberite katero koli od teh možnosti za prijavo ali ustvarjanje računa.",
+    "input": {
+      "placeholderEmail": "Vnesite vaš e-poštni naslov",
+      "placeholderPass": "Vnesite vaše geslo"
+    },
+    "forgotPass": "Ste pozabili geslo?",
+    "buttonLogin": "Prijava",
+    "notAccount": {
+      "subtext1": "Nimate računa?",
+      "subtext2": "Registracija",
+      "subtext3": "Ali se lahko prijavite z"
+    }
+  },
+  "accountView": {
+    "title": "Podatki o računu",
+    "welcome": "Dobrodošli",
+    "subwelcome": "Ustvarite svoj račun",
+    "input": {
+      "placeholderEmail": "Vnesite vaš e-poštni naslov",
+      "placeholderConfirmEmail": "Potrdite vaš e-poštni naslov",
+      "placeholderPass": "Vnesite vaše geslo",
+      "placeholderConfirmPass": "Potrdite vaše geslo"
+    },
+    "button": "Shrani in nadaljuj"
+  },
+  "registerView": {
+    "title": "Podatki o profilu",
+    "welcome": "Dobrodošli",
+    "subwelcome": "Prosimo, izpolnite vsa polja za ustvarjanje vašega profila.",
+    "edit": "Uredi sliko",
+    "subtitle1": "Osnovni osebni podatki",
+    "subtitle2": "Podatki o dostopnosti",
+    "input": {
+      "labelName": "Polno ime",
+      "placeholderName": "Vnesite svoje polno ime",
+      "labelDocumentType": "Vrsta dokumenta",
+      "optionDocumentType": {
+        "option1": "Izberite",
+        "option2": "Osebni dokument (državljanstvo)",
+        "option3": "Izkaznica",
+        "option4": "Potni list",
+        "option5": "Tuji osebni dokument",
+        "option6": "Drugo",
+        "option7": "Osebni dokument"
+      },
+      "labelNDocument": "Številka dokumenta",
+      "placeholderNDocument": "Vnesite številko svojega dokumenta",
+      "labelEmail": "Elektronski naslov",
+      "placeholderEmail": "Vnesite svoj elektronski naslov",
+      "labelBirthdate": "Datum rojstva",
+      "placeholderBirthdate": "Vnesite datum rojstva",
+      "labelResidenceArea": "Območje prebivališča",
+      "optionResidenceArea": {
+        "option1": "Izberite",
+        "option2": "Mestno",
+        "option3": "Podeželsko",
+        "option4": "Predmestno"
+      },
+      "labelEducationalLevel": "Izobrazbena raven",
+      "optionEducationalLevel": {
+        "option1": "Izberite",
+        "option2": "Brez",
+        "option3": "Osnovna",
+        "option4": "Srednja",
+        "option5": "Univerza",
+        "option6": "Podiplomski"
+      },
+      "labelOcupacion": "Poklicni status",
+      "optionOcupacion": {
+        "option1": "Izberite",
+        "option2": "Zaposlen",
+        "option3": "Brezposeln",
+        "option4": "Študent",
+        "option5": "Upokojenec",
+        "option6": "Samozaposlen"
+      },
+      "labelDisability": "Imate različne sposobnosti?",
+      "optionDisability": {
+        "option1": "Izberite",
+        "option2": "Da",
+        "option3": "Ne"
+      },
+      "labelDisabilityType": "Vrsta raznolike sposobnosti",
+      "optionDisabilityType": {
+        "option1": "Izberite",
+        "option2": "Vidna",
+        "option3": "Slušna",
+        "option4": "Motorična",
+        "option5": "Kognitivna",
+        "option6": "Psihosocialna",
+        "option7": "Večkratna"
+      },
+      "labelDisabilityLevel": "Stopnja raznolike sposobnosti",
+      "optionDisabilityLevel": {
+        "option1": "Izberite",
+        "option2": "Blaga",
+        "option3": "Zmerna",
+        "option4": "Visoka"
+      }
+    },
+    "button": "Shrani in nadaljuj"
+  },
+  "userTermsView": {
+    "title": "Pogoji in določila",
+    "title2": "Soglasje za obdelavo osebnih podatkov – platforma U",
+    "intro": "Z registracijo na platformi U priznavam in sprejemam, prosto, obveščeno, specifično in nedvoumno, da bodo moji osebni podatki zbirani, obdelani in shranjeni v skladu z mednarodnimi standardi zasebnosti in varstva podatkov, na podlagi naslednjih pogojev:",
+    "section1Title": "1. Upravljavec podatkov",
+    "section1Text": "Družba 201.Dsoft Innovate S.A.S. (v nadaljevanju 'U'), s sedežem na [pravni naslov], kot upravljavec podatkov, bo obdelovala moje podatke v skladu s tem pooblastilom.",
+    "section2Title": "2. Namen obdelave",
+    "section2Text": "Moji osebni podatki bodo obdelani za naslednje namene:",
+    "section2List": {
+      "item1": "Prilagoditev uporabniške izkušnje znotraj pripomočka U.",
+      "item2": "Omogočanje analize in agregiranega poročanja o uporabi orodij za dostopnost (brez individualne identifikacije uporabnika).",
+      "item3": "Zagotavljanje tehnične podpore in osebnega spremljanja, kadar je potrebno.",
+      "item4": "Izpolnjevanje zakonskih in regulativnih obveznosti glede dostopnosti, vključenosti in nediskriminacije.",
+      "item5": "Pošiljanje tehničnih, informativnih ali komercialnih posodobitev, samo če sem za to dal/a posebno soglasje."
+    },
+    "section3Title": "3. Pravna podlaga za obdelavo",
+    "section3Text": "U temelji obdelavo osebnih podatkov na:",
+    "section3List": {
+      "item1": "Izrecnem soglasju uporabnika.",
+      "item2": "Legitimnem interesu za izboljšanje storitev dostopnosti, pri čemer se vedno spoštuje zasebnost uporabnika.",
+      "item3": "Usklajenosti z lokalnimi in mednarodnimi predpisi, vključno z GDPR (EU), CCPA (Kalifornija), LGPD (Brazilija) in drugimi veljavnimi zakoni o varstvu podatkov."
+    },
+    "section4Title": "4. Mednarodni prenos podatkov",
+    "section4Text": "Podatki se lahko prenesejo in/ali shranijo na strežnikih, ki se nahajajo v različnih državah. Unyco zagotavlja, da bodo v tem primeru uporabljeni standardni pogodbeni določki in ustrezni tehnični ukrepi za zaščito podatkov v skladu z GDPR in drugimi veljavnimi predpisi.",
+    "section5Title": "5. Pravice uporabnika",
+    "section5Text": "Kot lastnik podatkov imam pravico do:",
+    "section5List": {
+      "item1": "Dostopanja, popravka, omejitve, izbrisa ali prenosa mojih osebnih podatkov.",
+      "item2": "Odpoklica mojega soglasja kadar koli.",
+      "item3": "Vloge pritožbe pri lokalnem organu za varstvo podatkov (kot je SIC v Kolumbiji, EDPB v EU ali FTC v ZDA)."
+    },
+    "section6Title": "6. Obdobje hrambe",
+    "section6Text": "Podatki se hranijo le tako dolgo, kot je potrebno za navedene namene, ali dokler je račun aktiven. Po tem se izbrišejo ali anonimizirajo v skladu z načeli minimizacije.",
+    "section7Title": "7. Kontakt za uveljavljanje pravic",
+    "section7Text1": "Svoje pravice lahko uveljavljate tako, da pišete na: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>",
+    "section7Text2": "Ali z obiskom obrazca, ki je na voljo na: <a href=\"https://www.u.app/privacy\">www.u.app/privacy</a>",
+    "helperText": "Pred potrditvijo preberite celoten dokument.",
+    "checkboxLabel": "Izjavljam, da sem prebral/a in sprejemam pogoje obdelave osebnih podatkov, kot so navedeni tukaj.",
+    "button": "Potrdi"
+  },
+  "userTermsView2": {
+    "title": "Pogoji in določila",
+    "title2": "Obveščeno soglasje k uporabi podatkov – Widget U",
+    "intro": "V podjetju U spoštujemo vašo zasebnost in želimo, da veste natančno, kako uporabljamo vaše podatke.",
+    "accept": "Z registracijo na naši platformi in uporabo widgeta sprejemate, da zbiramo in uporabljamo določene informacije za naslednje namene:",
+    "section1Title": "Katere podatke zbiramo?",
+    "section1Text": "Zbiramo le podatke, ki so potrebni, da vam zagotovimo dostopen in personaliziran dostop. To lahko vključuje:",
+    "section1List": {
+      "item1": "Vaše kontaktne podatke (ime, e-poštni naslov).",
+      "item2": "Vašo državo, jezik in zahtevano raven dostopnosti.",
+      "item3": "Vašo vrsto invalidnosti (če se odločite, da jo delite).",
+      "item4": "Nastavitve, ki jih aktivirate v widgetu (na primer: povečava besedila, omogočanje bralnika zaslona itd.)."
+    },
+    "section1Note": "Ne zbiramo bančnih podatkov ali dostopamo do vaše osebne vsebine na spletu.",
+    "section2Title": "Zakaj uporabljamo te informacije?",
+    "section2List": {
+      "item1": "Samodejno prilagodite pripomoček vašim potrebam.",
+      "item2": "Generiranje anonimnih in statističnih poročil, ki pomagajo izboljšati digitalni dostop.",
+      "item3": "Zaščita vaših pravic do dostopnosti v skladu s standardi, kot so WCAG 2.2, GDPR, CCPA in drugi lokalni zakoni.",
+      "item4": "Če se strinjate s prejemanjem novic, vam bomo poslali posodobitve o novih funkcijah ali izboljšavah pripomočka."
+    },
+    "section3Title": "Kdo lahko vidi vaše podatke?",
+    "section3Text1": "Dostop do vaših osebnih nastavitev imata samo vi in sistem.",
+    "section3Text2": "Če se odločite za souporabo vaših podatkov z institucijo (na primer univerzo, ki uporablja Unyco), bodo prejeli le agregirana in anonimna poročila, nikoli posameznih podatkov brez vašega dovoljenja.",
+    "section4Title": "Kakšen nadzor imate nad svojimi podatki?",
+    "section4List": {
+      "item1": "Svoj račun lahko kadar koli spremenite ali izbrišete.",
+      "item2": "Lahko zahtevate kopijo podatkov, ki jih imamo o vas.",
+      "item3": "To soglasje lahko prekličete tako, da pišete na: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>"
+    },
+    "helperText": "Pred sprejemanjem preberite celoten dokument.",
+    "checkboxLabel": "Izjavljam, da sem prebral in sprejemam pogoje obdelave osebnih podatkov, kot so navedeni tukaj.",
+    "button": "Potrdi"
+  },
+  "userProfileView": {
+    "title": "Podatki o profilu",
+    "editImage": "Uredi sliko",
+    "name": "Ime",
+    "email": "Elektronski naslov",
+    "birthDate": "Datum rojstva",
+    "id": "Identifikacija",
+    "allData": "Vsi podatki",
+    "theme": "Tema",
+    "editProfile": "Uredi profil",
+    "logout": "Odjava"
+  },
+  "resetPasswordView": {
+    "title": "Obnovitev gesla",
+    "labelEmail": "Vnesite svoj e-poštni naslov",
+    "placeholderEmail": "Vnesite svoj e-poštni naslov",
+    "buttonSend": "Pošlji",
+    "titleCode": "Varnostna preverjanje",
+    "labelCode": "Vnesite preveritveno kodo, poslano na vaš e-poštni naslov",
+    "resend": "Kode nisem prejel/a.",
+    "resendLink": "Pošlji znova",
+    "timer": "Preostane še {{time}} sekund",
+    "timerExpired": "Koda je potekla. Prosimo, zahtevajte novo.",
+    "titleNewPass": "Vnesite novo geslo",
+    "labelNewPass": "Vnesite novo geslo",
+    "placeholderNewPass": "Novo geslo",
+    "labelConfirmPass": "Potrdite novo geslo",
+    "placeholderConfirmPass": "Novo geslo",
+    "buttonAccept": "Potrdi",
+    "buttonCancel": "Prekliči",
+    "successTitle": "Sprememba gesla",
+    "successMessage": "Vaše geslo je bilo uspešno posodobljeno."
+  },
+  "positionView": {
+    "title": "Izberite lokacijo pripomočka",
+    "subtitle": "Izberite svojo želeno lokacijo."
+  },
+  "languagesView": {
+    "title": "Izberite jezik",
+    "subtitle": "Izberite svoj želeni ali materni jezik."
+  },
+  "error": {
+    "helperText": {
+      "emailError1": "E-poštna naslova se ne ujemata",
+      "emailError2": "E-poštni naslov ni veljaven",
+      "passError1": "Gesli se ne ujemata",
+      "passError2": "Geslo mora imeti več kot 6 znakov"
+    }
+  }
+}

@@ -4,12 +4,12 @@ import "../styles/AccesibilityButton.css";
 export const animationInitButton = () => {
   
   const images = [
-    `${host}/src/shared/assets/icons/iconsInitbutton/1-people.svg`,
-    `${host}/src/shared/assets/icons/iconsInitbutton/2-brain.svg`,
-    `${host}/src/shared/assets/icons/iconsInitbutton/3-arm.svg`,
-    `${host}/src/shared/assets/icons/iconsInitbutton/4-glasses.svg`,
-    `${host}/src/shared/assets/icons/iconsInitbutton/5-peoples.svg`,
-    `${host}/src/shared/assets/icons/iconsInitbutton/6-hands.svg`,
+    `${host}/public/icons/iconsInitbutton/1-people.svg`,
+    `${host}/public/icons/iconsInitbutton/2-brain.svg`,
+    `${host}/public/icons/iconsInitbutton/3-arm.svg`,
+    `${host}/public/icons/iconsInitbutton/4-glasses.svg`,
+    `${host}/public/icons/iconsInitbutton/5-peoples.svg`,
+    `${host}/public/icons/iconsInitbutton/6-hands.svg`,
   ];
 
   document.addEventListener("DOMContentLoaded", () => {

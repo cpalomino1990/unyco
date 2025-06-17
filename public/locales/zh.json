@@ -1,0 +1,484 @@
+{
+  "fullLayout": {
+    "slogan": "已连接 - 与你"
+  },
+  "bannerUser": {
+    "welcome": "欢迎",
+    "subwelcome": "我们邀请您注册，以获得个性化体验"
+  },
+  "category": {
+    "visual": {
+      "title": "视觉",
+      "description": "通过视觉感知或解读环境的独特方式。"
+    },
+    "mental": {
+      "title": "心理社会",
+      "description": "与世界互动、感受和关联的真实方式。"
+    },
+    "auditory": {
+      "title": "听觉",
+      "description": "体验和连接环境声音的多样化方式。"
+    },
+    "physical": {
+      "title": "身体",
+      "description": "个人的运动、肢体表达和协调方式。"
+    },
+    "cognitive": {
+      "title": "认知",
+      "description": "独特的思维、学习、记忆和注意力过程。"
+    },
+    "custom": {
+      "title": "定制化",
+      "description": "建立符合您个人需求和偏好的体验。"
+    }
+  },
+  "viewCategory": {
+    "title1": "多样化能力特征",
+    "title2": "更多设置",
+    "visual": {
+      "profile1": {
+        "title": "低视力",
+        "description": "丰富感知环境方式的独特视觉体验。"
+      },
+      "profile2": {
+        "title": "盲症",
+        "description": "优先使用其他感官来解读世界的感知方式。"
+      },
+      "profile3": {
+        "title": "色盲",
+        "description": "对色彩感知和辨别的独特体验。"
+      }
+    },
+    "mental": {
+      "profile1": {
+        "title": "自闭症谱系障碍 (ASD)",
+        "description": "关注兴趣、沟通和人际关系的独特方式。"
+      },
+      "profile2": {
+        "title": "唐氏综合征",
+        "description": "体验个人和社会发展的一种独特而宝贵的途径。"
+      },
+      "profile3": {
+        "title": "诵读困难症 (阅读障碍)",
+        "description": "感知和解码文本结构的特殊方式。"
+      },
+      "profile4": {
+        "title": "癫痫",
+        "description": "神经功能的独特表现形式，代表着多样性。"
+      },
+      "profile5": {
+        "title": "注意力缺陷多动障碍 (ADHD)",
+        "description": "注意力、精力和刺激处理的特殊动态。"
+      }
+    },
+    "auditory": {
+      "profile1": {
+        "title": "失聪",
+        "description": "与他人沟通的独特生活方式和理解方式。"
+      }
+    },
+    "physical": {
+      "profile1": {
+        "title": "上肢活动能力",
+        "description": "上半身运动和表达的特殊方式。"
+      }
+    },
+    "cognitive": {
+      "profile1": {
+        "title": "自闭症",
+        "description": "感知、处理和与环境以及他人互动的一种独特风格。"
+      },
+      "profile2": {
+        "title": "强迫症 (OCD)",
+        "description": "高度结构化的思维和行动组织方式。"
+      }
+    },
+    "custom": {}
+  },
+  "functionalityButtons": {
+    "button1": {
+      "title": "高亮模式",
+      "description": "突出显示重要内容。"
+    },
+    "button2": {
+      "title": "高亮文本",
+      "description": "高亮显示可见文本。"
+    },
+    "button3": {
+      "title": "放大镜",
+      "description": "悬停时放大文本。"
+    },
+    "button4": {
+      "title": "增大文本",
+      "description": "增大页面上的文本大小。"
+    },
+    "button5": {
+      "title": "增大间距",
+      "description": "改善文本间距。"
+    },
+    "button6": {
+      "title": "朗读",
+      "description": "悬停时朗读页面文本。"
+    },
+    "button7": {
+      "title": "高亮链接",
+      "description": "高亮显示页面上的链接。"
+    },
+    "button8": {
+      "title": "停止动画",
+      "description": "禁用页面上的所有动画。"
+    },
+    "button9": {
+      "title": "启动阅读栏",
+      "description": "显示一个方便阅读的栏。"
+    },
+    "button10": {
+      "title": "大型光标",
+      "description": "增大光标尺寸"
+    },
+    "button11": {
+      "title": "易读字体",
+      "description": "将文本字体更改为更易读的字体"
+    },
+    "button12": {
+      "title": "阅读速度",
+      "description": "调整文本阅读速度"
+    },
+    "button13": {
+      "title": "高亮颜色",
+      "description": "更改高亮颜色以提高可见性"
+    },
+    "button14": {
+      "title": "音量控制",
+      "description": "调整屏幕阅读器音量"
+    },
+    "button15": {
+      "title": "全色盲（红绿色盲）",
+      "description": "针对红色视觉缺陷的颜色调整"
+    },
+    "button16": {
+      "title": "绿色盲",
+      "description": "针对绿色视觉缺陷的颜色调整"
+    },
+    "button17": {
+      "title": "蓝色盲",
+      "description": "针对蓝色视觉缺陷的颜色调整"
+    },
+    "button18": {
+      "title": "部分红色盲",
+      "description": "部分红色颜色校正"
+    },
+    "button19": {
+      "title": "部分绿色盲",
+      "description": "部分绿色颜色校正"
+    },
+    "button20": {
+      "title": "部分蓝色盲",
+      "description": "局部蓝色校正"
+    },
+    "button21": {
+      "title": "部分色觉异常",
+      "description": "局部黑白颜色调整"
+    },
+    "button22": {
+      "title": "全色盲",
+      "description": "完全灰度颜色调整"
+    },
+    "button23": {
+      "title": "焦点框",
+      "description": "标记当前焦点元素"
+    },
+    "button24": {
+      "title": "选择性对比度",
+      "description": "启用深色模式"
+    },
+    "button25": {
+      "title": "暂停阅读",
+      "description": "启动逐词阅读"
+    },
+    "button26": {
+      "title": "焦点模式",
+      "description": "移除干扰图像和视频"
+    },
+    "button27": {
+      "title": "静音",
+      "description": "静音页面声音"
+    },
+    "button28": {
+      "title": "阅读遮罩",
+      "description": "添加遮罩以辅助阅读"
+    },
+    "button29": {
+      "title": "阅读障碍字体",
+      "description": "更改为针对阅读障碍设计的字体"
+    },
+    "button30": {
+      "title": "滚动控制",
+      "description": "控制页面滚动，防止突然跳跃。"
+    },
+    "button31": {
+      "title": "低对比度",
+      "description": "启用低对比度模式，以提高可读性。"
+    },
+    "button32": {
+      "title": "眼控",
+      "description": "启用通过眼动追踪进行鼠标导航。"
+    },
+    "button33": {
+      "title": "手语翻译器",
+      "description": "启用页面的手语模式。"
+    },
+    "button34": {
+      "title": "屏幕键盘",
+      "description": "启用屏幕键盘，以便更轻松地打字。"
+    },
+    "button35": {
+      "title": "更改文字颜色",
+      "description": "允许更改页面文字颜色。"
+    },
+    "button36": {
+      "title": "右对齐文字",
+      "description": "允许将文字右对齐。"
+    },
+    "button37": {
+      "title": "左对齐文字",
+      "description": "允许将文字左对齐。"
+    },
+    "button38": {
+      "title": "居中对齐文字",
+      "description": "允许将文字居中。"
+    },
+    "button39": {
+      "title": "行间距",
+      "description": "调整文字的行间距。"
+    }
+  },
+  "loginView": {
+    "title": "登录",
+    "welcome": "欢迎",
+    "subwelcome": "请选择以下任一选项登录或创建帐户。",
+    "input": {
+      "placeholderEmail": "输入您的邮箱",
+      "placeholderPass": "输入您的密码"
+    },
+    "forgotPass": "忘记密码？",
+    "buttonLogin": "登录",
+    "notAccount": {
+      "subtext1": "没有帐户？",
+      "subtext2": "注册",
+      "subtext3": "或者您可以使用以下方式登录"
+    }
+  },
+  "accountView": {
+    "title": "帐户信息",
+    "welcome": "欢迎",
+    "subwelcome": "创建您的帐户",
+    "input": {
+      "placeholderEmail": "输入您的邮箱",
+      "placeholderConfirmEmail": "确认您的邮箱",
+      "placeholderPass": "输入您的密码",
+      "placeholderConfirmPass": "确认您的密码"
+    },
+    "button": "保存并继续"
+  },
+  "registerView": {
+    "title": "个人资料信息",
+    "welcome": "欢迎",
+    "subwelcome": "请填写所有字段以创建您的个人资料。",
+    "edit": "编辑图片",
+    "subtitle1": "基本个人信息",
+    "subtitle2": "无障碍信息",
+    "input": {
+      "labelName": "全名",
+      "placeholderName": "请输入您的全名",
+      "labelDocumentType": "证件类型",
+      "optionDocumentType": {
+        "option1": "选择",
+        "option2": "公民身份证",
+        "option3": "身份证",
+        "option4": "护照",
+        "option5": "外国人身份证",
+        "option6": "其他",
+        "option7": "身份证明文件"
+      },
+      "labelNDocument": "证件号码",
+      "placeholderNDocument": "请输入您的证件号码",
+      "labelEmail": "邮箱",
+      "placeholderEmail": "请输入您的邮箱",
+      "labelBirthdate": "出生日期",
+      "placeholderBirthdate": "请输入您的出生日期",
+      "labelResidenceArea": "居住地",
+      "optionResidenceArea": {
+        "option1": "选择",
+        "option2": "城市",
+        "option3": "农村",
+        "option4": "城郊"
+      },
+      "labelEducationalLevel": "教育程度",
+      "optionEducationalLevel": {
+        "option1": "选择",
+        "option2": "无",
+        "option3": "小学",
+        "option4": "中学",
+        "option5": "大学",
+        "option6": "研究生"
+      },
+      "labelOcupacion": "职业状况",
+      "optionOcupacion": {
+        "option1": "选择",
+        "option2": "就业",
+        "option3": "失业",
+        "option4": "学生",
+        "option5": "退休",
+        "option6": "自营职业"
+      },
+      "labelDisability": "你有多元能力吗？",
+      "optionDisability": {
+        "option1": "选择",
+        "option2": "是",
+        "option3": "否"
+      },
+      "labelDisabilityType": "多样化能力类型",
+      "optionDisabilityType": {
+        "option1": "选择",
+        "option2": "视觉",
+        "option3": "听觉",
+        "option4": "运动",
+        "option5": "认知",
+        "option6": "心理社会",
+        "option7": "多重"
+      },
+      "labelDisabilityLevel": "多样化能力等级",
+      "optionDisabilityLevel": {
+        "option1": "选择",
+        "option2": "轻度",
+        "option3": "中度",
+        "option4": "重度"
+      }
+    },
+    "button": "保存并继续"
+  },
+  "userTermsView": {
+    "title": "条款与条件",
+    "title2": "U平台个人数据处理同意书",
+    "intro": "注册U平台即表示我自由、知情、明确且无异议地确认并接受我的个人数据将根据国际隐私和数据保护标准，基于以下条件收集、处理和存储：",
+    "section1Title": "1. 数据控制者",
+    "section1Text": "201.Dsoft Innovate S.A.S.（以下简称“U”），注册地址为[注册地址]，作为数据控制者，将根据本授权处理我的数据。",
+    "section2Title": "2. 处理目的",
+    "section2Text": "我的个人数据将用于以下目的：",
+    "section2List": {
+      "item1": "个性化U小工具内的无障碍体验。",
+      "item2": "允许对无障碍工具的使用进行分析和汇总报告（不会单独识别用户）。",
+      "item3": "在必要时提供技术支持和个性化后续服务。",
+      "item4": "遵守关于无障碍、包容性和反歧视的法律法规义务。",
+      "item5": "仅在我明确同意的情况下，发送技术性、信息性或商业性更新。"
+    },
+    "section3Title": "3. 数据处理的法律依据",
+    "section3Text": "U处理个人数据基于：",
+    "section3List": {
+      "item1": "用户的明确同意。",
+      "item2": "改进无障碍服务的合法利益，始终尊重用户的隐私。",
+      "item3": "遵守当地和国际法规，包括GDPR（欧盟）、CCPA（加利福尼亚州）、LGPD（巴西）和其他适用的数据保护法。"
+    },
+    "section4Title": "4. 国际数据传输",
+    "section4Text": "数据可能会传输和/或存储在不同国家/地区的服务器上。Unyco保证，在这种情况下，将应用标准合同条款和适当的技术措施，以根据GDPR和其他适用法规保护数据。",
+    "section5Title": "5. 用户权利",
+    "section5Text": "作为数据所有者，我有权：",
+    "section5List": {
+      "item1": "访问、纠正、限制、删除或转移我的个人数据。",
+      "item2": "随时撤回我的同意。",
+      "item3": "向当地数据保护机构（例如哥伦比亚的SIC、欧盟的EDPB或美国的FTC）投诉。"
+    },
+    "section6Title": "6. 数据保留期限",
+    "section6Text": "数据仅在必要时保留，用于声明的目的，或在帐户保持活跃状态期间。之后，将根据最小化原则删除或匿名化数据。",
+    "section7Title": "7. 行使权利的联系方式",
+    "section7Text1": "您可以通过邮件联系我们来行使您的权利：<a href=\"mailto:privacy@u.app\">privacy@u.app</a>",
+    "section7Text2": "或访问以下链接中的表格：<a href=\"https://www.u.app/privacy\">www.u.app/privacy</a>",
+    "helperText": "请在接受之前阅读全文",
+    "checkboxLabel": "我声明我已经阅读并接受此处规定的个人数据处理条款。",
+    "button": "确认"
+  },
+  "userTermsView2": {
+    "title": "条款与条件",
+    "title2": "Widget U 数据使用知情同意书",
+    "intro": "在U，我们尊重您的隐私，并希望您准确了解我们如何使用您的数据。",
+    "accept": "通过注册我们的平台并使用该小部件，您同意我们收集和使用某些信息，用于以下目的：",
+    "section1Title": "我们收集什么数据？",
+    "section1Text": "我们仅收集为向您提供便捷和个性化体验所需的数据。这可能包括：",
+    "section1List": {
+      "item1": "您的联系方式（姓名、电子邮件地址）。",
+      "item2": "您的国家/地区、语言和所需的辅助功能级别。",
+      "item3": "您的残疾类型（如果您选择分享）。",
+      "item4": "您在小部件中激活的设置（例如：放大文本、启用屏幕阅读器等）。"
+    },
+    "section1Note": "我们不会收集银行数据或访问您在网络上的个人内容。",
+    "section2Title": "我们为什么使用这些信息？",
+    "section2List": {
+      "item1": "自动调整小部件以满足您的需求。",
+      "item2": "生成匿名统计报告，以帮助改进数字无障碍访问。",
+      "item3": "根据WCAG 2.2、GDPR、CCPA及其他当地法律等标准，保护您的无障碍权利。",
+      "item4": "如果您同意接收新闻，我们将向您发送关于小部件新功能或改进的更新。"
+    },
+    "section3Title": "谁可以看到您的数据？",
+    "section3Text1": "只有您和系统可以访问您的个人设置。",
+    "section3Text2": "如果您决定与机构（例如，实施Unyco的大学）共享您的数据，他们只会收到汇总的匿名报告，绝不会未经您许可获得个人数据。",
+    "section4Title": "您可以对您的信息进行哪些控制？",
+    "section4List": {
+      "item1": "您可以随时修改或删除您的帐户。",
+      "item2": "您可以索取我们关于您的数据的副本。",
+      "item3": "您可以通过邮件联系我们撤销此同意：<a href=\"mailto:privacy@u.app\">privacy@u.app</a>"
+    },
+    "helperText": "请在接受之前阅读全文",
+    "checkboxLabel": "我声明我已经阅读并接受此处规定的个人数据处理条款。",
+    "button": "确认"
+  },
+  "userProfileView": {
+    "title": "个人信息",
+    "editImage": "编辑图片",
+    "name": "姓名",
+    "email": "邮箱",
+    "birthDate": "出生日期",
+    "id": "身份标识",
+    "allData": "全部数据",
+    "theme": "主题",
+    "editProfile": "编辑资料",
+    "logout": "退出登录"
+  },
+  "resetPasswordView": {
+    "title": "找回密码",
+    "labelEmail": "请输入您的邮箱",
+    "placeholderEmail": "请输入您的邮箱",
+    "buttonSend": "发送",
+    "titleCode": "安全验证",
+    "labelCode": "请输入发送到您邮箱的验证码",
+    "resend": "我没有收到验证码。",
+    "resendLink": "重新发送",
+    "timer": "剩余{{time}}秒",
+    "timerExpired": "验证码已过期。请重新申请一个。",
+    "titleNewPass": "输入新密码",
+    "labelNewPass": "请输入您的新密码",
+    "placeholderNewPass": "新密码",
+    "labelConfirmPass": "确认您的新密码",
+    "placeholderConfirmPass": "新密码",
+    "buttonAccept": "提交",
+    "buttonCancel": "取消",
+    "successTitle": "修改密码",
+    "successMessage": "您的密码已成功更新。"
+  },
+  "positionView": {
+    "title": "选择部件位置",
+    "subtitle": "请选择您的偏好位置。"
+  },
+  "languagesView": {
+    "title": "选择您的语言",
+    "subtitle": "请选择您的偏好语言或母语。"
+  },
+  "error": {
+    "helperText": {
+      "emailError1": "邮箱地址不匹配",
+      "emailError2": "邮箱地址无效",
+      "passError1": "密码不匹配",
+      "passError2": "密码必须超过6个字符"
+    }
+  }
+}

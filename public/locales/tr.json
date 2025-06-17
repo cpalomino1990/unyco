@@ -1,0 +1,484 @@
+{
+  "fullLayout": {
+    "slogan": "Bağlantılı -Sen"
+  },
+  "bannerUser": {
+    "welcome": "Hoş Geldiniz",
+    "subwelcome": "Kişiselleştirilmiş bir deneyim için kaydolmanızı rica ediyoruz"
+  },
+  "category": {
+    "visual": {
+      "title": "Görsel",
+      "description": "Çevreyi görme yoluyla algılama veya yorumlamanın benzersiz yolları."
+    },
+    "mental": {
+      "title": "Psikososyal",
+      "description": "Dünyayla etkileşim kurmanın, hissetmenin ve ilişki kurmanın özgün yolları."
+    },
+    "auditory": {
+      "title": "İşitsel",
+      "description": "Çevrenin sesleriyle deneyimleme ve bağlantı kurmanın çeşitli yolları."
+    },
+    "physical": {
+      "title": "Fiziksel",
+      "description": "Hareket, beden ifadesi ve koordinasyonun kişisel stilleri."
+    },
+    "cognitive": {
+      "title": "Bilişsel",
+      "description": "Düşünme, öğrenme, hafıza ve dikkatin benzersiz süreçleri."
+    },
+    "custom": {
+      "title": "Özelleştirilmiş",
+      "description": "Bireysel ihtiyaçlarınıza ve tercihlerinize göre uyarlanmış bir deneyim oluşturun."
+    }
+  },
+  "viewCategory": {
+    "title1": "Çeşitli Yetenek Profilleri",
+    "title2": "Daha Fazla Ayar",
+    "visual": {
+      "profile1": {
+        "title": "Düşük Görme",
+        "description": "Çevreyi algılama biçimini zenginleştiren benzersiz bir görsel deneyim."
+      },
+      "profile2": {
+        "title": "Körlük",
+        "description": "Dünyayı yorumlamak için diğer duyuları önceleyen algı biçimi."
+      },
+      "profile3": {
+        "title": "Renk Körlüğü",
+        "description": "Renklerin takdir edilmesi ve ayırt edilmesinde benzersiz deneyim."
+      }
+    },
+    "mental": {
+      "profile1": {
+        "title": "OTE (Otizm Spektrum Bozukluğu)",
+        "description": "İlgi alanlarına, iletişime ve ilişkilere odaklanmanın farklı yolları."
+      },
+      "profile2": {
+        "title": "Down Sendromu",
+        "description": "Kişisel ve sosyal gelişimin deneyimlenmesinin kişisel ve değerli bir yolu."
+      },
+      "profile3": {
+        "title": "Disleksi",
+        "description": "Metinlerin yapısını algılama ve çözümlemenin özel bir yolu."
+      },
+      "profile4": {
+        "title": "Epilepsi",
+        "description": "Çeşitliliği temsil eden nörolojik işleyişin eşsiz tezahürleri."
+      },
+      "profile5": {
+        "title": "DEHB (Dikkat Eksikliği Hiperaktivite Bozukluğu)",
+        "description": "Dikkat, enerji ve uyaran işlemede özel dinamikler."
+      }
+    },
+    "auditory": {
+      "profile1": {
+        "title": "Sağırlık",
+        "description": "Başkalarıyla iletişim kurmanın ve anlamanın farklı yaşam biçimleri."
+      }
+    },
+    "physical": {
+      "profile1": {
+        "title": "Üst Vücut Hareketliliği",
+        "description": "Üst vücutta hareket ve ifadenin özel yolları."
+      }
+    },
+    "cognitive": {
+      "profile1": {
+        "title": "Otizm",
+        "description": "Çevreye ve insanlara karşı algılama, işleme ve ilişki kurmanın eşsiz stili."
+      },
+      "profile2": {
+        "title": "OKB (Obsesif Kompulsif Bozukluk)",
+        "description": "Düşünceleri ve eylemleri organize etmenin yoğun ve yapılandırılmış yolları."
+      }
+    },
+    "custom": {}
+  },
+  "functionalityButtons": {
+    "button1": {
+      "title": "Vurgulama Modu",
+      "description": "Önemli içeriği vurgular."
+    },
+    "button2": {
+      "title": "Metni Vurgula",
+      "description": "Görünür metni vurgular."
+    },
+    "button3": {
+      "title": "Büyüteç",
+      "description": "Üzerinde durulduğunda metni büyütür."
+    },
+    "button4": {
+      "title": "Metni Büyüt",
+      "description": "Sayfadaki metnin boyutunu artırır."
+    },
+    "button5": {
+      "title": "Aralıkları Artır",
+      "description": "Metin aralıklarını iyileştirir."
+    },
+    "button6": {
+      "title": "Sesli Okuma",
+      "description": "Üzerinde durulduğunda sayfa metnini okur."
+    },
+    "button7": {
+      "title": "Bağlantıları Vurgula",
+      "description": "Sayfadaki bağlantıları vurgular."
+    },
+    "button8": {
+      "title": "Animasyonları Durdur",
+      "description": "Sayfadaki tüm animasyonları devre dışı bırakır."
+    },
+    "button9": {
+      "title": "Okuma Çubuğunu Etkinleştir",
+      "description": "Okuma kolaylığı sağlayan bir çubuk görüntüler."
+    },
+    "button10": {
+      "title": "Büyük İmleç",
+      "description": "İmleç boyutunu büyütür."
+    },
+    "button11": {
+      "title": "Okunabilir Yazı Tipi",
+      "description": "Metin yazı tipini daha okunabilir bir yazı tipine değiştirir."
+    },
+    "button12": {
+      "title": "Okuma Hızı",
+      "description": "Metin okuma hızını ayarlar."
+    },
+    "button13": {
+      "title": "Vurgulama Renkleri",
+      "description": "Görünürlüğü iyileştirmek için vurgulama renklerini değiştirir."
+    },
+    "button14": {
+      "title": "Ses Kontrolü",
+      "description": "Ekran okuyucu sesini ayarlar."
+    },
+    "button15": {
+      "title": "Protanopi",
+      "description": "Kırmızı renk algılama eksikliği için renk ayarı."
+    },
+    "button16": {
+      "title": "Deuteranopi",
+      "description": "Yeşil renk algılama eksikliği için renk ayarı."
+    },
+    "button17": {
+      "title": "Tritanopi",
+      "description": "Mavi renk algılama eksikliği için renk ayarı."
+    },
+    "button18": {
+      "title": "Protanomali",
+      "description": "Kırmızı renk kısmi düzeltmesi."
+    },
+    "button19": {
+      "title": "Deuteranomali",
+      "description": "Yeşil renk kısmi düzeltmesi."
+    },
+    "button20": {
+      "title": "Tritanomali",
+      "description": "Kısmi mavi renk düzeltmesi."
+    },
+    "button21": {
+      "title": "Achromatomali",
+      "description": "Kısmi siyah beyaz renk ayarı."
+    },
+    "button22": {
+      "title": "Achromatopsi",
+      "description": "Tam gri tonlama renk ayarı."
+    },
+    "button23": {
+      "title": "Odak Çerçevesi",
+      "description": "Odakta olan öğeyi işaretler."
+    },
+    "button24": {
+      "title": "Seçmeli Kontrast",
+      "description": "Sayfayı karanlık moda geçirir."
+    },
+    "button25": {
+      "title": "Duraklatılmış Okuma",
+      "description": "Kelime kelime okumayı etkinleştirir."
+    },
+    "button26": {
+      "title": "Odak Modu",
+      "description": "Dikkat dağıtan görselleri ve videoları kaldırır."
+    },
+    "button27": {
+      "title": "Sesi Kapat",
+      "description": "Sayfanın sesini kapatır."
+    },
+    "button28": {
+      "title": "Okuma Maskelemesi",
+      "description": "Okumayı kolaylaştırmak için bir maske ekler."
+    },
+    "button29": {
+      "title": "Disleksi Yazı Tipi",
+      "description": "Yazı tipini disleksi için tasarlanmış bir yazı tipine değiştirir."
+    },
+    "button30": {
+      "title": "Kaydırma Kontrolü",
+      "description": "Sayfa kaydırmayı ani sıçramaları önlemek için kontrol eder."
+    },
+    "button31": {
+      "title": "Düşük Kontrast",
+      "description": "Okunabilirliği artırmak için düşük kontrast modunu etkinleştirir."
+    },
+    "button32": {
+      "title": "Göz Kontrolü",
+      "description": "Göz takibiyle fare navigasyonunu etkinleştirir."
+    },
+    "button33": {
+      "title": "İşaret Dili Çevirmeni",
+      "description": "Sayfanın işaret dili modunu etkinleştirir."
+    },
+    "button34": {
+      "title": "Ekran Klavyesi",
+      "description": "Daha kolay yazım için ekran klavyesini etkinleştirir."
+    },
+    "button35": {
+      "title": "Metin Rengini Değiştir",
+      "description": "Sayfa metin rengini değiştirmeye olanak tanır."
+    },
+    "button36": {
+      "title": "Metni Sağa Hizala",
+      "description": "Metnin sağa hizalanmasına olanak tanır."
+    },
+    "button37": {
+      "title": "Metni Sola Hizala",
+      "description": "Metnin sola hizalanmasına olanak tanır."
+    },
+    "button38": {
+      "title": "Metni Ortala",
+      "description": "Metnin ortalanmasına olanak tanır."
+    },
+    "button39": {
+      "title": "Satır Aralığı",
+      "description": "Metindeki satır aralığını ayarlar."
+    }
+  },
+  "loginView": {
+    "title": "Giriş Yap",
+    "welcome": "Hoş geldiniz",
+    "subwelcome": "Giriş yapmak veya hesap oluşturmak için bu seçeneklerden birini seçin.",
+    "input": {
+      "placeholderEmail": "E-postanızı girin",
+      "placeholderPass": "Şifrenizi girin"
+    },
+    "forgotPass": "Şifrenizi mi unuttunuz?",
+    "buttonLogin": "Giriş Yap",
+    "notAccount": {
+      "subtext1": "Hesabınız yok mu?",
+      "subtext2": "Kayıt Ol",
+      "subtext3": "Ya da şu yöntemlerle giriş yapabilirsiniz:"
+    }
+  },
+  "accountView": {
+    "title": "Hesap Bilgileri",
+    "welcome": "Hoş geldiniz",
+    "subwelcome": "Hesabınızı oluşturun",
+    "input": {
+      "placeholderEmail": "E-postanızı girin",
+      "placeholderConfirmEmail": "E-postanızı onaylayın",
+      "placeholderPass": "Şifrenizi girin",
+      "placeholderConfirmPass": "Şifrenizi onaylayın"
+    },
+    "button": "Kaydet ve devam et"
+  },
+  "registerView": {
+    "title": "Profil Bilgileri",
+    "welcome": "Hoş geldiniz",
+    "subwelcome": "Profilinizi oluşturmak için lütfen tüm alanları doldurun.",
+    "edit": "Görseli Düzenle",
+    "subtitle1": "Temel Kişisel Bilgiler",
+    "subtitle2": "Erişilebilirlik Bilgileri",
+    "input": {
+      "labelName": "Tam Ad",
+      "placeholderName": "Tam adınızı girin",
+      "labelDocumentType": "Belge Türü",
+      "optionDocumentType": {
+        "option1": "Seçin",
+        "option2": "Nüfus Cüzdanı",
+        "option3": "Kimlik Kartı",
+        "option4": "Pasaport",
+        "option5": "Yabancı Kimlik",
+        "option6": "Diğer",
+        "option7": "Kimlik Belgesi"
+      },
+      "labelNDocument": "Belge Numarası",
+      "placeholderNDocument": "Belge numaranızı girin",
+      "labelEmail": "E-posta",
+      "placeholderEmail": "E-postanızı girin",
+      "labelBirthdate": "Doğum Tarihi",
+      "placeholderBirthdate": "Doğum tarihinizi girin",
+      "labelResidenceArea": "İkamet Yeri",
+      "optionResidenceArea": {
+        "option1": "Seçiniz",
+        "option2": "Kentsel",
+        "option3": "Kırsal",
+        "option4": "Kentsel çevre"
+      },
+      "labelEducationalLevel": "Eğitim Seviyesi",
+      "optionEducationalLevel": {
+        "option1": "Seçiniz",
+        "option2": "Yok",
+        "option3": "İlkokul",
+        "option4": "Ortaokul",
+        "option5": "Üniversite",
+        "option6": "Lisansüstü"
+      },
+      "labelOcupacion": "Mesleki Durum",
+      "optionOcupacion": {
+        "option1": "Seçiniz",
+        "option2": "Çalışan",
+        "option3": "İşsiz",
+        "option4": "Öğrenci",
+        "option5": "Emekli",
+        "option6": "Serbest çalışan"
+      },
+      "labelDisability": "Farklı bir yeteneğiniz var mı?",
+      "optionDisability": {
+        "option1": "Seçiniz",
+        "option2": "Evet",
+        "option3": "Hayır"
+      },
+      "labelDisabilityType": "Farklı Yetenek Türü",
+      "optionDisabilityType": {
+        "option1": "Seçin",
+        "option2": "Görsel",
+        "option3": "İşitsel",
+        "option4": "Motor",
+        "option5": "Bilişsel",
+        "option6": "Psikososyal",
+        "option7": "Çoklu"
+      },
+      "labelDisabilityLevel": "Farklı Yetenek Seviyesi",
+      "optionDisabilityLevel": {
+        "option1": "Seçin",
+        "option2": "Hafif",
+        "option3": "Orta",
+        "option4": "Yüksek"
+      }
+    },
+    "button": "Kaydet ve Devam Et"
+  },
+  "userTermsView": {
+    "title": "Şartlar ve Koşullar",
+    "title2": "Kişisel Verilerin İşlenmesi İçin Onay – U Platformu",
+    "intro": "U platformuna kayıt olarak, kişisel verilerimin uluslararası gizlilik ve veri koruma standartlarına uygun olarak, aşağıdaki koşullara göre toplanacağını, işleneceğini ve saklanacağını özgürce, bilgilendirilmiş, özel ve kesin olarak kabul ediyorum:",
+    "section1Title": "1. Veri Sorumlusu",
+    "section1Text": "Veri sorumlusu sıfatıyla [yasal adres]'te kayıtlı bulunan 201.Dsoft Innovate S.A.S. (bundan böyle 'U' olarak anılacaktır), verilerimi bu yetkilendirmeye göre işleyecektir.",
+    "section2Title": "2. İşleme Amacı",
+    "section2Text": "Kişisel verilerim aşağıdaki amaçlar için işlenecektir:",
+    "section2List": {
+      "item1": "U aracı içinde erişilebilirlik deneyimini kişiselleştirmek.",
+      "item2": "Erişilebilirlik araçlarının kullanımına ilişkin analiz ve toplu raporlama yapmak (kullanıcıyı bireysel olarak tanımlamadan).",
+      "item3": "Gerektiğinde teknik destek ve kişiselleştirilmiş takip sağlamak.",
+      "item4": "Erişilebilirlik, kapsayıcılık ve ayrımcılık yapmama ile ilgili yasal ve düzenleyici yükümlülüklere uymak.",
+      "item5": "Teknik, bilgilendirme veya ticari güncellemeler göndermek (yalnızca bunun için özel onam vermişsem)."
+    },
+    "section3Title": "3. İşlemenin Hukuki Temeli",
+    "section3Text": "U, kişisel verilerin işlenmesini aşağıdakilere dayandırır:",
+    "section3List": {
+      "item1": "Açık kullanıcı onamı.",
+      "item2": "Erişilebilirlik hizmetlerini iyileştirmeye yönelik meşru çıkar, her zaman kullanıcının gizliliğine saygı gösterilerek.",
+      "item3": "GDPR (AB), CCPA (Kaliforniya), LGPD (Brezilya) ve diğer geçerli veri koruma yasaları dahil olmak üzere yerel ve uluslararası düzenlemelere uyum."
+    },
+    "section4Title": "4. Uluslararası Veri Transferi",
+    "section4Text": "Veriler, farklı ülkelerde bulunan sunuculara aktarılabilir ve/veya depolanabilir. Unyco, bu durum meydana geldiğinde, GDPR ve diğer geçerli düzenlemelere uygun olarak verileri korumak için standart sözleşme maddeleri ve uygun teknik önlemlerin uygulanacağını garanti eder.",
+    "section5Title": "5. Kullanıcı Hakları",
+    "section5Text": "Veri sahibi olarak, aşağıdaki haklara sahibim:",
+    "section5List": {
+      "item1": "Kişisel verilerime erişme, düzeltme, sınırlama, silme veya aktarma.",
+      "item2": "Onamımı istediğim zaman geri çekme.",
+      "item3": "Yerel veri koruma otoritesine (örneğin Kolombiya'da SIC, AB'de EDPB veya ABD'de FTC) şikayette bulunma."
+    },
+    "section6Title": "6. Veri Saklama Süresi",
+    "section6Text": "Veriler, belirtilen amaçlar için gerekli olduğu sürece veya hesap aktif kaldığı sürece saklanacaktır. Daha sonra, minimizasyon prensiplerine göre silinecek veya anonimleştirilecektir.",
+    "section7Title": "7. Haklarınızı Kullanmak İçin İletişim",
+    "section7Text1": "Haklarınızı şu adrese yazarak kullanabilirsiniz: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>",
+    "section7Text2": "Veya şu adreste bulunan formu ziyaret ederek: <a href=\"https://www.u.app/privacy\">www.u.app/privacy</a>",
+    "helperText": "Kabul etmeden önce lütfen tüm belgeyi okuyun.",
+    "checkboxLabel": "Burada belirtilen kişisel veri işleme şartlarını okuduğumu ve kabul ettiğimi beyan ederim.",
+    "button": "Onayla"
+  },
+  "userTermsView2": {
+    "title": "Şartlar ve Koşullar",
+    "title2": "Veri Kullanımı Hakkında Bilgilendirilmiş Onam – Widget U",
+    "intro": "U olarak, gizliliğinize saygı duyuyoruz ve verilerinizi nasıl kullandığımızı tam olarak bilmenizi istiyoruz.",
+    "accept": "Platformumuzda kayıt olarak ve widgeti kullanarak, belirtilen amaçlar için belirli bilgileri toplamamızı ve kullanmamızı kabul edersiniz:",
+    "section1Title": "Hangi verileri topluyoruz?",
+    "section1Text": "Size erişilebilir ve kişiselleştirilmiş bir deneyim sağlamak için yalnızca gerekli verileri topluyoruz. Bunlar şunları içerebilir:",
+    "section1List": {
+      "item1": "İletişim bilgileriniz (ad, e-posta adresi).",
+      "item2": "Ülkeniz, diliniz ve gerekli erişilebilirlik seviyeniz.",
+      "item3": "(Paylaşmayı seçerseniz) Engellilik türünüz.",
+      "item4": "Widget'ta etkinleştirdiğiniz ayarlar (örneğin: metni büyütme, ekran okuyucuyu etkinleştirme, vb.)."
+    },
+    "section1Note": "Banka verileri toplamıyor veya web'deki kişisel içeriğinize erişmiyoruz.",
+    "section2Title": "Bu bilgileri neden kullanıyoruz?",
+    "section2List": {
+      "item1": "Widget'ı ihtiyaçlarınıza otomatik olarak uyarlamak için.",
+      "item2": "Dijital erişimi iyileştirmeye yardımcı olan anonim ve istatistiksel raporlar oluşturmak için.",
+      "item3": "WCAG 2.2, GDPR, CCPA ve diğer yerel kanunlar gibi standartlara göre erişilebilirlik haklarınızı korumak için.",
+      "item4": "Haber almayı kabul ederseniz, size widget'ın yeni özellikleri veya iyileştirmeleri hakkında güncellemeler göndereceğiz."
+    },
+    "section3Title": "Verilerinizi kim görebilir?",
+    "section3Text1": "Yalnızca siz ve sistem kişisel ayarlarınıza erişebilirsiniz.",
+    "section3Text2": "Verilerinizi bir kurumla (örneğin, Unyco'yu uygulayan bir üniversite) paylaşmaya karar verirseniz, yalnızca toplu ve anonim raporlar alacaklar, izniniz olmadan hiçbir zaman bireysel veriler almayacaklardır.",
+    "section4Title": "Bilgileriniz üzerinde hangi kontrole sahipsiniz?",
+    "section4List": {
+      "item1": "Hesabınızı istediğiniz zaman değiştirebilir veya silebilirsiniz.",
+      "item2": "Sizin hakkınızda sahip olduğumuz verilerin bir kopyasını isteyebilirsiniz.",
+      "item3": "Bu izni şu adrese yazarak geri çekebilirsiniz: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>"
+    },
+    "helperText": "Kabul etmeden önce lütfen tüm belgeyi okuyun.",
+    "checkboxLabel": "Burada belirtilen kişisel veri işleme şartlarını okuduğumu ve kabul ettiğimi beyan ederim.",
+    "button": "Onayla"
+  },
+  "userProfileView": {
+    "title": "Profil Bilgileri",
+    "editImage": "Resmi Düzenle",
+    "name": "Ad",
+    "email": "E-posta",
+    "birthDate": "Doğum Tarihi",
+    "id": "Kimlik",
+    "allData": "Tüm Veriler",
+    "theme": "Tema",
+    "editProfile": "Profili Düzenle",
+    "logout": "Çıkış Yap"
+  },
+  "resetPasswordView": {
+    "title": "Şifreyi Kurtar",
+    "labelEmail": "E-postanızı girin",
+    "placeholderEmail": "E-postanızı girin",
+    "buttonSend": "Gönder",
+    "titleCode": "Güvenlik Doğrulama",
+    "labelCode": "E-posta adresinize gönderilen doğrulama kodunu girin",
+    "resend": "Kodu almadım.",
+    "resendLink": "Tekrar Gönder",
+    "timer": "Kalan {{time}} saniye",
+    "timerExpired": "Kod süresi doldu. Lütfen yeni bir kod isteyin.",
+    "titleNewPass": "Yeni Şifre Girin",
+    "labelNewPass": "Yeni şifrenizi girin",
+    "placeholderNewPass": "Yeni şifre",
+    "labelConfirmPass": "Yeni şifrenizi doğrulayın",
+    "placeholderConfirmPass": "Yeni şifre",
+    "buttonAccept": "Gönder",
+    "buttonCancel": "İptal",
+    "successTitle": "Şifre Değişikliği",
+    "successMessage": "Şifreniz başarıyla güncellendi."
+  },
+  "positionView": {
+    "title": "Widget konumunu seçin",
+    "subtitle": "Lütfen tercih ettiğiniz konumu seçin."
+  },
+  "languagesView": {
+    "title": "Dil seçin",
+    "subtitle": "Tercih ettiğiniz veya ana dilinizi seçin."
+  },
+  "error": {
+    "helperText": {
+      "emailError1": "E-postalar eşleşmiyor",
+      "emailError2": "E-posta geçersiz",
+      "passError1": "Şifreler eşleşmiyor",
+      "passError2": "Şifre en az 6 karakterden oluşmalıdır"
+    }
+  }
+}

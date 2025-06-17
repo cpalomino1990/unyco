@@ -31,7 +31,6 @@ export function toggleVolumeControl() {
 
 function applyVolumeToMediaElements(volume) {
   const mediaElements = document.querySelectorAll("video, audio").forEach(e => {
-  console.log(e.volume, e.muted);
 });
 }
 

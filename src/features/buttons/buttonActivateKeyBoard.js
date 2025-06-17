@@ -3,31 +3,35 @@ import { toggleCheckButton } from "../../shared/components/allButtons/allButtons
 let virtualKeyboard;
 let removeKeyboardListeners;
 const VIRTUALKEYBOARD = "virtualKeyboard"
+
 // Activa o desactiva el teclado virtual según su estado actual
 export function toggleVirtualKeyboard() {
 
     const isActive = document.body.classList.toggle("virtual-keyboard");
     toggleCheckButton({ id: VIRTUALKEYBOARD, checked: isActive, option: null });
-    localStorage.setItem(VIRTUALKEYBOARD, isActive ? "true" : "false");
+    localStorage.setItem(VIRTUALKEYBOARD, isActive ? "true":"false"  )
+     console.log("Teclado virtual activado1:", isActive);
     
    if (isActive) {
     removeKeyboardListeners = initVirtualKeyboard();
-} else {
-    if (removeKeyboardListeners) {
-        removeKeyboardListeners();
+    
+    } else {
+        if (removeKeyboardListeners) {
+            removeKeyboardListeners();
+            
+        }
+    
     }
-    if (virtualKeyboard) return;
-}
+    
 }
 
 export function loadVirtualKeyboardSetting() {
-    if (localStorage.getItem(VIRTUALKEYBOARD) === "true") {
-        document.body.classList.add("virtual-keyboard");
-        toggleCheckButton({ id: VIRTUALKEYBOARD, checked: true, option: null });
-        removeKeyboardListeners = initVirtualKeyboard();
+if (localStorage.getItem(VIRTUALKEYBOARD) === "true") {
+    document.body.classList.add("virtual-keyboard");
+    toggleCheckButton({ id: VIRTUALKEYBOARD, checked: true, option: null });
+        removeKeyboardListeners();
     }
 }
-
 // Inicializa y renderiza el teclado virtual en la pantalla
 export function initVirtualKeyboard() {
     // Estados del teclado
@@ -39,8 +43,38 @@ export function initVirtualKeyboard() {
     let currentTheme = 'auto';
 
     // Layouts para idiomas inglés y español
+    
+ const closeButton = document.createElement("button");
+    closeButton.textContent = "Cerrar";
+    closeButton.style = `
+        margin: 8px 0 0 0;
+        padding: 8px 12px;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        background: #e74c3c;
+        color: white;
+        cursor: pointer;
+        width: -10%;
+        user-select: none;
+        transition: background 0.2s;
+    `;
+    closeButton.addEventListener("mouseenter", () => closeButton.style.background = "#c0392b");
+    closeButton.addEventListener("mouseleave", () => closeButton.style.background = "#e74c3c");
 
-    const layouts = {
+  closeButton.addEventListener("click", () => {
+     const isActive = document.body.classList.toggle("virtual-keyboard");
+     localStorage.setItem(VIRTUALKEYBOARD, isActive ? "true" : "false" )
+    toggleCheckButton({ id: VIRTUALKEYBOARD, checked: false, option: null });
+   
+     console.log("Teclado virtual activado2:", isActive);
+    removeKeyboardListeners();
+   
+
+    });
+     
+
+     const layouts = {
         en: [
             ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'Backspace'],
             ['Tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\'],
@@ -55,15 +89,15 @@ export function initVirtualKeyboard() {
             ['Shift', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '-', 'Shift'],
             ['Lang', 'Space', 'Clear', 'Theme']
         ]
-    };
+     };
 
-    const shiftMap = {
+     const shiftMap = {
         '`': '~', '1': '!', '2': '@', '3': '#', '4': '$',
         '5': '%', '6': '^', '7': '&', '8': '*', '9': '(',
         '0': ')', '-': '_', '=': '+', '[': '{', ']': '}',
         '\\': '|', ';': ':', '\'': '"', ',': '<', '.': '>', '/': '?',
         'º': 'ª', '\'': '\"', '`': '^', '+': '*', '´': '¨', '-': '_'
-    };
+     };
 
      // Crear el contenedor del teclado
      const keyboard = document.createElement("div");
@@ -74,7 +108,7 @@ export function initVirtualKeyboard() {
          transform: translateX(-50%);
          padding: 12px;
          border-radius: 12px;
-         z-index: 999999;
+         z-index:995;
          font-family: sans-serif;
          user-select: none;
          cursor: move;
@@ -134,6 +168,9 @@ export function initVirtualKeyboard() {
      // Renderiza las teclas del teclado virtual en el DOM
      const renderKeys = () => {
          keyboard.innerHTML = '';
+         keyboard.appendChild(closeButton);
+         document.body.appendChild(keyboard);
+        
          layouts[currentLayout].forEach(row => {
              const rowDiv = document.createElement("div");
              rowDiv.style.display = "flex";
@@ -150,18 +187,24 @@ export function initVirtualKeyboard() {
                      cursor: pointer;
                      transition: background 0.2s;
                  `;
+                   
+                    btn.textContent = key;
                  // Evento que maneja la acción de la tecla al hacer clic
                  btn.addEventListener("click", () => {
                      btn.style.filter = "brightness(1.5)";
                      setTimeout(() => btn.style.filter = "", 150);
                      handleKeyPress(key);
                  });
+                    
+                
                  rowDiv.appendChild(btn);
              });
              keyboard.appendChild(rowDiv);
+               
          });
          updateTheme(); // Aplica tema tras renderizar
      };
+
  
      // Maneja la lógica de cada tecla presionada
      const handleKeyPress = (key) => {
@@ -259,7 +302,12 @@ export function initVirtualKeyboard() {
          keyboard.removeEventListener("mousedown", onMouseDown);
          document.removeEventListener("mousemove", onMouseMove);
          document.removeEventListener("mouseup", onMouseUp);
-         document.body.removeChild(keyboard);
+         if (keyboard.parentNode) {
+             keyboard.parentNode.removeChild(keyboard);
+         }
+         virtualKeyboard = null;
      };
- }
+    }
+
+ 
  

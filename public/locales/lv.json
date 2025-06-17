@@ -1,0 +1,484 @@
+{
+  "fullLayout": {
+    "slogan": "Savienots ar Tevi"
+  },
+  "bannerUser": {
+    "welcome": "Laipni lūgti",
+    "subwelcome": "Aicinām reģistrēties, lai piedzīvotu personalizētu pieredzi"
+  },
+  "category": {
+    "visual": {
+      "title": "Vizualais",
+      "description": "Unikāli veidi, kā caur redzi uztvert vai interpretēt apkārtējo vidi."
+    },
+    "mental": {
+      "title": "Psihosociālais",
+      "description": "Autentisks veids, kā mijiedarboties, izjust un saistīties ar pasauli."
+    },
+    "auditory": {
+      "title": "Audīvais",
+      "description": "Daudzveidīgi veidi, kā piedzīvot un saistīties ar apkārtējās vides skaņām."
+    },
+    "physical": {
+      "title": "Fiziskais",
+      "description": "Personīgs kustību stils, ķermeņa izteiksme un koordinācija."
+    },
+    "cognitive": {
+      "title": "Kognitīvais",
+      "description": "Unikāli domāšanas, mācīšanās, atmiņas un uzmanības procesi."
+    },
+    "custom": {
+      "title": "Pielāgots",
+      "description": "Izveidojiet pieredzi, kas pielāgota jūsu individuālajām vajadzībām un vēlmēm."
+    }
+  },
+  "viewCategory": {
+    "title1": "Dažādas spēju profila",
+    "title2": "Papildu iestatījumi",
+    "visual": {
+      "profile1": {
+        "title": "Vāja redze",
+        "description": "Unikāla vizuālā pieredze, kas bagātina apkārtējās vides uztveri."
+      },
+      "profile2": {
+        "title": "Akluma",
+        "description": "Uztveres veids, kas prioritārā kārtā izmanto citas maņas, lai interpretētu pasauli."
+      },
+      "profile3": {
+        "title": "Krāsu aklums",
+        "description": "Unikāla pieredze krāsu novērtēšanā un atšķiršanā."
+      }
+    },
+    "mental": {
+      "profile1": {
+        "title": "ASD",
+        "description": "Īpatnēji veidi, kā koncentrēties uz interesēm, komunikāciju un attiecībām."
+      },
+      "profile2": {
+        "title": "Dauna sindroms",
+        "description": "Personisks un vērtīgs veids, kā piedzīvot personisko un sociālo attīstību."
+      },
+      "profile3": {
+        "title": "Disleksija",
+        "description": "Īpatnējs veids, kā uztvert un dekodēt tekstu struktūru."
+      },
+      "profile4": {
+        "title": "Epilepsija",
+        "description": "Neiroloģiskās funkcionēšanas unikālas izpausmes, kas atspoguļo daudzveidību."
+      },
+      "profile5": {
+        "title": "ADHD",
+        "description": "Īpatnēja uzmanības, enerģijas un stimulu apstrādes dinamika."
+      }
+    },
+    "auditory": {
+      "profile1": {
+        "title": "Kurluma",
+        "description": "Atšķirīgi dzīves veidi un komunikācijas izpratne ar citiem."
+      }
+    },
+    "physical": {
+      "profile1": {
+        "title": "Augšējo ekstremitāšu kustīgums",
+        "description": "Īpatnēji augšējo ķermeņa daļu kustību un izteiksmes veidi."
+      }
+    },
+    "cognitive": {
+      "profile1": {
+        "title": "Autisms",
+        "description": "Unikāls stils, kā uztvert, apstrādāt un veidot attiecības ar vidi un cilvēkiem."
+      },
+      "profile2": {
+        "title": "OCD",
+        "description": "Intensīvi un strukturēti domu un rīcības organizēšanas veidi."
+      }
+    },
+    "custom": {}
+  },
+  "functionalityButtons": {
+    "button1": {
+      "title": "Izcelšanas režīms",
+      "description": "Izceļ svarīgo saturu."
+    },
+    "button2": {
+      "title": "Teksta izcelšana",
+      "description": "Izceļ redzamo tekstu."
+    },
+    "button3": {
+      "title": "Lupa",
+      "description": "Palielina tekstu, uzvedot kursoru virsū."
+    },
+    "button4": {
+      "title": "Palielināt tekstu",
+      "description": "Palielina teksta izmēru lapā."
+    },
+    "button5": {
+      "title": "Palielināt starpas",
+      "description": "Uzlabo teksta starpas."
+    },
+    "button6": {
+      "title": "Skaļi lasīt",
+      "description": "Lasīs lapas tekstu, uzvedot kursoru virsū."
+    },
+    "button7": {
+      "title": "Izcelt saites",
+      "description": "Izceļ saites lapā."
+    },
+    "button8": {
+      "title": "Apturēt animācijas",
+      "description": "Atslēdz visas animācijas lapā."
+    },
+    "button9": {
+      "title": "Aktivizēt lasīšanas joslu",
+      "description": "Parāda lasīšanu atvieglojošu joslu."
+    },
+    "button10": {
+      "title": "Liels kursoris",
+      "description": "Palielina kursoru izmēru."
+    },
+    "button11": {
+      "title": "Lasāms fonts",
+      "description": "Maina teksta fontu uz lasāmāku."
+    },
+    "button12": {
+      "title": "Lasīšanas ātrums",
+      "description": "Regulē teksta lasīšanas ātrumu."
+    },
+    "button13": {
+      "title": "Izcelšanas krāsas",
+      "description": "Maina izcelšanas krāsas, lai uzlabotu redzamību."
+    },
+    "button14": {
+      "title": "Skaļuma regulēšana",
+      "description": "Regulē ekrāna lasītāja skaļumu."
+    },
+    "button15": {
+      "title": "Protanopija",
+      "description": "Krāsu pielāgošana sarkanās krāsas uztveres traucējumiem."
+    },
+    "button16": {
+      "title": "Deiteranopija",
+      "description": "Krāsu pielāgošana zaļās krāsas uztveres traucējumiem."
+    },
+    "button17": {
+      "title": "Tritanopija",
+      "description": "Krāsu pielāgošana zilās krāsas uztveres traucējumiem."
+    },
+    "button18": {
+      "title": "Protanomālija",
+      "description": "Daļēja sarkano krāsu korekcija."
+    },
+    "button19": {
+      "title": "Deiteranomālija",
+      "description": "Daļēja zaļo krāsu korekcija."
+    },
+    "button20": {
+      "title": "Tritanomālija",
+      "description": "Daļēja zila krāsa korekcija."
+    },
+    "button21": {
+      "title": "Achromatomālija",
+      "description": "Daļēja melnbaltas krāsas regulēšana."
+    },
+    "button22": {
+      "title": "Achromatopsija",
+      "description": "Pilnīga pelēktoņu krāsu regulēšana."
+    },
+    "button23": {
+      "title": "Fokusēšanas rāmis",
+      "description": "Atzīmē elementu, kas ir fokusā."
+    },
+    "button24": {
+      "title": "Selektīvs kontrasts",
+      "description": "Pārslēdz lapu tumšajā režīmā."
+    },
+    "button25": {
+      "title": "Pauzēta lasīšana",
+      "description": "Aktivizē vārdu pa vārdam lasīšanu."
+    },
+    "button26": {
+      "title": "Fokusēšanas režīms",
+      "description": "Noņem novēršošus attēlus un video."
+    },
+    "button27": {
+      "title": "Izslēgt skaņu",
+      "description": "Izslēdz lapas skaņu."
+    },
+    "button28": {
+      "title": "Lasīšanas maska",
+      "description": "Pievieno masku, lai atvieglotu lasīšanu."
+    },
+    "button29": {
+      "title": "Disleksijas fonts",
+      "description": "Maina fontu uz fontu, kas paredzēts disleksijai."
+    },
+    "button30": {
+      "title": "Ritināšanas vadība",
+      "description": "Kontrolē lapas ritināšanu, lai novērstu pēkšņas lēkšanas."
+    },
+    "button31": {
+      "title": "Zems kontrasts",
+      "description": "Aktivizē zemu kontrasta režīmu, lai uzlabotu lasāmību."
+    },
+    "button32": {
+      "title": "Acu vadība",
+      "description": "Aktivizē peles navigāciju, izmantojot acu izsekošanu."
+    },
+    "button33": {
+      "title": "Zīmju valodas tulks",
+      "description": "Aktivizē lapas zīmju valodas režīmu."
+    },
+    "button34": {
+      "title": "Ekrāna tastatūra",
+      "description": "Aktivizē ekrāna tastatūru ērtākai rakstīšanai."
+    },
+    "button35": {
+      "title": "Mainīt teksta krāsu",
+      "description": "Dod iespēju mainīt lapas teksta krāsu."
+    },
+    "button36": {
+      "title": "Līdzināt tekstu pa labi",
+      "description": "Dod iespēju līdzināt tekstu pa labi."
+    },
+    "button37": {
+      "title": "Līdzināt tekstu pa kreisi",
+      "description": "Dod iespēju līdzināt tekstu pa kreisi."
+    },
+    "button38": {
+      "title": "Līdzināt tekstu pa centru",
+      "description": "Dod iespēju centrēt tekstu."
+    },
+    "button39": {
+      "title": "Rindu atstarpe",
+      "description": "Pielāgo rindu atstarpi tekstā."
+    }
+  },
+  "loginView": {
+    "title": "Pieteikties",
+    "welcome": "Laipni lūgti",
+    "subwelcome": "Izvēlieties kādu no šīm iespējām, lai pierakstītos vai izveidotu kontu.",
+    "input": {
+      "placeholderEmail": "Ievadiet savu e-pastu",
+      "placeholderPass": "Ievadiet savu paroli"
+    },
+    "forgotPass": "Aizmirsāt paroli?",
+    "buttonLogin": "Pierakstīties",
+    "notAccount": {
+      "subtext1": "Nav konta?",
+      "subtext2": "Reģistrēties",
+      "subtext3": "Vai arī varat pierakstīties ar"
+    }
+  },
+  "accountView": {
+    "title": "Konta informācija",
+    "welcome": "Laipni lūgti",
+    "subwelcome": "Izveidojiet savu kontu",
+    "input": {
+      "placeholderEmail": "Ievadiet savu e-pastu",
+      "placeholderConfirmEmail": "Apstipriniet savu e-pastu",
+      "placeholderPass": "Ievadiet savu paroli",
+      "placeholderConfirmPass": "Apstipriniet savu paroli"
+    },
+    "button": "Saglabāt un turpināt"
+  },
+  "registerView": {
+    "title": "Profila informācija",
+    "welcome": "Sveiki",
+    "subwelcome": "Lūdzu, aizpildiet visus laukus, lai izveidotu savu profilu.",
+    "edit": "Rediģēt attēlu",
+    "subtitle1": "Pamatinformācija",
+    "subtitle2": "Pieejamības informācija",
+    "input": {
+      "labelName": "Pilns vārds",
+      "placeholderName": "Ievadiet savu pilno vārdu",
+      "labelDocumentType": "Dokumenta veids",
+      "optionDocumentType": {
+        "option1": "Izvēlēties",
+        "option2": "Pilsonības apliecība",
+        "option3": "Personas apliecība",
+        "option4": "Pase",
+        "option5": "Ārvalstu apliecība",
+        "option6": "Cits",
+        "option7": "Identifikācijas dokuments"
+      },
+      "labelNDocument": "Dokumenta numurs",
+      "placeholderNDocument": "Ievadiet sava dokumenta numuru",
+      "labelEmail": "E-pasts",
+      "placeholderEmail": "Ievadiet savu e-pastu",
+      "labelBirthdate": "Dzimšanas datums",
+      "placeholderBirthdate": "Ievadiet savu dzimšanas datumu",
+      "labelResidenceArea": "Dzīvesvieta",
+      "optionResidenceArea": {
+        "option1": "Izvēlēties",
+        "option2": "Pilsēta",
+        "option3": "Lauki",
+        "option4": "Pilsētas apkārtne"
+      },
+      "labelEducationalLevel": "Izglītības līmenis",
+      "optionEducationalLevel": {
+        "option1": "Izvēlēties",
+        "option2": "Nav",
+        "option3": "Pamatskola",
+        "option4": "Vidusskola",
+        "option5": "Universitāte",
+        "option6": "Pēcdoktorantūra"
+      },
+      "labelOcupacion": "Nodarbošanās statuss",
+      "optionOcupacion": {
+        "option1": "Izvēlēties",
+        "option2": "Nodarbināts",
+        "option3": "Bez darba",
+        "option4": "Students",
+        "option5": "Pensionārs",
+        "option6": "Pašnodarbināts"
+      },
+      "labelDisability": "Vai jums ir dažādas spējas?",
+      "optionDisability": {
+        "option1": "Izvēlēties",
+        "option2": "Jā",
+        "option3": "Nē"
+      },
+      "labelDisabilityType": "Atšķirīgo spēju veids",
+      "optionDisabilityType": {
+        "option1": "Izvēlēties",
+        "option2": "Vizuālās",
+        "option3": "Audiālās",
+        "option4": "Motoriskās",
+        "option5": "Kognitīvās",
+        "option6": "Psihosociālās",
+        "option7": "Vairākas"
+      },
+      "labelDisabilityLevel": "Atšķirīgo spēju līmenis",
+      "optionDisabilityLevel": {
+        "option1": "Izvēlēties",
+        "option2": "Viegli",
+        "option3": "Vidēji",
+        "option4": "Augsts"
+      }
+    },
+    "button": "Saglabāt un turpināt"
+  },
+  "userTermsView": {
+    "title": "Noteikumi un nosacījumi",
+    "title2": "Piekrišana personas datu apstrādei – U platforma",
+    "intro": "Reģistrējoties U platformā, es brīvprātīgi, informēti, konkrēti un nepārprotami apliecinu un piekrītu, ka mani personas dati tiks vākti, apstrādāti un uzglabāti saskaņā ar starptautiskiem privātuma un datu aizsardzības standartiem, balstoties uz šādiem nosacījumiem:",
+    "section1Title": "1. Datu pārzinis",
+    "section1Text": "201.Dsoft Innovate S.A.S. (turpmāk \"U\"), kura juridiskā adrese ir [juridiskā adrese], rīkojoties kā datu pārzinis, apstrādās manus datus saskaņā ar šo pilnvarojumu.",
+    "section2Title": "2. Apstrādes mērķis",
+    "section2Text": "Mani personas dati tiks apstrādāti šādiem mērķiem:",
+    "section2List": {
+      "item1": "Personalizēt pieejamības pieredzi U logrīkā.",
+      "item2": "Veikt pieejamības rīku izmantošanas analīzi un apkopotu pārskatu sagatavošanu (bez lietotāja individuālas identificēšanas).",
+      "item3": "Nodrošināt tehnisko atbalstu un personalizētu turpmāko atbalstu, ja nepieciešams.",
+      "item4": "Ievērot juridiskās un normatīvās saistības attiecībā uz pieejamību, iekļaušanu un nediskrimināciju.",
+      "item5": "Sūtīt tehniskus, informatīvus vai komerciālus jaunumus tikai tad, ja esmu devis tam īpašu piekrišanu."
+    },
+    "section3Title": "3. Juridiskais pamats apstrādei",
+    "section3Text": "U balsta personas datu apstrādi uz:",
+    "section3List": {
+      "item1": "Lietotāja skaidru piekrišanu.",
+      "item2": "Leģitīmu interesi uzlabot pieejamības pakalpojumus, vienmēr ievērojot lietotāja privātumu.",
+      "item3": "Vietējo un starptautisko regulējumu, ieskaitot GDPR (ES), CCPA (Kalifornija), LGPD (Brazīlija) un citus piemērojamos datu aizsardzības likumus, ievērošanu."
+    },
+    "section4Title": "4. Starptautiska datu pārvietošana",
+    "section4Text": "Dati var tikt pārvietoti un/vai uzglabāti serveros, kas atrodas dažādās valstīs. Unyco garantē, ka šādos gadījumos tiks piemērotas standarta līgumsaistības un atbilstoši tehniskie pasākumi, lai aizsargātu datus saskaņā ar GDPR un citiem piemērojamajiem noteikumiem.",
+    "section5Title": "5. Lietotāja tiesības",
+    "section5Text": "Kā datu īpašniekam man ir tiesības:",
+    "section5List": {
+      "item1": "Piekļūt, labot, ierobežot, dzēst vai pārvietot manus personas datus.",
+      "item2": "Jebkurā laikā atsaukt savu piekrišanu.",
+      "item3": "Iesniegt sūdzības vietējai datu aizsardzības iestādei (piemēram, SIC Kolumbijā, EDPB ES vai FTC ASV)."
+    },
+    "section6Title": "6. Saglabāšanas periods",
+    "section6Text": "Dati tiks saglabāti tikai tik ilgi, cik nepieciešams norādītajiem mērķiem vai kamēr konts ir aktīvs. Pēc tam tie tiks dzēsti vai anonimizēti saskaņā ar minimalizācijas principiem.",
+    "section7Title": "7. Kontakti tiesību izmantošanai",
+    "section7Text1": "Savu tiesību izmantošanai varat rakstīt uz: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>",
+    "section7Text2": "Vai arī apmeklējot pieejamo veidlapu: <a href=\"https://www.u.app/privacy\">www.u.app/privacy</a>",
+    "helperText": "Lūdzu, pirms pieņemšanas izlasiet visu dokumentu.",
+    "checkboxLabel": "Apliecinu, ka esmu izlasījis un piekrītu šeit izklāstītajiem personas datu apstrādes noteikumiem.",
+    "button": "Apstiprināt"
+  },
+  "userTermsView2": {
+    "title": "Noteikumi un nosacījumi",
+    "title2": "Informēta piekrišana datu izmantošanai – logrīks U",
+    "intro": "Uzņēmumā U mēs cienām jūsu privātumu un vēlamies, lai jūs precīzi zinātu, kā mēs izmantojam jūsu datus.",
+    "accept": "Reģistrējoties mūsu platformā un izmantojot logrīku, jūs piekrītat, ka mēs vācam un izmantojam noteiktu informāciju šādiem mērķiem:",
+    "section1Title": "Kādus datus mēs vācam?",
+    "section1Text": "Mēs vācam tikai datus, kas nepieciešami, lai nodrošinātu jums pieejamu un personalizētu pieredzi. Tas var ietvert:",
+    "section1List": {
+      "item1": "Jūsu kontaktinformāciju (vārds, e-pasta adrese).",
+      "item2": "Jūsu valsti, valodu un nepieciešamo pieejamības līmeni.",
+      "item3": "Jūsu invaliditātes veidu (ja izvēlaties to dalīties).",
+      "item4": "Iestatījumus, kurus aktivizējat logrīkā (piemēram: palielināt tekstu, ieslēgt ekrāna lasītāju utt.)."
+    },
+    "section1Note": "Mēs nevācam bankas datus vai nepiekļūstam jūsu personiskajam saturam tīmeklī.",
+    "section2Title": "Kāpēc mēs izmantojam šo informāciju?",
+    "section2List": {
+      "item1": "Automātiski pielāgot logrīku jūsu vajadzībām.",
+      "item2": "Ģenerēt anonīmus un statistiskus pārskatus, kas palīdz uzlabot digitālo pieejamību.",
+      "item3": "Aizsargāt jūsu pieejamības tiesības saskaņā ar standartiem, piemēram, WCAG 2.2, GDPR, CCPA un citiem vietējiem likumiem.",
+      "item4": "Ja piekrītat saņemt jaunumus, mēs jums nosūtīsim informāciju par jaunām logrīka funkcijām vai uzlabojumiem."
+    },
+    "section3Title": "Kas var redzēt jūsu datus?",
+    "section3Text1": "Pieeju jūsu personīgajiem iestatījumiem ir tikai jums un sistēmai.",
+    "section3Text2": "Ja nolemjat dalīties ar saviem datiem ar iestādi (piemēram, universitāti, kas ievieš Unyco), tā saņems tikai apkopotus un anonīmus pārskatus, nekad individuālus datus bez jūsu atļaujas.",
+    "section4Title": "Kāda kontrole jums ir pār savu informāciju?",
+    "section4List": {
+      "item1": "Jūs jebkurā laikā varat modificēt vai dzēst savu kontu.",
+      "item2": "Jūs varat pieprasīt savu datu kopiju.",
+      "item3": "Jūs varat atsaukt šo piekrišanu, rakstot uz: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>"
+    },
+    "helperText": "Lūdzu, pirms piekrišanas izlasiet visu dokumentu.",
+    "checkboxLabel": "Apliecinu, ka esmu izlasījis un piekrītu šeit izklāstītajiem personas datu apstrādes noteikumiem.",
+    "button": "Apstiprināt"
+  },
+  "userProfileView": {
+    "title": "Profila informācija",
+    "editImage": "Rediģēt attēlu",
+    "name": "Vārds",
+    "email": "E-pasts",
+    "birthDate": "Dzimšanas datums",
+    "id": "Identifikācija",
+    "allData": "Visi dati",
+    "theme": "Tēma",
+    "editProfile": "Rediģēt profilu",
+    "logout": "Iziet"
+  },
+  "resetPasswordView": {
+    "title": "Atgūt paroli",
+    "labelEmail": "Ievadiet savu e-pastu",
+    "placeholderEmail": "Ievadiet savu e-pastu",
+    "buttonSend": "Sūtīt",
+    "titleCode": "Drošības pārbaude",
+    "labelCode": "Ievadiet verifikācijas kodu, kas nosūtīts uz jūsu e-pasta adresi",
+    "resend": "Saņēmu kodu.",
+    "resendLink": "Sūtīt vēlreiz",
+    "timer": "Atlikušas {{time}} sekundes",
+    "timerExpired": "Kods ir beidzies. Lūdzu, pieprasiet jaunu.",
+    "titleNewPass": "Ievadiet jauno paroli",
+    "labelNewPass": "Ievadiet savu jauno paroli",
+    "placeholderNewPass": "Jauna parole",
+    "labelConfirmPass": "Apstipriniet savu jauno paroli",
+    "placeholderConfirmPass": "Jauna parole",
+    "buttonAccept": "Iesniegt",
+    "buttonCancel": "Atcelt",
+    "successTitle": "Paroles maiņa",
+    "successMessage": "Jūsu parole ir veiksmīgi atjaunināta."
+  },
+  "positionView": {
+    "title": "Izvēlieties logrīka atrašanās vietu",
+    "subtitle": "Lūdzu, izvēlieties vēlamo atrašanās vietu."
+  },
+  "languagesView": {
+    "title": "Izvēlieties valodu",
+    "subtitle": "Izvēlieties savu vēlamo vai dzimto valodu."
+  },
+  "error": {
+    "helperText": {
+      "emailError1": "E-pasti nesakrīt",
+      "emailError2": "E-pasts nav derīgs",
+      "passError1": "Paroles nesakrīt",
+      "passError2": "Parolei jābūt garākai par 6 rakstzīmēm"
+    }
+  }
+}

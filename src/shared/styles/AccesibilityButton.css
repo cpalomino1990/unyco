@@ -102,7 +102,7 @@
   /* box-shadow: 4px 2px 16px -2px rgba(244, 92, 96, 0.2); */
   box-shadow: 0 0 16px -1px rgba(255, 255, 255, 1);
   animation: spinnerRotate 5s linear infinite;
-   will-change: transform;
+  will-change: transform;
 }
 #accessibility-button .circle2 {
   content: "";
@@ -116,7 +116,7 @@
   height: 6px;
   transform: translate(-50%, 50%);
   border-radius: 50%;
-   will-change: transform;
+  will-change: transform;
 }
 
 @keyframes spinnerRotate {
@@ -162,7 +162,7 @@
   transform: rotateY(180deg);
 }
 
-img {
+#my-widget > img {
   width: 100%;
   height: 100%;
 }

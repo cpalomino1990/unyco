@@ -13,16 +13,9 @@ function injectNoneAnimationStyles() {
   caret-color: transparent !important;
  
 }
-
-
-
-
-
 }
-
   
 `;
-
     document.head.appendChild(styleTag);
   }
 }
@@ -31,8 +24,8 @@ export function toggleAnimations() {
   document.body.classList.toggle("none-animation");
   const isAnimationDisabled = document.body.classList.contains("none-animation");
   localStorage.setItem("noneAnimation", isAnimationDisabled);
-
-  toggleCheckButton({ id: "animations", checked: isAnimationDisabled, option: null });
+  console.log("Animations toggled:", isAnimationDisabled);
+  toggleCheckButton({ id: "noneAnimation", checked: isAnimationDisabled, option: null });
 
   const videos = Array.from(document.querySelectorAll("video")).filter(
     video => !video.closest("#my-widget")
@@ -58,9 +51,9 @@ export function loadAnimationSetting() {
 
   if (disabled) {
     document.body.classList.add("none-animation");
-    toggleCheckButton({ id: "animations", checked: true, option: null });
+    toggleCheckButton({ id: "noneAnimation", checked: true, option: null });
     injectNoneAnimationStyles();
   } else {
-    toggleCheckButton({ id: "animations", checked: false, option: null });
+    toggleCheckButton({ id: "noneAnimation", checked: false, option: null });
   }
 }

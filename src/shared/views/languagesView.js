@@ -1,6 +1,8 @@
-import { switchView } from "../../widget";
-import { DynamicIcon } from "../assets/icons/generals/dinamicIcons";
+import { applyTranslations, switchView } from "../../widget";
+import { DynamicIcon } from "/public/icons/generals/dinamicIcons";
 import { host } from "../constants/enviroments";
+import { languages } from "../constants/languages";
+import i18next from "i18next";
 
 export function languagesView() {
   const languagesView = document.createElement("div");
@@ -15,29 +17,53 @@ export function languagesView() {
         </div>
       </div>
       <div class="accessibility-languages-view-body">
-        <h1 class="title" >Selecciona tu idioma</h1>
-        <p class="subtitle" >Selecciona tu idioma preferido o nativo.</p>
+        <h1 class="title" data-u-i18n="languagesView.title" ></h1>
+        <p class="subtitle" data-u-i18n="languagesView.subtitle" ></p>
         <div class="accessibility-languages-view-list accessibility-custom-scroll">
-          ${Array.from({ length: 10 })
+          ${languages
             .map(
-              (_, index) => `
-              <div class="accessibility-languages-view-item${index === 1 ? " active" : ""}">
-                <div class="flag" style="background-image: url('${host}/src/shared/assets/icons/generals/Flag_of_Colombia.png')"></div>
-                <p>Español (Colombia)</p>
-              </div>
-            `
+              (lang, index) => `
+                <div class="accessibility-languages-view-item ${
+                  localStorage.getItem("u-i18n") === lang.code ? "active" : ""
+                }"  data-code="${lang.code}">
+                <div class="flag" style="background-image: url('${host}/public/icons/flags/${lang.flag}.svg')"></div>
+                  <p>${lang.name}</p>
+                </div>
+              `
             )
             .join("")}
         </div>
-        <button class="accessibility-button-theme">Continuar</button>
       </div>
     </div>
   `;
 
+  const options = languagesView.querySelectorAll(".accessibility-languages-view-item");
+  options.forEach((option) => {
+    option.addEventListener("click", (e) => {
+      // Obtener el codigo
+      const newLang = option.getAttribute("data-code");
+      // Activar el item
+      options.forEach((opt) => opt.classList.remove("active"));
+      option.classList.add("active");
+      // Colocar la bandera en el boton
+      const languageButton = document.querySelector("#accessibility-language-button");
+      languageButton.style.backgroundImage = `url("${host}/public/icons/flags/${
+        languages.find((item) => item.code === newLang)?.flag
+      }.svg")`;
+      // Almacenar el codigo en localstorage
+      localStorage.setItem("u-i18n", newLang);
+      // Cambiar el idioma del widget
+      i18next.changeLanguage(newLang, (err) => {
+        if (err) return console.error("Error al cambiar idioma:", err);
+        applyTranslations();
+      });
+    });
+  });
+
   const buttonClose = languagesView.querySelector("#accessibility-close-languages");
   buttonClose.addEventListener("click", () => {
-    switchView(-1)
-  })
+    switchView(-1);
+  });
 
   return languagesView;
 }

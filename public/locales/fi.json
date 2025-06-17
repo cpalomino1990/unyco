@@ -1,0 +1,484 @@
+{
+  "fullLayout": {
+    "slogan": "Yhdistetty With-U:hun"
+  },
+  "bannerUser": {
+    "welcome": "Tervetuloa",
+    "subwelcome": "Kutsumme sinut rekisteröitymään, jotta saat yksilöllisen käyttökokemuksen"
+  },
+  "category": {
+    "visual": {
+      "title": "Visuaalinen",
+      "description": "Ainutlaatuisia tapoja havaita tai tulkita ympäristöä näköaistilla."
+    },
+    "mental": {
+      "title": "Psykososiaalinen",
+      "description": "Aitoja tapoja olla vuorovaikutuksessa, tuntea ja suhtautua maailmaan."
+    },
+    "auditory": {
+      "title": "Auditiivinen",
+      "description": "Monimuotoisia tapoja kokea ja olla vuorovaikutuksessa ympäristön äänillä."
+    },
+    "physical": {
+      "title": "Fyysinen",
+      "description": "Henkilökohtaisia liikuntatyylejä, kehonilmaisua ja koordinaatiota."
+    },
+    "cognitive": {
+      "title": "Kognitiivinen",
+      "description": "Ainutlaatuisia ajattelu-, oppimis-, muisti- ja tarkkaavaisuusprosesseja."
+    },
+    "custom": {
+      "title": "Mukautettu",
+      "description": "Luo itsellesi käyttökokemus, joka on räätälöity sinun yksilöllisiin tarpeisiisi ja mieltymyksiisi."
+    }
+  },
+  "viewCategory": {
+    "title1": "Monipuoliset kyvykkyysprofiilit",
+    "title2": "Lisää asetuksia",
+    "visual": {
+      "profile1": {
+        "title": "Heikkonäköisyys",
+        "description": "Ainutlaatuinen visuaalinen kokemus, joka rikastaa ympäristön havaitsemista."
+      },
+      "profile2": {
+        "title": "Sokeus",
+        "description": "Muiden aistien priorisointi maailman tulkinnassa."
+      },
+      "profile3": {
+        "title": "Värisokeus",
+        "description": "Ainutlaatuinen kokemus värien havaitsemisessa ja erottamisessa."
+      }
+    },
+    "mental": {
+      "profile1": {
+        "title": "ASD",
+        "description": "Ominaisia tapoja keskittyä kiinnostuksen kohteisiin, kommunikointiin ja ihmissuhteisiin."
+      },
+      "profile2": {
+        "title": "Downin syndrooma",
+        "description": "Henkilökohtainen ja arvokkaasti koettu tapa kokea henkilökohtaista ja sosiaalista kehitystä."
+      },
+      "profile3": {
+        "title": "Lukivaikeus",
+        "description": "Erityinen tapa havaita ja dekoodata tekstien rakennetta."
+      },
+      "profile4": {
+        "title": "Epilepsia",
+        "description": "Neurologisen toiminnan ainutlaatuisia ilmenemismuotoja, jotka edustavat monimuotoisuutta."
+      },
+      "profile5": {
+        "title": "ADHD",
+        "description": "Erityinen dynamiikka huomion, energian ja ärsykkeiden käsittelyssä."
+      }
+    },
+    "auditory": {
+      "profile1": {
+        "title": "Kuurous",
+        "description": "Erimieliset tavat elää ja ymmärtää kommunikointia toisten kanssa."
+      }
+    },
+    "physical": {
+      "profile1": {
+        "title": "Ylävartalon liikkuvuus",
+        "description": "Erityisiä tapoja liikkua ja ilmaisua ylävartalon avulla."
+      }
+    },
+    "cognitive": {
+      "profile1": {
+        "title": "Autismi",
+        "description": "Ainutlaatuinen tyyli havaita, käsitellä ja olla vuorovaikutuksessa ympäristön ja ihmisten kanssa."
+      },
+      "profile2": {
+        "title": "OCD",
+        "description": "Intensiivisiä ja strukturoituja tapoja järjestää ajatuksia ja toimia."
+      }
+    },
+    "custom": {}
+  },
+  "functionalityButtons": {
+    "button1": {
+      "title": "Korostustila",
+      "description": "Korostaa tärkeää sisältöä."
+    },
+    "button2": {
+      "title": "Korosta teksti",
+      "description": "Korostaa näkyvää tekstiä."
+    },
+    "button3": {
+      "title": "Suurennin",
+      "description": "Suurentaa tekstiä hiiren osoittimen ollessa sen päällä."
+    },
+    "button4": {
+      "title": "Suurenna tekstiä",
+      "description": "Suurentaa sivun tekstin kokoa."
+    },
+    "button5": {
+      "title": "Suurenna välilyöntejä",
+      "description": "Parantaa tekstin välilyöntejä."
+    },
+    "button6": {
+      "title": "Lue ääneen",
+      "description": "Lukee sivun tekstin hiiren osoittimen ollessa sen päällä."
+    },
+    "button7": {
+      "title": "Korosta linkit",
+      "description": "Korostaa sivun linkkejä."
+    },
+    "button8": {
+      "title": "Lopeta animaatiot",
+      "description": "Poistaa käytöstä kaikki sivun animaatiot."
+    },
+    "button9": {
+      "title": "Aktivoi lukuvalikko",
+      "description": "Näyttää lukemista helpottavan valikon."
+    },
+    "button10": {
+      "title": "Suuri kursori",
+      "description": "Muuttaa kursoria suuremmaksi."
+    },
+    "button11": {
+      "title": "Luettava fontti",
+      "description": "Muuttaa tekstin fontin luettavammaksi."
+    },
+    "button12": {
+      "title": "Lukunopeus",
+      "description": "Säätelee tekstin lukunopeutta."
+    },
+    "button13": {
+      "title": "Korostusvärit",
+      "description": "Muuttaa korostusvärit näkyvyyden parantamiseksi."
+    },
+    "button14": {
+      "title": "Äänenvoimakkuuden säätö",
+      "description": "Säätelee ruudunlukijan äänenvoimakkuutta."
+    },
+    "button15": {
+      "title": "Protanopia",
+      "description": "Värisäätö puna-vihersokeaisuudelle."
+    },
+    "button16": {
+      "title": "Deuteranopia",
+      "description": "Värisäätö viher-puna sokeaisuudelle."
+    },
+    "button17": {
+      "title": "Tritanopia",
+      "description": "Värisäätö sinisokeaisuudelle."
+    },
+    "button18": {
+      "title": "Protanomalia",
+      "description": "Osittainen punaisen värin korjaus."
+    },
+    "button19": {
+      "title": "Deuteranomalia",
+      "description": "Osittainen vihreän värin korjaus."
+    },
+    "button20": {
+      "title": "Tritanomalia",
+      "description": "Osittainen sinisen värin korjaus."
+    },
+    "button21": {
+      "title": "Achromatomalia",
+      "description": "Osittainen mustavalkoisen värin säätö."
+    },
+    "button22": {
+      "title": "Achromatopsia",
+      "description": "Täydellinen harmaasävykorjaus."
+    },
+    "button23": {
+      "title": "Tarkennuskehys",
+      "description": "Merkitsee kohteen, jossa fokus on."
+    },
+    "button24": {
+      "title": "Valikoiva kontrasti",
+      "description": "Asettaa sivun tummaan tilaan."
+    },
+    "button25": {
+      "title": "Lukeminen tauolla",
+      "description": "Aktivoi sana sanalta -lukemisen."
+    },
+    "button26": {
+      "title": "Tarkennustila",
+      "description": "Poistaa häiritsevät kuvat ja videot."
+    },
+    "button27": {
+      "title": "Äänen vaimennus",
+      "description": "Vaimentaa sivun äänen."
+    },
+    "button28": {
+      "title": "Lukupeite",
+      "description": "Lisää peitteen lukemisen helpottamiseksi."
+    },
+    "button29": {
+      "title": "Dysleksia-fontti",
+      "description": "Muuttaa fontin dysleksiaa varten suunnitelluksi fontiksi."
+    },
+    "button30": {
+      "title": "Vierityksen hallinta",
+      "description": "Ohjaa sivun vieritystä äkillisiä hyppyjä estäen."
+    },
+    "button31": {
+      "title": "Heikko kontrasti",
+      "description": "Aktivoi heikon kontrastin tilan parantaakseen luettavuutta."
+    },
+    "button32": {
+      "title": "Katseenohjaus",
+      "description": "Aktivoi hiiren navigoinnin silmänseurannalla."
+    },
+    "button33": {
+      "title": "Viittomakielen kääntäjä",
+      "description": "Aktivoi sivun viittomakielitilat."
+    },
+    "button34": {
+      "title": "Näyttötaulu",
+      "description": "Aktivoi näyttötaulun helpottamaan kirjoittamista."
+    },
+    "button35": {
+      "title": "Muuta tekstin väriä",
+      "description": "Mahdollistaa sivun tekstin värin muuttamisen."
+    },
+    "button36": {
+      "title": "Tasaa teksti oikealle",
+      "description": "Mahdollistaa tekstin tasaamisen oikealle."
+    },
+    "button37": {
+      "title": "Tasaa teksti vasemmalle",
+      "description": "Mahdollistaa tekstin tasaamisen vasemmalle."
+    },
+    "button38": {
+      "title": "Tasaa teksti keskelle",
+      "description": "Mahdollistaa tekstin keskittämisen."
+    },
+    "button39": {
+      "title": "Rivinväli",
+      "description": "Säätelee tekstin rivinväliä."
+    }
+  },
+  "loginView": {
+    "title": "Kirjaudu sisään",
+    "welcome": "Tervetuloa",
+    "subwelcome": "Valitse jokin näistä vaihtoehdoista kirjautumiseen tai tilin luomiseen.",
+    "input": {
+      "placeholderEmail": "Syötä sähköpostisi",
+      "placeholderPass": "Syötä salasanasi"
+    },
+    "forgotPass": "Unohditko salasanasi?",
+    "buttonLogin": "Kirjaudu sisään",
+    "notAccount": {
+      "subtext1": "Ei tiliä?",
+      "subtext2": "Rekisteröidy",
+      "subtext3": "Tai voit kirjautua sisään käyttäen"
+    }
+  },
+  "accountView": {
+    "title": "Tilitiedot",
+    "welcome": "Tervetuloa",
+    "subwelcome": "Luo tili",
+    "input": {
+      "placeholderEmail": "Syötä sähköpostisi",
+      "placeholderConfirmEmail": "Vahvista sähköpostisi",
+      "placeholderPass": "Syötä salasanasi",
+      "placeholderConfirmPass": "Vahvista salasanasi"
+    },
+    "button": "Tallenna ja jatka"
+  },
+  "registerView": {
+    "title": "Profiilitiedot",
+    "welcome": "Tervetuloa",
+    "subwelcome": "Täytä kaikki kentät profiilin luomiseksi.",
+    "edit": "Muokkaa kuvaa",
+    "subtitle1": "Perustiedot",
+    "subtitle2": "Saavutettavuustiedot",
+    "input": {
+      "labelName": "Koko nimi",
+      "placeholderName": "Syötä koko nimesi",
+      "labelDocumentType": "Asiakirjatyypi",
+      "optionDocumentType": {
+        "option1": "Valitse",
+        "option2": "Kansalaisuusnumero",
+        "option3": "Henkilökortti",
+        "option4": "Passi",
+        "option5": "Ulkomainen henkilötodistus",
+        "option6": "Muu",
+        "option7": "Henkilöllisyystodistus"
+      },
+      "labelNDocument": "Asiakirjanumero",
+      "placeholderNDocument": "Syötä asiakirjanumerosi",
+      "labelEmail": "Sähköposti",
+      "placeholderEmail": "Syötä sähköpostiosoitteesi",
+      "labelBirthdate": "Syntymäaika",
+      "placeholderBirthdate": "Syötä syntymäaikasi",
+      "labelResidenceArea": "Asumispaikka",
+      "optionResidenceArea": {
+        "option1": "Valitse",
+        "option2": "Kaupunki",
+        "option3": "Maaseutu",
+        "option4": "Kaupunkialue"
+      },
+      "labelEducationalLevel": "Koulutustaso",
+      "optionEducationalLevel": {
+        "option1": "Valitse",
+        "option2": "Ei koulutusta",
+        "option3": "Peruskoulu",
+        "option4": "Toisen asteen koulutus",
+        "option5": "Yliopisto",
+        "option6": "Jälki- ja jatkotutkinto"
+      },
+      "labelOcupacion": "Ammattiasema",
+      "optionOcupacion": {
+        "option1": "Valitse",
+        "option2": "Työssäkäyvä",
+        "option3": "Työtön",
+        "option4": "Opiskelija",
+        "option5": "Eläkkeellä",
+        "option6": "Yrittäjä"
+      },
+      "labelDisability": "Onko sinulla monimuotoisia kykyjä?",
+      "optionDisability": {
+        "option1": "Valitse",
+        "option2": "Kyllä",
+        "option3": "Ei"
+      },
+      "labelDisabilityType": "Erilaisen kyvyn tyyppi",
+      "optionDisabilityType": {
+        "option1": "Valitse",
+        "option2": "Visuaalinen",
+        "option3": "Auditiivinen",
+        "option4": "Motorinen",
+        "option5": "Kognitiivinen",
+        "option6": "Psykososiaalinen",
+        "option7": "Moninkertainen"
+      },
+      "labelDisabilityLevel": "Erilaisen kyvyn taso",
+      "optionDisabilityLevel": {
+        "option1": "Valitse",
+        "option2": "Lievä",
+        "option3": "Kohtalainen",
+        "option4": "Vaikea"
+      }
+    },
+    "button": "Tallenna ja jatka"
+  },
+  "userTermsView": {
+    "title": "Käyttöehdot",
+    "title2": "Suostumus henkilötietojen käsittelyyn – U-alusta",
+    "intro": "Rekisteröitymällä U-alustalle, myönnän ja hyväksyn vapaaehtoisesti, tietoisesti, erityisesti ja yksiselitteisesti, että henkilötietojani kerätään, käsitellään ja tallennetaan kansainvälisten yksityisyydensuojan ja tietosuojan standardien mukaisesti seuraavien ehtojen perusteella:",
+    "section1Title": "1. Rekisterinpitäjä",
+    "section1Text": "Dsoft Innovate S.A.S. (jäljempänä 'U'), jonka rekisteröity osoite on [legal address], toimii rekisterinpitäjänä ja käsittelee tietojani tämän valtuutuksen mukaisesti.",
+    "section2Title": "2. Käsittelyn tarkoitus",
+    "section2Text": "Henkilötietojani käsitellään seuraaviin tarkoituksiin:",
+    "section2List": {
+      "item1": "Käytettävyyskokemuksen personointi U-widgetissä.",
+      "item2": "Käytettävyystyökalujen käytön analysointi ja koottu raportointi (ilman käyttäjän yksilöimistä).",
+      "item3": "Tekninen tuki ja personoitu seuranta tarvittaessa.",
+      "item4": "Lakisääteisten ja sääntelyn mukaisten velvoitteiden noudattaminen käytettävyyden, osallisuuden ja syrjimättömyyden osalta.",
+      "item5": "Teknisten, informatiivisten tai kaupallisten päivitysten lähettäminen vain, jos olen antanut siihen erikseen suostumuksen."
+    },
+    "section3Title": "3. Käsittelyn oikeusperuste",
+    "section3Text": "U perustaa henkilötietojen käsittelyn seuraaviin:",
+    "section3List": {
+      "item1": "Selkeään käyttäjän suostumukseen.",
+      "item2": "Oikeutettuun etuun käytettävyyspalveluiden parantamiseksi aina kunnioittaen käyttäjän yksityisyyttä.",
+      "item3": "Paikallisten ja kansainvälisten säädösten noudattamiseen, mukaan lukien GDPR (EU), CCPA (Kalifornia), LGPD (Brasilia) ja muut sovellettavat tietosuojalait."
+    },
+    "section4Title": "4. Kansainvälinen tietojen siirto",
+    "section4Text": "Tietoja voidaan siirtää ja/tai tallentaa eri maissa sijaitseville palvelimille. Unyco takaa, että tällöin sovelletaan vakiosopimuslausekkeita ja asianmukaisia teknisiä toimenpiteitä tietojen suojaamiseksi GDPR:n ja muiden sovellettavien säännösten mukaisesti.",
+    "section5Title": "5. Käyttäjän oikeudet",
+    "section5Text": "Tietojen haltijana minulla on oikeus:",
+    "section5List": {
+      "item1": "Tarkastaa, oikaista, rajoittaa, poistaa tai siirtää henkilötietojani.",
+      "item2": "Peruuttaa suostumukseni milloin tahansa.",
+      "item3": "Jättää valituksia paikalliselle tietosuojaviranomaiselle (kuten SIC Kolumbiassa, EDPB EU:ssa tai FTC Yhdysvalloissa)."
+    },
+    "section6Title": "6. Säilytysaika",
+    "section6Text": "Tietoja säilytetään vain niin kauan kuin se on tarpeen ilmoitettuihin tarkoituksiin tai niin kauan kuin tili on aktiivinen. Sen jälkeen tiedot poistetaan tai anonymisoidaan minimointiperiaatteiden mukaisesti.",
+    "section7Title": "7. Yhteystiedot oikeuksien käyttämiseksi",
+    "section7Text1": "Voit käyttää oikeuksiasi kirjoittamalla osoitteeseen: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>",
+    "section7Text2": "Tai käymällä lomakkeella osoitteessa: <a href=\"https://www.u.app/privacy\">www.u.app/privacy</a>",
+    "helperText": "Lue koko asiakirja ennen hyväksymistä.",
+    "checkboxLabel": "Vakuutan lukeneeni ja hyväksyneeni tässä esitetyt henkilötietojen käsittelyn ehdot.",
+    "button": "Vahvista"
+  },
+  "userTermsView2": {
+    "title": "Käyttöehdot",
+    "title2": "Tietoinen suostumus tietojen käyttöön – Widget U",
+    "intro": "U:lla kunnioitamme yksityisyyttäsi ja haluamme, että tiedät tarkalleen, miten käytämme tietojasi.",
+    "accept": "Rekisteröitymällä alustallemme ja käyttämällä widgetiä hyväksyt, että keräämme ja käytämme tiettyjä tietoja seuraaviin tarkoituksiin:",
+    "section1Title": "Mitä tietoja keräämme?",
+    "section1Text": "Keräämme vain tietoja, jotka ovat välttämättömiä helposti käytettävän ja personoidun käyttökokemuksen tarjoamiseksi. Tämä voi sisältää:",
+    "section1List": {
+      "item1": "Yhteystietosi (nimi, sähköpostiosoite).",
+      "item2": "Maasi, kielesi ja vaadittu saavutettavuustaso.",
+      "item3": "Vammaistyyppisi (jos päätät jakaa sen).",
+      "item4": "Widgetissä aktivoimasi asetukset (esimerkiksi: tekstin suurentaminen, näytönlukijan käyttöönotto jne.)."
+    },
+    "section1Note": "Emme kerää pankkitietoja emmekä pääse käsiksi henkilökohtaiseen sisältöösi verkossa.",
+    "section2Title": "Miksi käytämme näitä tietoja?",
+    "section2List": {
+      "item1": "Widgetin automatisoitu mukauttaminen tarpeisiisi.",
+      "item2": "Nimiettömien ja tilastollisten raporttien luominen digitaalisen saavutettavuuden parantamiseksi.",
+      "item3": "Saavutettavuusoikeuksiesi suojaaminen standardien, kuten WCAG 2.2, GDPR, CCPA ja muiden paikallislainsäädäntöjen mukaisesti.",
+      "item4": "Jos hyväksyt uutiskirjeet, lähetämme sinulle päivityksiä widgetistä ja sen uusista ominaisuuksista."
+    },
+    "section3Title": "Kuka näkee tietosi?",
+    "section3Text1": "Vain sinä ja järjestelmä pääsette käsiksi henkilökohtaisiin asetuksiisi.",
+    "section3Text2": "Jos päätät jakaa tietosi organisaatiolle (esimerkiksi Unycoa käyttävä yliopisto), he saavat vain yhdistettyjä ja anonymisoituja raportteja, eivät koskaan yksittäisiä tietoja ilman lupaasi.",
+    "section4Title": "Millainen valvonta sinulla on tietoihisi?",
+    "section4List": {
+      "item1": "Voit muokata tai poistaa tilisi milloin tahansa.",
+      "item2": "Voit pyytää kopion tiedoistasi.",
+      "item3": "Voit peruuttaa tämän suostumuksen kirjoittamalla osoitteeseen: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>"
+    },
+    "helperText": "Lue koko asiakirja ennen hyväksymistä.",
+    "checkboxLabel": "Vakuutan lukeneeni ja hyväksyneeni tässä esitetyt henkilötietojen käsittelyehdot.",
+    "button": "Vahvista"
+  },
+  "userProfileView": {
+    "title": "Profiilitiedot",
+    "editImage": "Muokkaa kuvaa",
+    "name": "Nimi",
+    "email": "Sähköposti",
+    "birthDate": "Syntymäaika",
+    "id": "Tunnistetiedot",
+    "allData": "Kaikki tiedot",
+    "theme": "Teema",
+    "editProfile": "Muokkaa profiilia",
+    "logout": "Kirjaudu ulos"
+  },
+  "resetPasswordView": {
+    "title": "Palauta salasana",
+    "labelEmail": "Syötä sähköpostiosoitteesi",
+    "placeholderEmail": "Syötä sähköpostiosoitteesi",
+    "buttonSend": "Lähetä",
+    "titleCode": "Turvallisuustarkistus",
+    "labelCode": "Syötä sähköpostiosoitteeseesi lähetetty varmistuskoodi",
+    "resend": "En saanut koodia.",
+    "resendLink": "Lähetä uudelleen",
+    "timer": "{{time}} sekuntia jäljellä",
+    "timerExpired": "Koodi on vanhentunut. Pyydä uusi koodi.",
+    "titleNewPass": "Syötä uusi salasana",
+    "labelNewPass": "Syötä uusi salasanasi",
+    "placeholderNewPass": "Uusi salasana",
+    "labelConfirmPass": "Vahvista uusi salasanasi",
+    "placeholderConfirmPass": "Uusi salasana",
+    "buttonAccept": "Lähetä",
+    "buttonCancel": "Peruuta",
+    "successTitle": "Salasanan vaihto",
+    "successMessage": "Salasanasi on päivitetty onnistuneesti."
+  },
+  "positionView": {
+    "title": "Valitse widgetisi sijainti",
+    "subtitle": "Valitse haluamasi sijainti."
+  },
+  "languagesView": {
+    "title": "Valitse kieli",
+    "subtitle": "Valitse haluamasi tai äidinkielesi."
+  },
+  "error": {
+    "helperText": {
+      "emailError1": "Sähköpostit eivät täsmää",
+      "emailError2": "Sähköpostiosoite ei ole kelvollinen",
+      "passError1": "Salasanat eivät täsmää",
+      "passError2": "Salasanan on oltava yli 6 merkkiä pitkä"
+    }
+  }
+}

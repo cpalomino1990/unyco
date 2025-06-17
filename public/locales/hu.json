@@ -1,0 +1,484 @@
+{
+  "fullLayout": {
+    "slogan": "Kapcsolatban Állunk Veled"
+  },
+  "bannerUser": {
+    "welcome": "Üdvözöljük!",
+    "subwelcome": "Invitáljuk, hogy regisztráljon egy személyre szabott élményért."
+  },
+  "category": {
+    "visual": {
+      "title": "Vizuális",
+      "description": "Egyedi módok a környezet látás általi érzékelésére és értelmezésére."
+    },
+    "mental": {
+      "title": "Pszichoszociális",
+      "description": "Hiteles módok a világgal való interakcióra, érzésekre és kapcsolódásra."
+    },
+    "auditory": {
+      "title": "Auditív",
+      "description": "A környezet hangjaival való kapcsolódás és megtapasztalás sokféle módja."
+    },
+    "physical": {
+      "title": "Fizikai",
+      "description": "Személyes mozgásstílusok, testbeszéd és koordináció."
+    },
+    "cognitive": {
+      "title": "Kognitív",
+      "description": "Egyedi gondolkodási, tanulási, emlékezeti és figyelemi folyamatok."
+    },
+    "custom": {
+      "title": "Testreszabott",
+      "description": "Személyre szabott élményt hozunk létre az Ön egyéni igényei és preferenciái szerint."
+    }
+  },
+  "viewCategory": {
+    "title1": "Különböző Képességprofilok",
+    "title2": "További Beállítások",
+    "visual": {
+      "profile1": {
+        "title": "Gyengénlátó",
+        "description": "Egyedi vizuális élmény, amely gazdagítja a környezet érzékelését."
+      },
+      "profile2": {
+        "title": "Vak",
+        "description": "Olyan érzékelési forma, amely más érzékszervek priorizálásával értelmezi a világot."
+      },
+      "profile3": {
+        "title": "Színvakság",
+        "description": "A színek megítélésének és megkülönböztetésének egyedi élménye."
+      }
+    },
+    "mental": {
+      "profile1": {
+        "title": "ASD",
+        "description": "Az érdeklődési körökre, a kommunikációra és a kapcsolatokra való fókuszálás sajátos módjai."
+      },
+      "profile2": {
+        "title": "Down-szindróma",
+        "description": "A személyes és társadalmi fejlődés megtapasztalásának személyes és értékes módja."
+      },
+      "profile3": {
+        "title": "Diszlexia",
+        "description": "A szövegek szerkezetének felfogásának és dekódolásának speciális módja."
+      },
+      "profile4": {
+        "title": "Epilepszia",
+        "description": "Az idegrendszeri működés egyedi megnyilvánulásai, amelyek a sokféleséget képviselik."
+      },
+      "profile5": {
+        "title": "ADHD",
+        "description": "A figyelem, az energia és az ingerek feldolgozásának speciális dinamikája."
+      }
+    },
+    "auditory": {
+      "profile1": {
+        "title": "Süketség",
+        "description": "A másokkal való kommunikáció megértésének és élésének sajátos módjai."
+      }
+    },
+    "physical": {
+      "profile1": {
+        "title": "Felsőtest-mozgásképesség",
+        "description": "A felsőtest mozgásának és kifejezésének sajátos módjai."
+      }
+    },
+    "cognitive": {
+      "profile1": {
+        "title": "Autizmus",
+        "description": "A környezethez és az emberekhez való viszonyulás, feldolgozás és érzékelés egyedi stílusa."
+      },
+      "profile2": {
+        "title": "OCD",
+        "description": "Intenzív és strukturált gondolat- és cselekvésrendezés."
+      }
+    },
+    "custom": {}
+  },
+  "functionalityButtons": {
+    "button1": {
+      "title": "Kiemelés mód",
+      "description": "Kiemeli a fontos tartalmat."
+    },
+    "button2": {
+      "title": "Szöveg kiemelése",
+      "description": "Kiemeli a látható szöveget."
+    },
+    "button3": {
+      "title": "Nagyító",
+      "description": "Nagyítja a szöveget kurzor fölé húzáskor."
+    },
+    "button4": {
+      "title": "Szövegméret növelése",
+      "description": "Növeli a szöveg méretét az oldalon."
+    },
+    "button5": {
+      "title": "Sorok közti távolság növelése",
+      "description": "Javítja a szöveg sorok közti távolságát."
+    },
+    "button6": {
+      "title": "Felolvasás",
+      "description": "Felolvassa az oldal szövegét kurzor fölé húzáskor."
+    },
+    "button7": {
+      "title": "Linkek kiemelése",
+      "description": "Kiemeli a linkeket az oldalon."
+    },
+    "button8": {
+      "title": "Animációk leállítása",
+      "description": "Letiltja az összes animációt az oldalon."
+    },
+    "button9": {
+      "title": "Olvásási sáv aktiválása",
+      "description": "Megjelenít egy olvasást segítő sávot."
+    },
+    "button10": {
+      "title": "Nagy kurzor",
+      "description": "Nagyobb kurzor méret."
+    },
+    "button11": {
+      "title": "Jól olvasható betűtípus",
+      "description": "Olvashatóbb betűtípusra váltás."
+    },
+    "button12": {
+      "title": "Olvasási sebesség",
+      "description": "A szöveg olvasási sebességének beállítása."
+    },
+    "button13": {
+      "title": "Kiemelő színek",
+      "description": "A kiemelő színek megváltoztatása a jobb láthatóság érdekében."
+    },
+    "button14": {
+      "title": "Hangerő szabályozás",
+      "description": "A képernyőolvasó hangerőjének beállítása."
+    },
+    "button15": {
+      "title": "Protanopia",
+      "description": "Színkorrekció vörös színérzékelési zavar esetén."
+    },
+    "button16": {
+      "title": "Deuteranopia",
+      "description": "Színkorrekció zöld színérzékelési zavar esetén."
+    },
+    "button17": {
+      "title": "Tritanopia",
+      "description": "Színkorrekció kék színérzékelési zavar esetén."
+    },
+    "button18": {
+      "title": "Protanomália",
+      "description": "Részleges vörös színkorrekció."
+    },
+    "button19": {
+      "title": "Deuteranomália",
+      "description": "Részleges zöld színkorrekció."
+    },
+    "button20": {
+      "title": "Tritanomália",
+      "description": "Részleges kék színkorrekció."
+    },
+    "button21": {
+      "title": "Achromatomália",
+      "description": "Részleges fekete-fehér színbeállítás."
+    },
+    "button22": {
+      "title": "Achromatopsia",
+      "description": "Teljes szürkeárnyalatos színbeállítás."
+    },
+    "button23": {
+      "title": "Fókuszkeret",
+      "description": "Megjelöli a fókuszban lévő elemet."
+    },
+    "button24": {
+      "title": "Szelektív kontraszt",
+      "description": "Sötét módba kapcsolja az oldalt."
+    },
+    "button25": {
+      "title": "Szüneteltetett olvasás",
+      "description": "Aktiválja a szó szerinti olvasást."
+    },
+    "button26": {
+      "title": "Fókuszmód",
+      "description": "Eltávolítja a zavaró képeket és videókat."
+    },
+    "button27": {
+      "title": "Némítás",
+      "description": "Némítja az oldal hangját."
+    },
+    "button28": {
+      "title": "Olvasási maszk",
+      "description": "Maszkot ad hozzá az olvasás megkönnyítéséhez."
+    },
+    "button29": {
+      "title": "Diszlexia-barát betűtípus",
+      "description": "Diszlexia-barát betűtípussá változtatja a betűtípust."
+    },
+    "button30": {
+      "title": "Görgetésvezérlés",
+      "description": "Ellenőrzi az oldal görgetését, hogy elkerülje a hirtelen ugrásokat."
+    },
+    "button31": {
+      "title": "Alapos kontraszt",
+      "description": "Aktiválja az alacsony kontrasztú módot a jobb olvashatóság érdekében."
+    },
+    "button32": {
+      "title": "Szemvezérlés",
+      "description": "Aktiválja az egér navigációt szemkövetéssel."
+    },
+    "button33": {
+      "title": "Jelnyelvi fordító",
+      "description": "Aktiválja az oldal jelnyelvi módját."
+    },
+    "button34": {
+      "title": "Képernyőbillentyűzet",
+      "description": "Aktiválja a képernyőbillentyűzetet a könnyebb gépeléshez."
+    },
+    "button35": {
+      "title": "Szövegszín módosítása",
+      "description": "Lehetővé teszi az oldalszöveg színének megváltoztatását."
+    },
+    "button36": {
+      "title": "Szöveg jobbra igazítása",
+      "description": "Lehetővé teszi a szöveg jobbra igazítását."
+    },
+    "button37": {
+      "title": "Szöveg balra igazítása",
+      "description": "Lehetővé teszi a szöveg balra igazítását."
+    },
+    "button38": {
+      "title": "Szöveg középre igazítása",
+      "description": "Lehetővé teszi a szöveg középre igazítását."
+    },
+    "button39": {
+      "title": "Sorköz",
+      "description": "Beállítja a szöveg sorközét."
+    }
+  },
+  "loginView": {
+    "title": "Bejelentkezés",
+    "welcome": "Üdvözöljük!",
+    "subwelcome": "Válasszon az alábbi lehetőségek közül a bejelentkezéshez vagy fiók létrehozásához.",
+    "input": {
+      "placeholderEmail": "Írja be az e-mail címét",
+      "placeholderPass": "Írja be a jelszavát"
+    },
+    "forgotPass": "Elfelejtette a jelszavát?",
+    "buttonLogin": "Bejelentkezés",
+    "notAccount": {
+      "subtext1": "Nincs még fiókja?",
+      "subtext2": "Regisztráció",
+      "subtext3": "Vagy jelentkezzen be az alábbival:"
+    }
+  },
+  "accountView": {
+    "title": "Fiókadatok",
+    "welcome": "Üdvözöljük!",
+    "subwelcome": "Fiók létrehozása",
+    "input": {
+      "placeholderEmail": "Írja be az e-mail címét",
+      "placeholderConfirmEmail": "Erősítse meg az e-mail címét",
+      "placeholderPass": "Írja be a jelszavát",
+      "placeholderConfirmPass": "Erősítse meg a jelszavát"
+    },
+    "button": "Mentés és folytatás"
+  },
+  "registerView": {
+    "title": "Profilinformációk",
+    "welcome": "Üdvözlet",
+    "subwelcome": "Kérjük, töltse ki az összes mezőt a profil létrehozásához.",
+    "edit": "Kép szerkesztése",
+    "subtitle1": "Alapvető személyes adatok",
+    "subtitle2": "Hozzáférhetőségi információk",
+    "input": {
+      "labelName": "Teljes név",
+      "placeholderName": "Írd be a teljes nevedet!",
+      "labelDocumentType": "Dokumentum típusa",
+      "optionDocumentType": {
+        "option1": "Választás",
+        "option2": "Állampolgársági igazolvány",
+        "option3": "Személyi igazolvány",
+        "option4": "Útlevél",
+        "option5": "Külföldi igazolvány",
+        "option6": "Egyéb",
+        "option7": "Személyazonosító okmány"
+      },
+      "labelNDocument": "Dokumentumszám",
+      "placeholderNDocument": "Írd be a dokumentumszámodat!",
+      "labelEmail": "E-mail cím",
+      "placeholderEmail": "Írd be az e-mail címedet!",
+      "labelBirthdate": "Születési dátum",
+      "placeholderBirthdate": "Írd be a születési dátumodat!",
+      "labelResidenceArea": "Lakóhely",
+      "optionResidenceArea": {
+        "option1": "Válasszon",
+        "option2": "Városi",
+        "option3": "Vidéki",
+        "option4": "Peri-urbánus"
+      },
+      "labelEducationalLevel": "Iskolai végzettség",
+      "optionEducationalLevel": {
+        "option1": "Válasszon",
+        "option2": "Nincs",
+        "option3": "Általános iskola",
+        "option4": "Középiskola",
+        "option5": "Egyetem",
+        "option6": "Posztgraduális"
+      },
+      "labelOcupacion": "Foglalkozási státusz",
+      "optionOcupacion": {
+        "option1": "Válasszon",
+        "option2": "Foglalkoztatott",
+        "option3": "Munkátlan",
+        "option4": "Diák",
+        "option5": "Nyugdíjas",
+        "option6": "Önálló vállalkozó"
+      },
+      "labelDisability": "Van-e valamilyen sajátos képessége?",
+      "optionDisability": {
+        "option1": "Válasszon",
+        "option2": "Igen",
+        "option3": "Nem"
+      },
+      "labelDisabilityType": "Különleges képesség típusa",
+      "optionDisabilityType": {
+        "option1": "Válasszon",
+        "option2": "Vizuális",
+        "option3": "Auditív",
+        "option4": "Motoros",
+        "option5": "Kognitív",
+        "option6": "Pszichoszociális",
+        "option7": "Többes"
+      },
+      "labelDisabilityLevel": "Különleges képesség szintje",
+      "optionDisabilityLevel": {
+        "option1": "Válasszon",
+        "option2": "Enyhe",
+        "option3": "Közepes",
+        "option4": "Súlyos"
+      }
+    },
+    "button": "Mentés és folytatás"
+  },
+  "userTermsView": {
+    "title": "Felhasználási feltételek",
+    "title2": "Hozzájárulás a személyes adatok feldolgozásához – U Platform",
+    "intro": "Az U platformon való regisztrációval szabadon, tájékozottan, konkrétan és egyértelműen elismerem és elfogadom, hogy személyes adataimat a nemzetközi adatvédelmi és adatvédelmi szabványoknak megfelelően gyűjtik, dolgozzák fel és tárolják a következő feltételek alapján:",
+    "section1Title": "1. Adatkezelő",
+    "section1Text": "A 201.Dsoft Innovate S.A.S. (a továbbiakban „U”), székhelye: [székhely], mint adatkezelő, az jelen engedélyezésnek megfelelően kezeli az adataimat.",
+    "section2Title": "2. Az adatfeldolgozás célja",
+    "section2Text": "Személyes adataimat a következő célokra dolgozzák fel:",
+    "section2List": {
+      "item1": "A hozzáférhetőségi élmény személyre szabása az U widgiten belül.",
+      "item2": "A hozzáférhetőségi eszközök használatának elemzése és összesített jelentéskészítése (a felhasználó egyéni azonosítása nélkül).",
+      "item3": "Műszaki támogatás és személyre szabott nyomon követés biztosítása szükség esetén.",
+      "item4": "A hozzáférhetőségre, a befogadásra és a megkülönböztetésmentességre vonatkozó jogi és szabályozási kötelezettségek teljesítése.",
+      "item5": "Műszaki, tájékoztató vagy kereskedelmi frissítések küldése, csak ha erre külön hozzájárulást adtam."
+    },
+    "section3Title": "3. Az adatfeldolgozás jogalapja",
+    "section3Text": "Az U a személyes adatok feldolgozását a következőkre alapozza:",
+    "section3List": {
+      "item1": "Kifejezett felhasználói hozzájárulás.",
+      "item2": "Jogszerű érdek a hozzáférhetőségi szolgáltatások fejlesztésében, a felhasználó magánszférájának mindig tiszteletben tartásával.",
+      "item3": "Helyi és nemzetközi jogszabályok betartása, beleértve a GDPR (EU), a CCPA (Kalifornia), az LGPD (Brazília) és egyéb alkalmazandó adatvédelmi törvényeket."
+    },
+    "section4Title": "4. Nemzetközi adatátvitel",
+    "section4Text": "Az adatokat különböző országokban található szervereken továbbíthatják és/vagy tárolhatják. Az Unyco garantálja, hogy ilyen esetben a GDPR és egyéb alkalmazandó jogszabályoknak megfelelően szabványos szerződéses záradékokat és megfelelő technikai intézkedéseket alkalmaznak az adatok védelmére.",
+    "section5Title": "5. Felhasználói jogok",
+    "section5Text": "Adatbirtokosként jogom van:",
+    "section5List": {
+      "item1": "Személyes adataimhoz való hozzáférésre, helyesbítésre, korlátozásra, törlésre vagy átvitelre.",
+      "item2": "Hozzámjárulásom bármikor történő visszavonására.",
+      "item3": "Panasz benyújtására a helyi adatvédelmi hatósághoz (például a kolumbiai SIC, az EU-s EDPB vagy az amerikai FTC)."
+    },
+    "section6Title": "6. Adatmegőrzési időszak",
+    "section6Text": "Az adatokat csak a megadott célokból szükséges ideig, vagy amíg a fiók aktív, megőrizzük. Ezután a minimalizálás elvei szerint töröljük vagy anonimizáljuk őket.",
+    "section7Title": "7. Jogok gyakorlásának módja",
+    "section7Text1": "Jogaikat a következő címre írt levéllel gyakorolhatják: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>",
+    "section7Text2": "Vagy az itt elérhető űrlap kitöltésével: <a href=\"https://www.u.app/privacy\">www.u.app/privacy</a>",
+    "helperText": "Kérjük, olvassa el a teljes dokumentumot elfogadás előtt.",
+    "checkboxLabel": "Nyilatkozom, hogy elolvastam és elfogadom az itt meghatározott személyes adatok feldolgozására vonatkozó feltételeket.",
+    "button": "Megerősítés"
+  },
+  "userTermsView2": {
+    "title": "Felhasználási feltételek",
+    "title2": "Tájékoztatás az adatfelhasználásról – Widget U",
+    "intro": "Az U-nál tiszteletben tartjuk az Ön adatvédelmét, és szeretnénk, ha pontosan tudná, hogyan használjuk az adatait.",
+    "accept": "A platformra történő regisztrációval és a widget használatával elfogadja, hogy bizonyos információkat a következő célokból gyűjtünk és használunk:",
+    "section1Title": "Milyen adatokat gyűjtünk?",
+    "section1Text": "Csak azokat az adatokat gyűjtjük, amelyek szükségesek ahhoz, hogy hozzáférhető és személyre szabott élményt nyújtsunk Önnek. Ez magában foglalhatja:",
+    "section1List": {
+      "item1": "Kapcsolattartási adatait (név, e-mail cím).",
+      "item2": "Országát, nyelvét és a szükséges akadálymentességi szintet.",
+      "item3": "Fogyatékosságának típusát (ha úgy dönt, hogy megosztja).",
+      "item4": "A widgetben aktivált beállításokat (például: szöveg nagyítása, képernyőolvasó engedélyezése, stb.)."
+    },
+    "section1Note": "Nem gyűjtünk banki adatokat, és nem férünk hozzá az Ön személyes tartalmához a weben.",
+    "section2Title": "Miért használjuk ezeket az információkat?",
+    "section2List": {
+      "item1": "A widgetet automatikusan az Ön igényeihez igazítja.",
+      "item2": "Névtelen és statisztikai jelentések generálása a digitális hozzáférés javítása érdekében.",
+      "item3": "Hozzáférhetőségi jogainak védelme olyan szabványok szerint, mint a WCAG 2.2, GDPR, CCPA és egyéb helyi jogszabályok.",
+      "item4": "Ha beleegyezik a hírek fogadásába, értesíteni fogjuk az új funkciókról vagy a widgetek fejlesztéseiről."
+    },
+    "section3Title": "Ki láthatja az adatait?",
+    "section3Text1": "Csak Ön és a rendszer férhet hozzá a személyes beállításaihoz.",
+    "section3Text2": "Ha úgy dönt, hogy megosztja adatait egy intézménnyel (például egy Unycót használó egyetemmel), akkor csak összesített és névtelen jelentéseket kapnak, soha nem egyéni adatokat az Ön engedélye nélkül.",
+    "section4Title": "Milyen kontrollja van az információi felett?",
+    "section4List": {
+      "item1": "Bármikor módosíthatja vagy törölheti a fiókját.",
+      "item2": "Kérheti az Önre vonatkozó adataink másolatát.",
+      "item3": "Ezt a hozzájárulást visszavonhatja ide írva: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>"
+    },
+    "helperText": "Kérjük, olvassa el a teljes dokumentumot elfogadás előtt.",
+    "checkboxLabel": "Nyilatkozom, hogy elolvastam és elfogadom a jelen dokumentumban leírt személyes adatok feldolgozásának feltételeit.",
+    "button": "Megerősítés"
+  },
+  "userProfileView": {
+    "title": "Profilinformációk",
+    "editImage": "Kép szerkesztése",
+    "name": "Név",
+    "email": "E-mail",
+    "birthDate": "Születési dátum",
+    "id": "Azonosító",
+    "allData": "Minden adat",
+    "theme": "Téma",
+    "editProfile": "Profil szerkesztése",
+    "logout": "Kijelentkezés"
+  },
+  "resetPasswordView": {
+    "title": "Jelszó helyreállítása",
+    "labelEmail": "Írd be az e-mail címedet",
+    "placeholderEmail": "Írd be az e-mail címedet",
+    "buttonSend": "Küldés",
+    "titleCode": "Biztonsági ellenőrzés",
+    "labelCode": "Írd be a az e-mail címedre küldött ellenőrző kódot",
+    "resend": "Nem kaptam meg a kódot.",
+    "resendLink": "Újraküldés",
+    "timer": "{{time}} másodperc hátra",
+    "timerExpired": "A kód lejárt. Kérj egy újat.",
+    "titleNewPass": "Új jelszó megadása",
+    "labelNewPass": "Írd be az új jelszavadat",
+    "placeholderNewPass": "Új jelszó",
+    "labelConfirmPass": "Erősítsd meg az új jelszavadat",
+    "placeholderConfirmPass": "Új jelszó",
+    "buttonAccept": "Küldés",
+    "buttonCancel": "Mégse",
+    "successTitle": "Jelszó módosítása",
+    "successMessage": "A jelszavát sikeresen frissítette."
+  },
+  "positionView": {
+    "title": "Válassza ki a widgetek helyét",
+    "subtitle": "Kérjük, válassza ki a kívánt helyet."
+  },
+  "languagesView": {
+    "title": "Nyelv kiválasztása",
+    "subtitle": "Válassza ki a preferált vagy anyanyelvét."
+  },
+  "error": {
+    "helperText": {
+      "emailError1": "Az e-mail címek nem egyeznek",
+      "emailError2": "Érvénytelen e-mail cím",
+      "passError1": "A jelszavak nem egyeznek",
+      "passError2": "A jelszónak több mint 6 karakterből kell állnia"
+    }
+  }
+}

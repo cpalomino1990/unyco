@@ -1,0 +1,484 @@
+{
+  "fullLayout": {
+    "slogan": "Ansluten till With-U"
+  },
+  "bannerUser": {
+    "welcome": "Välkommen",
+    "subwelcome": "Vi inbjuder dig att registrera dig för en personlig upplevelse"
+  },
+  "category": {
+    "visual": {
+      "title": "Visuell",
+      "description": "Unika sätt att uppfatta eller tolka omgivningen genom synen."
+    },
+    "mental": {
+      "title": "Psykosocial",
+      "description": "Äkta sätt att interagera, känna och förhålla sig till världen."
+    },
+    "auditory": {
+      "title": "Auditiv",
+      "description": "Olika sätt att uppleva och interagera med omgivningens ljud."
+    },
+    "physical": {
+      "title": "Fysisk",
+      "description": "Personliga stilar för rörelse, kroppsspråk och koordination."
+    },
+    "cognitive": {
+      "title": "Kognitiv",
+      "description": "Unika processer för tänkande, lärande, minne och uppmärksamhet."
+    },
+    "custom": {
+      "title": "Anpassad",
+      "description": "Skapa en upplevelse skräddarsydd efter dina individuella behov och preferenser."
+    }
+  },
+  "viewCategory": {
+    "title1": "Olika funktionsvariationsprofiler",
+    "title2": "Fler inställningar",
+    "visual": {
+      "profile1": {
+        "title": "Synskada",
+        "description": "Unik visuell upplevelse som berikar sättet att uppfatta omgivningen."
+      },
+      "profile2": {
+        "title": "Blindhet",
+        "description": "Perceptionsform som prioriterar andra sinnen för att tolka världen."
+      },
+      "profile3": {
+        "title": "Färgblindhet",
+        "description": "Unik upplevelse av att uppskatta och skilja på färger."
+      }
+    },
+    "mental": {
+      "profile1": {
+        "title": "ASD",
+        "description": "Särskilda sätt att fokusera på intressen, kommunikation och relationer."
+      },
+      "profile2": {
+        "title": "Downs syndrom",
+        "description": "Personligt och värdefullt sätt att uppleva personlig och social utveckling."
+      },
+      "profile3": {
+        "title": "Dyslexi",
+        "description": "Särskilt sätt att uppfatta och avkoda textens struktur."
+      },
+      "profile4": {
+        "title": "Epilepsi",
+        "description": "Unika manifestationer av neurologisk funktion som representerar mångfald."
+      },
+      "profile5": {
+        "title": "ADHD",
+        "description": "Speciell dynamik i uppmärksamhet, energi och stimuleringsprocessering."
+      }
+    },
+    "auditory": {
+      "profile1": {
+        "title": "Dövhet",
+        "description": "Distinkta sätt att leva och förstå kommunikation med andra."
+      }
+    },
+    "physical": {
+      "profile1": {
+        "title": "Övre rörlighet",
+        "description": "Specifika sätt att röra sig och uttrycka sig i överkroppen."
+      }
+    },
+    "cognitive": {
+      "profile1": {
+        "title": "Autism",
+        "description": "Unik stil att uppfatta, bearbeta och relatera till omgivningen och människor."
+      },
+      "profile2": {
+        "title": "OCD",
+        "description": "Intensiva och strukturerade sätt att organisera tankar och handlingar."
+      }
+    },
+    "custom": {}
+  },
+  "functionalityButtons": {
+    "button1": {
+      "title": "Markeringläge",
+      "description": "Markerar viktigt innehåll."
+    },
+    "button2": {
+      "title": "Markera text",
+      "description": "Markerar synlig text."
+    },
+    "button3": {
+      "title": "Förstoringsglas",
+      "description": "Förstorar text vid muspekarens överföring."
+    },
+    "button4": {
+      "title": "Öka textstorlek",
+      "description": "Ökar textstorleken på sidan."
+    },
+    "button5": {
+      "title": "Öka avstånd",
+      "description": "Förbättrar textmellanrummet."
+    },
+    "button6": {
+      "title": "Läs högt",
+      "description": "Läser upp sidtexten vid muspekarens överföring."
+    },
+    "button7": {
+      "title": "Markera länkar",
+      "description": "Markerar länkar på sidan."
+    },
+    "button8": {
+      "title": "Stoppa animationer",
+      "description": "Inaktiverar alla animationer på sidan."
+    },
+    "button9": {
+      "title": "Aktivera läsläge",
+      "description": "Visar en läshjälpande fält."
+    },
+    "button10": {
+      "title": "Stor markör",
+      "description": "Förstorar markören."
+    },
+    "button11": {
+      "title": "Läsbart typsnitt",
+      "description": "Ändrar textens typsnitt till ett mer läsbart."
+    },
+    "button12": {
+      "title": "Läshastighet",
+      "description": "Justerar textens läshastighet."
+    },
+    "button13": {
+      "title": "Markeringfärger",
+      "description": "Ändrar markeringsfärgerna för bättre synlighet."
+    },
+    "button14": {
+      "title": "Volymkontroll",
+      "description": "Justerar volymen för skärmläsaren."
+    },
+    "button15": {
+      "title": "Protanopi",
+      "description": "Färganpassning för röd-grön synnedsättning."
+    },
+    "button16": {
+      "title": "Deuteranopi",
+      "description": "Färganpassning för grön-röd synnedsättning."
+    },
+    "button17": {
+      "title": "Tritanopi",
+      "description": "Färganpassning för blågul synnedsättning."
+    },
+    "button18": {
+      "title": "Protanomali",
+      "description": "Partiell röd färgrättning."
+    },
+    "button19": {
+      "title": "Deuteranomali",
+      "description": "Partiell grön färgrättning."
+    },
+    "button20": {
+      "title": "Tritanomali",
+      "description": "Partiell blå korrigering."
+    },
+    "button21": {
+      "title": "Achromatomali",
+      "description": "Partiell svartvit färganpassning."
+    },
+    "button22": {
+      "title": "Achromatopsi",
+      "description": "Total gråskaleanpassning."
+    },
+    "button23": {
+      "title": "Fokusram",
+      "description": "Markerar det element som är i fokus."
+    },
+    "button24": {
+      "title": "Selektiv kontrast",
+      "description": "Aktiverar mörkt läge."
+    },
+    "button25": {
+      "title": "Pausad läsning",
+      "description": "Aktiverar ord-för-ord-läsning."
+    },
+    "button26": {
+      "title": "Fokusläge",
+      "description": "Tar bort störande bilder och videor."
+    },
+    "button27": {
+      "title": "Ljud av",
+      "description": "Stänger av sidans ljud."
+    },
+    "button28": {
+      "title": "Läsningsmask",
+      "description": "Lägger till en mask för att underlätta läsningen."
+    },
+    "button29": {
+      "title": "Dyslexi-typsnitt",
+      "description": "Ändrar typsnittet till ett som är utformat för dyslexi."
+    },
+    "button30": {
+      "title": "Rullningskontroll",
+      "description": "Kontrollerar sidans scrollning för att förhindra plötsliga hopp."
+    },
+    "button31": {
+      "title": "Låg kontrast",
+      "description": "Aktiverar läge för låg kontrast för att förbättra läsbarheten."
+    },
+    "button32": {
+      "title": "Ögonstyrning",
+      "description": "Aktiverar musnavigering via ögonstyrning."
+    },
+    "button33": {
+      "title": "Teckenspråkstolk",
+      "description": "Aktiverar sidans teckenspråksläge."
+    },
+    "button34": {
+      "title": "Skärmtangentbord",
+      "description": "Aktiverar skärmtangentbordet för enklare skrivning."
+    },
+    "button35": {
+      "title": "Ändra textfärg",
+      "description": "Gör det möjligt att ändra textfärgen på sidan."
+    },
+    "button36": {
+      "title": "Högerjustera text",
+      "description": "Gör det möjligt att högerjustera text."
+    },
+    "button37": {
+      "title": "Vänsterjustera text",
+      "description": "Gör det möjligt att vänsterjustera text."
+    },
+    "button38": {
+      "title": "Centrera text",
+      "description": "Gör det möjligt att centrera texten."
+    },
+    "button39": {
+      "title": "Radavstånd",
+      "description": "Justerar radavståndet i texten."
+    }
+  },
+  "loginView": {
+    "title": "Logga in",
+    "welcome": "Välkommen till",
+    "subwelcome": "Välj något av dessa alternativ för att logga in eller skapa ett konto.",
+    "input": {
+      "placeholderEmail": "Ange din e-postadress",
+      "placeholderPass": "Ange ditt lösenord"
+    },
+    "forgotPass": "Glömt ditt lösenord?",
+    "buttonLogin": "Logga in",
+    "notAccount": {
+      "subtext1": "Har du inget konto?",
+      "subtext2": "Registrera",
+      "subtext3": "Eller logga in med"
+    }
+  },
+  "accountView": {
+    "title": "Kontoinformation",
+    "welcome": "Välkommen till",
+    "subwelcome": "Skapa ditt konto",
+    "input": {
+      "placeholderEmail": "Ange din e-postadress",
+      "placeholderConfirmEmail": "Bekräfta din e-postadress",
+      "placeholderPass": "Ange ditt lösenord",
+      "placeholderConfirmPass": "Bekräfta ditt lösenord"
+    },
+    "button": "Spara och fortsätt"
+  },
+  "registerView": {
+    "title": "Profilinformation",
+    "welcome": "Välkommen",
+    "subwelcome": "Fyll i alla fält för att skapa din profil.",
+    "edit": "Redigera bild",
+    "subtitle1": "Grundläggande personuppgifter",
+    "subtitle2": "Tillgänglighetsinformation",
+    "input": {
+      "labelName": "Fullständigt namn",
+      "placeholderName": "Ange ditt fullständiga namn",
+      "labelDocumentType": "Dokumenttyp",
+      "optionDocumentType": {
+        "option1": "Välj",
+        "option2": "Medborgaridentitetsbevis",
+        "option3": "Identitetskort",
+        "option4": "Pass",
+        "option5": "Utländskt ID",
+        "option6": "Annat",
+        "option7": "Identitetshandling"
+      },
+      "labelNDocument": "Dokumentnummer",
+      "placeholderNDocument": "Ange ditt dokumentnummer",
+      "labelEmail": "E-post",
+      "placeholderEmail": "Ange din e-postadress",
+      "labelBirthdate": "Födelsedatum",
+      "placeholderBirthdate": "Ange ditt födelsedatum",
+      "labelResidenceArea": "Bostadsområde",
+      "optionResidenceArea": {
+        "option1": "Välj",
+        "option2": "Stad",
+        "option3": "Landsbygd",
+        "option4": "Förortsområde"
+      },
+      "labelEducationalLevel": "Utbildningsnivå",
+      "optionEducationalLevel": {
+        "option1": "Välj",
+        "option2": "Ingen",
+        "option3": "Grundskola",
+        "option4": "Gymnasium",
+        "option5": "Universitet",
+        "option6": "Eftergymnasial utbildning"
+      },
+      "labelOcupacion": "Sysselsättningsstatus",
+      "optionOcupacion": {
+        "option1": "Välj",
+        "option2": "Anställd",
+        "option3": "Arbetslös",
+        "option4": "Student",
+        "option5": "Pensionär",
+        "option6": "Frilansare/Egenföretagare"
+      },
+      "labelDisability": "Har du en funktionsvariation?",
+      "optionDisability": {
+        "option1": "Välj",
+        "option2": "Ja",
+        "option3": "Nej"
+      },
+      "labelDisabilityType": "Typ av funktionsvariation",
+      "optionDisabilityType": {
+        "option1": "Välj",
+        "option2": "Visuell",
+        "option3": "Auditiv",
+        "option4": "Motorisk",
+        "option5": "Kognitiv",
+        "option6": "Psykosocial",
+        "option7": "Multipel"
+      },
+      "labelDisabilityLevel": "Graden av funktionsvariation",
+      "optionDisabilityLevel": {
+        "option1": "Välj",
+        "option2": "Lätt",
+        "option3": "Medelsvår",
+        "option4": "Hög"
+      }
+    },
+    "button": "Spara och fortsätt"
+  },
+  "userTermsView": {
+    "title": "Villkor",
+    "title2": "Samtycke till behandling av personuppgifter – U-plattformen",
+    "intro": "Genom registrering på U-plattformen bekräftar och accepterar jag, fritt, informerat, specifikt och otvetydigt, att mina personuppgifter kommer att samlas in, behandlas och lagras i enlighet med internationella standarder för integritet och dataskydd, baserat på följande villkor:",
+    "section1Title": "1. Personuppgiftsansvarig",
+    "section1Text": "201.Dsoft Innovate S.A.S. (nedan kallat ”U”), med registrerad adress på [legal address], som personuppgiftsansvarig, kommer att behandla mina uppgifter i enlighet med denna auktorisation.",
+    "section2Title": "2. Ändamål med behandlingen",
+    "section2Text": "Mina personuppgifter kommer att behandlas för följande ändamål:",
+    "section2List": {
+      "item1": "Personalisera tillgänglighetsupplevelsen inom U-widgeten.",
+      "item2": "Tillåta analys och aggregerad rapportering om användningen av tillgänglighetsverktyg (utan att identifiera användaren individuellt).",
+      "item3": "Tillhandahålla teknisk support och personlig uppföljning vid behov.",
+      "item4": "Uppfylla rättsliga och regulatoriska skyldigheter avseende tillgänglighet, inkludering och icke-diskriminering.",
+      "item5": "Skicka tekniska, informativa eller kommersiella uppdateringar, endast om jag har gett specifikt samtycke till detta."
+    },
+    "section3Title": "3. Rättslig grund för behandling",
+    "section3Text": "U grundar behandlingen av personuppgifter på:",
+    "section3List": {
+      "item1": "Uttryckligt användarsamtycke.",
+      "item2": "Berättigat intresse av att förbättra tillgänglighetstjänster, alltid med respekt för användarens integritet.",
+      "item3": "Överensstämmelse med lokala och internationella förordningar, inklusive GDPR (EU), CCPA (Kalifornien), LGPD (Brasilien) och andra tillämpliga dataskyddslagar."
+    },
+    "section4Title": "4. Internationell dataöverföring",
+    "section4Text": "Data kan överföras och/eller lagras på servrar som är belägna i olika länder. Unyco garanterar att när detta sker kommer standardavtalsklausuler och lämpliga tekniska åtgärder att tillämpas för att skydda uppgifterna i enlighet med GDPR och andra tillämpliga förordningar.",
+    "section5Title": "5. Användarrättigheter",
+    "section5Text": "Som ägare av uppgifterna har jag rätt att:",
+    "section5List": {
+      "item1": "Få tillgång till, rätta, begränsa, radera eller överföra mina personuppgifter.",
+      "item2": "Återkalla mitt samtycke när som helst.",
+      "item3": "Ingå klagomål hos den lokala dataskyddsmyndigheten (såsom SIC i Colombia, EDPB i EU eller FTC i USA)."
+    },
+    "section6Title": "6. Lagringstid",
+    "section6Text": "Data kommer endast att lagras så länge som nödvändigt för de angivna ändamålen eller så länge kontot är aktivt. Därefter kommer de att raderas eller anonymiseras i enlighet med principerna för dataminimering.",
+    "section7Title": "7. Kontakt för att utöva dina rättigheter",
+    "section7Text1": "Du kan utöva dina rättigheter genom att skriva till: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>",
+    "section7Text2": "Eller genom att besöka formuläret som finns tillgängligt på: <a href=\"https://www.u.app/privacy\">www.u.app/privacy</a>",
+    "helperText": "Vänligen läs hela dokumentet innan du accepterar.",
+    "checkboxLabel": "Jag intygar att jag har läst och accepterar villkoren för behandling av personuppgifter som anges här.",
+    "button": "Bekräfta"
+  },
+  "userTermsView2": {
+    "title": "Villkor",
+    "title2": "Informerat samtycke till dataanvändning – Widget U",
+    "intro": "På U respekterar vi din integritet och vill att du ska veta exakt hur vi använder dina data.",
+    "accept": "Genom att registrera dig på vår plattform och använda widgeten accepterar du att vi samlar in och använder viss information för följande ändamål:",
+    "section1Title": "Vilka data samlar vi in?",
+    "section1Text": "Vi samlar endast in de data som är nödvändiga för att ge dig en tillgänglig och personlig användarupplevelse. Detta kan inkludera:",
+    "section1List": {
+      "item1": "Dina kontaktuppgifter (namn, e-postadress).",
+      "item2": "Ditt land, språk och önskad tillgänglighetsnivå.",
+      "item3": "Din typ av funktionsnedsättning (om du väljer att dela den).",
+      "item4": "De inställningar du aktiverar i widgeten (till exempel: förstora text, aktivera skärmläsare, etc.)."
+    },
+    "section1Note": "Vi samlar inte in bankuppgifter eller får åtkomst till ditt personliga innehåll på webben.",
+    "section2Title": "Varför använder vi denna information?",
+    "section2List": {
+      "item1": "För att automatiskt anpassa widgeten efter dina behov.",
+      "item2": "För att generera anonyma och statistiska rapporter som hjälper till att förbättra den digitala tillgängligheten.",
+      "item3": "För att skydda dina rättigheter till tillgänglighet, i enlighet med standarder som WCAG 2.2, GDPR, CCPA och andra lokala lagar.",
+      "item4": "Om du samtycker till att ta emot nyheter skickar vi uppdateringar om nya funktioner eller förbättringar av widgeten."
+    },
+    "section3Title": "Vem kan se dina data?",
+    "section3Text1": "Endast du och systemet har tillgång till dina personliga inställningar.",
+    "section3Text2": "Om du väljer att dela dina data med en institution (till exempel ett universitet som implementerar Unyco), kommer de endast att få aggregerade och anonyma rapporter, aldrig individuella data utan ditt tillstånd.",
+    "section4Title": "Vilken kontroll har du över din information?",
+    "section4List": {
+      "item1": "Du kan när som helst ändra eller ta bort ditt konto.",
+      "item2": "Du kan begära en kopia av de data vi har om dig.",
+      "item3": "Du kan återkalla detta samtycke genom att skriva till: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>"
+    },
+    "helperText": "Läs hela dokumentet innan du accepterar.",
+    "checkboxLabel": "Jag intygar att jag har läst och accepterar villkoren för behandling av personuppgifter såsom de anges här.",
+    "button": "Bekräfta"
+  },
+  "userProfileView": {
+    "title": "Profilinformation",
+    "editImage": "Redigera bild",
+    "name": "Namn",
+    "email": "E-post",
+    "birthDate": "Födelsedatum",
+    "id": "Identifikation",
+    "allData": "All Data",
+    "theme": "Tema",
+    "editProfile": "Redigera profil",
+    "logout": "Logga ut"
+  },
+  "resetPasswordView": {
+    "title": "Återställ lösenord",
+    "labelEmail": "Ange din e-postadress",
+    "placeholderEmail": "Ange din e-postadress",
+    "buttonSend": "Skicka",
+    "titleCode": "Säkerhetsverifiering",
+    "labelCode": "Ange den verifieringskod som skickades till din e-postadress",
+    "resend": "Jag fick inte koden.",
+    "resendLink": "Skicka på nytt",
+    "timer": "{{time}} sekunder kvar",
+    "timerExpired": "Koden har löpt ut. Begär en ny.",
+    "titleNewPass": "Ange nytt lösenord",
+    "labelNewPass": "Ange ditt nya lösenord",
+    "placeholderNewPass": "Nytt lösenord",
+    "labelConfirmPass": "Bekräfta ditt nya lösenord",
+    "placeholderConfirmPass": "Nytt lösenord",
+    "buttonAccept": "Skicka",
+    "buttonCancel": "Avbryt",
+    "successTitle": "Ändra lösenord",
+    "successMessage": "Ditt lösenord har uppdaterats."
+  },
+  "positionView": {
+    "title": "Välj widgetens placering",
+    "subtitle": "Vänligen välj din önskade plats."
+  },
+  "languagesView": {
+    "title": "Välj språk",
+    "subtitle": "Välj ditt önskade eller modersmål."
+  },
+  "error": {
+    "helperText": {
+      "emailError1": "E-postadresserna matchar inte",
+      "emailError2": "E-postadressen är ogiltig",
+      "passError1": "Lösenorden matchar inte",
+      "passError2": "Lösenordet måste innehålla fler än 6 tecken"
+    }
+  }
+}

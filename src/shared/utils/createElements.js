@@ -1,9 +1,9 @@
-import { createButton, switchView } from "../../widget";
-import { DynamicIcon } from "../assets/icons/generals/dinamicIcons";
+import { createButton, getDynamicTranslation, switchView } from "../../widget";
+import { DynamicIcon } from "/public/icons/generals/dinamicIcons";
 import { host, isMobile } from "../constants/enviroments";
 
 // Función para crear un botón tipo tarjeta (card) para categorías
-export function createButtonCard(props = { id, text, view, icon }) {
+export function createButtonCard(props = { id, text, text_i18n, view, icon, description, description_i18n }) {
   // Creamos el botón de tipo card
   const card = createButton(props.id, "", () => {
     // Cambiar la vista cuando se haga clic en el botón
@@ -12,7 +12,7 @@ export function createButtonCard(props = { id, text, view, icon }) {
 
   // Añadimos clases para el estilo del botón
   card.classList.add("accessibility-card-button");
-  card.classList.add("out-right");
+  // card.classList.add("out-right");
 
   // HTML del contenido del card (incluye icono, texto, y una descripción adicional)
   card.innerHTML = `
@@ -21,12 +21,15 @@ export function createButtonCard(props = { id, text, view, icon }) {
     </div>
     <div class="accessibility-card-button-content">
       <div class="accessibility-card-button-icon">
-        <img src="${props.icon}" alt="icono"></img>
+        <!-- <img src="${props.icon}" alt="icono" hidden></img -->
+        <div data-icon="${props.icon}" id="${props.id}-canvas" class="accessibility-card-button-canvas"></div>
       </div>
-      <p class="accessibility-card-button-text">${props.text}</p> <!-- Texto de la tarjeta -->
+      <div class="accessibility-card-button-text" >
+        <p data-u-i18n="${props.text_i18n}">${props.text}</p> <!-- Texto de la tarjeta -->
+      </div>
     </div>
     <div class="accessibility-card-button-info-content">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p> <!-- Descripción adicional de la tarjeta -->
+      <p data-u-i18n="${props.description_i18n}" >${props.description}</p> <!-- Descripción adicional de la tarjeta -->
     </div>
   `;
 
@@ -35,6 +38,7 @@ export function createButtonCard(props = { id, text, view, icon }) {
     const contentInfo = card.querySelector(".accessibility-card-button-info-content");
     contentInfo.style.paddingRight = "30px";
   }
+  card.classList.add("out-initial");
 
   // Event listener para el botón de información (muestra/oculta la información adicional)
   card.querySelector(".accessibility-card-button-info")?.addEventListener("click", (event) => {
@@ -45,6 +49,7 @@ export function createButtonCard(props = { id, text, view, icon }) {
     if ([...card.classList].some((cls) => cls.startsWith("in-"))) {
       card.classList.remove("in-right");
       card.classList.add("out-right");
+      card.classList.add("out-initial");
       if (isMobile) {
         buttonInfo.classList.remove("white");
         buttonInfo.classList.add("blue");
@@ -61,7 +66,7 @@ export function createButtonCard(props = { id, text, view, icon }) {
 
   // Animación de hover para efectos en escritorio (cubo de entrada y salida)
   if (!isMobile) {
-    const directions = { 0: "top", 1: "right", 2: "bottom", 3: "left" };
+    const directions = { 0: "top", 1: "right", 2: "bottom", 3: "left", 4: "initial" };
     const classNames = ["in", "out"]
       .map((p) => Object.values(directions).map((d) => `${p}-${d}`))
       .reduce((a, b) => a.concat(b));
@@ -82,11 +87,28 @@ export function createButtonCard(props = { id, text, view, icon }) {
         this.element = element;
         this.element.addEventListener("mouseover", (ev) => this.update(ev, "in"));
         this.element.addEventListener("mouseout", (ev) => this.update(ev, "out"));
+        this.element.addEventListener("animationend", (e) => {
+          // Solo quitar clases si es animación de salida (out)
+          if (this.element.className.includes("out-")) {
+            // Remover todas las clases excepto "out-initial"
+            this.element.classList.remove(...classNames.filter((cls) => cls !== "out-initial"));
+          }
+        });
+        this.element.addEventListener("transitionend", (e) => {
+          // Solo quitar clases si es transición de salida (out)
+          if (this.element.className.includes("out-")) {
+            // Remover todas las clases excepto "out-initial"
+            this.element.classList.remove(...classNames.filter((cls) => cls !== "out-initial"));
+          }
+        });
       }
 
       update(ev, prefix) {
         this.element.classList.remove(...classNames);
         this.element.classList.add(`${prefix}-${directions[getDirectionKey(ev, this.element)]}`);
+        if (prefix === "out") {
+          this.element.classList.add(`${prefix}-initial`);
+        }
       }
     }
 
@@ -102,20 +124,30 @@ export function createButtonCard(props = { id, text, view, icon }) {
 export function createBannerUser() {
   const card = document.createElement("div");
   card.id = "accessibility-banner-user";
+
+  // Recuperar la imagen del usuario desde localStorage (si existe)
+  const userImageBase64 = localStorage.getItem("inputFileFormImage_user-image");
+
+  // Imagen por defecto si no hay imagen personalizada
+  const defaultImage = `${host}/public/images/perfil.svg`; 
+
   card.innerHTML = `
     <div class="accessibility-banner-user-top">
       <div class="accessibility-banner-user-top-image">
         <div class="accessibility-banner-user-top-image-internal">
-          <img src="https://cdn.pixabay.com/photo/2020/12/08/19/12/woman-5815354_640.jpg" alt="user image">
+        <img class="u-accessibility-profile-img" src="${
+            userImageBase64 || defaultImage
+          }" alt="Imagen de perfil del usuario">
+
         </div>
       </div>
     </div>
-    <p class="accessibility-banner-user-title">
-      Bienvenid@ <!-- Título del banner -->
+    <p class="accessibility-banner-user-title" data-u-i18n="bannerUser.welcome">
+      Bienvenid@
     </p>
-    <p class="accessibility-banner-user-subtitle">
+    <p class="accessibility-banner-user-subtitle" data-u-i18n="bannerUser.subwelcome">
       Te invitamos a registrarte para tener una experiencia personalizada
-    </p> <!-- Subtítulo del banner -->
+    </p>
   `;
 
   const image = card.querySelector(".accessibility-banner-user-top-image");
@@ -128,7 +160,7 @@ export function createBannerUser() {
 }
 
 // Función para crear tarjetas de perfil
-export function createCardProfile(props = { id, title, description, onclick }) {
+export function createCardProfile(props = { id, title, title_i18n, description, description_i18n, onclick }) {
   const card = document.createElement("button");
   card.id = props.id;
   card.classList.add("accessibility-profile-card");
@@ -141,12 +173,12 @@ export function createCardProfile(props = { id, title, description, onclick }) {
       </div>
       <div class="accessibility-profile-card-top">
         <div class="accessibility-profile-card-top-icon">
-          ${DynamicIcon({ icon: "user" })} <!-- Icono de perfil -->
+          ${DynamicIcon({ icon: "user" })}
         </div>
-        <p>${props.title}</p> <!-- Título del perfil -->
+        <p data-u-i18n="${props.title_i18n}">${props.title}</p>
       </div>
-      <p class="description">
-        ${props.description} <!-- Descripción del perfil -->
+      <p class="description" data-u-i18n="${props.description_i18n}">
+        ${props.description}
       </p>
     </div>
   `;
@@ -159,7 +191,7 @@ export function createCardProfile(props = { id, title, description, onclick }) {
 }
 
 // Función para crear tarjetas de título con botón de retroceso y/o colapsables
-export function createCardTitle(props = { id, text, btnBack, collapse, onclick }) {
+export function createCardTitle(props = { id, text, text_i18n, btnBack, collapse, onclick }) {
   const card = document.createElement("div");
   card.id = props.id;
   card.classList.add("accessibility-title-card");
@@ -173,6 +205,7 @@ export function createCardTitle(props = { id, text, btnBack, collapse, onclick }
   const title = document.createElement("p");
   title.classList.add("accessibility-title-card-text");
   title.innerHTML = props.text; // Texto del título
+  title.setAttribute("data-u-i18n", props.text_i18n);
 
   // Contenedor izquierdo (con el botón de retroceso si es necesario)
   const contentLeft = document.createElement("div");
@@ -197,11 +230,12 @@ export function createCardTitle(props = { id, text, btnBack, collapse, onclick }
 }
 
 // Función para crear botones de funcionalidad (con opciones de selección)
-export function createFuncionalityButton(props = { id, title, icon, description, onclick, countOptions, type }) {
+export function createFuncionalityButton(
+  props = { id, title, title_i18n, icon, description, description_i18n, onclick, countOptions, type }
+) {
   const countOptions = props.countOptions || 1; // Si no se especifica, el valor por defecto es 1
   const card = document.createElement("button");
   card.setAttribute("data-id", props.id);
-
   // if (countOptions === 1) {
   card.style.position = "relative"; // Aseguramos que se posicionen bien las opciones si es solo una
   // }
@@ -214,7 +248,7 @@ export function createFuncionalityButton(props = { id, title, icon, description,
       <div class="accessibility-funcionality-button-icon">
         ${props.icon ? props.icon : DynamicIcon({ icon: "user" })} <!-- Icono de la funcionalidad -->
       </div>
-      <p>${props.title}</p> <!-- Título del botón -->
+      <p data-u-i18n="${props.title_i18n}">${getDynamicTranslation(props.title)}</p> <!-- Título del botón -->
       <div>
         <div class="accessibility-content-checks hidden">
           <div class="accessibility-check float-top-right">
@@ -226,7 +260,8 @@ export function createFuncionalityButton(props = { id, title, icon, description,
             props.type === "sliderColor"
               ? `
                 <div class="accessibility-button-slide-color">
-                  <input type="range" min="0" max="100" value="0" class="slider" id="colorRange" />
+                  <input type="range" min="0" max="100" value="0" class="slider" id="colorSlider" />
+                  
                 </div>
               `
               : Array.from({ length: countOptions })
@@ -244,28 +279,34 @@ export function createFuncionalityButton(props = { id, title, icon, description,
       </div>
     </div>
     <div class="accessibility-funcionality-button-content-info scale-up-tl-reverse">
-      <p>${props.description}</p> <!-- Descripción del botón -->
+      <p data-u-i18n="${props.description_i18n}">${props.description}</p> <!-- Descripción del botón -->
     </div>
   `;
 
-  const slider = card.querySelector("#colorRange");
+  const slider = card.querySelector("#colorSlider");
 
-  slider?.addEventListener("input", () => {
-    const value = slider.value;
-    const percentage = value / 100;
-    const color = getColorFromPercentage(percentage);
-    slider.style.setProperty("--thumb-color", color);
-    slider.style.borderColor = color;
+  if (slider) {
+    // Evitar que los clics en el slider se propaguen al botón padre
+    slider.addEventListener("click", (e) => e.stopPropagation());
+    slider.addEventListener("mousedown", (e) => e.stopPropagation());
+    slider.addEventListener("mouseup", (e) => e.stopPropagation());
 
-    // Cambia el borde del pulgar dinámicamente
-    slider.style.setProperty("--thumb-border", color);
-    slider.style.setProperty("--thumb-shadow", `0 0 4px ${color}`);
-  });
+    slider.addEventListener("input", () => {
+      const value = slider.value;
+      const percentage = value / 100;
+      const color = getColorFromPercentage(percentage);
+
+      document.querySelectorAll("p, span, a, h1, h2, h3, h4, h5, h6, li, td, th").forEach((el) => {
+        el.style.color = color;
+      });
+
+      localStorage.setItem("textColorValue", value);
+    });
+  }
 
   function getColorFromPercentage(pct) {
     const percent = Math.max(0, Math.min(1, pct));
-    const hue = (1 - percent) * 270; // 270° (púrpura) → 0° (rojo)
-    console.log(`hsl(${hue}, 100%, 50%)`);
+    const hue = (1 - percent) * 270; // de púrpura a rojo
     return `hsl(${hue}, 100%, 50%)`;
   }
 
@@ -302,7 +343,7 @@ export function createFuncionalityButton(props = { id, title, icon, description,
   return card;
 }
 
-export function createCollapse(props = { id, title, content, visible }) {
+export function createCollapse(props = { id, title, i18n_title, content, visible }) {
   const hiddenClass = props.visible ? null : "hidden"; // Determina si el contenido está oculto o visible
   // Creación del elemento collapse
   const collapseContainer = document.createElement("div");
@@ -312,7 +353,7 @@ export function createCollapse(props = { id, title, content, visible }) {
   const collapseHeader = document.createElement("div");
   collapseHeader.classList.add("accessibility-collapse-header");
   collapseHeader.innerHTML = `
-    <p class="accessibility-collapse-title">${props.title || "Titulo"}</p>
+    <p class="accessibility-collapse-title" data-u-i18n="${props.i18n_title}">${props.title || "Titulo"}</p>
     <span class="accessibility-collapse-icon">${DynamicIcon({ icon: hiddenClass ? "down" : "up" })}</span>
   `;
 
@@ -341,34 +382,69 @@ export function createCollapse(props = { id, title, content, visible }) {
 }
 
 // Creacion de input forms
-export function createInputForm(props = { id, type, placeholder, value, label, onchange }) {
+export function createInputForm(
+  props = { id, type, placeholder, i18n_placeholder, value, label, i18n_label, disabled, onchange }
+) {
   const container = document.createElement("div");
+  container.id = `${props.id}-container`;
   container.classList.add("accessibility-input-form-container");
 
   if (props.label) {
     const label = document.createElement("label");
     label.htmlFor = props.id;
     label.textContent = props.label;
+    label.setAttribute("data-u-i18n", props.i18n_label);
     container.appendChild(label);
   }
 
   const input = document.createElement("input");
   input.id = props.id;
-  input.type = props.type || "text"; // Tipo de input por defecto es "text"
-  input.placeholder = props.placeholder || ""; // Placeholder por defecto es vacío
-  input.value = props.value || ""; // Valor por defecto es vacío
+  input.type = props.type || "text";
+  input.placeholder = props.placeholder || "";
+  input.value = props.value || "";
+  input.disabled = props.disabled || false;
+  input.setAttribute("data-u-i18n-placeholder", props.i18n_placeholder);
+
+  container.appendChild(input);
+
+  // Si el tipo es password, agregar el botón de mostrar/ocultar
+  if (props.type === "password") {
+    const toggleBtn = document.createElement("button");
+    toggleBtn.type = "button";
+    toggleBtn.classList.add("accessibility-input-password-toggle");
+    toggleBtn.innerHTML = DynamicIcon({ icon: "eye" });
+    toggleBtn.style.position = "absolute";
+    toggleBtn.style.right = "10px";
+    toggleBtn.style.top = "33px";
+    toggleBtn.style.transform = "translateY(-50%)";
+    toggleBtn.style.background = "none";
+    toggleBtn.style.border = "none";
+    toggleBtn.style.cursor = "pointer";
+    toggleBtn.style.color = "var(--primaryColor)";
+    toggleBtn.setAttribute("tabindex", "-1");
+
+    let visible = false;
+    toggleBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      visible = !visible;
+      input.type = visible ? "text" : "password";
+      toggleBtn.innerHTML = DynamicIcon({ icon: visible ? "eye-off" : "eye" });
+    });
+
+    container.style.position = "relative";
+    container.appendChild(toggleBtn);
+  }
 
   // Event listener para manejar cambios en el input
   if (props.onchange) {
     input.addEventListener("change", props.onchange);
   }
 
-  container.appendChild(input);
-  return container; // Devolver el contenedor con el label y el input
+  return container;
 }
 
 // Creacion de check para aceptar terminos y condiciones
-export function createCheckTermsForm(props = { id, label, onchange, disabled }) {
+export function createCheckTermsForm(props = { id, label, i18n_label, onchange, disabled }) {
   const container = document.createElement("div");
   container.classList.add("accessibility-check-terms-container");
 
@@ -380,6 +456,7 @@ export function createCheckTermsForm(props = { id, label, onchange, disabled }) 
 
   const label = document.createElement("label");
   label.htmlFor = props.id;
+  label.setAttribute("data-u-i18n", props.i18n_label);
   label.innerHTML = props.label || "Acepto los términos y condiciones";
 
   container.appendChild(checkbox);
@@ -389,25 +466,28 @@ export function createCheckTermsForm(props = { id, label, onchange, disabled }) 
 }
 
 // Creacion de selects forms
-export function createSelectForm(props = { id, options, label, onchange }) {
+export function createSelectForm(props = { id, options, label, i18n_label, onchange }) {
   const container = document.createElement("div");
+  container.id = `${props.id}-container`;
   container.classList.add("accessibility-select-form-container");
 
   if (props.label) {
     const label = document.createElement("label");
     label.htmlFor = props.id;
     label.textContent = props.label;
+    label.setAttribute("data-u-i18n", props.i18n_label);
     container.appendChild(label);
   }
 
   const select = document.createElement("select");
   select.id = props.id;
 
-  // Agregar las opciones al select
+  // Agregar las opciones
   props.options.forEach((option) => {
     const opt = document.createElement("option");
-    opt.value = option.value || option; // Valor de la opción
-    opt.textContent = option.text || option; // Texto de la opción
+    opt.value = option.value ?? option;
+    opt.setAttribute("data-u-i18n", option.i18n);
+    opt.textContent = option.text ?? option;
     select.appendChild(opt);
   });
 
@@ -417,18 +497,19 @@ export function createSelectForm(props = { id, options, label, onchange }) {
   }
 
   container.appendChild(select);
-  return container; // Devolver el contenedor con el label y el select
+  return container;
 }
 
 // Creacion de input file forms
-export function createInputFileForm(props = { id, accept, onchange }) {
+export function createInputFileForm(props = { id, accept, onchange, targetWidth: 500, targetHeight: 500 }) {
   const container = document.createElement("div");
-  container.classList.add("accessibility-input-file-form-container");
+container.id = `inputFileForm_${props.id}`;
+container.classList.add("accessibility-input-file-form-container");
 
-  // Creacion del contenedor dropabble
+
   const dropabbleContainer = document.createElement("div");
   dropabbleContainer.classList.add("accessibility-dropabble-container");
-  dropabbleContainer.innerHTML += `
+  dropabbleContainer.innerHTML = `
     <div class="accessibility-dropabble-container-text">
       <p>${DynamicIcon({ icon: "image" })}</p>
       <p>Arrastra y suelta el archivo aquí</p>
@@ -442,84 +523,145 @@ export function createInputFileForm(props = { id, accept, onchange }) {
 
   const input = document.createElement("input");
   input.id = props.id;
-  input.type = "file"; // Tipo de input es "file"
-  input.hidden = true; // Ocultar el input file por defecto
-  input.accept = props.accept || "*"; // Aceptar cualquier tipo de archivo por defecto
+  input.type = "file";
+  input.hidden = true;
+  input.accept = props.accept || "image/*";
+
+  const processAndShowImage = (file) => {
+    if (!file) {
+      alert("Por favor, selecciona un archivo válido.");
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      console.log("Resultado del reader:", e.target.result);
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        const targetWidth = props.targetWidth || 300;
+        const targetHeight = props.targetHeight || 290;
+
+        const aspectRatio = img.width / img.height;
+        const targetAspectRatio = targetWidth / targetHeight;
+
+        let sx = 0,
+          sy = 0,
+          sWidth = img.width,
+          sHeight = img.height;
+        if (aspectRatio > targetAspectRatio) {
+          sHeight = img.height;
+          sWidth = img.height * targetAspectRatio;
+          sx = (img.width - sWidth) / 2;
+        } else {
+          sWidth = img.width;
+          sHeight = img.width / targetAspectRatio;
+          sy = (img.height - sHeight) / 2;
+        }
+
+        canvas.width = targetWidth;
+        canvas.height = targetHeight;
+        ctx.drawImage(img, sx, sy, sWidth, sHeight, 0, 0, targetWidth, targetHeight);
+
+        const resizedBase64 = canvas.toDataURL("image/png");
+
+        // Mostrar imagen
+        const displayImg = dropabbleContainer.querySelector(".accessibility-dropabble-container-img img");
+        displayImg.src = resizedBase64;
+        dropabbleContainer.querySelector(".accessibility-dropabble-container-text")?.classList.add("hidden");
+        dropabbleContainer.querySelector(".accessibility-dropabble-container-img")?.classList.remove("hidden");
+
+        // Guardar y notificar
+        if (props.id) {
+          localStorage.setItem(`inputFileFormImage_${props.id}`, resizedBase64);
+          const profileImgs = document.querySelectorAll(".u-accessibility-register-profile-img  ");
+          profileImgs.forEach((imgEl) => {
+            imgEl.src = resizedBase64;
+          });
+        }
+        if (props.onchange) {
+          props.onchange(resizedBase64);
+        }
+      };
+
+      img.onerror = () => {
+        alert("El archivo seleccionado no es una imagen válida.");
+        console.error("Error al cargar imagen:", file.name);
+      };
+
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  };
+
+  // Cargar imagen guardada
+  if (props.id) {
+    const savedImage = localStorage.getItem(`inputFileFormImage_${props.id}`);
+    if (savedImage) {
+      dropabbleContainer.querySelector(".accessibility-dropabble-container-text")?.classList.add("hidden");
+      dropabbleContainer.querySelector(".accessibility-dropabble-container-img")?.classList.remove("hidden");
+
+      const img = dropabbleContainer.querySelector(".accessibility-dropabble-container-img img");
+      img.src = savedImage;
+    }
+  }
 
   input.addEventListener("change", (event) => {
-    const file = event.target.files[0]; // Obtener el primer archivo seleccionado
+    const file = event.target.files[0];
     if (file) {
-      dropabbleContainer.querySelector(".accessibility-dropabble-container-text")?.classList.add("hidden");
-      dropabbleContainer.querySelector(".accessibility-dropabble-container-img")?.classList.remove("hidden");
-
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const img = dropabbleContainer.querySelector(".accessibility-dropabble-container-img img");
-        img.src = e.target.result; // Asignar la URL de previsualización al src de la imagen
-      };
-      reader.readAsDataURL(file);
-
-      if (props.onchange) {
-        props.onchange(file); // Llamar a la función onchange con el archivo seleccionado
-      }
+      processAndShowImage(file);
     }
   });
 
-  // Evento click para abrir el selector de archivos al hacer clic en el contenedor dropabble
   dropabbleContainer.querySelector(".accessibility-dropabble-container-text")?.addEventListener("click", () => {
-    input.click(); // Simular clic en el input file
+    input.click();
   });
 
-  // Evento dragover para permitir el arrastre de archivos al contenedor dropabble
   dropabbleContainer.addEventListener("dragover", (event) => {
-    event.preventDefault(); // Prevenir el comportamiento por defecto al arrastrar
+    event.preventDefault();
+    dropabbleContainer.classList.add("drag-over");
   });
 
-  // Evento dragleave para manejar el evento de salir del contenedor dropabble
   dropabbleContainer.addEventListener("dragleave", (event) => {
-    event.preventDefault(); // Prevenir el comportamiento por defecto al salir
+    event.preventDefault();
+    dropabbleContainer.classList.remove("drag-over");
   });
 
-  // Evento drop para manejar el archivo soltado en el contenedor dropabble
   dropabbleContainer.addEventListener("drop", (event) => {
-    event.preventDefault(); // Prevenir el comportamiento por defecto al soltar
-    const file = event.dataTransfer.files[0]; // Obtener el primer archivo soltado
+    event.preventDefault();
+    dropabbleContainer.classList.remove("drag-over");
+    const file = event.dataTransfer.files[0];
     if (file) {
-      dropabbleContainer.querySelector(".accessibility-dropabble-container-text")?.classList.add("hidden");
-      dropabbleContainer.querySelector(".accessibility-dropabble-container-img")?.classList.remove("hidden");
-
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        const img = dropabbleContainer.querySelector(".accessibility-dropabble-container-img img");
-        img.src = e.target.result; // Asignar la URL de previsualización al src de la imagen
-      };
-      reader.readAsDataURL(file);
-
-      if (props.onchange) {
-        props.onchange(file); // Llamar a la función onchange con el archivo seleccionado
-      }
+      processAndShowImage(file);
     }
   });
 
-  // Evento click para eliminar el archivo
   dropabbleContainer
     .querySelector(".accessibility-dropabble-container-img-delete")
     ?.addEventListener("click", (event) => {
       event.preventDefault();
       dropabbleContainer.querySelector(".accessibility-dropabble-container-text")?.classList.remove("hidden");
       dropabbleContainer.querySelector(".accessibility-dropabble-container-img")?.classList.add("hidden");
-      props.onchange(null);
+
+      if (props.id) {
+        localStorage.removeItem(`inputFileFormImage_${props.id}`);
+      }
+
+      if (props.onchange) {
+        props.onchange(null);
+      }
+
       input.value = null;
     });
 
-  dropabbleContainer.appendChild(input); // Agregar el input al contenedor dropabble
+  dropabbleContainer.appendChild(input);
   container.appendChild(dropabbleContainer);
 
-  return container; // Devolver el contenedor con el label y el input file
+  return container;
 }
 
-// Creacion de inputs code
-export function createInputsCode(cantidad = 4) {
+export function createInputsCode(cantidad = 6) {
   const container = document.createElement("div");
   container.classList.add("accessibility-input-code-form-container");
 

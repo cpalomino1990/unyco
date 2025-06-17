@@ -1,68 +1,76 @@
 import { toggleCheckButton } from "../../shared/components/allButtons/allButtons";
-import { startCalibration } from "./startCalibration";
+import { releaseWakeLock, startCalibration } from "./startCalibration";
 import "../../shared/styles/loading.css";
+import { stopEyeCursorControl } from "./buttonEyeCursorControl";
 
 export function showCalibrationInstructions(callback) {
-    const isActive = document.body.classList.toggle("calibration-instructions-modal");
-    localStorage.setItem("calibration-instructions-modal", isActive ? "true":"false")
-    
+  const isActive = localStorage.getItem("calibration-instructions-modal") === "true";
 
+  if (isActive) {
+    stopEyeCursorControl();
+    localStorage.setItem("calibration-instructions-modal", "false");
+    document.body.classList.remove("calibration-instructions-modal");
+    toggleCheckButton({ id: "calibration-instructions-modal", checked: false, option: null });
 
-  
-  if (document.getElementById("calibration-instructions-modal")) return;
+    const existingModal = document.getElementById("calibration-instructions-modal");
+    if (existingModal) existingModal.remove();
+    return;
+  }
 
+  // Activar estado
+  document.body.classList.add("calibration-instructions-modal");
+  localStorage.setItem("calibration-instructions-modal", "true");
+  console.log("entro no 1")
+  toggleCheckButton({ id: "calibration-instructions-modal", checked: true, option: null });
+  createCalibrationModal(callback);
+}
+
+function createCalibrationModal() {
   const modal = document.createElement("div");
   modal.id = "calibration-instructions-modal";
-  Object.assign(modal.style, {
-    position: "fixed",
-    top: 0,
-    left: 0,
-    width: "100vw",
-    height: "100vh",
-    backgroundColor: "rgba(165, 159, 159, 0.86)",
-    color: "#fff",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    zIndex: 100001,
-    padding: "20px",
-    fontFamily: "sans-serif",
-    overflowY: "auto"
-  });
+  modal.setAttribute("role", "dialog");
+  modal.setAttribute("aria-modal", "true");
+  modal.setAttribute("aria-labelledby", "calibration-instructions-title");
 
-  
+  const content = document.createElement("div");
+  content.className = "calibration-instructions";
 
- const content = document.createElement("div");
-content.className = "calibration-instructions";
-
-content.innerHTML = `
-  <h2 class="calibration-title">Instrucciones para Calibración</h2>
-  <ul class="calibration-list">
-    <ul><strong>Siéntate</strong> frente a la pantalla con buena postura y sin moverte.</ul>
-    <ul><strong>Evita mover la cabeza</strong> durante la calibración.</ul>
-    <ul><strong>Mira fijamente</strong> el punto brillante cuando aparezca.</ul>
-    <ul><strong>No parpadees</strong> mucho o desvíes la mirada.</ul>
-    <ul><strong>Ilumina bien tu rostro</strong> (sin luz directa en la cámara).</ul>
-    <ul><strong>Permite el acceso a la cámara</strong> si el navegador lo solicita.</ul>
-    <ul><strong>Evita distracciones</strong> o movimientos a tu alrededor.</ul>
-    <ul>La <strong>calibración</strong> puede durar aproximadamente 15 segundos.</ul>
-    <ul>Puedes <strong>repetir la calibración</strong> si el cursor no sigue bien tus ojos.</ul>
-  </ul>
-  <button id="startCalibrationNow" class="calibration-button">Iniciar Calibración
-  
-   </button> 
-`;
-
-
+  content.innerHTML = `
+    <h2 id="calibration-instructions-title">Instrucciones para Calibración</h2>
+    <p>Lea atentamente y siga las instrucciones para una mejor experiencia</p>
+    <ul>
+      <li><strong><span class="accessibility-emoji">✅</span> Siéntese</strong> con buena postura.</li>
+      <li><strong><span class="accessibility-emoji">✅</span> Evite mover la cabeza</strong>.</li>
+      <li><strong><span class="accessibility-emoji">✅</span> Mire</strong> el punto brillante.</li>
+      <li><strong><span class="accessibility-emoji">✅</span> No parpadee</strong> o mire a otro lado.</li>
+      <li><strong><span class="accessibility-emoji">✅</span> Buena iluminación</strong> sin reflejos.</li>
+      <li><strong><span class="accessibility-emoji">✅</span> Permita</strong> acceso a la cámara.</li>
+      <li><strong><span class="accessibility-emoji">✅</span> Evite distracciones</strong>.</li>
+      <li><strong><span class="accessibility-emoji">✅</span> Dura</strong> unos 15 segundos.</li>
+      <li><strong><span class="accessibility-emoji">✅</span> Repita</strong> si es necesario.</li>
+    </ul>
+    <div>
+      <button class="calibration-button" id="startCalibrationNow">Iniciar Calibración</button>
+      <button class="calibration-button" id="cancelCalibrationNow">Cancelar Calibración</button>
+    </div>
+  `;
 
   modal.appendChild(content);
   document.body.appendChild(modal);
 
-  // Botón para continuar
+  // Eventos
+  document.getElementById("cancelCalibrationNow").addEventListener("click", () => {
+    console.log("entro yo 1")
+    modal.remove();
+    releaseWakeLock(); 
+    document.body.classList.remove("calibration-instructions-modal");
+    localStorage.setItem("calibration-instructions-modal", "false");
+    stopEyeCursorControl();
+    toggleCheckButton({ id: "calibration-instructions-modal", checked: false, option: null });
+  });
+
   document.getElementById("startCalibrationNow").addEventListener("click", () => {
     modal.remove();
-    callback?.(startCalibration()); // Ejecuta la calibración si se pasa como parámetro
+    startCalibration();
   });
 }
-

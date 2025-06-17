@@ -1,8 +1,19 @@
 // components/loginView.js
-import { createButton, switchView } from "../../widget";
-import { DynamicIcon } from "../assets/icons/generals/dinamicIcons";
+import { getDynamicTranslation, createButton, switchView, applyTranslations } from "../../widget";
+import { DynamicIcon } from "/public/icons/generals/dinamicIcons";
 import { host } from "../constants/enviroments";
-import { fetchLogin, fetchRegister } from "../services/authentication";
+import {
+  fetchLogin,
+  fetchRecoveryPassNewPass,
+  fetchRecoveryPassSendCode,
+  fetchRecoveryPassVerifyCode,
+  fetchRegister,
+  logout,
+  fetchUserProfile,
+  getUserIdFromToken,
+  updateUserProfile,
+  checkEmail,
+} from "../services/authentication";
 import { ChangeTheme } from "../utils/actions";
 import {
   createCheckTermsForm,
@@ -26,32 +37,40 @@ export function loginView() {
       <div class="accessibility-user-view-header">
       </div>
       <div class="accessibility-user-login-view-content-text">
-        <p class="accessibility-title-card-text">Bienvenido a <span><img src="${host}/src/shared/assets/logos/isotipoBlue.svg" alt="logo de u"></span></p>
-        <p class="accessibility-description-card-text">Elige cualquiera de estas opciones para iniciar sesion o crear una cuenta.</p>
+        <p class="accessibility-title-card-text"><span data-u-i18n="loginView.welcome">Bienvenido a</span> <span><img src="${host}/public/logos/isotipoBlue.svg" alt="logo de u"></span></p>
+        <p class="accessibility-description-card-text" data-u-i18n="loginView.subwelcome">Elige cualquiera de estas opciones para iniciar sesion o crear una cuenta.</p>
       </div>
       <div class="accessibility-user-login-view-content-form">
       </div>
       <div class="accessibility-user-login-view-content-footer">
-        <p>¿No tienes una cuenta? <a>Registrarme</a></p>
-        <p>o</p>
-        <p>puedes ingresar con</p>
+        <p> <span data-u-i18n="loginView.notAccount.subtext1">¿No tienes una cuenta?</span> <a data-u-i18n="loginView.notAccount.subtext2">Registrate</a></p>
+        <p data-u-i18n="loginView.notAccount.subtext3">O puedes ingresar con</p>
         <div class="accessibility-user-login-view-content-footer-icons">
-          <button class="accessibility-icon-button" id="email-button" aria-label="email">
-            <img src="${host}/src/shared/assets/icons/socialMedia/email.svg" alt="email" aria-label="email" />
-          </button>
-          <button class="accessibility-icon-button" id="google-button" aria-label="Google">
-            <img src="${host}/src/shared/assets/icons/socialMedia/google.svg" alt="Google" aria-label="Google" />
-          </button>
-          <button class="accessibility-icon-button" id="instagram-button" aria-label="instagram">
-            <img src="${host}/src/shared/assets/icons/socialMedia/instagram.svg" alt="instagram" aria-label="instagram" />
+          <button class="accessibility-icon-button" id="googleRegisterBtn" aria-label="Google">
+            <img src="${host}/public/icons/socialMedia/google.svg" alt="Google" aria-label="Google" />
           </button>
           <button class="accessibility-icon-button" id="facebook-button" aria-label="Facebook">
-            <img src="${host}/src/shared/assets/icons/socialMedia/facebook.svg" alt="Facebook" aria-label="Facebook" />
+            <img src="${host}/public/icons/socialMedia/facebook.svg" alt="Facebook" aria-label="Facebook" />
           </button>
         </div>
       </div>
     </div>
   `;
+
+  window.addEventListener("message", (event) => {
+    const user = event.data;
+
+    // Aquí puedes cerrar el popup o actualizar tu UI
+  });
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("googleRegisterBtn");
+    if (btn) {
+      btn.addEventListener("click", () => {
+        window.open("https://apitest.unyco.co/auth/google", "login", "width=500,height=600");
+      });
+    }
+  });
 
   // Creación del botón "atrás"
   const buttonBack = createButton("back", "", () => switchView(-1));
@@ -61,7 +80,8 @@ export function loginView() {
   // Creación del título
   const title = document.createElement("p");
   title.classList.add("accessibility-title-card-text");
-  title.innerHTML = "Iniciar sesion"; // Texto del título
+  title.setAttribute("data-u-i18n", "loginView.title");
+  title.innerHTML = "Iniciar sesión"; // Texto del título
 
   // Creacion del contenedor izquierdo (con el botón de retroceso)
   const contentLeft = document.createElement("div");
@@ -84,6 +104,7 @@ export function loginView() {
       type: "text",
       id: "login-email",
       placeholder: "Ingresa tu correo electronico",
+      i18n_placeholder: "loginView.input.placeholderEmail",
     })
   );
   form.appendChild(
@@ -91,12 +112,13 @@ export function loginView() {
       type: "password",
       id: "login-password",
       placeholder: "Ingresa tu contraseña",
+      i18n_placeholder: "loginView.input.placeholderPass",
     })
   );
   const button = document.createElement("div");
   button.innerHTML = `
-      <a>¿Olvidaste tu contraseña?</a>
-      <button id="accessibility-login-button" class="accessibility-button-theme" >Iniciar sesión</button>
+      <a data-U-i18n="loginView.forgotPass">¿Olvidaste tu contraseña?</a>
+      <button id="accessibility-login-button" class="accessibility-button-theme" data-U-i18n="loginView.buttonLogin" >Iniciar sesión</button>
   `;
   form.appendChild(button);
   content.appendChild(form);
@@ -118,9 +140,17 @@ export function loginView() {
       email,
       password,
     });
-
     if (response.success) {
-      switchView("accessibility-user-profile-view");
+      switchView("accessibility-user-profile-view"); // Cambiar a la vista inicial
+    } else {
+      executeAlertMessage({
+        icon: "x",
+        title: "Error al iniciar sesión",
+        message: response.message || "Por favor, verifica tus credenciales e intenta nuevamente.",
+        onclick: () => {
+          switchView("accessibility-user-login-view"); // Volver a la vista de login
+        },
+      });
     }
   });
 
@@ -134,6 +164,23 @@ export function loginView() {
   return login;
 }
 
+// Objeto donde se almacenan los datos del registro de usuario
+let dataRegisterUser = {
+  email: "",
+  password: "",
+  role: "",
+  name: "",
+  documentType: "",
+  n_document: "",
+  birthdate: "",
+  residenceArea: "",
+  educationalLevel: "",
+  ocupacion: "",
+  disability: "",
+  disabilityType: "",
+  disabilityLevel: "",
+};
+
 export function accountView() {
   const account = document.createElement("div");
   account.id = "accessibility-user-account-view";
@@ -145,8 +192,8 @@ export function accountView() {
       </div>
       <div class="accessibility-user-account-view-content">
         <div class="accessibility-user-login-view-content-text">
-          <p class="accessibility-title-card-text">Bienvenido a <span><img src="${host}/src/shared/assets/logos/isotipoBlue.svg" alt="Logo de U" width="50px"></span></p>
-          <p class="accessibility-description-card-text">Crea tu cuenta</p>
+          <p class="accessibility-title-card-text"><span data-u-i18n="accountView.welcome">Bienvenido a</span> <span><img src="${host}/public/logos/isotipoBlue.svg" alt="Logo de U" width="50px"></span></p>
+          <p class="accessibility-description-card-text" data-u-i18n="accountView.subwelcome">Crea tu cuenta</p>
         </div>
         <div class="accessibility-user-account-view-content-form">
         </div>
@@ -162,6 +209,7 @@ export function accountView() {
   // Creación del título
   const title = document.createElement("p");
   title.classList.add("accessibility-title-card-text");
+  title.setAttribute("data-u-i18n", "accountView.title");
   title.innerHTML = "Datos de la cuenta"; // Texto del título
 
   // Creación del botón "home"
@@ -198,24 +246,28 @@ export function accountView() {
     type: "text",
     id: "create-email",
     placeholder: "Ingresa tu correo electronico",
+    i18n_placeholder: "accountView.input.placeholderEmail",
   });
 
   const confirmEmailInputContainer = createInputForm({
     type: "text",
     id: "confirm-email",
     placeholder: "Confirma tu correo electronico",
+    i18n_placeholder: "accountView.input.placeholderConfirmEmail",
   });
 
   const passwordInputContainer = createInputForm({
     type: "password",
     id: "create-password",
     placeholder: "Ingresa tu contraseña",
+    i18n_placeholder: "accountView.input.placeholderPass",
   });
 
   const confirmPasswordInputContainer = createInputForm({
     type: "password",
     id: "confirm-password",
     placeholder: "Confirma tu contraseña",
+    i18n_placeholder: "accountView.input.placeholderConfirmPass",
   });
 
   // Añadir los campos al formulario
@@ -229,7 +281,7 @@ export function accountView() {
   button.classList.add("accessibility-button-theme");
   button.innerHTML = `
       <span style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-        <span>Guardar y continuar</span> 
+        <span data-u-i18n="accountView.button">Guardar y continuar</span> 
         <span>
           ${DynamicIcon({
             icon: "right",
@@ -242,7 +294,9 @@ export function accountView() {
   // Funcion onClick para el boton de siguiente
   button.addEventListener("click", (e) => {
     e.preventDefault(); // Evitar el comportamiento por defecto del formulario
-    switchView("accessibility-user-register-view");
+    dataRegisterUser.email = emailInput.value.trim();
+    dataRegisterUser.password = passwordInput.value.trim();
+    executeRegisterView({});
   });
 
   form.appendChild(button);
@@ -269,47 +323,66 @@ export function accountView() {
   confirmPasswordInputContainer.appendChild(passwordErrorText);
 
   // Validación de correo electrónico y contraseñas
-  const validateForm = (e) => {
-    const email = emailInput.value.trim();
-    const confirmEmail = confirmEmailInput.value.trim();
-    const password = passwordInput.value.trim();
-    const confirmPassword = confirmPasswordInput.value.trim();
+ 
 
-    // Validar el correo
-    const isEmailValid = email === confirmEmail && /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
 
-    // Mostrar mensaje de error si no coinciden
-    if (e.target.id?.includes("email") && confirmEmail !== "") {
+let emailValid = false;
+let passwordValid = false;
+
+const validateForm = async (e) => {
+  const email = emailInput.value.trim();
+  const confirmEmail = confirmEmailInput.value.trim();
+  const password = passwordInput.value.trim();
+  const confirmPassword = confirmPasswordInput.value.trim();
+
+  const isEmailFormatValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+
+  if (e.target.id?.includes("email")) {
+    emailValid = false;
+    emailErrorText.style.display = "none";
+    emailErrorText.textContent = "";
+
+    if (email === confirmEmail && isEmailFormatValid) {
+      const emailRegistered = await checkEmail(email);
+
+      if (emailRegistered) {
+        const translate = getDynamicTranslation("error.helperText.emailError3") || "Este correo ya está registrado.";
+        emailErrorText.textContent = translate;
+        emailErrorText.style.display = "block";
+        emailValid = false;
+      } else {
+        emailValid = true;
+      }
+    } else {
       if (email !== confirmEmail) {
-        emailErrorText.textContent = "Los correos electrónicos no coinciden.";
-        emailErrorText.style.display = "block"; // Mostrar el mensaje de error
-      } else if (!isEmailValid) {
-        emailErrorText.textContent = "Por favor, ingresa un correo válido.";
-        emailErrorText.style.display = "block"; // Mostrar el mensaje de error
-      } else {
-        emailErrorText.style.display = "none"; // Ocultar el mensaje si la validación es correcta
+        emailErrorText.textContent = getDynamicTranslation("error.helperText.emailError1");
+      } else if (!isEmailFormatValid) {
+        emailErrorText.textContent = getDynamicTranslation("error.helperText.emailError2");
       }
+      emailErrorText.style.display = "block";
     }
+  }
 
-    // Validar la contraseña
-    const isPasswordValid = password === confirmPassword && password.length >= 6;
+  if (e.target.id?.includes("password")) {
+    passwordValid = false;
+    passwordErrorText.style.display = "none";
 
-    if (e.target.id.includes("password") && confirmPassword !== "") {
-      // Mostrar mensaje de error si no coinciden
+    if (password === confirmPassword && password.length >= 6) {
+      passwordValid = true;
+    } else {
       if (password !== confirmPassword) {
-        passwordErrorText.textContent = "Las contraseñas no coinciden.";
-        passwordErrorText.style.display = "block"; // Mostrar el mensaje de error
+        passwordErrorText.textContent = getDynamicTranslation("error.helperText.passError1");
       } else if (password.length < 6) {
-        passwordErrorText.textContent = "La contraseña debe tener al menos 6 caracteres.";
-        passwordErrorText.style.display = "block"; // Mostrar el mensaje de error
-      } else {
-        passwordErrorText.style.display = "none"; // Ocultar el mensaje si la validación es correcta
+        passwordErrorText.textContent = getDynamicTranslation("error.helperText.passError2");
       }
+      passwordErrorText.style.display = "block";
     }
+  }
 
-    // Habilitar el botón solo si las validaciones son correctas
-    button.disabled = !(isEmailValid && isPasswordValid && email === confirmEmail && password === confirmPassword);
-  };
+  // Habilitar botón solo si ambos campos están válidos
+  button.disabled = !(emailValid && passwordValid);
+};
+
 
   // Añadir evento de input para validar el formulario al escribir
   emailInput.addEventListener("input", validateForm);
@@ -320,7 +393,15 @@ export function accountView() {
   return account;
 }
 
+
+
 export function registerView() {
+  // Recuperar la imagen del usuario desde localStorage (si existe)
+  const storedImageUrl = localStorage.getItem("inputFileFormImage_user-image");
+
+  // Imagen por defecto si no hay imagen personalizada
+  const defaultImage = `${host}/public/images/perfil.svg`;
+
   const register = document.createElement("div");
   register.id = "accessibility-user-register-view";
   register.classList.add("accessibility-custom-scroll", "accessibility-view", "hidden");
@@ -332,12 +413,18 @@ export function registerView() {
       <div class="accessibility-user-register-view-content">
         <div class="accessibility-banner-user-top-image" style="position: relative; top: 0; width: 120px; height: 120px; left: calc(50% - 60px);">
           <div class="accessibility-banner-user-top-image-internal" style="width: 105px; height: 105px;">
-            <img src="https://cdn.pixabay.com/photo/2020/12/08/19/12/woman-5815354_640.jpg" alt="user image">
+            <img class"u-accessibility-register-profile-img" src="${
+              storedImageUrl || defaultImage
+            }" alt="Imagen de perfil del usuario">
           </div>
         </div>
-        <a class="accessibility-user-button-edit-img" >Editar imagen <span>${DynamicIcon({ icon: "pen" })}</span></a>
-        <h2 class="accessibility-user-register-view-title">Bienvenido</h2>
-        <p>Por favor completa todos los campos para crear tu perfil.</p>
+        <a class="accessibility-user-button-edit-img"><span data-u-i18n="registerView.edit">Editar imagen</span> <span>${DynamicIcon(
+          {
+            icon: "pen",
+          }
+        )}</span></a>
+        <h2 class="accessibility-user-register-view-title" data-u-i18n="registerView.welcome">Bienvenido</h2>
+        <p data-u-i18n="registerView.subwelcome">Por favor completa todos los campos para crear tu perfil.</p>
       </div>
     </div>
   `;
@@ -350,6 +437,7 @@ export function registerView() {
   // Creación del título
   const title = document.createElement("p");
   title.classList.add("accessibility-title-card-text");
+  title.setAttribute("data-u-i18n", "registerView.title");
   title.innerHTML = "Datos del perfil"; // Texto del título
 
   // Creación del botón "home"
@@ -386,20 +474,46 @@ export function registerView() {
   const personalInfo = document.createElement("div");
   personalInfo.classList.add("accessibility-user-register-form-personal-info");
 
-  // Nombre y apellido
   personalInfo.appendChild(
-    createInputForm({ type: "text", id: "name", label: "Nombre", placeholder: "Ingresa tu nombre completo" })
+    createInputForm({
+      type: "text",
+      id: "name",
+      label: "Nombre",
+      placeholder: "Ingresa tu nombre completo",
+      i18n_label: "registerView.input.labelName",
+      i18n_placeholder: "registerView.input.placeholderName",
+    })
   );
-  // Tipos de documento
+
   personalInfo.appendChild(
     createSelectForm({
-      id: "document-type",
+      id: "documentType",
       label: "Tipo de documento",
+      i18n_label: "registerView.input.labelDocumentType",
       options: [
-        { value: "", text: "Seleccione" },
-        { value: "cc", text: "Cédula de ciudadania" },
-        { value: "ce", text: "Cédula de extrangeria" },
-        { value: "pt", text: "Pasaporte" },
+        { value: "", text: "Seleccione", i18n: "registerView.input.optionDocumentType.option1" },
+        {
+          value: "Cedula de Ciudadanía",
+          text: "Cédula de Ciudadanía",
+          i18n: "registerView.input.optionDocumentType.option2",
+        },
+        {
+          value: "Tarjeta de Identidad",
+          text: "Tarjeta de Identidad",
+          i18n: "registerView.input.optionDocumentType.option3",
+        },
+        { value: "Pasaporte", text: "Pasaporte", i18n: "registerView.input.optionDocumentType.option4" },
+        {
+          value: "Cedula de Extranjería",
+          text: "Cédula de Extranjería",
+          i18n: "registerView.input.optionDocumentType.option5",
+        },
+        { value: "Otro", text: "Otro", i18n: "registerView.input.optionDocumentType.option6" },
+        {
+          value: "Documento de Identidad",
+          text: "Documento de Identidad",
+          i18n: "registerView.input.optionDocumentType.option7",
+        },
       ],
     })
   );
@@ -407,9 +521,11 @@ export function registerView() {
   personalInfo.appendChild(
     createInputForm({
       type: "text",
-      id: "document-number",
+      id: "n_document",
       label: "Número de documento",
       placeholder: "Ingresa tu número de documento",
+      i18n_label: "registerView.input.labelNDocument",
+      i18n_placeholder: "registerView.input.placeholderNDocument",
     })
   );
   // Correo electronico
@@ -419,77 +535,65 @@ export function registerView() {
       id: "email",
       label: "Correo electronico",
       placeholder: "Ingresa tu correo electronico",
+      i18n_label: "registerView.input.labelEmail",
+      i18n_placeholder: "registerView.input.placeholderEmail",
+      disabled: true,
     })
   );
   // Fecha de nacimiento
   personalInfo.appendChild(
     createInputForm({
       type: "date",
-      id: "birth-date",
+      id: "birthdate",
       label: "Fecha de nacimiento",
       placeholder: "Ingresa tu fecha de nacimiento",
+      i18n_label: "registerView.input.labelBirthdate",
+      i18n_placeholder: "registerView.input.placeholderBirthdate",
     })
   );
-  // Pais de residencia
+
   personalInfo.appendChild(
     createSelectForm({
-      id: "country",
-      label: "País de residencia",
+      id: "residenceArea",
+      label: "Area de residencia",
+      i18n_label: "registerView.input.labelResidenceArea",
       options: [
-        { value: "", text: "Seleccione" },
-        { value: "colombia", text: "Colombia" },
-        { value: "mexico", text: "México" },
+        { value: "", text: "Seleccione", i18n: "registerView.input.optionResidenceArea.option1" },
+        { value: "Urbana", text: "Urbana", i18n: "registerView.input.optionResidenceArea.option2" },
+        { value: "Rural", text: "Rural", i18n: "registerView.input.optionResidenceArea.option3" },
+        { value: "Periurbana", text: "Periurbana", i18n: "registerView.input.optionResidenceArea.option4" },
       ],
     })
   );
-  // Ciudad de residencia
+
   personalInfo.appendChild(
     createSelectForm({
-      id: "city",
-      label: "Ciudad de residencia",
-      options: [
-        { value: "", text: "Seleccione" },
-        { value: "bogota", text: "Bogotá" },
-        { value: "medellin", text: "Medellín" },
-        { value: "cali", text: "Cali" },
-      ],
-    })
-  );
-  // zona de residencia
-  personalInfo.appendChild(
-    createSelectForm({
-      id: "zone",
-      label: "Zona de residencia",
-      options: [
-        { value: "", text: "Seleccione" },
-        { value: "urbana", text: "Urbana" },
-        { value: "rural", text: "Rural" },
-      ],
-    })
-  );
-  // Nivel educativo
-  personalInfo.appendChild(
-    createSelectForm({
-      id: "education-level",
+      id: "educationalLevel",
       label: "Nivel educativo",
+      i18n_label: "registerView.input.labelEducationalLevel",
       options: [
-        { value: "", text: "Seleccione" },
-        { value: "basico", text: "Básico" },
-        { value: "medio", text: "Medio" },
-        { value: "superior", text: "Superior" },
+        { value: "", text: "Seleccione", i18n: "registerView.input.optionEducationalLevel.option1" },
+        { value: "Ninguno", text: "Ninguno", i18n: "registerView.input.optionEducationalLevel.option2" },
+        { value: "Primaria", text: "Primaria", i18n: "registerView.input.optionEducationalLevel.option3" },
+        { value: "Secundaria", text: "Secundaria", i18n: "registerView.input.optionEducationalLevel.option4" },
+        { value: "Universitaria", text: "Universitaria", i18n: "registerView.input.optionEducationalLevel.option5" },
+        { value: "Postgrado", text: "Postgrado", i18n: "registerView.input.optionEducationalLevel.option6" },
       ],
     })
   );
-  // Situacion ocupacional
+
   personalInfo.appendChild(
     createSelectForm({
-      id: "occupation-situation",
+      id: "ocupacion",
       label: "Situación ocupacional",
+      i18n_label: "registerView.input.labelOcupacion",
       options: [
-        { value: "", text: "Seleccione" },
-        { value: "estudiante", text: "Estudiante" },
-        { value: "trabajando", text: "Trabajando" },
-        { value: "desempleado", text: "Desempleado" },
+        { value: "", text: "Seleccione", i18n: "registerView.input.optionOcupacion.option1" },
+        { value: "Empleado(a)", text: "Empleado(a)", i18n: "registerView.input.optionOcupacion.option2" },
+        { value: "Desempleado(a)", text: "Desempleado(a)", i18n: "registerView.input.optionOcupacion.option3" },
+        { value: "Estudiante", text: "Estudiante", i18n: "registerView.input.optionOcupacion.option4" },
+        { value: "Jubilado(a)", text: "Jubilado(a)", i18n: "registerView.input.optionOcupacion.option5" },
+        { value: "Independiente", text: "Independiente", i18n: "registerView.input.optionOcupacion.option6" },
       ],
     })
   );
@@ -497,42 +601,47 @@ export function registerView() {
   // Crear seccion del formulario para informacion de accesibilidad
   const accessibilityInfo = document.createElement("div");
   accessibilityInfo.classList.add("accessibility-user-register-form-accessibility-info");
-  // Tiene alguna discapacidad
+
   accessibilityInfo.appendChild(
     createSelectForm({
       id: "disability",
       label: "¿Tiene alguna capacidad diversa?",
+      i18n_label: "registerView.input.labelDisability",
       options: [
-        { value: "", text: "Seleccione" },
-        { value: "si", text: "Sí" },
-        { value: "no", text: "No" },
+        { value: "", text: "Seleccione", i18n: "registerView.input.optionDisability.option1" },
+        { value: "1", text: "Sí", i18n: "registerView.input.optionDisability.option2" },
+        { value: "0", text: "No", i18n: "registerView.input.optionDisability.option3" },
       ],
     })
   );
-  // Tipo de discapacidad
+
   accessibilityInfo.appendChild(
     createSelectForm({
-      id: "disability-type",
-      label: "Tipo de capacidsad diversa",
+      id: "disabilityType",
+      label: "Tipo de capacidad diversa",
+      i18n_label: "registerView.input.labelDisabilityType",
       options: [
-        { value: "", text: "Seleccione" },
-        { value: "visual", text: "Visual" },
-        { value: "auditiva", text: "Auditiva" },
-        { value: "motora", text: "Motora" },
-        { value: "intelectual", text: "Intelectual" },
+        { value: "", text: "Seleccione", i18n: "registerView.input.optionDisabilityType.option1" },
+        { value: "Visual", text: "Visual", i18n: "registerView.input.optionDisabilityType.option2" },
+        { value: "Auditiva", text: "Auditiva", i18n: "registerView.input.optionDisabilityType.option3" },
+        { value: "Motriz", text: "Motriz", i18n: "registerView.input.optionDisabilityType.option4" },
+        { value: "Cognitiva", text: "Cognitiva", i18n: "registerView.input.optionDisabilityType.option5" },
+        { value: "Psicosocial", text: "Psicosocial", i18n: "registerView.input.optionDisabilityType.option6" },
+        { value: "Multiple", text: "Multiple", i18n: "registerView.input.optionDisabilityType.option7" },
       ],
     })
   );
-  // nivel de discapacidad
+
   accessibilityInfo.appendChild(
     createSelectForm({
-      id: "disability-level",
+      id: "disabilityLevel",
       label: "Nivel de capacidad diversa",
+      i18n_label: "registerView.input.labelDisabilityLevel",
       options: [
-        { value: "", text: "Seleccione" },
-        { value: "leve", text: "Leve" },
-        { value: "moderada", text: "Moderada" },
-        { value: "grave", text: "Grave" },
+        { value: "", text: "Seleccione", i18n: "registerView.input.optionDisabilityLevel.option1" },
+        { value: "Leve", text: "Leve", i18n: "registerView.input.optionDisabilityLevel.option2" },
+        { value: "Media", text: "Media", i18n: "registerView.input.optionDisabilityLevel.option3" },
+        { value: "Alta", text: "Alta", i18n: "registerView.input.optionDisabilityLevel.option4" },
       ],
     })
   );
@@ -542,6 +651,7 @@ export function registerView() {
     createCollapse({
       id: "register-collapse",
       title: "Información Personal Básica",
+      i18n_title: "registerView.subtitle1",
       content: personalInfo,
       visible: true,
     })
@@ -550,6 +660,7 @@ export function registerView() {
     createCollapse({
       id: "register-collapse2",
       title: "Información de Accesibilidad",
+      i18n_title: "registerView.subtitle2",
       content: accessibilityInfo,
       visible: true,
     })
@@ -560,7 +671,7 @@ export function registerView() {
   button.innerHTML = `
     <button id="register-button" class="accessibility-button-theme">
       <span style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-        <span>Guardar y continuar</span> 
+        <span data-u-i18n="registerView.button">Guardar y continuar</span> 
         <span>
           ${DynamicIcon({
             icon: "right",
@@ -573,6 +684,20 @@ export function registerView() {
   const registerButton = button.querySelector("#register-button");
   registerButton.addEventListener("click", (e) => {
     e.preventDefault(); // Evitar el comportamiento por defecto del formulario
+    // Obtener los valores de los inputs y agregarlos al objeto dataRegisterUser
+    const formElement = register.querySelector(".accessibility-user-register-form");
+    dataRegisterUser.documentType = formElement.querySelector("#documentType")?.value || "";
+    dataRegisterUser.name = formElement.querySelector("#name")?.value?.trim() || "";
+    dataRegisterUser.n_document = Number(formElement.querySelector("#n_document")?.value?.trim() || "");
+    dataRegisterUser.email = formElement.querySelector("#email")?.value?.trim() || "";
+    dataRegisterUser.birthdate = formElement.querySelector("#birthdate")?.value || "";
+    dataRegisterUser.educationalLevel = formElement.querySelector("#educationalLevel")?.value || "";
+    dataRegisterUser.residenceArea = formElement.querySelector("#residenceArea")?.value || "";
+    dataRegisterUser.ocupacion = formElement.querySelector("#ocupacion")?.value || "";
+    dataRegisterUser.disability = formElement.querySelector("#disability")?.value === "1" ? true : false;
+    dataRegisterUser.disabilityType = formElement.querySelector("#disabilityType")?.value || "";
+    dataRegisterUser.disabilityLevel = formElement.querySelector("#disabilityLevel")?.value || "";
+
     switchView("accessibility-user-terms-view-1"); // Cambiar a la vista de terminos y condiciones
   });
 
@@ -588,6 +713,155 @@ export function registerView() {
 
   return register;
 }
+
+// Ajusta la ruta
+
+const executeRegisterView = async (props = { errorfields: null, isEdit: false }) => {
+  const form = document.querySelector("#accessibility-user-register-view .accessibility-user-register-form");
+  if (!form) return;
+
+  let userId = null;
+
+  const setInputValue = (selector, value) => {
+    const input = form.querySelector(selector);
+    console.log(input);
+    if (input) input.value = value ?? "";
+  };
+
+  // Obtener datos reales del usuario desde la API
+  if (props.isEdit) {
+    const response = await fetchUserProfile();
+    if (response.success) {
+      const user = response.data;
+      userId = user.id;
+
+      setInputValue("#name", user.name);
+      setInputValue("#documentType", user.documentType);
+      setInputValue("#n_document", user.n_document);
+      setInputValue("#email", user.email);
+      setInputValue("#birthdate", user.birthdate);
+      setInputValue("#residenceArea", user.residenceArea);
+      setInputValue("#educationalLevel", user.educationalLevel);
+      setInputValue("#ocupacion", user.ocupacion);
+      setInputValue("#disability", user.disability ? "1" : "0");
+      setInputValue("#disabilityType", user.disabilityType);
+      setInputValue("#disabilityLevel", user.disabilityLevel);
+
+      // Habilitar / deshabilitar selects según disability
+      const disabilityValue = form.querySelector("#disability")?.value;
+      const disabilityTypeSelect = form.querySelector("#disabilityType");
+      const disabilityLevelSelect = form.querySelector("#disabilityLevel");
+      if (disabilityTypeSelect) disabilityTypeSelect.disabled = disabilityValue !== "1";
+      if (disabilityLevelSelect) disabilityLevelSelect.disabled = disabilityValue !== "1";
+
+      const disabilitySelect = form.querySelector("#disability");
+      if (disabilitySelect) {
+        disabilitySelect.addEventListener("change", (e) => {
+          const value = e.target.value;
+          if (disabilityTypeSelect) disabilityTypeSelect.disabled = value !== "1";
+          if (disabilityLevelSelect) disabilityLevelSelect.disabled = value !== "1";
+        });
+      }
+
+      // Guardar cambios al enviar el formulario
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const updatedData = {
+          name: form.querySelector("#name")?.value,
+          documentType: form.querySelector("#documentType")?.value,
+          n_document: form.querySelector("#n_document")?.value,
+          email: form.querySelector("#email")?.value,
+          birthdate: form.querySelector("#birthdate")?.value,
+          residenceArea: form.querySelector("#residenceArea")?.value,
+          educationalLevel: form.querySelector("#educationalLevel")?.value,
+          ocupacion: form.querySelector("#ocupacion")?.value,
+          disability: form.querySelector("#disability")?.value === "1",
+          disabilityType: form.querySelector("#disabilityType")?.value,
+          disabilityLevel: form.querySelector("#disabilityLevel")?.value,
+        };
+
+        try {
+          const response = await fetch(`https://apitest.unyco.co/users/${userId}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(updatedData),
+          });
+
+          const result = await response.json();
+
+          if (!response.ok) {
+            console.error("Error al actualizar usuario:", result);
+            alert("Ocurrió un error al actualizar tu perfil.");
+          } else {
+            // ✅ Mostrar notificación de éxito
+            alert("Perfil actualizado correctamente.");
+            // ✅ Redirigir a la vista de perfil
+            switchView("accessibility-user-profile-view");
+          }
+        } catch (error) {
+          console.error("Error al hacer la solicitud PUT:", error);
+          alert("Error de conexión al actualizar tu perfil.");
+        }
+      });
+    } else {
+      console.error("Error al obtener perfil:", response.error);
+      return;
+    }
+  } else {
+    setInputValue("#name", dataRegisterUser.name);
+    setInputValue("#documentType", dataRegisterUser.documentType);
+    setInputValue("#n_document", dataRegisterUser.n_document);
+    setInputValue("#email", dataRegisterUser.email);
+    setInputValue("#birthdate", dataRegisterUser.birthdate);
+    setInputValue("#residenceArea", dataRegisterUser.residenceArea);
+    setInputValue("#educationalLevel", dataRegisterUser.educationalLevel);
+    setInputValue("#ocupacion", dataRegisterUser.ocupacion);
+    setInputValue("#disability", dataRegisterUser.disability ? "1" : "0");
+    setInputValue("#disabilityType", dataRegisterUser.disabilityType);
+    setInputValue("#disabilityLevel", dataRegisterUser.disabilityLevel);
+
+    // Habilitar / deshabilitar selects según disability
+    const disabilityValue = form.querySelector("#disability")?.value;
+    const disabilityTypeSelect = form.querySelector("#disabilityType");
+    const disabilityLevelSelect = form.querySelector("#disabilityLevel");
+    if (disabilityTypeSelect) disabilityTypeSelect.disabled = disabilityValue !== "1";
+    if (disabilityLevelSelect) disabilityLevelSelect.disabled = disabilityValue !== "1";
+
+    const disabilitySelect = form.querySelector("#disability");
+    if (disabilitySelect) {
+      disabilitySelect.addEventListener("change", (e) => {
+        const value = e.target.value;
+        if (disabilityTypeSelect) disabilityTypeSelect.disabled = value !== "1";
+        if (disabilityLevelSelect) disabilityLevelSelect.disabled = value !== "1";
+      });
+    }
+  }
+
+  // Mostrar errores si los hay
+  if (props.errorfields && Array.isArray(props.errorfields)) {
+    props.errorfields.forEach((error) => {
+      if (typeof error === "string") {
+        const [field, ...rest] = error.split(" ");
+        const message = rest.join(" ");
+        const inputContainer = form.querySelector(`#${field}-container`);
+        if (inputContainer) {
+          let helper = inputContainer.querySelector(".accessibility-helper-text");
+          if (!helper) {
+            helper = document.createElement("span");
+            helper.classList.add("accessibility-helper-text");
+            inputContainer.appendChild(helper);
+          }
+          helper.textContent = message;
+          helper.style.display = "block";
+          inputContainer.classList.add("accessibility-input-error");
+        }
+      }
+    });
+  }
+
+  switchView("accessibility-user-register-view");
+};
 
 // Creacion de la vista de recuperacion de contraseña
 export function resetPasswordView() {
@@ -612,23 +886,17 @@ export function resetPasswordView() {
   button.classList.add("accessibility-button-theme");
   button.innerHTML = `
     <span style="display: flex; align-items: center; justify-content: center; width: 100%;">
-      <span>Aceptar</span>
+      <span data-u-i18n="resetPasswordView.buttonAccept"></span>
     </span>
   `;
 
-  button.addEventListener("click", (e) => {
-    e.preventDefault();
-    const stepResetPassword = localStorage.getItem("stepResetPassword");
-    excuteResetPasswordView(Number(stepResetPassword) + 1);
-  });
-
-  // Creacion del boton de aceptar
+  // Creacion del boton de cancelar
   const buttonCancel = document.createElement("button");
   buttonCancel.id = "accessibility-user-cancel-reset-password-button";
   buttonCancel.classList.add("accessibility-button-theme");
   buttonCancel.innerHTML = `
     <span style="display: flex; align-items: center; justify-content: center; width: 100%;">
-      <span>Cancelar</span>
+      <span data-u-i18n="resetPasswordView.buttonCancel"></span>
     </span>
   `;
 
@@ -651,6 +919,7 @@ export function resetPasswordView() {
   return reset;
 }
 
+let dataReset = {};
 const excuteResetPasswordView = (step) => {
   localStorage.setItem("stepResetPassword", step);
   const icon = document.querySelector(
@@ -662,63 +931,237 @@ const excuteResetPasswordView = (step) => {
   const content = document.querySelector(
     "#accessibility-user-reset-password-view .accessibility-user-reset-password-content"
   );
-  console.log(step);
+  const buttonNext = document.querySelector("#accessibility-user-reset-password-button");
+  buttonNext.replaceWith(buttonNext.cloneNode(true));
+  const newButtonNext = document.querySelector("#accessibility-user-reset-password-button");
+
   switch (step) {
     case 0:
       switchView("accessibility-user-login-view");
       break;
     case 1:
       icon.innerHTML = DynamicIcon({ icon: "lock" });
-      title.innerHTML = "Recuperar contraseña";
+      title.setAttribute("data-u-i18n", "resetPasswordView.title");
+      title.innerHTML = ""; // El sistema de i18n lo llenará
       content.innerHTML = "";
       content.appendChild(
         createInputForm({
           type: "text",
           id: "reset-email",
-          label: "Ingrese su correo electronico",
-          placeholder: "Ingrese su correo electronico",
+          label: "resetPasswordView.labelEmail",
+          i18n_label: "resetPasswordView.labelEmail",
+          placeholder: "resetPasswordView.placeholderEmail",
+          i18n_placeholder: "resetPasswordView.placeholderEmail",
         })
       );
+
+      const emailInput = content.querySelector("#reset-email");
+      emailInput.value = dataReset.email || ""; // Si hay un email guardado, lo muestra
+      const isValidEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(emailInput.value.trim());
+      newButtonNext.disabled = !isValidEmail;
+
+      emailInput.addEventListener("input", () => {
+        const email = emailInput.value.trim();
+        const isValidEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+        newButtonNext.disabled = !(email && isValidEmail);
+      });
+
+      // click boton continuar
+      newButtonNext.addEventListener("click", async (e) => {
+        e.preventDefault();
+        const response = await fetchRecoveryPassSendCode({
+          email: emailInput.value.trim(),
+        });
+        if (response.success) {
+          excuteResetPasswordView(2);
+          dataReset = { email: emailInput.value.trim() };
+        } else {
+          executeAlertMessage({
+            icon: "x",
+            title: "Error al enviar el código",
+            message: response.message || "Ocurrió un error al enviar el código de recuperación.",
+            onclick: () => {
+              excuteResetPasswordView(1);
+            },
+          });
+        }
+      });
+
       switchView("accessibility-user-reset-password-view");
       break;
 
     case 2:
       icon.innerHTML = DynamicIcon({ icon: "lock" });
-      title.innerHTML = "Validación de seguridad";
+      title.setAttribute("data-u-i18n", "resetPasswordView.titleCode");
+      title.innerHTML = "";
       content.innerHTML = `
-        <p>Ingrese el código de validacion enviado <br> a la direccion de correo electronico <br> ma***@correo.com</p>
-        <div id="inputCode"></div>
-        <p>No recibí el código. <a style="font-weight: bold">Reenviar</a></p>
-        <p style="color: var(--primaryColor); font-weight: bold">1:20 Segundos pendientes</p>
-      `;
+      <p data-u-i18n="resetPasswordView.labelCode"></p>
+      <div id="inputCode"></div>
+      <p>
+        <span data-u-i18n="resetPasswordView.resend"></span>
+        <a style="font-weight: bold" data-u-i18n="resetPasswordView.resendLink"></a>
+      </p>
+      <p id="accessibility-time-discount" style="color: var(--primaryColor); font-weight: bold"></p>
+    `;
       content.querySelector("#inputCode").appendChild(createInputsCode());
+
+      // Bloquear el botón "Aceptar" si no se ha escrito el código completo
+      const codeInputs = content.querySelectorAll("#inputCode input");
+      newButtonNext.disabled = true;
+
+      codeInputs.forEach((input) => {
+        input.addEventListener("input", () => {
+          // Habilitar solo si todos los inputs tienen un valor (asumiendo 6 dígitos)
+          const allFilled = Array.from(codeInputs).every((inp) => inp.value.trim().length === 1);
+          newButtonNext.disabled = !allFilled;
+        });
+      });
+
+      // funcion para obtener los valores de los inputs del codigo
+      function getCodeInputs() {
+        const inputs = content.querySelectorAll("#inputCode input");
+        return Array.from(inputs)
+          .map((input) => input.value.trim())
+          .join("");
+      }
+
+      // click boton continuar
+      newButtonNext.addEventListener("click", async (e) => {
+        e.preventDefault();
+        const code = getCodeInputs();
+        console.log("enviando codigo", code);
+        const response = await fetchRecoveryPassVerifyCode({
+          email: dataReset.email,
+          code,
+        });
+        if (response.success) {
+          excuteResetPasswordView(3);
+        } else {
+          executeAlertMessage({
+            icon: "x",
+            title: "Error al validar el código",
+            message: response.message || "Ocurrió un error al validar el código de recuperación.",
+            onclick: () => {
+              excuteResetPasswordView(2);
+              switchView("accessibility-user-reset-password-view");
+            },
+          });
+        }
+      });
+
+      // click boton reenviar codigo
+      const resendButton = content.querySelector("p a");
+      resendButton.addEventListener("click", async (e) => {
+        e.preventDefault();
+        const response = await fetchRecoveryPassSendCode({
+          email: document.getElementById("reset-email").value.trim(),
+        });
+        if (response.success) {
+          executeAlertMessage({
+            icon: "check",
+            title: "Código reenviado",
+            message: "El código de recuperación ha sido reenviado a su correo electrónico.",
+            onclick: () => {
+              excuteResetPasswordView(2);
+            },
+          });
+        } else {
+          executeAlertMessage({
+            icon: "x",
+            title: "Error al reenviar el código",
+            message: response.message || "Ocurrió un error al reenviar el código de recuperación.",
+            onclick: () => {
+              excuteResetPasswordView(2);
+            },
+          });
+        }
+      });
+
+      let timeLeft = 300; // 5 minutos en segundos
+      const timeDiscount = content.querySelector("#accessibility-time-discount");
+      let timerInterval;
+
+      function updateTimer() {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        timeDiscount.textContent = getDynamicTranslation("resetPasswordView.timer", {
+          time: `${minutes}:${seconds.toString().padStart(2, "0")}`,
+        });
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          timeDiscount.textContent = "El código ha expirado. Por favor, solicite uno nuevo.";
+          // Deshabilitar los inputs de código y el botón de continuar
+          const codeInputs = content.querySelectorAll("#inputCode input");
+          codeInputs.forEach((input) => (input.disabled = true));
+          const continueButton = document.querySelector("#accessibility-user-reset-password-button");
+          if (continueButton) continueButton.disabled = true;
+        }
+      }
+
+      updateTimer();
+      timerInterval = setInterval(() => {
+        timeLeft--;
+        updateTimer();
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+        }
+      }, 1000);
+
       break;
 
     case 3:
       icon.innerHTML = DynamicIcon({ icon: "unlock" });
-      title.innerHTML = "Ingresar nueva  contraseña";
+      title.setAttribute("data-u-i18n", "resetPasswordView.titleNewPass");
+      title.innerHTML = "";
       content.innerHTML = "";
       content.appendChild(
         createInputForm({
-          type: "text",
+          type: "password",
           id: "create-new-password",
-          label: "Ingrese su contraseña",
-          placeholder: "Nueva contraseña",
+          label: "resetPasswordView.labelNewPass",
+          i18n_label: "resetPasswordView.labelNewPass",
+          placeholder: "resetPasswordView.placeholderNewPass",
+          i18n_placeholder: "resetPasswordView.placeholderNewPass",
         })
       );
       content.appendChild(
         createInputForm({
-          type: "text",
+          type: "password",
           id: "confirm-new-password",
-          label: "Confirme su contraseña",
-          placeholder: "Nueva contraseña",
+          label: "resetPasswordView.labelConfirmPass",
+          i18n_label: "resetPasswordView.labelConfirmPass",
+          placeholder: "resetPasswordView.placeholderConfirmPass",
+          i18n_placeholder: "resetPasswordView.placeholderConfirmPass",
         })
       );
+
+      // click boton continuar
+      newButtonNext.addEventListener("click", async (e) => {
+        e.preventDefault();
+        const response = await fetchRecoveryPassNewPass({
+          email: dataReset.email,
+          newPassword: content.querySelector("#create-new-password")?.value.trim(),
+        });
+        if (response.success) {
+          excuteResetPasswordView(4);
+        } else {
+          executeAlertMessage({
+            icon: "x",
+            title: "Error al actualizar la contraseña",
+            message: response.message || "Ocurrió un error al actualizar la contraseña.",
+            onclick: () => {
+              excuteResetPasswordView(3);
+              switchView("accessibility-user-reset-password-view");
+            },
+          });
+        }
+      });
+
       break;
     case 4:
       executeAlertMessage({
-        title: "Cambio de contraseña",
-        message: "Su contraseña ha sido actualizada con exito.",
+        title: getDynamicTranslation("resetPasswordView.successTitle"),
+        message: getDynamicTranslation("resetPasswordView.successMessage"),
         onclick: () => {
           switchView("accessibility-user-login-view");
         },
@@ -728,6 +1171,7 @@ const excuteResetPasswordView = (step) => {
     default:
       break;
   }
+  applyTranslations();
 };
 
 // Crea la vista para cargar la imagen del perfil del usuario
@@ -809,21 +1253,67 @@ export function userImageView() {
   const button = document.createElement("button");
   button.id = "user-image-button";
   button.classList.add("accessibility-button-theme");
+  button.setAttribute("aria-label", "Confirmar imagen de perfil");
   button.disabled = true;
   button.innerHTML = `
     <span style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-      <span>Confirmar</span> 
-      <span>
-        ${DynamicIcon({
-          icon: "right",
-        })}
-      </span>
+      <span>Confirmar</span>
+      <span>${DynamicIcon({ icon: "right" })}</span>
     </span>
   `;
 
-  // Onclick para el boton de guardar y continuar
-  button.addEventListener("click", (e) => {
-    e.preventDefault(); // Evitar el comportamiento por defecto del formulario
+  // Evento del botón confirmar
+  button.addEventListener("click", async (e) => {
+    e.preventDefault();
+
+    const userId = getUserIdFromToken();
+    console.log(userId);
+    if (!userId) {
+      alert("No se pudo identificar al usuario.");
+      return;
+    }
+
+    const input = document.querySelector("#inputFileForm_user-image input[type='file']");
+    const file = input?.files[0];
+
+    if (!file) {
+      alert("No se ha seleccionado una imagen válida.");
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      const response = await fetch(`${apiHost}/upload/profile/${userId}`, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+        },
+      });
+
+      if (!response.ok) throw new Error("Error al subir la imagen.");
+
+      const result = await response.json();
+
+      // Actualiza la imagen en el DOM
+      document
+        .querySelectorAll(
+          "#accessibility-user-profile-view .accessibility-banner-user-top-image-internal img, " +
+            "#accessibility-banner-user .accessibility-banner-user-top-image-internal img"
+        )
+        .forEach((img) => {
+          img.src = result.imageUrl;
+          // console.log(imageUrl)
+        });
+
+      // Cambiar la vista
+      switchView(-1);
+    } catch (err) {
+      console.error("Fallo la subida de la imagen:", err);
+      alert("No se pudo subir la imagen. Intenta nuevamente.");
+    }
   });
 
   content.appendChild(button);
@@ -841,47 +1331,47 @@ export function userTermsView() {
       <div class="accessibility-user-view-header">
       </div>
       <div class="accessibility-user-terms-content accessibility-custom-scroll">
-        <h1>Consentimiento para el Tratamiento de Datos Personales – Plataforma U</h1>
-        <p>Al registrarme en la plataforma U, reconozco y acepto, de manera libre, informada, específica e inequívoca, que mis datos personales sean recolectados, tratados y almacenados conforme a los estándares internacionales de privacidad y protección de datos, con base en las siguientes condiciones:</p>
+        <h1 data-u-i18n="userTermsView.title2"></h1>
+        <p data-u-i18n="userTermsView.intro"></p>
 
-        <h2>1. Responsable del Tratamiento</h2>
-        <p>Dsoft Innovate S.A.S. (en adelante “U”), identificada con domicilio en [dirección legal], actuando como responsable del tratamiento, tratará mis datos conforme a la presente autorización.</p>
+        <h2 data-u-i18n="userTermsView.section1Title"></h2>
+        <p data-u-i18n="userTermsView.section1Text"></p>
 
-        <h2>2. Finalidades del Tratamiento</h2>
-        <p>Mis datos personales serán tratados para las siguientes finalidades:</p>
+        <h2 data-u-i18n="userTermsView.section2Title"></h2>
+        <p data-u-i18n="userTermsView.section2Text"></p>
         <ul>
-          <li>Personalizar la experiencia de accesibilidad dentro del widget U.</li>
-          <li>Permitir el análisis y reporte agregado sobre el uso de herramientas de accesibilidad (sin identificar individualmente al usuario).</li>
-          <li>Ofrecer soporte técnico y seguimiento personalizado cuando sea necesario.</li>
-          <li>Cumplir con obligaciones legales y regulatorias en materia de accesibilidad, inclusión y no discriminación.</li>
-          <li>Enviar actualizaciones técnicas, informativas o comerciales, solo si he dado consentimiento específico para ello.</li>
+          <li data-u-i18n="userTermsView.section2List.item1"></li>
+          <li data-u-i18n="userTermsView.section2List.item2"></li>
+          <li data-u-i18n="userTermsView.section2List.item3"></li>
+          <li data-u-i18n="userTermsView.section2List.item4"></li>
+          <li data-u-i18n="userTermsView.section2List.item5"></li>
         </ul>
 
-        <h2>3. Base Legal del Tratamiento</h2>
-        <p>U basa el tratamiento de datos personales en:</p>
+        <h2 data-u-i18n="userTermsView.section3Title"></h2>
+        <p data-u-i18n="userTermsView.section3Text"></p>
         <ul>
-          <li>Consentimiento explícito del usuario.</li>
-          <li>Interés legítimo para mejorar servicios de accesibilidad, siempre respetando la privacidad del usuario.</li>
-          <li>El cumplimiento de normativas locales e internacionales, incluyendo GDPR (UE), CCPA (California), LGPD (Brasil), y otras leyes de protección de datos vigentes.</li>
+          <li data-u-i18n="userTermsView.section3List.item1"></li>
+          <li data-u-i18n="userTermsView.section3List.item2"></li>
+          <li data-u-i18n="userTermsView.section3List.item3"></li>
         </ul>
 
-        <h2>4. Transferencia Internacional de Datos</h2>
-        <p>Los datos podrán ser transferidos y/o almacenados en servidores ubicados en distintos países. Unyco garantiza que, cuando ello ocurra, se aplicarán cláusulas contractuales estándar y medidas técnicas adecuadas para proteger los datos conforme al GDPR y demás normativas aplicables.</p>
+        <h2 data-u-i18n="userTermsView.section4Title"></h2>
+        <p data-u-i18n="userTermsView.section4Text"></p>
 
-        <h2>5. Derechos del Usuario</h2>
-        <p>Como titular de los datos, tengo derecho a:</p>
+        <h2 data-u-i18n="userTermsView.section5Title"></h2>
+        <p data-u-i18n="userTermsView.section5Text"></p>
         <ul>
-          <li>Acceder, rectificar, limitar, suprimir o portar sus datos personales.</li>
-          <li>Retirar su consentimiento en cualquier momento.</li>
-          <li>Presentar reclamos ante la autoridad local competente en protección de datos (como la SIC en Colombia, EDPB en la UE o FTC en EE.UU.).</li>
+          <li data-u-i18n="userTermsView.section5List.item1"></li>
+          <li data-u-i18n="userTermsView.section5List.item2"></li>
+          <li data-u-i18n="userTermsView.section5List.item3"></li>
         </ul>
 
-        <h2>6. Tiempo de Conservación</h2>
-        <p>Los datos serán conservados solo durante el tiempo necesario para las finalidades indicadas o mientras se mantenga la cuenta activa. Posteriormente, se eliminarán o anonimizarán según los principios de minimización.</p>
+        <h2 data-u-i18n="userTermsView.section6Title"></h2>
+        <p data-u-i18n="userTermsView.section6Text"></p>
 
-        <h2>7. Contacto para Ejercer Derechos</h2>
-        <p>Puede ejercer sus derechos escribiendo a: <a href="mailto:privacy@u.app">privacy@u.app</a></p>
-        <p>O visitando el formulario disponible en: <a href="https://www.u.app/privacy">www.u.app/privacy</a></p>
+        <h2 data-u-i18n="userTermsView.section7Title"></h2>
+        <p data-u-i18n="userTermsView.section7Text1"></p>
+        <p data-u-i18n="userTermsView.section7Text2"></p>
       </div>
       <div class="accessibility-user-terms-form">
       </div>
@@ -891,46 +1381,42 @@ export function userTermsView() {
   // Creación del botón "atrás"
   const buttonBack = createButton("back", "", () => switchView("accessibility-user-register-view"));
   buttonBack.classList.add("accessibility-circle-button");
-  buttonBack.innerHTML = `${DynamicIcon({ icon: "left" })}`; // Icono de flecha hacia atrás
+  buttonBack.innerHTML = `${DynamicIcon({ icon: "left" })}`;
 
   // Creación del título
   const title = document.createElement("p");
   title.classList.add("accessibility-title-card-text");
-  title.innerHTML = "Términos y condiciones"; // Texto del título
+  title.setAttribute("data-u-i18n", "userTermsView.title");
+  title.innerHTML = "Términos y condiciones";
 
   // Creación del botón "home"
   const buttonHome = createButton("home", "", () => switchView("view-initial"));
   buttonHome.classList.add("accessibility-home-button");
-  buttonHome.innerHTML = `${DynamicIcon({ icon: "home" })}`; // Icono de flecha hacia atrás
+  buttonHome.innerHTML = `${DynamicIcon({ icon: "home" })}`;
 
-  // Creacion del contenedor izquierdo (con el botón de retroceso)
+  // Contenedores de header
   const contentLeft = document.createElement("div");
   contentLeft.classList.add("accessibility-user-view-header-left");
 
-  // Creacion del contenedor derecho (con el botón de home)
   const contentRight = document.createElement("div");
   contentRight.classList.add("accessibility-user-view-header-right");
 
-  // Agrega el botón "atrás" y el título al contenedor izquierdo
   contentLeft.appendChild(buttonBack);
   contentLeft.appendChild(title);
-
-  // Agrega el botón "home" al contenedor derecho
   contentRight.appendChild(buttonHome);
 
-  // Agregar los contenendores al header
   const header = content.querySelector(".accessibility-user-view-header");
   header.appendChild(contentLeft);
   header.appendChild(contentRight);
 
-  // Creacion del boton de continuar
+  // Botón de continuar
   const button = document.createElement("button");
   button.id = "user-image-button";
   button.classList.add("accessibility-button-theme");
   button.disabled = true;
   button.innerHTML = `
     <span style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-      <span>Confirmar</span> 
+      <span data-u-i18n="userTermsView.button"></span> 
       <span>
         ${DynamicIcon({
           icon: "right",
@@ -941,16 +1427,12 @@ export function userTermsView() {
 
   // Onclick para el boton de guardar y continuar
   button.addEventListener("click", (e) => {
-    e.preventDefault(); // Evitar el comportamiento por defecto del formulario
+    e.preventDefault();
     switchView("accessibility-user-terms-view-2");
   });
 
   const onChangeCheck = (e) => {
-    if (e.target.checked) {
-      button.disabled = false;
-    } else {
-      button.disabled = true;
-    }
+    button.disabled = !e.target.checked;
   };
 
   const form = content.querySelector(".accessibility-user-terms-form");
@@ -958,13 +1440,13 @@ export function userTermsView() {
   message.classList.add("accessibility-helper-text");
   message.style.textAlign = "center";
   message.style.textDecoration = "underline";
-  message.innerHTML = "Por favor debe leer todo el documento antes de aceptar";
+  message.setAttribute("data-u-i18n", "userTermsView.helperText");
   form.appendChild(message);
   form.appendChild(
     createCheckTermsForm({
       id: "check1",
-      label:
-        "Declaro que he leído y acepto los términos del tratamiento de mis datos personales conforme a lo aquí expuesto.",
+      label: "userTermsView.checkboxLabel",
+      i18n_label: "userTermsView.checkboxLabel",
       onchange: onChangeCheck,
       disabled: true,
     })
@@ -976,7 +1458,7 @@ export function userTermsView() {
   termsContent.addEventListener("scroll", () => {
     if (termsContent.scrollTop + termsContent.clientHeight >= termsContent.scrollHeight) {
       const check = form.querySelector("#check1");
-      check.disabled = false; // Activar el checkbox
+      check.disabled = false;
     }
   });
 
@@ -993,37 +1475,37 @@ export function userTermsView2() {
       <div class="accessibility-user-view-header">
       </div>
       <div class="accessibility-user-terms-content accessibility-custom-scroll">
-        <h1>Consentimiento Informado sobre el Uso de Datos – Widget U</h1>
-        <p>En U respetamos tu privacidad y queremos que sepas exactamente cómo usamos tus datos.</p>
-        <p>Al registrarte en nuestra plataforma y usar el widget, aceptas que recolectemos y utilicemos cierta información con los siguientes propósitos:</p>
+        <h1 data-u-i18n="userTermsView2.title2"></h1>
+        <p data-u-i18n="userTermsView2.intro"></p>
+        <p data-u-i18n="userTermsView2.accept"></p>
 
-        <h2>📌 ¿Qué datos recopilamos?</h2>
-        <p>Recopilamos únicamente los datos necesarios para ofrecerte una experiencia accesible y personalizada. Estos pueden incluir:</p>
+        <h2 data-u-i18n="userTermsView2.section1Title"></h2>
+        <p data-u-i18n="userTermsView2.section1Text"></p>
         <ul>
-          <li>Tus datos de contacto (nombre, correo electrónico).</li>
-          <li>Tu país, idioma y nivel de accesibilidad requerido.</li>
-          <li>Tu tipo de discapacidad (si decides compartirlo).</li>
-          <li>Las configuraciones que activas en el widget (por ejemplo: agrandar texto, activar lector, etc.).</li>
+          <li data-u-i18n="userTermsView2.section1List.item1"></li>
+          <li data-u-i18n="userTermsView2.section1List.item2"></li>
+          <li data-u-i18n="userTermsView2.section1List.item3"></li>
+          <li data-u-i18n="userTermsView2.section1List.item4"></li>
         </ul>
-        <p>🔒 No recolectamos datos bancarios ni accedemos a tu contenido personal en la web.</p>
+        <p data-u-i18n="userTermsView2.section1Note"></p>
 
-        <h2>📌 ¿Para qué usamos esta información?</h2>
+        <h2 data-u-i18n="userTermsView2.section2Title"></h2>
         <ul>
-          <li>Para adaptar automáticamente el widget a tus necesidades.</li>
-          <li>Para generar reportes anónimos y estadísticos que ayuden a mejorar el acceso digital.</li>
-          <li>Para proteger tus derechos de accesibilidad, conforme a normas como la WCAG 2.2, la GDPR, la CCPA y otras leyes locales.</li>
-          <li>Si aceptas recibir noticias, te enviaremos actualizaciones sobre nuevas funciones o mejoras del widget.</li>
+          <li data-u-i18n="userTermsView2.section2List.item1"></li>
+          <li data-u-i18n="userTermsView2.section2List.item2"></li>
+          <li data-u-i18n="userTermsView2.section2List.item3"></li>
+          <li data-u-i18n="userTermsView2.section2List.item4"></li>
         </ul>
 
-        <h2>📌 ¿Quién puede ver tus datos?</h2>
-        <p>Solo tú y el sistema tienen acceso a tus configuraciones personales.</p>
-        <p>Si decides compartir tus datos con una institución (por ejemplo, una universidad que implementa Unyco), ellos solo recibirán reportes agregados y anónimos, nunca datos individuales sin tu permiso.</p>
+        <h2 data-u-i18n="userTermsView2.section3Title"></h2>
+        <p data-u-i18n="userTermsView2.section3Text1"></p>
+        <p data-u-i18n="userTermsView2.section3Text2"></p>
 
-        <h2>📌 ¿Qué control tienes sobre tu información?</h2>
+        <h2 data-u-i18n="userTermsView2.section4Title"></h2>
         <ul>
-          <li>Puedes modificar o eliminar tu cuenta en cualquier momento.</li>
-          <li>Puedes pedir una copia de los datos que tenemos sobre ti.</li>
-          <li>Puedes revocar este consentimiento escribiéndonos a: <a href="mailto:privacy@u.app">privacy@u.app</a></li>
+          <li data-u-i18n="userTermsView2.section4List.item1"></li>
+          <li data-u-i18n="userTermsView2.section4List.item2"></li>
+          <li data-u-i18n="userTermsView2.section4List.item3"></li>
         </ul>
       </div>
       <div class="accessibility-user-terms-form">
@@ -1034,34 +1516,30 @@ export function userTermsView2() {
   // Creación del botón "atrás"
   const buttonBack = createButton("back", "", () => switchView("accessibility-user-terms-view-1"));
   buttonBack.classList.add("accessibility-circle-button");
-  buttonBack.innerHTML = `${DynamicIcon({ icon: "left" })}`; // Icono de flecha hacia atrás
+  buttonBack.innerHTML = `${DynamicIcon({ icon: "left" })}`;
 
   // Creación del título
   const title = document.createElement("p");
   title.classList.add("accessibility-title-card-text");
-  title.innerHTML = "Términos y condiciones"; // Texto del título
+  title.setAttribute("data-u-i18n", "userTermsView2.title");
+  title.innerHTML = "Términos y condiciones";
 
   // Creación del botón "home"
   const buttonHome = createButton("home", "", () => switchView("view-initial"));
   buttonHome.classList.add("accessibility-home-button");
-  buttonHome.innerHTML = `${DynamicIcon({ icon: "home" })}`; // Icono de flecha hacia atrás
+  buttonHome.innerHTML = `${DynamicIcon({ icon: "home" })}`;
 
-  // Creacion del contenedor izquierdo (con el botón de retroceso)
+  // Contenedores de header
   const contentLeft = document.createElement("div");
   contentLeft.classList.add("accessibility-user-view-header-left");
 
-  // Creacion del contenedor derecho (con el botón de home)
   const contentRight = document.createElement("div");
   contentRight.classList.add("accessibility-user-view-header-right");
 
-  // Agrega el botón "atrás" y el título al contenedor izquierdo
   contentLeft.appendChild(buttonBack);
   contentLeft.appendChild(title);
-
-  // Agrega el botón "home" al contenedor derecho
   contentRight.appendChild(buttonHome);
 
-  // Agregar los contenendores al header
   const header = content.querySelector(".accessibility-user-view-header");
   header.appendChild(contentLeft);
   header.appendChild(contentRight);
@@ -1073,7 +1551,7 @@ export function userTermsView2() {
   button.disabled = true;
   button.innerHTML = `
     <span style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
-      <span>Confirmar</span> 
+      <span data-u-i18n="userTermsView2.button"></span> 
       <span>
         ${DynamicIcon({
           icon: "right",
@@ -1083,29 +1561,25 @@ export function userTermsView2() {
   `;
 
   // Onclick para el boton de guardar y continuar
-  button.addEventListener("click", (e) => {
-    e.preventDefault(); // Evitar el comportamiento por defecto del formulario
-    executeAlertMessage({
-      icon: null,
-      title: "¡Cuenta Creada!",
-      message: "Su perfil ha sido creado con éxito </br> Ingrese y comience a disfrutar.",
-      onclick: () => {
-        const response = fetchRegister({
-          email: emailInput.value.trim(),
-          password: passwordInput.value.trim(),
-        });
-        console.log(response);
-        switchView("accessibility-user-login-view");
-      },
-    });
+  button.addEventListener("click", async (e) => {
+    e.preventDefault();
+    const response = await fetchRegister(dataRegisterUser);
+    if (response.success) {
+      executeAlertMessage({
+        icon: null,
+        title: "¡Cuenta Creada!",
+        message: "Su perfil ha sido creado con éxito </br> Ingrese y comience a disfrutar.",
+        onclick: () => {
+          switchView("accessibility-user-login-view");
+        },
+      });
+    } else {
+      executeRegisterView({ errorfields: response.data?.message });
+    }
   });
 
   const onChangeCheck = (e) => {
-    if (e.target.checked) {
-      button.disabled = false;
-    } else {
-      button.disabled = true;
-    }
+    button.disabled = !e.target.checked;
   };
 
   const form = content.querySelector(".accessibility-user-terms-form");
@@ -1113,13 +1587,13 @@ export function userTermsView2() {
   message.classList.add("accessibility-helper-text");
   message.style.textAlign = "center";
   message.style.textDecoration = "underline";
-  message.innerHTML = "Por favor debe leer todo el documento antes de aceptar";
+  message.setAttribute("data-u-i18n", "userTermsView2.helperText");
   form.appendChild(message);
   form.appendChild(
     createCheckTermsForm({
       id: "check2",
-      label:
-        "Declaro que he leído y acepto los términos del tratamiento de mis datos personales conforme a lo aquí expuesto.",
+      label: "userTermsView2.checkboxLabel",
+      i18n_label: "userTermsView2.checkboxLabel",
       onchange: onChangeCheck,
       disabled: true,
     })
@@ -1130,7 +1604,7 @@ export function userTermsView2() {
   termsContent.addEventListener("scroll", () => {
     if (termsContent.scrollTop + termsContent.clientHeight >= termsContent.scrollHeight) {
       const check = form.querySelector("#check2");
-      check.disabled = false; // Activar el checkbox
+      check.disabled = false;
     }
   });
 
@@ -1145,6 +1619,16 @@ export function userProfileView() {
   content.classList.add("accessibility-custom-scroll", "accessibility-view", "hidden");
   content.setAttribute("data-typeAuthRequired", "true");
   content.setAttribute("aria-hidden", "true");
+
+  // Obtiene la imagen desde localStorage o usa una por defecto
+  const storedImageUrl = localStorage.getItem("user-profile-image-url");
+  if (storedImageUrl) {
+    document.getElementById("profile-image").src = storedImageUrl;
+  }
+
+  // Imagen por defecto si no hay imagen personalizada
+  const defaultImage = `${host}/public/images/perfil.svg`;
+
   content.innerHTML = `
     <div class="accessibility-user-view-content">
       <div class="accessibility-user-view-header">
@@ -1152,11 +1636,16 @@ export function userProfileView() {
       <div class="accessibility-user-profile-view-content"> 
         <div class="accessibility-banner-user-top-image" style="position: relative; top: 0; width: 120px; height: 120px; left: calc(50% - 60px);">
           <div class="accessibility-banner-user-top-image-internal" style="width: 105px; height: 105px;">
-            <img src="https://cdn.pixabay.com/photo/2020/12/08/19/12/woman-5815354_640.jpg" alt="user image">
+            <img class="u-accessibility-profile-img"  src="${
+              storedImageUrl || defaultImage
+            }" alt="Imagen de perfil del usuario">
           </div>
         </div>
-        <a class="accessibility-user-button-edit-img" >Editar imagen <span>${DynamicIcon({ icon: "pen" })}</span></a>
+        <a class="accessibility-user-button-edit-img"><span data-u-i18n="userProfileView.editImage"></span> <span>${DynamicIcon(
+          { icon: "pen" }
+        )}</span></a>
         <div class="accessibility-user-profile-view-info">
+          <!-- Aquí puedes agregar más info del perfil -->
         </div>
       </div>
     </div>
@@ -1165,17 +1654,18 @@ export function userProfileView() {
   // Creación del botón "atrás"
   const buttonBack = createButton("back", "", () => switchView(-1));
   buttonBack.classList.add("accessibility-circle-button");
-  buttonBack.innerHTML = `${DynamicIcon({ icon: "left" })}`; // Icono de flecha hacia atrás
+  buttonBack.innerHTML = `${DynamicIcon({ icon: "left" })}`;
 
   // Creación del título
   const title = document.createElement("p");
   title.classList.add("accessibility-title-card-text");
-  title.innerHTML = "Datos del perfil"; // Texto del título
+  title.setAttribute("data-u-i18n", "userProfileView.title");
+  title.innerHTML = "Datos del perfil";
 
   // Creación del botón "home"
   const buttonHome = createButton("home", "", () => switchView("view-initial"));
   buttonHome.classList.add("accessibility-home-button");
-  buttonHome.innerHTML = `${DynamicIcon({ icon: "home" })}`; // Icono de flecha hacia atrás
+  buttonHome.innerHTML = `${DynamicIcon({ icon: "home" })}`;
 
   // Creacion del contenedor izquierdo (con el botón de retroceso)
   const contentLeft = document.createElement("div");
@@ -1200,7 +1690,7 @@ export function userProfileView() {
   const contentInfo = content.querySelector(".accessibility-user-profile-view-info");
   // Datos de ejemplo, reemplaza por los datos reales del usuario
   const userData = {
-    name: "Lina Marulanda",
+    name: "",
     email: "linamarulanda@gmail.com",
     birthDate: "02 April 2021",
     id: "abcd123456",
@@ -1213,34 +1703,64 @@ export function userProfileView() {
 
   contentInfo.innerHTML = `
     <h2 style="text-align: center; width: 100%; margin-bottom: 30px;">${userData.name}</h2>
-    <p class="title">Correo</p>
+    <p class="title" data-u-i18n="userProfileView.email"></p>
     <p class="subtitle">${userData.email}</p>
-    <p class="title">Fecha de nacimiento</p>
+    <p class="title" data-u-i18n="userProfileView.birthDate"></p>
     <p class="subtitle">${userData.birthDate}</p>
-    <p class="title">Identificación</p>
+    <p class="title" data-u-i18n="userProfileView.id"></p>
     <p class="subtitle">${userData.id}</p>
-    <p class="title">Todos los datos</p>
-    <p class="title">Tema</p>
+    <p class="title" data-u-i18n="userProfileView.allData"></p>
+    <p class="title" data-u-i18n="userProfileView.theme"></p>
     <div class="list-checks">
       ${userData.themes
         .map(
           (theme) => `
           <div data-value="${theme.color}" data-hex="${theme.hex}" class="accessibility-check"
-            style="${theme.active && `border: 2px solid ${theme.hex}`}"
-          >
+            style="${theme.active && `border: 2px solid ${theme.hex}`}">
             <div class="accessibility-check-external"
-              style="${`background: color-mix(in srgb, ${theme.hex} 33%, transparent);`}"
-            >
+              style="${`background: color-mix(in srgb, ${theme.hex} 33%, transparent);`}">
               <div class="accessibility-check-internal"
-                style="${`background: ${theme.hex};`}"
-              ></div>
+                style="${`background: ${theme.hex};`}"></div>
             </div>
           </div>
         `
         )
         .join("")}
     </div>
+    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-top: 20px; gap: 10px;">
+      <button class="accessibility-button-theme" id="accessibility-user-edit-profile-button">
+        <span style="display: flex; align-items: center; justify-content: center; width: 100%;">
+          <span data-u-i18n="userProfileView.editProfile"></span>
+        </span>
+      </button>
+      <button class="accessibility-button-theme" id="accessibility-user-logout-button">
+        <span style="display: flex; align-items: center; justify-content: center; width: 100%;">
+          <span data-u-i18n="userProfileView.logout"></span>
+        </span>
+    </div>
   `;
+
+  const editImgButton = content.querySelector(".accessibility-user-button-edit-img");
+  editImgButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    switchView("accessibility-user-image-view");
+  });
+
+  const editProfileButton = contentInfo.querySelector("#accessibility-user-edit-profile-button");
+  editProfileButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    executeRegisterView({
+      errorfields: null,
+      isEdit: true,
+    });
+  });
+
+  const logoutButton = contentInfo.querySelector("#accessibility-user-logout-button");
+  logoutButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    logout();
+    switchView("accessibility-user-login-view");
+  });
 
   const checks = contentInfo.querySelectorAll(".accessibility-check");
   checks.forEach((check, idx) => {

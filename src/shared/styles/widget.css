@@ -7,17 +7,16 @@
   --primaryColor: #1e67e7;
   --secondaryColor: #74c5f2;
   --reverseColor: #5d04d8;
-  --textColor: #1B1F31;
+  --textColor: #1b1f31;
+  --colorRotate: 90deg;
 }
 
-* {
+#my-widget * {
   font-family: "Nunito", sans-serif;
 }
 
 #accessibility-button {
   position: fixed;
-  bottom: 18px;
-  right: 20px;
   background-color: transparent;
   border: none;
   border-radius: 50%;
@@ -25,6 +24,51 @@
   height: 90px;
   cursor: pointer;
   padding: 0;
+  z-index: 9998;
+}
+
+#accessibility-button.top-left {
+  top: 18px;
+  left: 20px;
+}
+
+#accessibility-button.top-center {
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#accessibility-button.top-right {
+  top: 18px;
+  right: 20px;
+}
+
+#accessibility-button.center-right {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+#accessibility-button.center-left {
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+#accessibility-button.bottom-left {
+  bottom: 18px;
+  left: 20px;
+}
+
+#accessibility-button.bottom-center {
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#accessibility-button.bottom-right {
+  bottom: 18px;
+  right: 20px;
 }
 
 .hit-the-floor {
@@ -38,11 +82,7 @@
   text-align: center;
 }
 
-body {
-  background-color: #f1f1f1;
-}
-
-.hidden {
+#my-widget .hidden {
   display: none !important;
 }
 
@@ -50,8 +90,8 @@ body {
 #accessibility-menu {
   position: fixed;
   top: 10px;
-  right: 10px;
-  z-index: 16;
+  z-index: 9999;
+  /* width: min(100%, max(25%, 500px)); */
   width: 500px;
   max-width: calc(100% - 20px);
   height: calc(100% - 20px);
@@ -65,11 +105,27 @@ body {
   border: 1px solid #ffffff1a;
   background: #e1eaf869;
   box-shadow: 0px 0px 20px 10px #00000059;
+  font-size: 1em;
+}
+
+#accessibility-menu.left {
+  left: 10px;
+}
+
+#accessibility-menu.center {
+  right: 50%;
+  transform: translateX(50%);
+}
+
+#accessibility-menu.right {
+  right: 10px;
 }
 
 #accessibility-main-menu {
   padding: 10px;
   height: 100%;
+  font-size: 1em;
+  box-sizing: border-box;
 }
 
 .toggle-button.active {
@@ -91,20 +147,25 @@ body {
   background-color: #c9c5c5;
 }
 
-
-
-
-
 /* Barra de lectura */
 .reading-bar {
   position: fixed;
   width: 500px;
-  height: 5px;
+  height: 8px;
   background: rgba(0, 0, 0, 0.959);
   pointer-events: none;
   z-index: 9999;
-  border-top: 2px solid rgb(208, 255, 0);
-  border-bottom: 2px solid rgb(0, 255, 64);
+
+  .reading-bar {
+    width: 845.95px;
+    height: 25.38px;
+    top: 74.38px;
+    border-radius: 20px;
+    border: 0.5px solid #1e67e7;
+    background: linear-gradient(135deg, #1e67e7 0%, rgb(30, 104, 231) 100%);
+    box-shadow: 4px 2px 8px 0px rgb(95, 156, 231);
+    position: relative;
+  }
 }
 
 /* Detener animaciones */
@@ -116,20 +177,7 @@ body {
 
 /* Subrayar enlaces */
 
-
 /*{barra para apoyo de lectura  }*/
-.reading-bar {
-  position: absolute;
-  left: 50%;
-  width: 30%;
-  height: 7px;
-  background: rgba(0, 0, 0, 0.774);
-  pointer-events: none;
-  z-index: 9999;
-  border-top: 2px solid rgb(255, 115, 0);
-  border-bottom: 2px solid rgb(0, 255, 64);
-  border-radius: 100px;
-}
 
 .center-element {
   position: absolute;

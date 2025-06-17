@@ -1,24 +1,34 @@
-// Función que recorre todos los elementos <audio> y <video> y establece su volumen a 0
+import { toggleCheckButton } from "../../shared/components/allButtons/allButtons";
 
+let silenceActive = false;
 
-
-export function setGlobalMediaVolumeToZero() {
+export function toggleMediaSilence() {
   const mediaElements = document.querySelectorAll("audio, video");
+
+  // Alterna el estado
+  silenceActive = !silenceActive;
+
   mediaElements.forEach(el => {
     try {
-      el.volume = 0;
+      el.volume = silenceActive ? 0 : 1;
     } catch (error) {
       console.warn("No se pudo ajustar el volumen de un elemento:", error);
     }
   });
-}
 
+  // Guarda el estado en localStorage
+  localStorage.setItem("mediaSilence", silenceActive.toString());
 
-
-// Ejemplo de integración: agrega el botón a un contenedor específico del widget
-window.addEventListener("DOMContentLoaded", () => {
-  const controlsContainer = document.getElementById("widget-controls"); // Asegúrate de tener este contenedor en el DOM
-  if (controlsContainer) {
-    controlsContainer.appendChild(createSilenceButton());
+  // Actualiza el botón visual
+  const btn = document.getElementById("media-silence-button");
+  if (btn) {
+    btn.textContent = silenceActive ? " Desactivar silencio" : " Activar silencio";
   }
-});
+
+  // ✅ Refleja el estado en la interfaz visual con toggleCheckButton
+  toggleCheckButton({
+    id: "mediaSilence", // Cambia el ID si es diferente
+    checked: silenceActive,
+    option: null,
+  });
+}

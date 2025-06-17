@@ -1,0 +1,484 @@
+{
+  "fullLayout": {
+    "slogan": "Conectat cu tine"
+  },
+  "bannerUser": {
+    "welcome": "Bun venit",
+    "subwelcome": "Vă invităm să vă înregistrați pentru o experiență personalizată"
+  },
+  "category": {
+    "visual": {
+      "title": "Vizual",
+      "description": "Modalități unice de percepție sau interpretare a mediului înconjurător prin vedere."
+    },
+    "mental": {
+      "title": "Psihosocial",
+      "description": "Modalități autentice de interacțiune, simțire și relaționare cu lumea."
+    },
+    "auditory": {
+      "title": "Auditiv",
+      "description": "Modalități diverse de a experimenta și de a te conecta cu sunetele mediului înconjurător."
+    },
+    "physical": {
+      "title": "Fizic",
+      "description": "Stiluri personale de mișcare, exprimare corporală și coordonare."
+    },
+    "cognitive": {
+      "title": "Cognitiv",
+      "description": "Procese unice de gândire, învățare, memorare și atenție."
+    },
+    "custom": {
+      "title": "Personalizat",
+      "description": "Configurați o experiență adaptată nevoilor și preferințelor dumneavoastră individuale."
+    }
+  },
+  "viewCategory": {
+    "title1": "Profile de Abilități Diverse",
+    "title2": "Mai multe setări",
+    "visual": {
+      "profile1": {
+        "title": "Vedere scăzută",
+        "description": "Experiență vizuală unică care îmbogățește modul de percepție a mediului."
+      },
+      "profile2": {
+        "title": "Orbire",
+        "description": "Formă de percepție care prioritizează alte simțuri pentru a interpreta lumea."
+      },
+      "profile3": {
+        "title": "Daltonism",
+        "description": "Experiență singulară în aprecierea și distincția culorilor."
+      }
+    },
+    "mental": {
+      "profile1": {
+        "title": "TSA",
+        "description": "Modalități distinctive de concentrare asupra intereselor, comunicării și relațiilor."
+      },
+      "profile2": {
+        "title": "Sindrom Down",
+        "description": "Mod personal și valoros de a experimenta dezvoltarea personală și socială."
+      },
+      "profile3": {
+        "title": "Dislexie",
+        "description": "Mod special de percepție și decodificare a structurii textelor."
+      },
+      "profile4": {
+        "title": "Epilepsie",
+        "description": "Manifestări unice ale funcționării neurologice care reprezintă diversitate."
+      },
+      "profile5": {
+        "title": "ADHD",
+        "description": "Dinamică specială a atenției, energiei și procesării stimulilor."
+      }
+    },
+    "auditory": {
+      "profile1": {
+        "title": "Surditate",
+        "description": "Moduri distincte de viață și înțelegere a comunicării cu ceilalți."
+      }
+    },
+    "physical": {
+      "profile1": {
+        "title": "Mobilitate superioară",
+        "description": "Modalități particulare de mișcare și expresie în partea superioară a corpului."
+      }
+    },
+    "cognitive": {
+      "profile1": {
+        "title": "Autism",
+        "description": "Stil unic de percepție, procesare și relaționare cu mediul și oamenii."
+      },
+      "profile2": {
+        "title": "TOC",
+        "description": "Modalități intense și structurate de organizare a gândurilor și acțiunilor."
+      }
+    },
+    "custom": {}
+  },
+  "functionalityButtons": {
+    "button1": {
+      "title": "Mod evidențiere",
+      "description": "Evidențiază conținutul important."
+    },
+    "button2": {
+      "title": "Evidențiază text",
+      "description": "Evidențiază textul vizibil."
+    },
+    "button3": {
+      "title": "Lupă",
+      "description": "Mărește textul la trecerea cursorului."
+    },
+    "button4": {
+      "title": "Mărește textul",
+      "description": "Mărește dimensiunea textului de pe pagină."
+    },
+    "button5": {
+      "title": "Mărește spațierea",
+      "description": "Îmbunătățește spațierea textului."
+    },
+    "button6": {
+      "title": "Citește cu voce tare",
+      "description": "Citește textul paginii la trecerea cursorului."
+    },
+    "button7": {
+      "title": "Evidențiază linkuri",
+      "description": "Evidențiază linkurile de pe pagină."
+    },
+    "button8": {
+      "title": "Oprește animațiile",
+      "description": "Dezactivează toate animațiile de pe pagină."
+    },
+    "button9": {
+      "title": "Activează bara de citire",
+      "description": "Afișează o bară care facilitează citirea."
+    },
+    "button10": {
+      "title": "Cursor mare",
+      "description": "Mărește dimensiunea cursorului."
+    },
+    "button11": {
+      "title": "Font lizibil",
+      "description": "Schimbă fontul textului într-unul mai lizibil."
+    },
+    "button12": {
+      "title": "Viteză de citire",
+      "description": "Reglați viteza de citire a textului."
+    },
+    "button13": {
+      "title": "Culori de evidențiere",
+      "description": "Schimbă culorile de evidențiere pentru a îmbunătăți vizibilitatea."
+    },
+    "button14": {
+      "title": "Control volum",
+      "description": "Reglați volumul cititorului de ecran."
+    },
+    "button15": {
+      "title": "Protanopie",
+      "description": "Ajustare culoare pentru deficiență de percepție a culorii roșii."
+    },
+    "button16": {
+      "title": "Deuteranopie",
+      "description": "Ajustare culoare pentru deficiență de percepție a culorii verzi."
+    },
+    "button17": {
+      "title": "Tritanopie",
+      "description": "Ajustare culoare pentru deficiență de percepție a culorii albastre."
+    },
+    "button18": {
+      "title": "Protanomalie",
+      "description": "Corecție parțială a culorii roșii."
+    },
+    "button19": {
+      "title": "Deuteranomalie",
+      "description": "Corecție parțială a culorii verzi."
+    },
+    "button20": {
+      "title": "Tritanomalie",
+      "description": "Corecție parțială a culorii albastre."
+    },
+    "button21": {
+      "title": "Achromatomalie",
+      "description": "Ajustare parțială a culorilor alb-negru."
+    },
+    "button22": {
+      "title": "Achromatopsie",
+      "description": "Ajustare totală a culorilor în nuanțe de gri."
+    },
+    "button23": {
+      "title": "Cadru de focalizare",
+      "description": "Marchează elementul aflat în focalizare."
+    },
+    "button24": {
+      "title": "Contrast selectiv",
+      "description": "Activează modul întunecat."
+    },
+    "button25": {
+      "title": "Citire pauzată",
+      "description": "Activează citirea cuvânt cu cuvânt."
+    },
+    "button26": {
+      "title": "Mod focalizare",
+      "description": "Elimină imaginile și videoclipurile care distrag atenția."
+    },
+    "button27": {
+      "title": "Sunet mut",
+      "description": "Mutează sunetul paginii."
+    },
+    "button28": {
+      "title": "Mască de citire",
+      "description": "Adaugă o mască pentru a facilita citirea."
+    },
+    "button29": {
+      "title": "Font dislexic",
+      "description": "Schimbă fontul într-unul conceput pentru dislexie."
+    },
+    "button30": {
+      "title": "Control derulare",
+      "description": "Controlează derularea paginii pentru a preveni săriturile bruște."
+    },
+    "button31": {
+      "title": "Contrast redus",
+      "description": "Activează modul contrast redus pentru a îmbunătăți lizibilitatea."
+    },
+    "button32": {
+      "title": "Control ocular",
+      "description": "Activează navigarea cu mouse-ul prin urmărirea ochilor."
+    },
+    "button33": {
+      "title": "Traducător limbaj mimico-gestual",
+      "description": "Activează modul limbaj mimico-gestual al paginii."
+    },
+    "button34": {
+      "title": "Tastatură pe ecran",
+      "description": "Activează tastatura pe ecran pentru o tastare mai ușoară."
+    },
+    "button35": {
+      "title": "Schimbă culoarea textului",
+      "description": "Permite schimbarea culorii textului paginii."
+    },
+    "button36": {
+      "title": "Aliniază textul la dreapta",
+      "description": "Permite alinierea textului la dreapta."
+    },
+    "button37": {
+      "title": "Aliniază textul la stânga",
+      "description": "Permite alinierea textului la stânga."
+    },
+    "button38": {
+      "title": "Aliniază textul la centru",
+      "description": "Permite centrarea textului."
+    },
+    "button39": {
+      "title": "Spațiere între linii",
+      "description": "Reglați spațierea între liniile de text."
+    }
+  },
+  "loginView": {
+    "title": "Autentificare",
+    "welcome": "Bun venit!",
+    "subwelcome": "Alegeți una dintre aceste opțiuni pentru a vă conecta sau a crea un cont.",
+    "input": {
+      "placeholderEmail": "Introduceți adresa dvs. de email",
+      "placeholderPass": "Introduceți parola"
+    },
+    "forgotPass": "Ați uitat parola?",
+    "buttonLogin": "Conectare",
+    "notAccount": {
+      "subtext1": "Nu aveți cont?",
+      "subtext2": "Înregistrare",
+      "subtext3": "Sau vă puteți conecta cu"
+    }
+  },
+  "accountView": {
+    "title": "Informații cont",
+    "welcome": "Bun venit!",
+    "subwelcome": "Creați-vă contul",
+    "input": {
+      "placeholderEmail": "Introduceți adresa dvs. de email",
+      "placeholderConfirmEmail": "Confirmați adresa dvs. de email",
+      "placeholderPass": "Introduceți parola",
+      "placeholderConfirmPass": "Confirmați parola"
+    },
+    "button": "Salvează și continuă"
+  },
+  "registerView": {
+    "title": "Informații profil",
+    "welcome": "Bun venit",
+    "subwelcome": "Vă rugăm completați toate câmpurile pentru a vă crea profilul.",
+    "edit": "Editează imaginea",
+    "subtitle1": "Informații personale de bază",
+    "subtitle2": "Informații privind accesibilitatea",
+    "input": {
+      "labelName": "Nume complet",
+      "placeholderName": "Introduceți numele complet",
+      "labelDocumentType": "Tipul documentului",
+      "optionDocumentType": {
+        "option1": "Selectați",
+        "option2": "C.I.",
+        "option3": "Carte de identitate",
+        "option4": "Pașaport",
+        "option5": "Document de identitate străin",
+        "option6": "Altele",
+        "option7": "Act de identitate"
+      },
+      "labelNDocument": "Număr document",
+      "placeholderNDocument": "Introduceți numărul documentului",
+      "labelEmail": "Email",
+      "placeholderEmail": "Introduceți adresa dvs. de email",
+      "labelBirthdate": "Data nașterii",
+      "placeholderBirthdate": "Introduceți data nașterii",
+      "labelResidenceArea": "Zona de reședință",
+      "optionResidenceArea": {
+        "option1": "Selectați",
+        "option2": "Urban",
+        "option3": "Rural",
+        "option4": "Peri-urban"
+      },
+      "labelEducationalLevel": "Nivel de educație",
+      "optionEducationalLevel": {
+        "option1": "Selectați",
+        "option2": "Niciunul",
+        "option3": "Primar",
+        "option4": "Secundar",
+        "option5": "Universitar",
+        "option6": "Postuniversitar"
+      },
+      "labelOcupacion": "Statut ocupațional",
+      "optionOcupacion": {
+        "option1": "Selectați",
+        "option2": "Angajat",
+        "option3": "Șomer",
+        "option4": "Student",
+        "option5": "Pensionar",
+        "option6": "Întreprinzător"
+      },
+      "labelDisability": "Aveți abilități diverse?",
+      "optionDisability": {
+        "option1": "Selectați",
+        "option2": "Da",
+        "option3": "Nu"
+      },
+      "labelDisabilityType": "Tip de abilitate diversă",
+      "optionDisabilityType": {
+        "option1": "Selectați",
+        "option2": "Vizuală",
+        "option3": "Auditivă",
+        "option4": "Motorie",
+        "option5": "Cognitivă",
+        "option6": "Psihosocială",
+        "option7": "Multiple"
+      },
+      "labelDisabilityLevel": "Nivel de abilitate diversă",
+      "optionDisabilityLevel": {
+        "option1": "Selectați",
+        "option2": "Ușoară",
+        "option3": "Moderată",
+        "option4": "Ridicată"
+      }
+    },
+    "button": "Salvează și continuă"
+  },
+  "userTermsView": {
+    "title": "Termeni și Condiții",
+    "title2": "Consimțământ pentru prelucrarea datelor personale – Platforma U",
+    "intro": "Înregistrându-mă pe platforma U, confirm și accept, în mod liber, informat, specific și neechivoc, că datele mele personale vor fi colectate, prelucrate și stocate în conformitate cu standardele internaționale de confidențialitate și protecție a datelor, pe baza următoarelor condiții:",
+    "section1Title": "1. Operatorul de date",
+    "section1Text": "201.Dsoft Innovate S.A.S. (denumită în continuare „U”), cu sediul social în [adresa juridică], în calitate de operator de date, îmi va prelucra datele conform acestei autorizări.",
+    "section2Title": "2. Scopul prelucrării",
+    "section2Text": "Datele mele personale vor fi prelucrate în următoarele scopuri:",
+    "section2List": {
+      "item1": "Personalizarea experienței de accesibilitate în widget-ul U.",
+      "item2": "Permite analiza și raportarea agregată privind utilizarea instrumentelor de accesibilitate (fără identificarea individuală a utilizatorului).",
+      "item3": "Furnizarea de asistență tehnică și urmărire personalizată atunci când este necesar.",
+      "item4": "Respectarea obligațiilor legale și de reglementare privind accesibilitatea, incluziunea și nediscriminarea.",
+      "item5": "Transmiterea de actualizări tehnice, informaționale sau comerciale, numai dacă am dat consimțământul explicit în acest sens."
+    },
+    "section3Title": "3. Baza legală pentru prelucrare",
+    "section3Text": "U se bazează pe prelucrarea datelor personale pe:",
+    "section3List": {
+      "item1": "Consimțământul explicit al utilizatorului.",
+      "item2": "Interesul legitim de a îmbunătăți serviciile de accesibilitate, respectând întotdeauna confidențialitatea utilizatorului.",
+      "item3": "Respectarea reglementărilor locale și internaționale, inclusiv GDPR (UE), CCPA (California), LGPD (Brazilia) și alte legi aplicabile privind protecția datelor."
+    },
+    "section4Title": "4. Transferul internațional de date",
+    "section4Text": "Datele pot fi transferate și/sau stocate pe servere situate în diferite țări. Unyco garantează că, atunci când acest lucru se întâmplă, se vor aplica clauze contractuale standard și măsuri tehnice adecvate pentru a proteja datele în conformitate cu GDPR și alte reglementări aplicabile.",
+    "section5Title": "5. Drepturile utilizatorului",
+    "section5Text": "În calitate de titular al datelor, am dreptul să:",
+    "section5List": {
+      "item1": "Accesez, rectific, limitez, șterg sau portez datele mele personale.",
+      "item2": "Îmi retrag consimțământul în orice moment.",
+      "item3": "Depun plângeri la autoritatea locală de protecție a datelor (cum ar fi SIC în Columbia, EDPB în UE sau FTC în SUA)."
+    },
+    "section6Title": "6. Perioada de Retenție",
+    "section6Text": "Datele vor fi păstrate numai atât timp cât este necesar pentru scopurile menționate sau cât timp contul rămâne activ. Ulterior, acestea vor fi șterse sau anonimizate conform principiilor de minimizare.",
+    "section7Title": "7. Contact pentru Exercitarea Drepturilor",
+    "section7Text1": "Vă puteți exercita drepturile scriind la: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>",
+    "section7Text2": "Sau accesând formularul disponibil la: <a href=\"https://www.u.app/privacy\">www.u.app/privacy</a>",
+    "helperText": "Vă rugăm să citiți întregul document înainte de a accepta.",
+    "checkboxLabel": "Declar că am citit și accept termenii de prelucrare a datelor cu caracter personal, așa cum sunt prezentați aici.",
+    "button": "Confirmare"
+  },
+  "userTermsView2": {
+    "title": "Termeni și Condiții",
+    "title2": "Consimțământ Informat cu privire la Utilizarea Datelor – Widget U",
+    "intro": "La U, respectăm confidențialitatea dvs. și dorim să știți exact cum utilizăm datele dvs.",
+    "accept": "Înregistrându-vă pe platforma noastră și utilizând widget-ul, acceptați că colectăm și utilizăm anumite informații în următoarele scopuri:",
+    "section1Title": "Ce date colectăm?",
+    "section1Text": "Colectăm doar datele necesare pentru a vă oferi o experiență accesibilă și personalizată. Acest lucru poate include:",
+    "section1List": {
+      "item1": "Datele dvs. de contact (nume, adresă de e-mail).",
+      "item2": "Țara, limba și nivelul de accesibilitate necesar.",
+      "item3": "Tipul de dizabilitate (dacă alegeți să îl împărtășiți).",
+      "item4": "Setările pe care le activați în widget (de exemplu: mărire text, activare cititor ecran, etc.)."
+    },
+    "section1Note": "Nu colectăm date bancare sau nu accesăm conținutul dvs. personal de pe web.",
+    "section2Title": "De ce utilizăm aceste informații?",
+    "section2List": {
+      "item1": "Pentru a adapta automat widget-ul la nevoile dumneavoastră.",
+      "item2": "Pentru a genera rapoarte anonime și statistice care contribuie la îmbunătățirea accesului digital.",
+      "item3": "Pentru a vă proteja drepturile de accesibilitate, conform standardelor precum WCAG 2.2, GDPR, CCPA și alte legi locale.",
+      "item4": "Dacă sunteți de acord să primiți noutăți, vă vom trimite actualizări despre noile funcții sau îmbunătățiri ale widget-ului."
+    },
+    "section3Title": "Cine vă poate vedea datele?",
+    "section3Text1": "Doar dumneavoastră și sistemul aveți acces la setările dumneavoastră personale.",
+    "section3Text2": "Dacă decideți să vă împărtășiți datele cu o instituție (de exemplu, o universitate care implementează Unyco), aceasta va primi doar rapoarte agregate și anonime, niciodată date individuale fără permisiunea dumneavoastră.",
+    "section4Title": "Ce control aveți asupra informațiilor dumneavoastră?",
+    "section4List": {
+      "item1": "Vă puteți modifica sau șterge contul oricând.",
+      "item2": "Puteți solicita o copie a datelor pe care le deținem despre dumneavoastră.",
+      "item3": "Vă puteți revoca acest consimțământ scriind la: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>"
+    },
+    "helperText": "Vă rugăm să citiți întregul document înainte de a accepta.",
+    "checkboxLabel": "Declar că am citit și accept termenii de prelucrare a datelor personale menționați aici.",
+    "button": "Confirmare"
+  },
+  "userProfileView": {
+    "title": "Informații Profil",
+    "editImage": "Editează Imagine",
+    "name": "Nume",
+    "email": "Email",
+    "birthDate": "Data nașterii",
+    "id": "Identificare",
+    "allData": "Toate datele",
+    "theme": "Temă",
+    "editProfile": "Editează profilul",
+    "logout": "Deconectare"
+  },
+  "resetPasswordView": {
+    "title": "Recuperare parolă",
+    "labelEmail": "Introduceți adresa dvs. de email",
+    "placeholderEmail": "Introduceți adresa dvs. de email",
+    "buttonSend": "Trimite",
+    "titleCode": "Verificare securitate",
+    "labelCode": "Introduceți codul de verificare trimis la adresa dvs. de email",
+    "resend": "Nu am primit codul.",
+    "resendLink": "Retrimite",
+    "timer": "Mai sunt {{time}} secunde",
+    "timerExpired": "Codul a expirat. Vă rugăm să solicitați unul nou.",
+    "titleNewPass": "Introduceți noua parolă",
+    "labelNewPass": "Introduceți noua parolă",
+    "placeholderNewPass": "Parolă nouă",
+    "labelConfirmPass": "Confirmați noua parolă",
+    "placeholderConfirmPass": "Parolă nouă",
+    "buttonAccept": "Trimite",
+    "buttonCancel": "Anulare",
+    "successTitle": "Schimbare parolă",
+    "successMessage": "Parola dumneavoastră a fost actualizată cu succes."
+  },
+  "positionView": {
+    "title": "Selectați locația widget-ului",
+    "subtitle": "Vă rugăm să selectați locația preferată."
+  },
+  "languagesView": {
+    "title": "Selectați limba",
+    "subtitle": "Selectați limba preferată sau limba maternă."
+  },
+  "error": {
+    "helperText": {
+      "emailError1": "Adresele de e-mail nu coincid.",
+      "emailError2": "Adresa de e-mail nu este validă.",
+      "passError1": "Parolele nu coincid.",
+      "passError2": "Parola trebuie să aibă mai mult de 6 caractere."
+    }
+  }
+}

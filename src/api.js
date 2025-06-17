@@ -17,7 +17,7 @@ export async function registerBasic(email, password) {
 // Paso 2: Completar perfil
 async function updateProfile(profileData) {
   const token = localStorage.getItem('token');
-  const res = await fetch('http://localhost:3001/auth/profile', {
+  const res = await fetch('http://localhost/auth/profile', {
     method: 'PUT', // o PATCH
     headers: { 
       'Content-Type': 'application/json',
@@ -28,4 +28,33 @@ async function updateProfile(profileData) {
 
   if (!res.ok) throw new Error('Error actualizando perfil');
   return await res.json();
+}
+
+
+
+function handleCredentialResponse(response) {
+  // response.credential contiene el JWT (ID token)
+  console.log("ID Token:", response.credential);
+
+  // Enviar el token al backend para verificarlo e iniciar/registrar al usuario
+  fetch("http://localhost:3000/auth/google-login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ idToken: response.credential })
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log("Usuario autenticado:", data);
+  });
+}
+
+function loginWithGoogle() {
+  google.accounts.id.initialize({
+    client_id: "TU_CLIENT_ID_AQUI",
+    callback: handleCredentialResponse
+  });
+
+  google.accounts.id.prompt(); // Usa un popup
 }

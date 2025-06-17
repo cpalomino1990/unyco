@@ -1,8 +1,9 @@
 import { toggleCheckButton } from "../../shared/components/allButtons/allButtons";
 
 let abruptScrollEnabled = false;
-let originalScrollTo = null;
-let originalScroll = null;
+let originalScrollTo = window.scrollTo;
+let originalScroll = window.scroll;
+let originalScrollIntoView = Element.prototype.scrollIntoView;
 
 export function preventAbruptScroll() {
   abruptScrollEnabled = !abruptScrollEnabled;
@@ -10,7 +11,7 @@ export function preventAbruptScroll() {
   toggleCheckButton({
     id: "scrollControl",
     checked: abruptScrollEnabled,
-    option:  null,
+    option: null,
   });
 
   if (abruptScrollEnabled) {
@@ -23,43 +24,55 @@ export function preventAbruptScroll() {
 }
 
 function activateAbruptScrollControl() {
-  if (!originalScrollTo) originalScrollTo = window.scrollTo;
-  if (!originalScroll) originalScroll = window.scroll;
-
+  // Interceptar window.scrollTo
   window.scrollTo = function (...args) {
     const opts = args[0];
-    const isAbrupt =
-      (typeof opts === "object" && opts.top === 0 && opts.behavior === "auto") ||
-      (args[0] === 0 && args[1] === 0);
+    const isBrusco =
+      (typeof opts === "object" && (!opts.behavior || opts.behavior === "auto")) ||
+      (typeof args[0] === "number" && typeof args[1] === "number");
 
-    if (isAbrupt) {
-      console.warn("⚠️ Scroll brusco bloqueado por accesibilidad");
+    if (isBrusco) {
+      console.warn("🚫 Scroll bloqueado (window.scrollTo)");
       return;
     }
 
     return originalScrollTo.apply(window, args);
   };
 
+  // Interceptar window.scroll
   window.scroll = function (...args) {
-    const isAbrupt = args[0] === 0 && args[1] === 0;
+    const isBrusco = args[0] === 0 && args[1] === 0;
 
-    if (isAbrupt) {
-      console.warn("⚠️ Scroll brusco bloqueado por accesibilidad");
+    if (isBrusco) {
+      console.warn("🚫 Scroll bloqueado (window.scroll)");
       return;
     }
 
     return originalScroll.apply(window, args);
   };
+
+  // Interceptar scrollIntoView de cualquier elemento
+  Element.prototype.scrollIntoView = function (arg) {
+    const isBrusco = !arg || (typeof arg === "object" && (!arg.behavior || arg.behavior === "auto"));
+
+    if (isBrusco) {
+      console.warn("🚫 Scroll bloqueado (element.scrollIntoView)");
+      return;
+    }
+
+    return originalScrollIntoView.call(this, arg);
+  };
 }
 
 function deactivateAbruptScrollControl() {
-  if (originalScrollTo) window.scrollTo = originalScrollTo;
-  if (originalScroll) window.scroll = originalScroll;
+  window.scrollTo = originalScrollTo;
+  window.scroll = originalScroll;
+  Element.prototype.scrollIntoView = originalScrollIntoView;
 }
 
 export function loadAbruptScrollSetting() {
   const saved = localStorage.getItem("scrollControl");
-  if (saved === "on") {
+  if (saved === "true") {
     abruptScrollEnabled = true;
     activateAbruptScrollControl();
 

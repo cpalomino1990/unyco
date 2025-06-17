@@ -1,0 +1,484 @@
+{
+  "fullLayout": {
+    "slogan": "Tersambung Dengan-U"
+  },
+  "bannerUser": {
+    "welcome": "Selamat Datang",
+    "subwelcome": "Kami mengundang Anda untuk mendaftar agar mendapatkan pengalaman yang dipersonalisasi"
+  },
+  "category": {
+    "visual": {
+      "title": "Visual",
+      "description": "Cara unik dalam melihat atau menafsirkan lingkungan melalui penglihatan."
+    },
+    "mental": {
+      "title": "Psikososial",
+      "description": "Cara otentik dalam berinteraksi, merasakan, dan berhubungan dengan dunia."
+    },
+    "auditory": {
+      "title": "Auditorial",
+      "description": "Berbagai cara dalam mengalami dan terhubung dengan suara-suara di lingkungan."
+    },
+    "physical": {
+      "title": "Fisik",
+      "description": "Gaya personal dalam bergerak, ekspresi tubuh, dan koordinasi."
+    },
+    "cognitive": {
+      "title": "Kognitif",
+      "description": "Proses unik dalam berpikir, belajar, mengingat, dan memperhatikan."
+    },
+    "custom": {
+      "title": "Dikustomisasi",
+      "description": "Siapkan pengalaman yang disesuaikan dengan kebutuhan dan preferensi individu Anda."
+    }
+  },
+  "viewCategory": {
+    "title1": "Profil Kemampuan yang Beragam",
+    "title2": "Lebih Banyak Pengaturan",
+    "visual": {
+      "profile1": {
+        "title": "Low Vision",
+        "description": "Pengalaman visual unik yang memperkaya cara melihat lingkungan."
+      },
+      "profile2": {
+        "title": "Kebutaan",
+        "description": "Bentuk persepsi yang memprioritaskan indera lain untuk menginterpretasi dunia."
+      },
+      "profile3": {
+        "title": "Buta Warna",
+        "description": "Pengalaman unik dalam menghargai dan membedakan warna."
+      }
+    },
+    "mental": {
+      "profile1": {
+        "title": "ASD",
+        "description": "Cara khas dalam memfokuskan minat, komunikasi, dan hubungan."
+      },
+      "profile2": {
+        "title": "Sindrom Down",
+        "description": "Cara pribadi dan berharga dalam mengalami perkembangan pribadi dan sosial."
+      },
+      "profile3": {
+        "title": "Disleksia",
+        "description": "Cara khusus dalam memahami dan mendekode struktur teks."
+      },
+      "profile4": {
+        "title": "Epilepsi",
+        "description": "Manifestasi fungsi neurologis yang unik dan mewakili keberagaman."
+      },
+      "profile5": {
+        "title": "ADHD",
+        "description": "Dinamika khusus perhatian, energi, dan pemrosesan stimulus."
+      }
+    },
+    "auditory": {
+      "profile1": {
+        "title": "Ketulian",
+        "description": "Mode hidup dan pemahaman komunikasi dengan orang lain yang berbeda."
+      }
+    },
+    "physical": {
+      "profile1": {
+        "title": "Mobilitas Atas",
+        "description": "Cara khusus dalam bergerak dan berekspresi di bagian tubuh atas."
+      }
+    },
+    "cognitive": {
+      "profile1": {
+        "title": "Autisme",
+        "description": "Gaya unik dalam memahami, memproses, dan berhubungan dengan lingkungan dan orang lain."
+      },
+      "profile2": {
+        "title": "OCD",
+        "description": "Cara pengorganisasian pikiran dan tindakan yang intensif dan terstruktur."
+      }
+    },
+    "custom": {}
+  },
+  "functionalityButtons": {
+    "button1": {
+      "title": "Mode Sorot",
+      "description": "Menyorot konten penting."
+    },
+    "button2": {
+      "title": "Sorot Teks",
+      "description": "Menyorot teks yang terlihat."
+    },
+    "button3": {
+      "title": "Pembesar",
+      "description": "Memperbesar teks saat dihover."
+    },
+    "button4": {
+      "title": "Perbesar Teks",
+      "description": "Memperbesar ukuran teks di halaman."
+    },
+    "button5": {
+      "title": "Perbesar Jarak",
+      "description": "Meningkatkan jarak antar teks."
+    },
+    "button6": {
+      "title": "Baca dengan Keras",
+      "description": "Membaca teks halaman saat dihover."
+    },
+    "button7": {
+      "title": "Sorot Tautan",
+      "description": "Menyorot tautan di halaman."
+    },
+    "button8": {
+      "title": "Hentikan Animasi",
+      "description": "Menonaktifkan semua animasi di halaman."
+    },
+    "button9": {
+      "title": "Aktifkan Bilah Baca",
+      "description": "Menampilkan bilah yang memudahkan membaca."
+    },
+    "button10": {
+      "title": "Kursor Besar",
+      "description": "Ubah ukuran kursor menjadi lebih besar."
+    },
+    "button11": {
+      "title": "Font Terbaca",
+      "description": "Mengubah font teks menjadi font yang lebih mudah dibaca."
+    },
+    "button12": {
+      "title": "Kecepatan Membaca",
+      "description": "Menyesuaikan kecepatan membaca teks."
+    },
+    "button13": {
+      "title": "Warna Sorotan",
+      "description": "Mengubah warna sorotan untuk meningkatkan visibilitas."
+    },
+    "button14": {
+      "title": "Kontrol Volume",
+      "description": "Menyesuaikan volume pembaca layar."
+    },
+    "button15": {
+      "title": "Protanopia",
+      "description": "Penyesuaian warna untuk kekurangan persepsi warna merah."
+    },
+    "button16": {
+      "title": "Deuteranopia",
+      "description": "Penyesuaian warna untuk kekurangan persepsi warna hijau."
+    },
+    "button17": {
+      "title": "Tritanopia",
+      "description": "Penyesuaian warna untuk kekurangan persepsi warna biru."
+    },
+    "button18": {
+      "title": "Protanomaly",
+      "description": "Koreksi warna merah sebagian."
+    },
+    "button19": {
+      "title": "Deuteranomaly",
+      "description": "Koreksi warna hijau sebagian."
+    },
+    "button20": {
+      "title": "Tritanomaly",
+      "description": "Koreksi warna biru sebagian."
+    },
+    "button21": {
+      "title": "Achromatomaly",
+      "description": "Penyesuaian warna hitam putih sebagian."
+    },
+    "button22": {
+      "title": "Achromatopsia",
+      "description": "Penyesuaian warna skala abu-abu total."
+    },
+    "button23": {
+      "title": "Bingkai Fokus",
+      "description": "Menandai elemen yang sedang fokus."
+    },
+    "button24": {
+      "title": "Kontras Selektif",
+      "description": "Mengaktifkan mode gelap halaman."
+    },
+    "button25": {
+      "title": "Bacaan Dijeda",
+      "description": "Mengaktifkan pembacaan per kata."
+    },
+    "button26": {
+      "title": "Mode Fokus",
+      "description": "Menghapus gambar dan video yang mengganggu."
+    },
+    "button27": {
+      "title": "Bisukan Suara",
+      "description": "Membisukan suara halaman."
+    },
+    "button28": {
+      "title": "Masker Bacaan",
+      "description": "Menambahkan masker untuk memudahkan membaca."
+    },
+    "button29": {
+      "title": "Font Disleksia",
+      "description": "Mengubah font ke font yang dirancang untuk disleksia."
+    },
+    "button30": {
+      "title": "Kontrol Gulir",
+      "description": "Mengontrol pengguliran halaman untuk mencegah lompatan mendadak."
+    },
+    "button31": {
+      "title": "Kontras Rendah",
+      "description": "Mengaktifkan mode kontras rendah untuk meningkatkan keterbacaan."
+    },
+    "button32": {
+      "title": "Kontrol Mata",
+      "description": "Mengaktifkan navigasi mouse dengan pelacakan mata."
+    },
+    "button33": {
+      "title": "Penerjemah Bahasa Isyarat",
+      "description": "Mengaktifkan mode bahasa isyarat halaman."
+    },
+    "button34": {
+      "title": "Keyboard Layar",
+      "description": "Mengaktifkan keyboard layar untuk mengetik lebih mudah."
+    },
+    "button35": {
+      "title": "Ubah Warna Teks",
+      "description": "Memungkinkan perubahan warna teks halaman."
+    },
+    "button36": {
+      "title": "Rata Kanan Teks",
+      "description": "Memungkinkan perataan teks ke kanan."
+    },
+    "button37": {
+      "title": "Rata Kiri Teks",
+      "description": "Memungkinkan perataan teks ke kiri."
+    },
+    "button38": {
+      "title": "Rata Tengah Teks",
+      "description": "Memungkinkan pemusatan teks."
+    },
+    "button39": {
+      "title": "Spasi Baris",
+      "description": "Menyesuaikan spasi baris dalam teks."
+    }
+  },
+  "loginView": {
+    "title": "Masuk",
+    "welcome": "Selamat datang di",
+    "subwelcome": "Pilih salah satu opsi berikut untuk masuk atau buat akun.",
+    "input": {
+      "placeholderEmail": "Masukkan email Anda",
+      "placeholderPass": "Masukkan kata sandi Anda"
+    },
+    "forgotPass": "Lupa kata sandi Anda?",
+    "buttonLogin": "Masuk",
+    "notAccount": {
+      "subtext1": "Belum punya akun?",
+      "subtext2": "Daftar",
+      "subtext3": "Atau Anda dapat masuk dengan"
+    }
+  },
+  "accountView": {
+    "title": "Informasi Akun",
+    "welcome": "Selamat datang di",
+    "subwelcome": "Buat akun Anda",
+    "input": {
+      "placeholderEmail": "Masukkan email Anda",
+      "placeholderConfirmEmail": "Konfirmasi email Anda",
+      "placeholderPass": "Masukkan kata sandi Anda",
+      "placeholderConfirmPass": "Konfirmasi kata sandi Anda"
+    },
+    "button": "Simpan dan lanjutkan"
+  },
+  "registerView": {
+    "title": "Informasi Profil",
+    "welcome": "Selamat datang",
+    "subwelcome": "Harap lengkapi semua kolom untuk membuat profil Anda.",
+    "edit": "Sunting gambar",
+    "subtitle1": "Informasi Pribadi Dasar",
+    "subtitle2": "Informasi Aksesibilitas",
+    "input": {
+      "labelName": "Nama Lengkap",
+      "placeholderName": "Masukkan nama lengkap Anda",
+      "labelDocumentType": "Jenis Dokumen",
+      "optionDocumentType": {
+        "option1": "Pilih",
+        "option2": "KTP",
+        "option3": "Kartu Identitas",
+        "option4": "Paspor",
+        "option5": "ID Asing",
+        "option6": "Lainnya",
+        "option7": "Dokumen Identitas"
+      },
+      "labelNDocument": "Nomor Dokumen",
+      "placeholderNDocument": "Masukkan nomor dokumen Anda",
+      "labelEmail": "Email",
+      "placeholderEmail": "Masukkan email Anda",
+      "labelBirthdate": "Tanggal Lahir",
+      "placeholderBirthdate": "Masukkan tanggal lahir Anda",
+      "labelResidenceArea": "Area Tempat Tinggal",
+      "optionResidenceArea": {
+        "option1": "Pilih",
+        "option2": "Perkotaan",
+        "option3": "Pedesaan",
+        "option4": "Perkotaan Pinggiran"
+      },
+      "labelEducationalLevel": "Tingkat Pendidikan",
+      "optionEducationalLevel": {
+        "option1": "Pilih",
+        "option2": "Tidak Ada",
+        "option3": "SD/MI",
+        "option4": "SMP/SMA/SMK",
+        "option5": "Universitas",
+        "option6": "Pascasarjana"
+      },
+      "labelOcupacion": "Status Pekerjaan",
+      "optionOcupacion": {
+        "option1": "Pilih",
+        "option2": "Bekerja",
+        "option3": "Pengangguran",
+        "option4": "Mahasiswa/Siswa",
+        "option5": "Pensiun",
+        "option6": "Wiraswasta"
+      },
+      "labelDisability": "Apakah Anda memiliki kemampuan yang beragam?",
+      "optionDisability": {
+        "option1": "Pilih",
+        "option2": "Ya",
+        "option3": "Tidak"
+      },
+      "labelDisabilityType": "Jenis Kelainan Kemampuan",
+      "optionDisabilityType": {
+        "option1": "Pilih",
+        "option2": "Visual",
+        "option3": "Auditorial",
+        "option4": "Motorik",
+        "option5": "Kognitif",
+        "option6": "Psikososial",
+        "option7": "Multipel"
+      },
+      "labelDisabilityLevel": "Tingkat Kelainan Kemampuan",
+      "optionDisabilityLevel": {
+        "option1": "Pilih",
+        "option2": "Ringan",
+        "option3": "Sedang",
+        "option4": "Berat"
+      }
+    },
+    "button": "Simpan dan lanjutkan"
+  },
+  "userTermsView": {
+    "title": "Syarat dan Ketentuan",
+    "title2": "Persetujuan Pengolahan Data Pribadi – Platform U",
+    "intro": "Dengan mendaftar di platform U, saya mengakui dan menerima, secara bebas, informatif, spesifik, dan tegas, bahwa data pribadi saya akan dikumpulkan, diproses, dan disimpan sesuai dengan standar internasional privasi dan perlindungan data, berdasarkan ketentuan sebagai berikut:",
+    "section1Title": "1. Pengontrol Data",
+    "section1Text": "201.Dsoft Innovate S.A.S. (selanjutnya disebut 'U'), beralamat legal di [alamat legal], bertindak sebagai pengontrol data, akan memproses data saya sesuai dengan otorisasi ini.",
+    "section2Title": "2. Tujuan Pemrosesan",
+    "section2Text": "Data pribadi saya akan diproses untuk tujuan berikut:",
+    "section2List": {
+      "item1": "Mempersonalisasi pengalaman aksesibilitas dalam widget U.",
+      "item2": "Memungkinkan analisis dan pelaporan agregat tentang penggunaan alat aksesibilitas (tanpa mengidentifikasi pengguna secara individual).",
+      "item3": "Memberikan dukungan teknis dan tindak lanjut yang dipersonalisasi jika diperlukan.",
+      "item4": "Memenuhi kewajiban hukum dan peraturan terkait aksesibilitas, inklusi, dan non-diskriminasi.",
+      "item5": "Mengirim pembaruan teknis, informatif, atau komersial, hanya jika saya telah memberikan persetujuan khusus untuk itu."
+    },
+    "section3Title": "3. Dasar Hukum Pemrosesan",
+    "section3Text": "U mendasarkan pemrosesan data pribadi pada:",
+    "section3List": {
+      "item1": "Persetujuan eksplisit pengguna.",
+      "item2": "Kepentingan sah dalam meningkatkan layanan aksesibilitas, selalu menghormati privasi pengguna.",
+      "item3": "Kepatuhan terhadap peraturan lokal dan internasional, termasuk GDPR (EU), CCPA (California), LGPD (Brazil), dan undang-undang perlindungan data lainnya yang berlaku."
+    },
+    "section4Title": "4. Transfer Data Internasional",
+    "section4Text": "Data dapat ditransfer dan/atau disimpan di server yang berlokasi di berbagai negara. Unyco menjamin bahwa ketika hal ini terjadi, klausul kontraktual standar dan langkah-langkah teknis yang tepat akan diterapkan untuk melindungi data sesuai dengan GDPR dan peraturan lain yang berlaku.",
+    "section5Title": "5. Hak Pengguna",
+    "section5Text": "Sebagai pemilik data, saya berhak untuk:",
+    "section5List": {
+      "item1": "Mengakses, meralat, membatasi, menghapus, atau memindahkan data pribadi saya.",
+      "item2": "Mencabut persetujuan saya kapan saja.",
+      "item3": "Mengajukan pengaduan kepada otoritas perlindungan data setempat (seperti SIC di Kolombia, EDPB di Uni Eropa, atau FTC di AS)."
+    },
+    "section6Title": "6. Masa Retensi",
+    "section6Text": "Data akan disimpan hanya selama diperlukan untuk tujuan yang dinyatakan atau selama akun tetap aktif. Setelah itu, data akan dihapus atau dianonimkan sesuai dengan prinsip minimisasi.",
+    "section7Title": "7. Kontak untuk Melakukan Hak Anda",
+    "section7Text1": "Anda dapat menggunakan hak Anda dengan menulis ke: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>",
+    "section7Text2": "Atau dengan mengunjungi formulir yang tersedia di: <a href=\"https://www.u.app/privacy\">www.u.app/privacy</a>",
+    "helperText": "Harap baca seluruh dokumen sebelum menerima",
+    "checkboxLabel": "Saya menyatakan bahwa saya telah membaca dan menerima ketentuan pemrosesan data pribadi sebagaimana tercantum di sini.",
+    "button": "Konfirmasi"
+  },
+  "userTermsView2": {
+    "title": "Syarat dan Ketentuan",
+    "title2": "Persetujuan Terinformasi tentang Penggunaan Data – Widget U",
+    "intro": "Di U, kami menghargai privasi Anda dan ingin Anda mengetahui secara tepat bagaimana kami menggunakan data Anda.",
+    "accept": "Dengan mendaftar di platform kami dan menggunakan widget, Anda menyetujui bahwa kami mengumpulkan dan menggunakan informasi tertentu untuk tujuan berikut:",
+    "section1Title": "Data apa yang kami kumpulkan?",
+    "section1Text": "Kami hanya mengumpulkan data yang diperlukan untuk memberi Anda pengalaman yang mudah diakses dan dipersonalisasi. Ini mungkin termasuk:",
+    "section1List": {
+      "item1": "Detail kontak Anda (nama, alamat email).",
+      "item2": "Negara, bahasa, dan tingkat aksesibilitas yang Anda perlukan.",
+      "item3": "Jenis disabilitas Anda (jika Anda memilih untuk membagikannya).",
+      "item4": "Pengaturan yang Anda aktifkan di widget (misalnya: memperbesar teks, mengaktifkan pembaca layar, dll.)."
+    },
+    "section1Note": "Kami tidak mengumpulkan data perbankan atau mengakses konten pribadi Anda di web.",
+    "section2Title": "Mengapa kami menggunakan informasi ini?",
+    "section2List": {
+      "item1": "Untuk secara otomatis menyesuaikan widget dengan kebutuhan Anda.",
+      "item2": "Untuk menghasilkan laporan anonim dan statistik yang membantu meningkatkan akses digital.",
+      "item3": "Untuk melindungi hak aksesibilitas Anda, sesuai dengan standar seperti WCAG 2.2, GDPR, CCPA, dan undang-undang lokal lainnya.",
+      "item4": "Jika Anda setuju untuk menerima berita, kami akan mengirimkan pembaruan tentang fitur baru atau peningkatan pada widget."
+    },
+    "section3Title": "Siapa yang dapat melihat data Anda?",
+    "section3Text1": "Hanya Anda dan sistem yang memiliki akses ke pengaturan pribadi Anda.",
+    "section3Text2": "Jika Anda memutuskan untuk berbagi data Anda dengan suatu lembaga (misalnya, universitas yang mengimplementasikan Unyco), mereka hanya akan menerima laporan agregat dan anonim, tidak pernah data individual tanpa izin Anda.",
+    "section4Title": "Kontrol apa yang Anda miliki atas informasi Anda?",
+    "section4List": {
+      "item1": "Anda dapat memodifikasi atau menghapus akun Anda kapan saja.",
+      "item2": "Anda dapat meminta salinan data yang kami miliki tentang Anda.",
+      "item3": "Anda dapat mencabut persetujuan ini dengan menulis ke: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>"
+    },
+    "helperText": "Harap baca seluruh dokumen sebelum menerima",
+    "checkboxLabel": "Saya menyatakan bahwa saya telah membaca dan menerima ketentuan pemrosesan data pribadi sebagaimana tercantum di sini.",
+    "button": "Konfirmasi"
+  },
+  "userProfileView": {
+    "title": "Informasi Profil",
+    "editImage": "Ubah Gambar",
+    "name": "Nama",
+    "email": "Email",
+    "birthDate": "Tanggal Lahir",
+    "id": "Identifikasi",
+    "allData": "Semua Data",
+    "theme": "Tema",
+    "editProfile": "Sunting Profil",
+    "logout": "Keluar"
+  },
+  "resetPasswordView": {
+    "title": "Pulihkan Kata Sandi",
+    "labelEmail": "Masukkan email Anda",
+    "placeholderEmail": "Masukkan email Anda",
+    "buttonSend": "Kirim",
+    "titleCode": "Verifikasi Keamanan",
+    "labelCode": "Masukkan kode verifikasi yang dikirim ke alamat email Anda",
+    "resend": "Saya tidak menerima kode.",
+    "resendLink": "Kirim Ulang",
+    "timer": "Sisa {{time}} detik",
+    "timerExpired": "Kode telah kedaluwarsa. Harap minta kode baru.",
+    "titleNewPass": "Masukkan Kata Sandi Baru",
+    "labelNewPass": "Masukkan kata sandi baru Anda",
+    "placeholderNewPass": "Kata sandi baru",
+    "labelConfirmPass": "Konfirmasi kata sandi baru Anda",
+    "placeholderConfirmPass": "Kata sandi baru",
+    "buttonAccept": "Kirim",
+    "buttonCancel": "Batal",
+    "successTitle": "Ubah Kata Sandi",
+    "successMessage": "Kata sandi Anda telah berhasil diperbarui."
+  },
+  "positionView": {
+    "title": "Pilih lokasi widget",
+    "subtitle": "Silakan pilih lokasi yang Anda inginkan."
+  },
+  "languagesView": {
+    "title": "Pilih bahasa Anda",
+    "subtitle": "Pilih bahasa yang Anda inginkan atau bahasa ibu Anda."
+  },
+  "error": {
+    "helperText": {
+      "emailError1": "Email tidak cocok",
+      "emailError2": "Email tidak valid",
+      "passError1": "Kata sandi tidak cocok",
+      "passError2": "Kata sandi harus lebih dari 6 karakter"
+    }
+  }
+}

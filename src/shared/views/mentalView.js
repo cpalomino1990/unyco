@@ -18,34 +18,43 @@ export function mentalView() {
   profiles.append(
     createCardProfile({
       id: "accessibility-btn-asperger",
-      title: "Asperger",
-      description: "Lorem ipsum dolor sit amet...",
+      title: "TEA",
+      title_i18n: "viewCategory.mental.profile1.title",
+      description: "Maneras distintivas de enfocar intereses, comunicación y relaciones.",
+      description_i18n: "viewCategory.mental.profile1.description",
       onclick: () => ToggleActiveProfiles("accessibility-btn-asperger", "Asperger", "accessibility-mental-view"),
     }),
     createCardProfile({
       id: "accessibility-btn-downsyndrom",
-      title: "Sindrome de Down",
-      description: "Lorem ipsum dolor sit amet...",
+      title: "Down",
+      title_i18n: "viewCategory.mental.profile2.title",
+      description: "Manera propia y valiosa de experimentar el desarrollo personal y social.",
+      description_i18n: "viewCategory.mental.profile2.description",
       onclick: () =>
         ToggleActiveProfiles("accessibility-btn-downsyndrom", "Sindrome de Down", "accessibility-mental-view"),
     }),
     createCardProfile({
       id: "accessibility-btn-dyslexia",
       title: "Dislexia",
-      description: "Lorem ipsum dolor sit amet...",
+      title_i18n: "viewCategory.mental.profile3.title",
+      description: "Forma especial de percibir y decodificar la estructura de los textos.",
+      description_i18n: "viewCategory.mental.profile3.description",
       onclick: () => ToggleActiveProfiles("accessibility-btn-dyslexia", "Dislexia", "accessibility-mental-view"),
     }),
-
     createCardProfile({
       id: "accessibility-btn-epilepsy",
       title: "Epilepsia",
-      description: "Lorem ipsum dolor sit amet...",
+      title_i18n: "viewCategory.mental.profile4.title",
+      description: "Manifestaciones únicas del funcionamiento neurológico que representan la diversidad.",
+      description_i18n: "viewCategory.mental.profile4.description",
       onclick: () => ToggleActiveProfiles("accessibility-btn-epilepsy", "Epilepsia", "accessibility-mental-view"),
     }),
     createCardProfile({
       id: "accessibility-btn-hyperactivity",
-      title: "Hiperactividad",
-      description: "Lorem ipsum dolor sit amet...",
+      title: "TDAH",
+      title_i18n: "viewCategory.mental.profile5.title",
+      description: "Dinámicas especiales de atención, energía y procesamiento de estímulos.",
+      description_i18n: "viewCategory.mental.profile5.description",
       onclick: () =>
         ToggleActiveProfiles("accessibility-btn-hyperactivity", "Hiperactividad", "accessibility-mental-view"),
     })
@@ -60,6 +69,7 @@ export function mentalView() {
     createCardTitle({
       id: "",
       text: "Perfiles de capacidad diversa",
+      text_i18n: "viewCategory.title1",
       btnBack: true,
       collapse: false,
       onclick: () => switchView("view-initial"),
@@ -68,7 +78,15 @@ export function mentalView() {
 
   categoriesView.appendChild(profiles);
   categoriesView.appendChild(contentButtonProfiles);
-  categoriesView.appendChild(createCardTitle({ id: "", text: "Mas configuraciones", btnBack: false, collapse: false }));
+  categoriesView.appendChild(
+    createCardTitle({
+      id: "",
+      text: "Mas configuraciones",
+      text_i18n: "viewCategory.title2",
+      btnBack: false,
+      collapse: false,
+    })
+  );
   // Sección general de botones: muestra todos
   categoriesView.appendChild(allButtons("accessibility-content-others-buttons"));
 

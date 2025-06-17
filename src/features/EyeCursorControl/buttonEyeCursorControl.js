@@ -1,10 +1,17 @@
-import {initVirtualKeyboard} from './activateKeyBoard.js';
-import {applyCalibration} from './startCalibration.js';
+  import { toggleCheckButton } from "../../shared/components/allButtons/allButtons";
+import {toggleVirtualKeyboar1} from './buttonkey.js';
+import {applyCalibration, startCalibration} from './startCalibration.js';
 
 let eyeClosedStartTime = null;
 let clickTriggered = false;
 const EYE_CLOSED_THRESHOLD = 0.21;
 const EYE_CLOSED_DURATION = 20;
+
+
+let faceNotDetectedSince = null;
+let hasLookedAway = false;
+const LOOK_AWAY_TIMEOUT = 2000; // 2 segundos sin rostro
+const RECALIBRATION_MSG_DURATION = 5000; // Mostrar mensaje 5 seg
 
 
 
@@ -17,7 +24,7 @@ export function initEyeCursorControl() {
   //   return;
   // }
   window.eyeCursorActive = true;
-
+ 
   const loadingOverlay = document.createElement("div");
   loadingOverlay.id = "eye-loading-overlay";
   Object.assign(loadingOverlay.style, {
@@ -132,7 +139,20 @@ export function initEyeCursorControl() {
     faceMesh.setOptions({ maxNumFaces: 1, refineLandmarks: true, minDetectionConfidence: 0.5, minTrackingConfidence: 0.5 });
 
     faceMesh.onResults(results => {
-      if (!results.multiFaceLandmarks.length) return;
+      if (!results.multiFaceLandmarks.length) {
+        if (!faceNotDetectedSince) {
+          faceNotDetectedSince = Date.now();
+        } else if (Date.now() - faceNotDetectedSince > LOOK_AWAY_TIMEOUT) {
+          hasLookedAway = true;
+        }
+        return;
+        } else {
+          if (hasLookedAway) {
+        startAutoRecalibration();
+        hasLookedAway = false;
+}
+        faceNotDetectedSince = null;
+      }
       const lm = results.multiFaceLandmarks[0];
       const iris = lm[468];
       const calibrated = applyCalibration(iris);
@@ -228,7 +248,10 @@ export function initEyeCursorControl() {
       width: 640,
       height: 480
     });
-    camera.start();
+    camera.start().catch((err) => {
+      console.error("Permiso de cámara denegado o error al iniciar la cámara:", err);
+      alert("No se pudo acceder a la cámara. Por favor, permite el acceso para usar el control ocular.");
+    });
 
     loadingOverlay.remove();
   });
@@ -236,12 +259,44 @@ export function initEyeCursorControl() {
 
 export function stopEyeCursorControl() {
   window.eyeCursorActive = false;
-  document.getElementById("eye-cursor")?.remove();
-  document.getElementById("eye-loading-overlay")?.remove();
-  document.getElementById("eye-loading-style")?.remove();
-  document.getElementById("eye-hover-style")?.remove();
-  document.getElementById("eye-cursor-video")?.remove();
+
+  // Eliminar el cursor
+  const cursor = document.getElementById("eye-cursor");
+  if (cursor) cursor.remove();
+
+  // Eliminar el video oculto
+  const video = document.getElementById("eye-cursor-video");
+  if (video) {
+    video.pause();
+    video.srcObject = null;
+    video.remove();
+  }
+
+  // Eliminar estilos inyectados
+  const style = document.getElementById("eye-loading-style");
+  if (style) style.remove();
+
+  const hoverStyle = document.getElementById("eye-hover-style");
+  if (hoverStyle) hoverStyle.remove();
+
+  // Eliminar overlay si sigue presente
+  const overlay = document.getElementById("eye-loading-overlay");
+  if (overlay) overlay.remove();
+
+  // Detener y eliminar cámara si existe
+  if (window.currentCameraInstance && typeof window.currentCameraInstance.stop === "function") {
+    window.currentCameraInstance.stop();
+    window.currentCameraInstance = null;
+  }
+
+  // Limpiar cualquier clase marcada
+  document.querySelectorAll(".eye-hovered").forEach(el => el.classList.remove("eye-hovered"));
+
+  // Reset de flags temporales
+  eyeClosedStartTime = null;
+  clickTriggered = false;
 }
+
 
 function getEAR(landmarks, eyeIndices) {
   const vertical1 = Math.hypot(
@@ -270,7 +325,7 @@ function simulateClickAtCursor(x, y) {
   if (!el) return;
 
   if (['INPUT', 'TEXTAREA'].includes(el.tagName)) {
-    initVirtualKeyboard(el);
+    toggleVirtualKeyboar1(el);
     el.focus();
   }
 
@@ -309,3 +364,50 @@ function getClosestInteractiveElement(x, y, radius = 80) {
 
   return closest;
 }
+
+
+
+function startAutoRecalibration() {
+  stopEyeCursorControl();
+
+  const msg = document.createElement("div");
+  msg.textContent = "Parece que miraste mucho tiempo fuera de la pantalla. Recalibrando en ";
+  
+  // Crear span del contador
+  const countdown = document.createElement("span");
+  countdown.textContent = "5";
+  countdown.style.fontWeight = "bold";
+  msg.appendChild(countdown);
+
+  const secondsText = document.createTextNode(" segundos...");
+  msg.appendChild(secondsText);
+
+  Object.assign(msg.style, {
+    position: "fixed",
+    top: "20px",
+    left: "50%",
+    transform: "translateX(-50%)",
+    padding: "12px 20px",
+    backgroundColor: "#000",
+    color: "#fff",
+    borderRadius: "8px",
+    fontSize: "1rem",
+    boxShadow: "0 0 10px rgba(0,0,0,0.4)",
+    zIndex: 100001
+  });
+
+  document.body.appendChild(msg);
+
+  let secondsLeft = 4;
+  const interval = setInterval(() => {
+    secondsLeft--;
+    countdown.textContent = secondsLeft.toString();
+
+    if (secondsLeft <= 0) {
+      clearInterval(interval);
+      msg.remove();
+      startCalibration();
+    }
+  }, 1000);
+}
+

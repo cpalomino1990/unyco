@@ -1,0 +1,484 @@
+{
+  "fullLayout": {
+    "slogan": "Conectado com-U"
+  },
+  "bannerUser": {
+    "welcome": "Bem-vindo(a)",
+    "subwelcome": "Convidamos você a se registrar para ter uma experiência personalizada"
+  },
+  "category": {
+    "visual": {
+      "title": "Visual",
+      "description": "Maneiras unicas de perceber ou interpretar o ambiente através da visão."
+    },
+    "mental": {
+      "title": "Psicossocial",
+      "description": "Maneiras autênticas de interagir, sentir e se relacionar com o mundo."
+    },
+    "auditory": {
+      "title": "Auditivo",
+      "description": "Diversas maneiras de experimentar e se conectar com os sons do ambiente."
+    },
+    "physical": {
+      "title": "Físico",
+      "description": "Estilos pessoais de movimento, expressão corporal e coordenação."
+    },
+    "cognitive": {
+      "title": "Cognitivo",
+      "description": "Processos únicos de pensar, aprender, memorizar e prestar atenção."
+    },
+    "custom": {
+      "title": "Personalizado",
+      "description": "Configure uma experiência adaptada às suas necessidades e preferências individuais."
+    }
+  },
+  "viewCategory": {
+    "title1": "Perfis de Habilidades Diversas",
+    "title2": "Mais Configurações",
+    "visual": {
+      "profile1": {
+        "title": "Baixa Visão",
+        "description": "Experiência visual única que enriquece a forma de perceber o ambiente."
+      },
+      "profile2": {
+        "title": "Cegueira",
+        "description": "Forma de percepção que prioriza outros sentidos para interpretar o mundo."
+      },
+      "profile3": {
+        "title": "Daltonismo",
+        "description": "Experiência singular na apreciação e distinção de cores."
+      }
+    },
+    "mental": {
+      "profile1": {
+        "title": "TEA",
+        "description": "Maneiras distintas de focar em interesses, comunicação e relacionamentos."
+      },
+      "profile2": {
+        "title": "Síndrome de Down",
+        "description": "Maneira pessoal e valiosa de experienciar o desenvolvimento pessoal e social."
+      },
+      "profile3": {
+        "title": "Dislexia",
+        "description": "Maneira especial de perceber e decodificar a estrutura de textos."
+      },
+      "profile4": {
+        "title": "Epilepsia",
+        "description": "Manifestações únicas do funcionamento neurológico que representam diversidade."
+      },
+      "profile5": {
+        "title": "TDAH",
+        "description": "Dinâmica especial de atenção, energia e processamento de estímulos."
+      }
+    },
+    "auditory": {
+      "profile1": {
+        "title": "Surdez",
+        "description": "Modos distintos de viver e compreender a comunicação com os outros."
+      }
+    },
+    "physical": {
+      "profile1": {
+        "title": "Mobilidade Superior",
+        "description": "Maneiras particulares de movimento e expressão na parte superior do corpo."
+      }
+    },
+    "cognitive": {
+      "profile1": {
+        "title": "Autismo",
+        "description": "Estilo único de perceber, processar e se relacionar com o ambiente e as pessoas."
+      },
+      "profile2": {
+        "title": "TOC",
+        "description": "Modos intensos e estruturados de organizar pensamentos e ações."
+      }
+    },
+    "custom": {}
+  },
+  "functionalityButtons": {
+    "button1": {
+      "title": "Modo Destaque",
+      "description": "Destaca conteúdo importante."
+    },
+    "button2": {
+      "title": "Destacar Texto",
+      "description": "Destaca o texto visível."
+    },
+    "button3": {
+      "title": "Lupa",
+      "description": "Amplia o texto ao passar o cursor."
+    },
+    "button4": {
+      "title": "Aumentar Texto",
+      "description": "Aumenta o tamanho do texto na página."
+    },
+    "button5": {
+      "title": "Aumentar Espaçamento",
+      "description": "Melhora o espaçamento do texto."
+    },
+    "button6": {
+      "title": "Ler em Voz Alta",
+      "description": "Lê o texto da página ao passar o cursor."
+    },
+    "button7": {
+      "title": "Destacar Links",
+      "description": "Destaca os links na página."
+    },
+    "button8": {
+      "title": "Parar Animações",
+      "description": "Desativa todas as animações na página."
+    },
+    "button9": {
+      "title": "Ativar Barra de Leitura",
+      "description": "Exibe uma barra que facilita a leitura."
+    },
+    "button10": {
+      "title": "Cursor Grande",
+      "description": "Aumenta o tamanho do cursor."
+    },
+    "button11": {
+      "title": "Fonte Legível",
+      "description": "Altera a fonte do texto para uma mais legível."
+    },
+    "button12": {
+      "title": "Velocidade de Leitura",
+      "description": "Ajusta a velocidade de leitura do texto."
+    },
+    "button13": {
+      "title": "Cores de Destaque",
+      "description": "Altera as cores de destaque para melhorar a visibilidade."
+    },
+    "button14": {
+      "title": "Controle de Volume",
+      "description": "Ajusta o volume do leitor de tela."
+    },
+    "button15": {
+      "title": "Protanopia",
+      "description": "Ajuste de cores para deficiência de percepção da cor vermelha."
+    },
+    "button16": {
+      "title": "Deuteranopia",
+      "description": "Ajuste de cores para deficiência de percepção da cor verde."
+    },
+    "button17": {
+      "title": "Tritanopia",
+      "description": "Ajuste de cores para deficiência de percepção da cor azul."
+    },
+    "button18": {
+      "title": "Protanomalia",
+      "description": "Correção parcial da cor vermelha."
+    },
+    "button19": {
+      "title": "Deuteranomalia",
+      "description": "Correção parcial da cor verde."
+    },
+    "button20": {
+      "title": "Tritanomalia",
+      "description": "Correção parcial de cor azul."
+    },
+    "button21": {
+      "title": "Acromatomalia",
+      "description": "Ajuste parcial de cor preto e branco."
+    },
+    "button22": {
+      "title": "Acromatopsia",
+      "description": "Ajuste de cor total em escala de cinza."
+    },
+    "button23": {
+      "title": "Quadro de Foco",
+      "description": "Marca o elemento que está em foco."
+    },
+    "button24": {
+      "title": "Contraste Seletivo",
+      "description": "Coloca a página no modo escuro."
+    },
+    "button25": {
+      "title": "Leitura Pausada",
+      "description": "Ativa a leitura palavra por palavra."
+    },
+    "button26": {
+      "title": "Modo de Foco",
+      "description": "Remove imagens e vídeos que distraem."
+    },
+    "button27": {
+      "title": "Silenciar Som",
+      "description": "Silencia o som da página."
+    },
+    "button28": {
+      "title": "Máscara de Leitura",
+      "description": "Adiciona uma máscara para facilitar a leitura."
+    },
+    "button29": {
+      "title": "Fonte Disléxica",
+      "description": "Altera a fonte para uma projetada para dislexia."
+    },
+    "button30": {
+      "title": "Controle de Rolagem",
+      "description": "Controla a rolagem da página para evitar saltos bruscos."
+    },
+    "button31": {
+      "title": "Contraste Reduzido",
+      "description": "Ativa o modo de contraste reduzido para melhorar a legibilidade."
+    },
+    "button32": {
+      "title": "Controle por Olhar",
+      "description": "Ativa a navegação do mouse por rastreamento ocular."
+    },
+    "button33": {
+      "title": "Tradutor de Libras",
+      "description": "Ativa o modo de libras da página."
+    },
+    "button34": {
+      "title": "Teclado na Tela",
+      "description": "Ativa o teclado na tela para facilitar a digitação."
+    },
+    "button35": {
+      "title": "Alterar Cor do Texto",
+      "description": "Permite alterar a cor do texto da página."
+    },
+    "button36": {
+      "title": "Alinhar Texto à Direita",
+      "description": "Permite alinhar o texto à direita."
+    },
+    "button37": {
+      "title": "Alinhar Texto à Esquerda",
+      "description": "Permite alinhar o texto à esquerda."
+    },
+    "button38": {
+      "title": "Alinhar Texto ao Centro",
+      "description": "Permite centralizar o texto."
+    },
+    "button39": {
+      "title": "Espaçamento entre Linhas",
+      "description": "Ajusta o espaçamento entre linhas do texto."
+    }
+  },
+  "loginView": {
+    "title": "Entrar",
+    "welcome": "Bem-vindo(a)",
+    "subwelcome": "Escolha uma destas opções para entrar ou criar uma conta.",
+    "input": {
+      "placeholderEmail": "Insira seu email",
+      "placeholderPass": "Insira sua senha"
+    },
+    "forgotPass": "Esqueceu sua senha?",
+    "buttonLogin": "Entrar",
+    "notAccount": {
+      "subtext1": "Não tem uma conta?",
+      "subtext2": "Registrar",
+      "subtext3": "Ou você pode entrar com"
+    }
+  },
+  "accountView": {
+    "title": "Informações da Conta",
+    "welcome": "Bem-vindo(a)",
+    "subwelcome": "Crie sua conta",
+    "input": {
+      "placeholderEmail": "Insira seu email",
+      "placeholderConfirmEmail": "Confirme seu email",
+      "placeholderPass": "Insira sua senha",
+      "placeholderConfirmPass": "Confirme sua senha"
+    },
+    "button": "Salvar e continuar"
+  },
+  "registerView": {
+    "title": "Informações do Perfil",
+    "welcome": "Bem-vindo(a)",
+    "subwelcome": "Por favor, preencha todos os campos para criar seu perfil.",
+    "edit": "Editar imagem",
+    "subtitle1": "Informações Pessoais Básicas",
+    "subtitle2": "Informações de Acessibilidade",
+    "input": {
+      "labelName": "Nome Completo",
+      "placeholderName": "Digite seu nome completo",
+      "labelDocumentType": "Tipo de Documento",
+      "optionDocumentType": {
+        "option1": "Selecione",
+        "option2": "CPF/RG (ou similar, dependendo do contexto)",
+        "option3": "Carteira de Identidade",
+        "option4": "Passaporte",
+        "option5": "Documento de Identidade Estrangeiro",
+        "option6": "Outro",
+        "option7": "Documento de Identidade"
+      },
+      "labelNDocument": "Número do Documento",
+      "placeholderNDocument": "Digite o número do seu documento",
+      "labelEmail": "Email",
+      "placeholderEmail": "Digite seu email",
+      "labelBirthdate": "Data de Nascimento",
+      "placeholderBirthdate": "Digite sua data de nascimento",
+      "labelResidenceArea": "Área de Residência",
+      "optionResidenceArea": {
+        "option1": "Selecionar",
+        "option2": "Urbano",
+        "option3": "Rural",
+        "option4": "Periurbano"
+      },
+      "labelEducationalLevel": "Nível de Escolaridade",
+      "optionEducationalLevel": {
+        "option1": "Selecionar",
+        "option2": "Nenhum",
+        "option3": "Primário",
+        "option4": "Secundário",
+        "option5": "Universitário",
+        "option6": "Pós-graduação"
+      },
+      "labelOcupacion": "Situação Profissional",
+      "optionOcupacion": {
+        "option1": "Selecionar",
+        "option2": "Empregado",
+        "option3": "Desempregado",
+        "option4": "Estudante",
+        "option5": "Aposentado",
+        "option6": "Autônomo"
+      },
+      "labelDisability": "Você possui alguma deficiência?",
+      "optionDisability": {
+        "option1": "Selecionar",
+        "option2": "Sim",
+        "option3": "Não"
+      },
+      "labelDisabilityType": "Tipo de Deficiência",
+      "optionDisabilityType": {
+        "option1": "Selecione",
+        "option2": "Visual",
+        "option3": "Auditiva",
+        "option4": "Motora",
+        "option5": "Cognitiva",
+        "option6": "Psicosocial",
+        "option7": "Múltipla"
+      },
+      "labelDisabilityLevel": "Grau de Deficiência",
+      "optionDisabilityLevel": {
+        "option1": "Selecione",
+        "option2": "Leve",
+        "option3": "Moderada",
+        "option4": "Grave"
+      }
+    },
+    "button": "Salvar e continuar"
+  },
+  "userTermsView": {
+    "title": "Termos e Condições",
+    "title2": "Consentimento para o Processamento de Dados Pessoais – Plataforma U",
+    "intro": "Ao me registrar na plataforma U, reconheço e aceito, livre, informada, específica e inequivocamente, que meus dados pessoais serão coletados, processados e armazenados de acordo com os padrões internacionais de privacidade e proteção de dados, com base nas seguintes condições:",
+    "section1Title": "1. Controlador de Dados",
+    "section1Text": "Dsoft Innovate S.A.S. (doravante 'U'), com endereço legal em [endereço legal], na qualidade de controlador de dados, processará meus dados de acordo com esta autorização.",
+    "section2Title": "2. Finalidade do Processamento",
+    "section2Text": "Meus dados pessoais serão processados para as seguintes finalidades:",
+    "section2List": {
+      "item1": "Personalizar a experiência de acessibilidade dentro do widget U.",
+      "item2": "Permitir análise e relatórios agregados sobre o uso de ferramentas de acessibilidade (sem identificar o usuário individualmente).",
+      "item3": "Prestar suporte técnico e acompanhamento personalizado quando necessário.",
+      "item4": "Cumprir com obrigações legais e regulatórias relativas à acessibilidade, inclusão e não discriminação.",
+      "item5": "Enviar atualizações técnicas, informativas ou comerciais, somente se eu tiver dado consentimento específico para isso."
+    },
+    "section3Title": "3. Base Legal para o Processamento",
+    "section3Text": "U baseia o processamento de dados pessoais em:",
+    "section3List": {
+      "item1": "Consentimento explícito do usuário.",
+      "item2": "Interesse legítimo em melhorar os serviços de acessibilidade, sempre respeitando a privacidade do usuário.",
+      "item3": "Conformidade com regulamentos locais e internacionais, incluindo GDPR (UE), CCPA (Califórnia), LGPD (Brasil) e outras leis de proteção de dados aplicáveis."
+    },
+    "section4Title": "4. Transferência Internacional de Dados",
+    "section4Text": "Os dados podem ser transferidos e/ou armazenados em servidores localizados em diferentes países. A Unyco garante que, quando isso ocorrer, serão aplicadas cláusulas contratuais padrão e medidas técnicas adequadas para proteger os dados de acordo com o GDPR e outras regulamentações aplicáveis.",
+    "section5Title": "5. Direitos do Usuário",
+    "section5Text": "Como titular dos dados, tenho o direito de:",
+    "section5List": {
+      "item1": "Acessar, retificar, limitar, apagar ou portar meus dados pessoais.",
+      "item2": "Retirar meu consentimento a qualquer momento.",
+      "item3": "Interpor reclamações junto à autoridade local de proteção de dados (como a SIC na Colômbia, EDPB na UE ou FTC nos EUA)."
+    },
+    "section6Title": "6. Período de Retenção",
+    "section6Text": "Os dados serão retidos apenas pelo tempo necessário para as finalidades declaradas ou enquanto a conta permanecer ativa. Posteriormente, serão apagados ou anonimizados de acordo com os princípios de minimização.",
+    "section7Title": "7. Contato para Exercício de Direitos",
+    "section7Text1": "Você pode exercer seus direitos escrevendo para: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>",
+    "section7Text2": "Ou acessando o formulário disponível em: <a href=\"https://www.u.app/privacy\">www.u.app/privacy</a>",
+    "helperText": "Por favor, leia todo o documento antes de aceitar.",
+    "checkboxLabel": "Declaro que li e aceito os termos de processamento de dados pessoais aqui estabelecidos.",
+    "button": "Confirmar"
+  },
+  "userTermsView2": {
+    "title": "Termos e Condições",
+    "title2": "Consentimento Informado sobre o Uso de Dados – Widget U",
+    "intro": "Na U, respeitamos sua privacidade e queremos que você saiba exatamente como usamos seus dados.",
+    "accept": "Ao se registrar em nossa plataforma e usar o widget, você aceita que coletamos e usamos determinadas informações para os seguintes propósitos:",
+    "section1Title": "Quais dados coletamos?",
+    "section1Text": "Coletamos apenas os dados necessários para lhe proporcionar uma experiência acessível e personalizada. Isso pode incluir:",
+    "section1List": {
+      "item1": "Seus dados de contato (nome, endereço de e-mail).",
+      "item2": "Seu país, idioma e nível de acessibilidade requerido.",
+      "item3": "Seu tipo de deficiência (se você optar por compartilhá-la).",
+      "item4": "As configurações que você ativa no widget (por exemplo: aumentar o texto, habilitar o leitor de tela, etc.)."
+    },
+    "section1Note": "Não coletamos dados bancários nem acessamos seu conteúdo pessoal na web.",
+    "section2Title": "Por que usamos essas informações?",
+    "section2List": {
+      "item1": "Para adaptar automaticamente o widget às suas necessidades.",
+      "item2": "Para gerar relatórios anônimos e estatísticos que ajudam a melhorar o acesso digital.",
+      "item3": "Para proteger seus direitos de acessibilidade, de acordo com padrões como WCAG 2.2, GDPR, CCPA e outras leis locais.",
+      "item4": "Se você concordar em receber notícias, enviaremos atualizações sobre novos recursos ou melhorias no widget."
+    },
+    "section3Title": "Quem pode ver seus dados?",
+    "section3Text1": "Somente você e o sistema têm acesso às suas configurações pessoais.",
+    "section3Text2": "Se você decidir compartilhar seus dados com uma instituição (por exemplo, uma universidade que implementa o Unyco), ela só receberá relatórios agregados e anônimos, nunca dados individuais sem sua permissão.",
+    "section4Title": "Que controle você tem sobre suas informações?",
+    "section4List": {
+      "item1": "Você pode modificar ou excluir sua conta a qualquer momento.",
+      "item2": "Você pode solicitar uma cópia dos dados que temos sobre você.",
+      "item3": "Você pode revogar este consentimento escrevendo para: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>"
+    },
+    "helperText": "Por favor, leia todo o documento antes de aceitar.",
+    "checkboxLabel": "Declaro que li e aceito os termos de processamento de dados pessoais aqui estabelecidos.",
+    "button": "Confirmar"
+  },
+  "userProfileView": {
+    "title": "Informações do Perfil",
+    "editImage": "Editar Imagem",
+    "name": "Nome",
+    "email": "Email",
+    "birthDate": "Data de Nascimento",
+    "id": "Identificação",
+    "allData": "Todos os Dados",
+    "theme": "Tema",
+    "editProfile": "Editar Perfil",
+    "logout": "Sair"
+  },
+  "resetPasswordView": {
+    "title": "Recuperar Senha",
+    "labelEmail": "Insira seu email",
+    "placeholderEmail": "Insira seu email",
+    "buttonSend": "Enviar",
+    "titleCode": "Verificação de Segurança",
+    "labelCode": "Insira o código de verificação enviado para o endereço de email",
+    "resend": "Não recebi o código.",
+    "resendLink": "Reenviar",
+    "timer": "Restantes {{time}} segundos",
+    "timerExpired": "O código expirou. Solicite um novo.",
+    "titleNewPass": "Inserir Nova Senha",
+    "labelNewPass": "Insira sua nova senha",
+    "placeholderNewPass": "Nova senha",
+    "labelConfirmPass": "Confirme sua nova senha",
+    "placeholderConfirmPass": "Nova senha",
+    "buttonAccept": "Enviar",
+    "buttonCancel": "Cancelar",
+    "successTitle": "Alterar Senha",
+    "successMessage": "Sua senha foi atualizada com sucesso."
+  },
+  "positionView": {
+    "title": "Selecione a localização do widget",
+    "subtitle": "Por favor, selecione sua localização preferida."
+  },
+  "languagesView": {
+    "title": "Selecione seu idioma",
+    "subtitle": "Selecione seu idioma preferido ou nativo."
+  },
+  "error": {
+    "helperText": {
+      "emailError1": "Os emails não coincidem",
+      "emailError2": "O email não é válido",
+      "passError1": "As senhas não coincidem",
+      "passError2": "A senha deve ter mais de 6 caracteres"
+    }
+  }
+}

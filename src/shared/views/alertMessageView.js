@@ -1,5 +1,5 @@
 import { switchView } from "../../widget";
-import { DynamicIcon } from "../assets/icons/generals/dinamicIcons";
+import { DynamicIcon } from "/public/icons/generals/dinamicIcons";
 
 export function alertMessageView() {
   const alertMessageView = document.createElement("div");
@@ -36,10 +36,8 @@ export function alertMessageView() {
 }
 
 export const executeAlertMessage = (props = { icon, title, message, onclick }) => {
-  document.querySelector("#accessibility-alert-message-view .accessibility-alert-message-icon").innerHTML =
-    props.icon ??
-    `
-      ${DynamicIcon({ icon: "check" })}
+  document.querySelector("#accessibility-alert-message-view .accessibility-alert-message-icon").innerHTML = `
+      ${DynamicIcon({ icon: props.icon || "check" })}
     `;
   document.querySelector("#accessibility-alert-message-view .accessibility-alert-message-title").innerHTML =
     props.title;

@@ -1,0 +1,484 @@
+{
+  "fullLayout": {
+    "slogan": "With-U 연결"
+  },
+  "bannerUser": {
+    "welcome": "환영합니다",
+    "subwelcome": "개인 맞춤형 경험을 위해 등록해 주세요"
+  },
+  "category": {
+    "visual": {
+      "title": "시각",
+      "description": "시각을 통해 환경을 인지하거나 해석하는 독특한 방식"
+    },
+    "mental": {
+      "title": "심리사회적",
+      "description": "세상과 상호 작용하고, 느끼고, 관계 맺는 진정한 방식"
+    },
+    "auditory": {
+      "title": "청각",
+      "description": "환경의 소리에 대해 경험하고 연결하는 다양한 방식"
+    },
+    "physical": {
+      "title": "신체적",
+      "description": "움직임, 신체 표현 및 조정의 개인적인 스타일"
+    },
+    "cognitive": {
+      "title": "인지적",
+      "description": "사고, 학습, 기억 및 주의의 독특한 과정"
+    },
+    "custom": {
+      "title": "맞춤형",
+      "description": "개별적인 요구와 선호도에 맞춘 경험을 설정합니다."
+    }
+  },
+  "viewCategory": {
+    "title1": "다양한 능력 프로필",
+    "title2": "더 많은 설정",
+    "visual": {
+      "profile1": {
+        "title": "저시력",
+        "description": "환경을 인지하는 방식을 풍부하게 하는 독특한 시각 경험"
+      },
+      "profile2": {
+        "title": "시각장애",
+        "description": "다른 감각을 우선시하여 세상을 해석하는 지각 방식"
+      },
+      "profile3": {
+        "title": "색맹",
+        "description": "색채의 감상과 구별에 대한 독특한 경험"
+      }
+    },
+    "mental": {
+      "profile1": {
+        "title": "자폐 스펙트럼 장애 (ASD)",
+        "description": "관심사, 의사소통, 관계에 대한 독특한 집중 방식"
+      },
+      "profile2": {
+        "title": "다운증후군",
+        "description": "개인적이고 사회적인 발달을 경험하는 개인적인 소중한 방식"
+      },
+      "profile3": {
+        "title": "난독증",
+        "description": "텍스트의 구조를 인지하고 해독하는 특별한 방식"
+      },
+      "profile4": {
+        "title": "간질",
+        "description": "다양성을 보여주는 신경 기능의 독특한 발현"
+      },
+      "profile5": {
+        "title": "주의력 결핍 과잉 행동 장애 (ADHD)",
+        "description": "주의력, 에너지, 자극 처리의 특별한 역동성"
+      }
+    },
+    "auditory": {
+      "profile1": {
+        "title": "청각 장애",
+        "description": "타인과의 의사소통을 이해하고 살아가는 독특한 방식"
+      }
+    },
+    "physical": {
+      "profile1": {
+        "title": "상체 운동성",
+        "description": "상체의 움직임과 표현의 특별한 방식"
+      }
+    },
+    "cognitive": {
+      "profile1": {
+        "title": "자폐증",
+        "description": "환경과 사람을 인지하고 처리하며 관계를 맺는 독특한 방식"
+      },
+      "profile2": {
+        "title": "강박 장애 (OCD)",
+        "description": "집중적이고 구조적인 사고 및 행동 정리 방식"
+      }
+    },
+    "custom": {}
+  },
+  "functionalityButtons": {
+    "button1": {
+      "title": "강조 표시 모드",
+      "description": "중요한 내용을 강조 표시합니다."
+    },
+    "button2": {
+      "title": "텍스트 강조 표시",
+      "description": "보이는 텍스트를 강조 표시합니다."
+    },
+    "button3": {
+      "title": "확대경",
+      "description": "마우스를 올리면 텍스트를 확대합니다."
+    },
+    "button4": {
+      "title": "텍스트 크기 키우기",
+      "description": "페이지의 텍스트 크기를 키웁니다."
+    },
+    "button5": {
+      "title": "간격 늘리기",
+      "description": "텍스트 간격을 개선합니다."
+    },
+    "button6": {
+      "title": "소리내어 읽기",
+      "description": "마우스를 올리면 페이지 텍스트를 읽어줍니다."
+    },
+    "button7": {
+      "title": "링크 강조 표시",
+      "description": "페이지의 링크를 강조 표시합니다."
+    },
+    "button8": {
+      "title": "애니메이션 중지",
+      "description": "페이지의 모든 애니메이션을 비활성화합니다."
+    },
+    "button9": {
+      "title": "읽기 바 활성화",
+      "description": "읽기를 편하게 해주는 바를 표시합니다."
+    },
+    "button10": {
+      "title": "큰 커서",
+      "description": "커서 크기 변경"
+    },
+    "button11": {
+      "title": "가독성 높은 글꼴",
+      "description": "더욱 가독성 높은 글꼴로 변경"
+    },
+    "button12": {
+      "title": "읽기 속도 조절",
+      "description": "텍스트 읽기 속도 조절"
+    },
+    "button13": {
+      "title": "강조 표시 색상",
+      "description": "가독성 향상을 위한 강조 표시 색상 변경"
+    },
+    "button14": {
+      "title": "볼륨 조절",
+      "description": "화면 판독기 볼륨 조절"
+    },
+    "button15": {
+      "title": "적색 약시",
+      "description": "적색 인식 결함에 대한 색상 조정"
+    },
+    "button16": {
+      "title": "녹색 약시",
+      "description": "녹색 인식 결함에 대한 색상 조정"
+    },
+    "button17": {
+      "title": "청색 약시",
+      "description": "청색 인식 결함에 대한 색상 조정"
+    },
+    "button18": {
+      "title": "적색 이상",
+      "description": "부분적인 적색 색보정"
+    },
+    "button19": {
+      "title": "녹색 이상",
+      "description": "부분적인 녹색 색보정"
+    },
+    "button20": {
+      "title": "청색 이상",
+      "description": "부분 청색 보정"
+    },
+    "button21": {
+      "title": "색각이상(일부 색맹)",
+      "description": "부분 흑백 색상 조정"
+    },
+    "button22": {
+      "title": "전색맹",
+      "description": "전체 회색조 색상 조정"
+    },
+    "button23": {
+      "title": "포커스 프레임",
+      "description": "포커스된 요소를 표시합니다."
+    },
+    "button24": {
+      "title": "선택적 명암 조정",
+      "description": "다크 모드로 전환합니다."
+    },
+    "button25": {
+      "title": "읽기 일시 정지",
+      "description": "단어별 읽기 활성화"
+    },
+    "button26": {
+      "title": "집중 모드",
+      "description": "주의 산만한 이미지와 비디오 제거"
+    },
+    "button27": {
+      "title": "소리 음소거",
+      "description": "페이지 소리 음소거"
+    },
+    "button28": {
+      "title": "읽기 마스크",
+      "description": "읽기 편의를 위한 마스크 추가"
+    },
+    "button29": {
+      "title": "난독증 전용 글꼴",
+      "description": "난독증에 맞는 글꼴로 변경"
+    },
+    "button30": {
+      "title": "스크롤 제어",
+      "description": "갑작스러운 화면 이동 방지"
+    },
+    "button31": {
+      "title": "저대비 모드",
+      "description": "가독성 향상을 위한 저대비 모드 활성화"
+    },
+    "button32": {
+      "title": "시선 제어",
+      "description": "시선 추적을 이용한 마우스 탐색 활성화"
+    },
+    "button33": {
+      "title": "수화 통역",
+      "description": "페이지 수화 모드 활성화"
+    },
+    "button34": {
+      "title": "화면 키보드",
+      "description": "보다 쉬운 타이핑을 위한 화면 키보드 활성화"
+    },
+    "button35": {
+      "title": "글자 색상 변경",
+      "description": "페이지 글자 색상 변경 허용"
+    },
+    "button36": {
+      "title": "텍스트 오른쪽 정렬",
+      "description": "텍스트를 오른쪽으로 정렬할 수 있음"
+    },
+    "button37": {
+      "title": "텍스트 왼쪽 정렬",
+      "description": "텍스트를 왼쪽으로 정렬할 수 있음"
+    },
+    "button38": {
+      "title": "텍스트 가운데 정렬",
+      "description": "텍스트 가운데 정렬 허용"
+    },
+    "button39": {
+      "title": "줄 간격",
+      "description": "텍스트 줄 간격 조정"
+    }
+  },
+  "loginView": {
+    "title": "로그인",
+    "welcome": "환영합니다",
+    "subwelcome": "다음 옵션 중 하나를 선택하여 로그인하거나 계정을 생성하세요.",
+    "input": {
+      "placeholderEmail": "이메일 주소를 입력하세요",
+      "placeholderPass": "비밀번호를 입력하세요"
+    },
+    "forgotPass": "비밀번호를 잊으셨나요?",
+    "buttonLogin": "로그인",
+    "notAccount": {
+      "subtext1": "계정이 없으신가요?",
+      "subtext2": "회원가입",
+      "subtext3": "또는 다음으로 로그인할 수 있습니다"
+    }
+  },
+  "accountView": {
+    "title": "계정 정보",
+    "welcome": "환영합니다",
+    "subwelcome": "계정을 생성하세요",
+    "input": {
+      "placeholderEmail": "이메일 주소를 입력하세요",
+      "placeholderConfirmEmail": "이메일 주소를 확인하세요",
+      "placeholderPass": "비밀번호를 입력하세요",
+      "placeholderConfirmPass": "비밀번호를 확인하세요"
+    },
+    "button": "저장 후 계속"
+  },
+  "registerView": {
+    "title": "프로필 정보",
+    "welcome": "환영합니다",
+    "subwelcome": "프로필을 생성하려면 모든 필드를 입력해주세요.",
+    "edit": "이미지 편집",
+    "subtitle1": "기본 개인 정보",
+    "subtitle2": "접근성 정보",
+    "input": {
+      "labelName": "성명",
+      "placeholderName": "성명을 입력하세요",
+      "labelDocumentType": "서류 종류",
+      "optionDocumentType": {
+        "option1": "선택",
+        "option2": "주민등록증",
+        "option3": "신분증",
+        "option4": "여권",
+        "option5": "외국인등록증",
+        "option6": "기타",
+        "option7": "신분증명서"
+      },
+      "labelNDocument": "서류 번호",
+      "placeholderNDocument": "서류 번호를 입력하세요",
+      "labelEmail": "이메일",
+      "placeholderEmail": "이메일을 입력하세요",
+      "labelBirthdate": "생년월일",
+      "placeholderBirthdate": "생년월일을 입력하세요",
+      "labelResidenceArea": "거주 지역",
+      "optionResidenceArea": {
+        "option1": "선택",
+        "option2": "도시",
+        "option3": "농촌",
+        "option4": "도시근교"
+      },
+      "labelEducationalLevel": "교육 수준",
+      "optionEducationalLevel": {
+        "option1": "선택",
+        "option2": "없음",
+        "option3": "초등",
+        "option4": "중등",
+        "option5": "대학",
+        "option6": "대학원"
+      },
+      "labelOcupacion": "직업 현황",
+      "optionOcupacion": {
+        "option1": "선택",
+        "option2": "취업",
+        "option3": "실업",
+        "option4": "학생",
+        "option5": "퇴직",
+        "option6": "자영업"
+      },
+      "labelDisability": "다양한 능력을 가지고 있습니까?",
+      "optionDisability": {
+        "option1": "선택",
+        "option2": "예",
+        "option3": "아니오"
+      },
+      "labelDisabilityType": "다양한 능력 유형",
+      "optionDisabilityType": {
+        "option1": "선택",
+        "option2": "시각적",
+        "option3": "청각적",
+        "option4": "운동적",
+        "option5": "인지적",
+        "option6": "심리사회적",
+        "option7": "복합적"
+      },
+      "labelDisabilityLevel": "다양한 능력 수준",
+      "optionDisabilityLevel": {
+        "option1": "선택",
+        "option2": "경증",
+        "option3": "중증",
+        "option4": "중증도 이상"
+      }
+    },
+    "button": "저장 후 계속"
+  },
+  "userTermsView": {
+    "title": "이용약관",
+    "title2": "U 플랫폼 개인정보 처리 동의",
+    "intro": "U 플랫폼에 등록함으로써 저는 자유롭고, 충분히 알고, 구체적이며, 명확하게 제 개인정보가 국제적인 개인정보보호 및 데이터 보호 표준에 따라 다음 조건에 기반하여 수집, 처리 및 저장되는 것에 동의합니다.",
+    "section1Title": "1. 데이터 관리자",
+    "section1Text": "주소 [legal address]에 소재지를 둔 Dsoft Innovate S.A.S.(이하 'U')는 데이터 관리자로서 본 승인에 따라 개인정보를 처리합니다.",
+    "section2Title": "2. 처리 목적",
+    "section2Text": "개인정보는 다음 목적으로 처리됩니다.",
+    "section2List": {
+      "item1": "U 위젯 내 접근성 경험 개인화",
+      "item2": "접근성 도구 사용에 대한 분석 및 집계 보고(개별 사용자 식별 없음)",
+      "item3": "필요시 기술 지원 및 개인 맞춤형 후속 조치 제공",
+      "item4": "접근성, 포용성 및 차별 금지 관련 법적 및 규제적 의무 준수",
+      "item5": "별도의 동의를 얻은 경우에만 기술적, 정보적 또는 상업적 업데이트 발송"
+    },
+    "section3Title": "3. 처리의 법적 근거",
+    "section3Text": "U는 다음을 근거로 개인정보를 처리합니다.",
+    "section3List": {
+      "item1": "명시적인 사용자 동의",
+      "item2": "사용자의 프라이버시를 항상 존중하는 접근성 서비스 개선을 위한 정당한 이익",
+      "item3": "GDPR(EU), CCPA(캘리포니아), LGPD(브라질) 및 기타 적용 가능한 데이터 보호법을 포함한 국내외 규정 준수"
+    },
+    "section4Title": "4. 국제 데이터 전송",
+    "section4Text": "데이터는 여러 국가에 위치한 서버로 전송 및/또는 저장될 수 있습니다. Unyco는 이러한 경우 GDPR 및 기타 관련 규정에 따라 데이터를 보호하기 위해 표준 계약 조항 및 적절한 기술적 조치를 적용한다는 것을 보장합니다.",
+    "section5Title": "5. 사용자 권리",
+    "section5Text": "데이터 소유자로서 귀하는 다음 권리를 갖습니다.",
+    "section5List": {
+      "item1": "개인정보에 대한 접근, 수정, 제한, 삭제 또는 이전",
+      "item2": "언제든지 동의 철회",
+      "item3": "현지 데이터 보호 기관(예: 콜롬비아의 SIC, EU의 EDPB 또는 미국의 FTC)에 불만을 제기"
+    },
+    "section6Title": "6. 데이터 보관 기간",
+    "section6Text": "데이터는 명시된 목적을 위해 필요한 기간 또는 계정이 활성 상태인 동안에만 보관됩니다. 그 이후에는 최소화 원칙에 따라 삭제되거나 익명화됩니다.",
+    "section7Title": "7. 권리 행사를 위한 연락처",
+    "section7Text1": "다음으로 연락하여 권리를 행사할 수 있습니다: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>",
+    "section7Text2": "또는 다음 링크에서 이용 가능한 양식을 통해: <a href=\"https://www.u.app/privacy\">www.u.app/privacy</a>",
+    "helperText": "동의하기 전에 전체 문서를 읽어주세요.",
+    "checkboxLabel": "본인은 여기에 명시된 개인정보 처리 조건을 읽고 동의합니다.",
+    "button": "확인"
+  },
+  "userTermsView2": {
+    "title": "이용 약관",
+    "title2": "Widget U 데이터 사용에 대한 정보 동의",
+    "intro": "U에서는 귀하의 개인정보를 존중하며, 귀하의 데이터를 어떻게 사용하는지 정확히 알려드리고자 합니다.",
+    "accept": "본 플랫폼에 등록하고 위젯을 사용함으로써 귀하는 다음 목적을 위해 특정 정보를 수집하고 사용하는 것에 동의하는 것입니다.",
+    "section1Title": "어떤 데이터를 수집합니까?",
+    "section1Text": "접근 가능하고 개인화된 경험을 제공하는 데 필요한 데이터만 수집합니다. 여기에는 다음이 포함될 수 있습니다.",
+    "section1List": {
+      "item1": "연락처 정보(이름, 이메일 주소)",
+      "item2": "국가, 언어 및 필요한 접근성 수준",
+      "item3": "(공유하기로 선택한 경우) 장애 유형",
+      "item4": "위젯에서 활성화한 설정(예: 텍스트 크기 확대, 화면 판독기 활성화 등)"
+    },
+    "section1Note": "은행 데이터는 수집하지 않으며 웹 상의 개인 콘텐츠에도 접근하지 않습니다.",
+    "section2Title": "이 정보를 왜 사용합니까?",
+    "section2List": {
+      "item1": "위젯을 사용자의 요구에 맞게 자동으로 조정하기 위해",
+      "item2": "디지털 접근성 개선에 도움이 되는 익명의 통계 보고서를 생성하기 위해",
+      "item3": "WCAG 2.2, GDPR, CCPA 및 기타 현지 법률과 같은 표준에 따라 사용자의 접근성 권리를 보호하기 위해",
+      "item4": "뉴스 수신에 동의하시면 위젯의 새로운 기능 또는 개선 사항에 대한 업데이트를 보내드리겠습니다."
+    },
+    "section3Title": "누가 사용자의 데이터를 볼 수 있습니까?",
+    "section3Text1": "사용자 본인과 시스템만 개인 설정에 접근할 수 있습니다.",
+    "section3Text2": "기관(예: Unyco를 구현하는 대학교)과 데이터를 공유하기로 결정하시면, 사용자의 허가 없이는 개별 데이터가 아닌 집계된 익명 보고서만 제공됩니다.",
+    "section4Title": "사용자는 자신의 정보에 대해 어떤 통제권을 가지고 있습니까?",
+    "section4List": {
+      "item1": "언제든지 계정을 수정하거나 삭제할 수 있습니다.",
+      "item2": "보유하고 있는 사용자 데이터의 사본을 요청할 수 있습니다.",
+      "item3": "다음으로 이메일을 보내 동의를 철회할 수 있습니다: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>"
+    },
+    "helperText": "동의하기 전에 전체 문서를 읽어주세요",
+    "checkboxLabel": "여기에 명시된 개인 정보 처리 약관을 읽고 동의합니다.",
+    "button": "확인"
+  },
+  "userProfileView": {
+    "title": "프로필 정보",
+    "editImage": "이미지 편집",
+    "name": "이름",
+    "email": "이메일",
+    "birthDate": "생년월일",
+    "id": "신분증",
+    "allData": "전체 데이터",
+    "theme": "테마",
+    "editProfile": "프로필 수정",
+    "logout": "로그아웃"
+  },
+  "resetPasswordView": {
+    "title": "비밀번호 재설정",
+    "labelEmail": "이메일 입력",
+    "placeholderEmail": "이메일 입력",
+    "buttonSend": "전송",
+    "titleCode": "보안 확인",
+    "labelCode": "이메일 주소로 발송된 인증 코드를 입력하세요.",
+    "resend": "코드를 받지 못했습니다.",
+    "resendLink": "재전송",
+    "timer": "{{time}}초 남았습니다",
+    "timerExpired": "코드가 만료되었습니다. 새 코드를 요청하세요.",
+    "titleNewPass": "새 비밀번호 입력",
+    "labelNewPass": "새 비밀번호를 입력하세요",
+    "placeholderNewPass": "새 비밀번호",
+    "labelConfirmPass": "새 비밀번호 확인",
+    "placeholderConfirmPass": "새 비밀번호",
+    "buttonAccept": "제출",
+    "buttonCancel": "취소",
+    "successTitle": "비밀번호 변경",
+    "successMessage": "비밀번호가 성공적으로 업데이트되었습니다."
+  },
+  "positionView": {
+    "title": "위젯 위치 선택",
+    "subtitle": "원하는 위치를 선택해주세요."
+  },
+  "languagesView": {
+    "title": "언어 선택",
+    "subtitle": "선호하는 언어 또는 모국어를 선택하십시오."
+  },
+  "error": {
+    "helperText": {
+      "emailError1": "이메일이 일치하지 않습니다.",
+      "emailError2": "이메일이 유효하지 않습니다.",
+      "passError1": "비밀번호가 일치하지 않습니다.",
+      "passError2": "비밀번호는 6자 이상이어야 합니다."
+    }
+  }
+}

@@ -1,0 +1,484 @@
+{
+  "fullLayout": {
+    "slogan": "With-U接続"
+  },
+  "bannerUser": {
+    "welcome": "ようこそ",
+    "subwelcome": "パーソナライズされた体験のために登録をお勧めします"
+  },
+  "category": {
+    "visual": {
+      "title": "視覚",
+      "description": "視覚を通して環境を認識または解釈する独自のやり方。"
+    },
+    "mental": {
+      "title": "心理社会的",
+      "description": "世界と関わったり、感じたり、関係を築いたりする本質的な方法。"
+    },
+    "auditory": {
+      "title": "聴覚",
+      "description": "環境の音を体験し、それに繋がる多様な方法。"
+    },
+    "physical": {
+      "title": "身体的",
+      "description": "動作、身体表現、協調性における個人的なスタイル。"
+    },
+    "cognitive": {
+      "title": "認知的",
+      "description": "思考、学習、記憶、注意の独自の過程。"
+    },
+    "custom": {
+      "title": "カスタマイズ",
+      "description": "個々のニーズと好みに合わせた体験を設定します。"
+    }
+  },
+  "viewCategory": {
+    "title1": "多様な能力プロファイル",
+    "title2": "その他の設定",
+    "visual": {
+      "profile1": {
+        "title": "弱視",
+        "description": "環境を認識する方法を豊かにする独自の視覚体験。"
+      },
+      "profile2": {
+        "title": "盲",
+        "description": "五感を優先して世界を解釈する知覚様式"
+      },
+      "profile3": {
+        "title": "色覚異常",
+        "description": "色の認識と識別における独自の経験"
+      }
+    },
+    "mental": {
+      "profile1": {
+        "title": "自閉スペクトラム症(ASD)",
+        "description": "関心、コミュニケーション、人間関係における独特な様式"
+      },
+      "profile2": {
+        "title": "ダウン症候群",
+        "description": "個人および社会的な発達を経験する個人的で価値のある方法"
+      },
+      "profile3": {
+        "title": "ディスレクシア",
+        "description": "テキストの構造を認識し解読する特殊な方法"
+      },
+      "profile4": {
+        "title": "てんかん",
+        "description": "神経機能の独自の現れであり、多様性を示すもの"
+      },
+      "profile5": {
+        "title": "注意欠陥多動症(ADHD)",
+        "description": "注意、エネルギー、刺激処理における特殊なダイナミクス"
+      }
+    },
+    "auditory": {
+      "profile1": {
+        "title": "難聴",
+        "description": "他者とのコミュニケーションにおける独自の生活様式と理解"
+      }
+    },
+    "physical": {
+      "profile1": {
+        "title": "上肢の運動機能",
+        "description": "上半身の運動と表現における独特な様式"
+      }
+    },
+    "cognitive": {
+      "profile1": {
+        "title": "自閉症",
+        "description": "環境や人々と接する、独特の知覚、処理、関係性のスタイル"
+      },
+      "profile2": {
+        "title": "強迫性障害(OCD)",
+        "description": "思考や行動を集中して体系的に整理する方法"
+      }
+    },
+    "custom": {}
+  },
+  "functionalityButtons": {
+    "button1": {
+      "title": "ハイライトモード",
+      "description": "重要なコンテンツを強調表示します。"
+    },
+    "button2": {
+      "title": "テキストハイライト",
+      "description": "表示されているテキストを強調表示します。"
+    },
+    "button3": {
+      "title": "拡大鏡",
+      "description": "カーソルを合わせるとテキストを拡大表示します。"
+    },
+    "button4": {
+      "title": "テキスト拡大",
+      "description": "ページ上のテキストサイズを拡大します。"
+    },
+    "button5": {
+      "title": "行間拡大",
+      "description": "テキストの行間を広げます。"
+    },
+    "button6": {
+      "title": "音声読み上げ",
+      "description": "カーソルを合わせるとページのテキストを読み上げます。"
+    },
+    "button7": {
+      "title": "リンク強調表示",
+      "description": "ページ上のリンクを強調表示します。"
+    },
+    "button8": {
+      "title": "アニメーション停止",
+      "description": "ページ上のすべてのアニメーションを無効にします。"
+    },
+    "button9": {
+      "title": "読書バー表示",
+      "description": "読書を容易にするバーを表示します。"
+    },
+    "button10": {
+      "title": "大型カーソル",
+      "description": "カーソルサイズ変更"
+    },
+    "button11": {
+      "title": "読みやすいフォント",
+      "description": "テキストフォントを読みやすいフォントに変更"
+    },
+    "button12": {
+      "title": "読書速度",
+      "description": "テキストの読書速度を調整"
+    },
+    "button13": {
+      "title": "ハイライトカラー",
+      "description": "視認性を向上させるためハイライトカラーを変更"
+    },
+    "button14": {
+      "title": "音量調整",
+      "description": "スクリーンリーダーの音量を調整"
+    },
+    "button15": {
+      "title": "プロタノピア",
+      "description": "赤色覚異常のための色調整"
+    },
+    "button16": {
+      "title": "ドゥテラノピア",
+      "description": "緑色覚異常のための色調整"
+    },
+    "button17": {
+      "title": "トリタノピア",
+      "description": "青色覚異常のための色調整"
+    },
+    "button18": {
+      "title": "プロタノマリー",
+      "description": "赤色の部分的な色補正"
+    },
+    "button19": {
+      "title": "ドゥテラノマリー",
+      "description": "緑色の部分的な色補正"
+    },
+    "button20": {
+      "title": "トリタノマリー",
+      "description": "部分青色補正"
+    },
+    "button21": {
+      "title": "色覚異常(アクロマタマル)",
+      "description": "部分白黒色調整"
+    },
+    "button22": {
+      "title": "色覚異常(アクロマートプシア)",
+      "description": "全体グレースケール色調整"
+    },
+    "button23": {
+      "title": "フォーカス枠",
+      "description": "フォーカスされている要素を示します。"
+    },
+    "button24": {
+      "title": "選択的コントラスト",
+      "description": "ダークモードに切り替えます。"
+    },
+    "button25": {
+      "title": "一時停止中",
+      "description": "単語単位の読み上げを有効にします。"
+    },
+    "button26": {
+      "title": "集中モード",
+      "description": "邪魔な画像と動画を削除します。"
+    },
+    "button27": {
+      "title": "サウンドミュート",
+      "description": "ページの音声をミュートします。"
+    },
+    "button28": {
+      "title": "読書マスク",
+      "description": "読書を容易にするためのマスクを追加します。"
+    },
+    "button29": {
+      "title": "ディスレクシア対応フォント",
+      "description": "ディスレクシアに対応したフォントに変更します。"
+    },
+    "button30": {
+      "title": "スクロール制御",
+      "description": "ページスクロールを制御し、急なジャンプを防ぎます。"
+    },
+    "button31": {
+      "title": "低コントラスト",
+      "description": "読みやすさを向上させるため、低コントラストモードを有効にします。"
+    },
+    "button32": {
+      "title": "視線制御",
+      "description": "視線追跡によるマウス操作を有効にします。"
+    },
+    "button33": {
+      "title": "手話翻訳",
+      "description": "ページの手話モードを有効にします。"
+    },
+    "button34": {
+      "title": "onscreen keyboard",
+      "description": "より簡単な入力のために、onscreen keyboardを有効にします。"
+    },
+    "button35": {
+      "title": "テキスト色の変更",
+      "description": "ページのテキストの色を変更できます。"
+    },
+    "button36": {
+      "title": "テキストを右揃え",
+      "description": "テキストを右揃えにできます。"
+    },
+    "button37": {
+      "title": "テキストを左揃え",
+      "description": "テキストを左揃えにできます。"
+    },
+    "button38": {
+      "title": "テキストを中央揃え",
+      "description": "テキストを中央揃えにできます。"
+    },
+    "button39": {
+      "title": "行間",
+      "description": "テキストの行間を調整します。"
+    }
+  },
+  "loginView": {
+    "title": "ログイン",
+    "welcome": "ようこそ",
+    "subwelcome": "ログインまたはアカウント作成には、以下のいずれかのオプションを選択してください。",
+    "input": {
+      "placeholderEmail": "メールアドレスを入力してください",
+      "placeholderPass": "パスワードを入力してください"
+    },
+    "forgotPass": "パスワードをお忘れですか？",
+    "buttonLogin": "ログイン",
+    "notAccount": {
+      "subtext1": "アカウントをお持ちでない場合",
+      "subtext2": "登録",
+      "subtext3": "または、でログインすることもできます"
+    }
+  },
+  "accountView": {
+    "title": "アカウント情報",
+    "welcome": "ようこそ",
+    "subwelcome": "アカウントを作成する",
+    "input": {
+      "placeholderEmail": "メールアドレスを入力してください",
+      "placeholderConfirmEmail": "メールアドレスを確認してください",
+      "placeholderPass": "パスワードを入力してください",
+      "placeholderConfirmPass": "パスワードを確認してください"
+    },
+    "button": "保存して続行"
+  },
+  "registerView": {
+    "title": "プロフィール情報",
+    "welcome": "ようこそ",
+    "subwelcome": "プロフィールを作成するには、すべての項目を入力してください。",
+    "edit": "画像編集",
+    "subtitle1": "基本個人情報",
+    "subtitle2": "アクセシビリティ情報",
+    "input": {
+      "labelName": "氏名",
+      "placeholderName": "氏名を入力してください",
+      "labelDocumentType": "書類の種類",
+      "optionDocumentType": {
+        "option1": "選択",
+        "option2": "国民ID",
+        "option3": "身分証明書",
+        "option4": "パスポート",
+        "option5": "外国人ID",
+        "option6": "その他",
+        "option7": "身分証明書"
+      },
+      "labelNDocument": "書類番号",
+      "placeholderNDocument": "書類番号を入力してください",
+      "labelEmail": "メールアドレス",
+      "placeholderEmail": "メールアドレスを入力してください",
+      "labelBirthdate": "生年月日",
+      "placeholderBirthdate": "生年月日を入力してください",
+      "labelResidenceArea": "居住地域",
+      "optionResidenceArea": {
+        "option1": "選択",
+        "option2": "都市部",
+        "option3": "農村部",
+        "option4": "郊外"
+      },
+      "labelEducationalLevel": "学歴",
+      "optionEducationalLevel": {
+        "option1": "選択",
+        "option2": "なし",
+        "option3": "小学校",
+        "option4": "中学校",
+        "option5": "大学",
+        "option6": "大学院"
+      },
+      "labelOcupacion": "職業状況",
+      "optionOcupacion": {
+        "option1": "選択",
+        "option2": "雇用あり",
+        "option3": "失業中",
+        "option4": "学生",
+        "option5": "退職",
+        "option6": "自営業"
+      },
+      "labelDisability": "多様な能力をお持ちですか？",
+      "optionDisability": {
+        "option1": "選択",
+        "option2": "はい",
+        "option3": "いいえ"
+      },
+      "labelDisabilityType": "多様な能力の種類",
+      "optionDisabilityType": {
+        "option1": "選択",
+        "option2": "視覚",
+        "option3": "聴覚",
+        "option4": "運動",
+        "option5": "認知",
+        "option6": "精神社会",
+        "option7": "複数"
+      },
+      "labelDisabilityLevel": "多様な能力のレベル",
+      "optionDisabilityLevel": {
+        "option1": "選択",
+        "option2": "軽度",
+        "option3": "中等度",
+        "option4": "高度"
+      }
+    },
+    "button": "保存して続ける"
+  },
+  "userTermsView": {
+    "title": "利用規約",
+    "title2": "Uプラットフォーム個人データ処理同意書",
+    "intro": "Uプラットフォームに登録することにより、私は、国際的なプライバシーとデータ保護基準に従って、私の個人データが収集、処理、および保存されることに、自由意思に基づき、十分な情報に基づき、具体的かつ明確に同意します。以下の条件に基づきます。",
+    "section1Title": "1. データ管理者",
+    "section1Text": "データ管理者として[住所]に所在地を有する201.Dsoft Innovate S.A.S.（以下「U」とする）は、本許可に基づき、私のデータを処理します。",
+    "section2Title": "2. 処理目的",
+    "section2Text": "私の個人データは以下の目的で処理されます。",
+    "section2List": {
+      "item1": "Uウィジェット内でのアクセシビリティ体験のパーソナライズ。",
+      "item2": "アクセシビリティツールの利用に関する分析と集計レポートの作成（ユーザー個人の特定は行いません）。",
+      "item3": "必要な場合の技術サポートと個別対応。",
+      "item4": "アクセシビリティ、インクルージョン、および差別禁止に関する法的および規制上の義務の遵守。",
+      "item5": "技術的な、情報的な、または商業的なアップデートの送信（ただし、私がそのために明確な同意を与えた場合に限る）。"
+    },
+    "section3Title": "3. 処理の法的根拠",
+    "section3Text": "Uは、個人データの処理を以下の根拠に基づいています。",
+    "section3List": {
+      "item1": "明示的なユーザーの同意。",
+      "item2": "アクセシビリティサービスの向上という正当な利益（常にユーザーのプライバシーを尊重）。",
+      "item3": "GDPR（EU）、CCPA（カリフォルニア州）、LGPD（ブラジル）、およびその他の適用されるデータ保護法を含む、国内および国際的な規制の遵守。"
+    },
+    "section4Title": "4. 国際データ転送",
+    "section4Text": "データは、異なる国にあるサーバーに転送および／または保存される場合があります。Unycoは、このような場合、GDPRおよびその他の適用される規制に従ってデータを保護するために、標準契約条項および適切な技術的措置を適用することを保証します。",
+    "section5Title": "5. ユーザーの権利",
+    "section5Text": "データ所有者として、私は以下の権利を有します。",
+    "section5List": {
+      "item1": "私の個人データへのアクセス、修正、制限、削除、またはポータビリティ。",
+      "item2": "いつでも同意を撤回する権利。",
+      "item3": "地元のデータ保護機関（コロンビアのSIC、EUのEDPB、米国のFTCなど）に苦情を申し立てる権利。"
+    },
+    "section6Title": "6. 保持期間",
+    "section6Text": "データは、明示された目的のために必要な期間、またはアカウントがアクティブである間のみ保持されます。その後、最小化原則に従って削除または匿名化されます。",
+    "section7Title": "7.権利行使に関する連絡先",
+    "section7Text1": "権利を行使するには、下記までご連絡ください：<a href=\"mailto:privacy@u.app\">privacy@u.app</a>",
+    "section7Text2": "または、下記のフォームをご利用ください：<a href=\"https://www.u.app/privacy\">www.u.app/privacy</a>",
+    "helperText": "同意する前に、ドキュメント全体をよくお読みください。",
+    "checkboxLabel": "ここに記載されている個人データ処理の条件を読み、同意します。",
+    "button": "確認"
+  },
+  "userTermsView2": {
+    "title": "利用規約",
+    "title2": "データ利用に関する情報提供と同意 – ウィジェットU",
+    "intro": "Uでは、お客様のプライバシーを尊重し、お客様のデータの使用方法を正確に知っていただくことを願っています。",
+    "accept": "当社のプラットフォームに登録し、ウィジェットを使用することにより、お客様は、当社が以下の目的のために特定の情報を収集および使用することに同意したことになります。",
+    "section1Title": "どのようなデータを収集しますか？",
+    "section1Text": "アクセスしやすくパーソナライズされたエクスペリエンスを提供するために必要なデータのみを収集します。これには以下が含まれる場合があります。",
+    "section1List": {
+      "item1": "お客様の連絡先情報（氏名、メールアドレス）。",
+      "item2": "お客様の国、言語、および必要なアクセシビリティレベル。",
+      "item3": "お客様の障害の種類（共有する場合）。",
+      "item4": "ウィジェットで有効にした設定（例：テキストの拡大、スクリーンリーダーの有効化など）。"
+    },
+    "section1Note": "銀行データは収集せず、ウェブ上のお客様の個人コンテンツにもアクセスしません。",
+    "section2Title": "この情報は何のために使用しますか？",
+    "section2List": {
+      "item1": "ウィジェットを自動的にニーズに合わせて調整するため。",
+      "item2": "デジタルアクセスの向上に役立つ匿名の統計レポートを作成するため。",
+      "item3": "WCAG 2.2、GDPR、CCPA、その他の地域の法律などの基準に従って、アクセシビリティに関する権利を保護するため。",
+      "item4": "ニュースの受信に同意された場合、ウィジェットの新機能や改善に関する最新情報をお送りします。"
+    },
+    "section3Title": "誰があなたのデータを見ることができますか？",
+    "section3Text1": "あなたとシステムのみが、あなたの個人設定にアクセスできます。",
+    "section3Text2": "機関（例えば、Unycoを実装している大学など）とデータを共有することにした場合、彼らは集約され匿名化されたレポートのみを受け取ります。あなたの許可なく個々のデータが提供されることはありません。",
+    "section4Title": "あなたの情報に関してどのような管理権限がありますか？",
+    "section4List": {
+      "item1": "いつでもアカウントの変更または削除ができます。",
+      "item2": "私たちが保有するあなたのデータのコピーを請求できます。",
+      "item3": "privacy@u.app にご連絡いただくことで、この同意を取り消すことができます。"
+    },
+    "helperText": "同意する前に、文書全体をよくお読みください。",
+    "checkboxLabel": "ここに記載されている個人データ処理の条件を読みました、そして同意します。",
+    "button": "確認"
+  },
+  "userProfileView": {
+    "title": "プロフィール情報",
+    "editImage": "画像編集",
+    "name": "氏名",
+    "email": "メールアドレス",
+    "birthDate": "生年月日",
+    "id": "ID",
+    "allData": "全データ",
+    "theme": "テーマ",
+    "editProfile": "プロフィール編集",
+    "logout": "ログアウト"
+  },
+  "resetPasswordView": {
+    "title": "パスワードを再設定",
+    "labelEmail": "メールアドレスを入力",
+    "placeholderEmail": "メールアドレスを入力",
+    "buttonSend": "送信",
+    "titleCode": "セキュリティ確認",
+    "labelCode": "メールアドレスに送信された確認コードを入力してください",
+    "resend": "コードが届きません",
+    "resendLink": "再送",
+    "timer": "残り{{time}}秒",
+    "timerExpired": "コードの有効期限が切れました。新しいコードをリクエストしてください。",
+    "titleNewPass": "新しいパスワードを入力",
+    "labelNewPass": "新しいパスワードを入力してください",
+    "placeholderNewPass": "新しいパスワード",
+    "labelConfirmPass": "新しいパスワードを確認",
+    "placeholderConfirmPass": "新しいパスワード",
+    "buttonAccept": "送信",
+    "buttonCancel": "キャンセル",
+    "successTitle": "パスワード変更",
+    "successMessage": "パスワードが正常に更新されました。"
+  },
+  "positionView": {
+    "title": "ウィジェットの場所を選択",
+    "subtitle": "ご希望の場所を選択してください。"
+  },
+  "languagesView": {
+    "title": "言語を選択",
+    "subtitle": "ご希望の言語または母国語を選択してください。"
+  },
+  "error": {
+    "helperText": {
+      "emailError1": "メールアドレスが一致しません",
+      "emailError2": "メールアドレスが無効です",
+      "passError1": "パスワードが一致しません",
+      "passError2": "パスワードは6文字以上である必要があります"
+    }
+  }
+}

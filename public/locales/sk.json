@@ -1,0 +1,484 @@
+{
+  "fullLayout": {
+    "slogan": "Prepojené s Vami"
+  },
+  "bannerUser": {
+    "welcome": "Vitajte",
+    "subwelcome": "Pozývame Vás na registráciu pre personalizovaný zážitok"
+  },
+  "category": {
+    "visual": {
+      "title": "Vizuálne",
+      "description": "Jedinečné spôsoby vnímania alebo interpretácie prostredia zrakom."
+    },
+    "mental": {
+      "title": "Psychosociaálne",
+      "description": "Autentické spôsoby interakcie, prežívania a vzťahovania sa k svetu."
+    },
+    "auditory": {
+      "title": "Audiálne",
+      "description": "Rôznorodé spôsoby prežívania a prepojenia so zvukmi prostredia."
+    },
+    "physical": {
+      "title": "Fyzické",
+      "description": "Osobné štýly pohybu, telesného prejavu a koordinácie."
+    },
+    "cognitive": {
+      "title": "Kognitívne",
+      "description": "Jedinečné procesy myslenia, učenia, pamäti a pozornosti."
+    },
+    "custom": {
+      "title": "Prispôsobené",
+      "description": "Nastavte si zážitok šitý na mieru vašim individuálnym potrebám a preferenciám."
+    }
+  },
+  "viewCategory": {
+    "title1": "Rôznorodé profily schopností",
+    "title2": "Ďalšie nastavenia",
+    "visual": {
+      "profile1": {
+        "title": "Nízke videnie",
+        "description": "Jedinečný vizuálny zážitok, ktorý obohacuje spôsob vnímania prostredia."
+      },
+      "profile2": {
+        "title": "Slepé osoby",
+        "description": "Forma vnímania, ktorá uprednostňuje iné zmysly pri interpretácii sveta."
+      },
+      "profile3": {
+        "title": "Farbosleposť",
+        "description": "Jedinečný zážitok pri vnímaní a rozlišovaní farieb."
+      }
+    },
+    "mental": {
+      "profile1": {
+        "title": "ASD",
+        "description": "Charakteristické spôsoby zamerania sa na záujmy, komunikáciu a vzťahy."
+      },
+      "profile2": {
+        "title": "Downov syndróm",
+        "description": "Osobný a hodnotný spôsob prežívania osobného a spoločenského vývoja."
+      },
+      "profile3": {
+        "title": "Dyslexia",
+        "description": "Špecifický spôsob vnímania a dekódovania štruktúry textov."
+      },
+      "profile4": {
+        "title": "Epilepsia",
+        "description": "Jedinečné prejavy neurologického fungovania, ktoré reprezentujú rozmanitosť."
+      },
+      "profile5": {
+        "title": "ADHD",
+        "description": "Špecifická dynamika pozornosti, energie a spracovania podnetov."
+      }
+    },
+    "auditory": {
+      "profile1": {
+        "title": "Hluchota",
+        "description": "Odlišné spôsoby života a porozumenia komunikácie s ostatnými."
+      }
+    },
+    "physical": {
+      "profile1": {
+        "title": "Horná mobilita",
+        "description": "Osobitné spôsoby pohybu a prejavu v hornej časti tela."
+      }
+    },
+    "cognitive": {
+      "profile1": {
+        "title": "Autizmus",
+        "description": "Jedinečný štýl vnímania, spracovania a vzťahovania sa k okoliu a ľuďom."
+      },
+      "profile2": {
+        "title": "OCD",
+        "description": "Intenzívne a štruktúrované spôsoby organizácie myšlienok a činností."
+      }
+    },
+    "custom": {}
+  },
+  "functionalityButtons": {
+    "button1": {
+      "title": "Režim zvýraznenia",
+      "description": "Zvýrazňuje dôležitý obsah."
+    },
+    "button2": {
+      "title": "Zvýrazniť text",
+      "description": "Zvýrazňuje viditeľný text."
+    },
+    "button3": {
+      "title": "Lupa",
+      "description": "Zväčšuje text pri prechode kurzora."
+    },
+    "button4": {
+      "title": "Zväčšiť text",
+      "description": "Zväčšuje veľkosť textu na stránke."
+    },
+    "button5": {
+      "title": "Zväčšiť medzery",
+      "description": "Zlepšuje rozostupy textu."
+    },
+    "button6": {
+      "title": "Prečítať nahlas",
+      "description": "Prečíta text stránky pri prechode kurzora."
+    },
+    "button7": {
+      "title": "Zvýrazniť odkazy",
+      "description": "Zvýrazňuje odkazy na stránke."
+    },
+    "button8": {
+      "title": "Zastaviť animácie",
+      "description": "Zakáže všetky animácie na stránke."
+    },
+    "button9": {
+      "title": "Aktivovať čítací panel",
+      "description": "Zobrazí panel, ktorý uľahčuje čítanie."
+    },
+    "button10": {
+      "title": "Veľký kurzor",
+      "description": "Zväčší kurzor."
+    },
+    "button11": {
+      "title": "Čitateľné písmo",
+      "description": "Zmení písmo textu na čitateľnejšie."
+    },
+    "button12": {
+      "title": "Rýchlosť čítania",
+      "description": "Upraví rýchlosť čítania textu."
+    },
+    "button13": {
+      "title": "Zvýrazňujúce farby",
+      "description": "Zmení farby zvýraznenia pre lepšiu viditeľnosť."
+    },
+    "button14": {
+      "title": "Ovládanie hlasitosti",
+      "description": "Upraví hlasitosť čítačky obrazovky."
+    },
+    "button15": {
+      "title": "Protanopia",
+      "description": "Úprava farieb pre červeno-zelenú farebnú slepotu."
+    },
+    "button16": {
+      "title": "Deuteranopia",
+      "description": "Úprava farieb pre zelenú farebnú slepotu."
+    },
+    "button17": {
+      "title": "Tritanopia",
+      "description": "Úprava farieb pre modro-žltú farebnú slepotu."
+    },
+    "button18": {
+      "title": "Protanomália",
+      "description": "Čiastočná korekcia červenej farby."
+    },
+    "button19": {
+      "title": "Deuteranomália",
+      "description": "Čiastočná korekcia zelenej farby."
+    },
+    "button20": {
+      "title": "Tritanomália",
+      "description": "Čiastočná korekcia modrej farby."
+    },
+    "button21": {
+      "title": "Achromatomália",
+      "description": "Čiastočné nastavenie farieb čierno-bielej."
+    },
+    "button22": {
+      "title": "Achromatopsia",
+      "description": "Úplné nastavenie farieb na odtiene šedej."
+    },
+    "button23": {
+      "title": "Zameriavací rámček",
+      "description": "Označuje prvok, ktorý je zaostrený."
+    },
+    "button24": {
+      "title": "Selektívny kontrast",
+      "description": "Prevedie stránku do tmavého režimu."
+    },
+    "button25": {
+      "title": "Pozastavené čítanie",
+      "description": "Aktivuje čítanie slovo po slove."
+    },
+    "button26": {
+      "title": "Režim zaostrenia",
+      "description": "Odstráni rušivé obrázky a videá."
+    },
+    "button27": {
+      "title": "Stlmiť zvuk",
+      "description": "Stlmí zvuk stránky."
+    },
+    "button28": {
+      "title": "Maska na čítanie",
+      "description": "Prida masku na uľahčenie čítania."
+    },
+    "button29": {
+      "title": "Dyslektické písmo",
+      "description": "Zmení písmo na písmo určené pre dyslexiu."
+    },
+    "button30": {
+      "title": "Ovládanie rolovania",
+      "description": "Ovládanie posúvania stránky, aby sa predišlo náhlym skokom."
+    },
+    "button31": {
+      "title": "Nízky kontrast",
+      "description": "Aktivuje režim nízkeho kontrastu pre lepšiu čitateľnosť."
+    },
+    "button32": {
+      "title": "Ovládanie očami",
+      "description": "Aktivuje navigáciu myšou pomocou sledovania očí."
+    },
+    "button33": {
+      "title": "Prekladač posunkovej reči",
+      "description": "Aktivuje režim posunkovej reči na stránke."
+    },
+    "button34": {
+      "title": "Klávesnica na obrazovke",
+      "description": "Aktivuje klávesnicu na obrazovke pre jednoduchšie písanie."
+    },
+    "button35": {
+      "title": "Zmena farby textu",
+      "description": "Umožňuje zmenu farby textu na stránke."
+    },
+    "button36": {
+      "title": "Zarovnať text vpravo",
+      "description": "Umožňuje zarovnanie textu vpravo."
+    },
+    "button37": {
+      "title": "Zarovnať text vľavo",
+      "description": "Umožňuje zarovnanie textu vľavo."
+    },
+    "button38": {
+      "title": "Zarovnať text na stred",
+      "description": "Umožňuje zarovnanie textu na stred."
+    },
+    "button39": {
+      "title": "Riadkovanie",
+      "description": "Upravuje riadkovanie textu."
+    }
+  },
+  "loginView": {
+    "title": "Prihlásiť sa",
+    "welcome": "Vitajte",
+    "subwelcome": "Vyberte si niektorú z týchto možností na prihlásenie alebo vytvorenie účtu.",
+    "input": {
+      "placeholderEmail": "Zadajte svoj e-mail",
+      "placeholderPass": "Zadajte svoje heslo"
+    },
+    "forgotPass": "Zabudli ste heslo?",
+    "buttonLogin": "Prihlásiť sa",
+    "notAccount": {
+      "subtext1": "Nemáte účet?",
+      "subtext2": "Registrovať sa",
+      "subtext3": "Alebo sa môžete prihlásiť pomocou"
+    }
+  },
+  "accountView": {
+    "title": "Informácie o účte",
+    "welcome": "Vitajte",
+    "subwelcome": "Vytvorte si účet",
+    "input": {
+      "placeholderEmail": "Zadajte svoj e-mail",
+      "placeholderConfirmEmail": "Potvrďte svoj e-mail",
+      "placeholderPass": "Zadajte svoje heslo",
+      "placeholderConfirmPass": "Potvrďte svoje heslo"
+    },
+    "button": "Uložiť a pokračovať"
+  },
+  "registerView": {
+    "title": "Informácie o profile",
+    "welcome": "Vitajte",
+    "subwelcome": "Na vytvorenie profilu vyplňte prosím všetky polia.",
+    "edit": "Upraviť obrázok",
+    "subtitle1": "Základné osobné údaje",
+    "subtitle2": "Informácie o prístupnosti",
+    "input": {
+      "labelName": "Úplné meno",
+      "placeholderName": "Zadajte svoje úplné meno",
+      "labelDocumentType": "Druh dokladu",
+      "optionDocumentType": {
+        "option1": "Vyberte",
+        "option2": "Občiansky preukaz",
+        "option3": "Preukaz totožnosti",
+        "option4": "Cestovný pas",
+        "option5": "Cudzí doklad",
+        "option6": "Iné",
+        "option7": "Doklad totožnosti"
+      },
+      "labelNDocument": "Číslo dokladu",
+      "placeholderNDocument": "Zadajte číslo dokladu",
+      "labelEmail": "Email",
+      "placeholderEmail": "Zadajte svoj email",
+      "labelBirthdate": "Dátum narodenia",
+      "placeholderBirthdate": "Zadajte dátum narodenia",
+      "labelResidenceArea": "Oblasť bydliska",
+      "optionResidenceArea": {
+        "option1": "Vyberte",
+        "option2": "Mestské",
+        "option3": "Vidiecke",
+        "option4": "Primestské"
+      },
+      "labelEducationalLevel": "Úroveň vzdelania",
+      "optionEducationalLevel": {
+        "option1": "Vyberte",
+        "option2": "Žiadne",
+        "option3": "Základné",
+        "option4": "Stredné",
+        "option5": "Univerzitné",
+        "option6": "Postgraduálne"
+      },
+      "labelOcupacion": "Zamestnanie",
+      "optionOcupacion": {
+        "option1": "Vyberte",
+        "option2": "Zamestnaný",
+        "option3": "Nezamestnaný",
+        "option4": "Študent",
+        "option5": "Dôchodca",
+        "option6": "SZČO"
+      },
+      "labelDisability": "Máte rôznorodé schopnosti?",
+      "optionDisability": {
+        "option1": "Vyberte",
+        "option2": "Áno",
+        "option3": "Nie"
+      },
+      "labelDisabilityType": "Typ rozmanitosti schopností",
+      "optionDisabilityType": {
+        "option1": "Vyberte",
+        "option2": "Zrakové",
+        "option3": "Sluchové",
+        "option4": "Motorické",
+        "option5": "Kognitívne",
+        "option6": "Psychosotické",
+        "option7": "Násobné"
+      },
+      "labelDisabilityLevel": "Úroveň rozmanitosti schopností",
+      "optionDisabilityLevel": {
+        "option1": "Vyberte",
+        "option2": "Ľahké",
+        "option3": "Stredné",
+        "option4": "Ťažké"
+      }
+    },
+    "button": "Uložiť a pokračovať"
+  },
+  "userTermsView": {
+    "title": "Podmienky používania",
+    "title2": "Súhlas so spracovaním osobných údajov – platforma U",
+    "intro": "Registráciou na platforme U slobodne, informovane, konkrétne a jednoznačne potvrdzujem a prijímam, že moje osobné údaje budú zhromažďované, spracovávané a uchovávané v súlade s medzinárodnými normami ochrany súkromia a údajov, na základe nasledovných podmienok:",
+    "section1Title": "1. Prevádzkovateľ údajov",
+    "section1Text": "Spoločnosť 201.Dsoft Innovate S.A.S. (ďalej len „U“), so sídlom na adrese [právna adresa], ako prevádzkovateľ údajov, bude spracúvať moje údaje v súlade s týmto povolením.",
+    "section2Title": "2. Účel spracúvania",
+    "section2Text": "Moje osobné údaje budú spracúvané na tieto účely:",
+    "section2List": {
+      "item1": "Personalizácia prístupnosti v rámci widgetu U.",
+      "item2": "Umožnenie analýzy a agregačného hlásenia o používaní nástrojov prístupnosti (bez individuálnej identifikácie používateľa).",
+      "item3": "Poskytovanie technickej podpory a personalizovaného následného sledovania v prípade potreby.",
+      "item4": "Dodržiavanie právnych a regulačných povinností týkajúcich sa prístupnosti, začlenenia a nediskriminácie.",
+      "item5": "Zasielanie technických, informačných alebo obchodných aktualizácií, len ak som na to dal/a výslovný súhlas."
+    },
+    "section3Title": "3. Právny základ spracúvania",
+    "section3Text": "Spoločnosť U zakladá spracúvanie osobných údajov na:",
+    "section3List": {
+      "item1": "Výslovnom súhlase používateľa.",
+      "item2": "Legitímnom záujme na zlepšovaní služieb prístupnosti, vždy s rešpektovaním súkromia používateľa.",
+      "item3": "Dodržiavaní miestnych a medzinárodných predpisov vrátane GDPR (EÚ), CCPA (Kalifornia), LGPD (Brazília) a ďalších platných zákonov o ochrane údajov."
+    },
+    "section4Title": "4. Medzinárodný prenos údajov",
+    "section4Text": "Údaje môžu byť prenášané a/alebo ukladané na serveroch nachádzajúcich sa v rôznych krajinách. Spoločnosť Unyco garantuje, že v takom prípade sa použijú štandardné zmluvné doložky a vhodné technické opatrenia na ochranu údajov v súlade s GDPR a ďalšími platnými predpismi.",
+    "section5Title": "5. Práva používateľa",
+    "section5Text": "Ako vlastník údajov mám právo na:",
+    "section5List": {
+      "item1": "Prístup, opravu, obmedzenie, vymazanie alebo prenos mojich osobných údajov.",
+      "item2": "Odvolanie môjho súhlasu kedykoľvek.",
+      "item3": "Podanie sťažnosti príslušnému orgánu na ochranu údajov (napríklad SIC v Kolumbii, EDPB v EÚ alebo FTC v USA)."
+    },
+    "section6Title": "6. Doba uchovávania údajov",
+    "section6Text": "Údaje sa budú uchovávať len tak dlho, ako je potrebné na uvedené účely, alebo pokiaľ zostane účet aktívny. Následne budú vymazané alebo anonymizované v súlade so zásadami minimalizácie.",
+    "section7Title": "7. Kontakt pre uplatnenie práv",
+    "section7Text1": "Svoje práva môžete uplatniť písomne na adrese: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>",
+    "section7Text2": "Alebo prostredníctvom formulára dostupného na: <a href=\"https://www.u.app/privacy\">www.u.app/privacy</a>",
+    "helperText": "Pred potvrdením si prečítajte celý dokument.",
+    "checkboxLabel": "Vyhlasujem, že som si prečítal a prijímam podmienky spracovania osobných údajov, ktoré sú tu uvedené.",
+    "button": "Potvrdiť"
+  },
+  "userTermsView2": {
+    "title": "Podmienky používania",
+    "title2": "Informovaný súhlas s používaním údajov – Widget U",
+    "intro": "V spoločnosti U rešpektujeme vaše súkromie a chceme, aby ste presne vedeli, ako používame vaše údaje.",
+    "accept": "Registráciou na našej platforme a používaním widgetu súhlasíte s tým, že zhromažďujeme a používame určité informácie na nasledujúce účely:",
+    "section1Title": "Aké údaje zhromažďujeme?",
+    "section1Text": "Zhromažďujeme iba údaje potrebné na poskytnutie prístupného a personalizovaného zážitku. Môže to zahŕňať:",
+    "section1List": {
+      "item1": "Vaše kontaktné údaje (meno, e-mailová adresa).",
+      "item2": "Vašu krajinu, jazyk a požadovanú úroveň prístupnosti.",
+      "item3": "Váš typ zdravotného postihnutia (ak sa rozhodnete ho zdieľať).",
+      "item4": "Nastavenia, ktoré aktivujete vo widgete (napríklad: zväčšenie textu, zapnutie čítačky obrazovky, atď.)."
+    },
+    "section1Note": "Nezhromažďujeme bankové údaje ani nepristupujeme k vášmu osobnému obsahu na webe.",
+    "section2Title": "Prečo tieto informácie používame?",
+    "section2List": {
+      "item1": "Automaticky prispôsobiť widget vašim potrebám.",
+      "item2": "Generovať anonymné a štatistické správy, ktoré pomáhajú zlepšovať digitálny prístup.",
+      "item3": "Chrániť vaše práva na prístupnosť v súlade so štandardami, ako sú WCAG 2.2, GDPR, CCPA a ďalšie miestne zákony.",
+      "item4": "Ak súhlasíte s prijímaním noviniek, budeme vám posielať aktualizácie o nových funkciách alebo vylepšeniach widgetu."
+    },
+    "section3Title": "Kto môže vidieť vaše údaje?",
+    "section3Text1": "Prístup k vašim osobným nastaveniam máte len vy a systém.",
+    "section3Text2": "Ak sa rozhodnete zdieľať svoje údaje s inštitúciou (napríklad univerzitou, ktorá implementuje Unyco), obdržia iba agregované a anonymné správy, nikdy individuálne údaje bez vášho súhlasu.",
+    "section4Title": "Akú kontrolu máte nad svojimi informáciami?",
+    "section4List": {
+      "item1": "Svoj účet môžete kedykoľvek upraviť alebo vymazať.",
+      "item2": "Môžete si vyžiadať kópiu údajov, ktoré o vás máme.",
+      "item3": "Tento súhlas môžete odvolať napísaním na: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>"
+    },
+    "helperText": "Pred potvrdením si prečítajte celý dokument.",
+    "checkboxLabel": "Prehlasujem, že som si prečítal a prijímam tu uvedené podmienky spracovania osobných údajov.",
+    "button": "Potvrdiť"
+  },
+  "userProfileView": {
+    "title": "Informácie o profile",
+    "editImage": "Upraviť obrázok",
+    "name": "Meno",
+    "email": "Email",
+    "birthDate": "Dátum narodenia",
+    "id": "Identifikácia",
+    "allData": "Všetky údaje",
+    "theme": "Motív",
+    "editProfile": "Upraviť profil",
+    "logout": "Odhlásiť sa"
+  },
+  "resetPasswordView": {
+    "title": "Obnoviť heslo",
+    "labelEmail": "Zadajte svoj e-mail",
+    "placeholderEmail": "Zadajte svoj e-mail",
+    "buttonSend": "Odoslať",
+    "titleCode": "Overenie zabezpečenia",
+    "labelCode": "Zadajte overovací kód odoslaný na vašu e-mailovú adresu",
+    "resend": "Kód som nedostal.",
+    "resendLink": "Znova odoslať",
+    "timer": "Zostáva {{time}} sekúnd",
+    "timerExpired": "Kód vypršal. Požiadajte o nový.",
+    "titleNewPass": "Zadajte nové heslo",
+    "labelNewPass": "Zadajte svoje nové heslo",
+    "placeholderNewPass": "Nové heslo",
+    "labelConfirmPass": "Potvrďte svoje nové heslo",
+    "placeholderConfirmPass": "Nové heslo",
+    "buttonAccept": "Odoslať",
+    "buttonCancel": "Zrušiť",
+    "successTitle": "Zmena hesla",
+    "successMessage": "Vaše heslo bolo úspešne aktualizované."
+  },
+  "positionView": {
+    "title": "Vyberte umiestnenie widgetu",
+    "subtitle": "Vyberte prosím svoje preferované umiestnenie."
+  },
+  "languagesView": {
+    "title": "Vyberte jazyk",
+    "subtitle": "Vyberte si svoj preferovaný alebo rodný jazyk."
+  },
+  "error": {
+    "helperText": {
+      "emailError1": "Emailové adresy sa nezhodujú",
+      "emailError2": "Emailová adresa nie je platná",
+      "passError1": "Heslá sa nezhodujú",
+      "passError2": "Heslo musí mať viac ako 6 znakov"
+    }
+  }
+}

@@ -19,7 +19,9 @@ export function auditoryView() {
     createCardProfile({
       id: "accessibility-btn-sorta",
       title: "Sordera",
-      description: "Lorem ipsum dolor sit amet...",
+      title_i18n: "viewCategory.auditory.profile1.title",
+      description: "Modalidades distintas de vivir y comprender  la comunicación con los demás.",
+      description_i18n: "viewCategory.auditory.profile1.description",
       onclick: () => ToggleActiveProfiles("accessibility-btn-sorta", "Sordera", "accessibility-auditory-view"),
     })
   );
@@ -33,6 +35,7 @@ export function auditoryView() {
     createCardTitle({
       id: "",
       text: "Perfiles de capacidad diversa",
+      text_i18n: "viewCategory.title1",
       btnBack: true,
       collapse: false,
       onclick: () => switchView("view-initial"),
@@ -40,7 +43,15 @@ export function auditoryView() {
   );
   categoriesView.appendChild(profiles);
   categoriesView.appendChild(contentButtonProfiles);
-  categoriesView.appendChild(createCardTitle({ id: "", text: "Mas configuraciones", btnBack: false, collapse: false }));
+  categoriesView.appendChild(
+    createCardTitle({
+      id: "",
+      text: "Mas configuraciones",
+      text_i18n: "viewCategory.title2",
+      btnBack: false,
+      collapse: false,
+    })
+  );
   // Sección general de botones: muestra todos
   categoriesView.appendChild(allButtons("accessibility-content-others-buttons"));
 

@@ -1,0 +1,484 @@
+{
+  "fullLayout": {
+    "slogan": "Ühendatud Sinuga"
+  },
+  "bannerUser": {
+    "welcome": "Tere tulemast",
+    "subwelcome": "Kutsume teid registreeruma, et saada isikupärastatud kogemus"
+  },
+  "category": {
+    "visual": {
+      "title": "Visuaalne",
+      "description": "Ainulaadsed viisid keskkonna tajumiseks või tõlgendamiseks nägemise kaudu."
+    },
+    "mental": {
+      "title": "Psühhosotsiaalne",
+      "description": "Autentsed viisid maailmaga suhtlemiseks, tundmiseks ja suhtlemiseks."
+    },
+    "auditory": {
+      "title": "Kuulmispuue",
+      "description": "Mitmekesised viisid keskkonna helide kogemiseks ja nendega ühenduse loomiseks."
+    },
+    "physical": {
+      "title": "Füüsiline",
+      "description": "Isiklikud liikumise-, keha väljendus- ja koordineerimisstiilid."
+    },
+    "cognitive": {
+      "title": "Kognitiivne",
+      "description": "Ainulaadsed mõtlemise, õppimise, mälu ja tähelepanu protsessid."
+    },
+    "custom": {
+      "title": "Kohandatud",
+      "description": "Looge oma individuaalsetele vajadustele ja eelistustele vastav kogemus."
+    }
+  },
+  "viewCategory": {
+    "title1": "Mitmekesised võimete profiilid",
+    "title2": "Rohkem seadeid",
+    "visual": {
+      "profile1": {
+        "title": "Nõrk nägemine",
+        "description": "Ainulaadne visuaalne kogemus, mis rikastab keskkonna tajumist."
+      },
+      "profile2": {
+        "title": "Pimedus",
+        "description": "Maailma tajumise vorm, mis eelistab teisi meeli."
+      },
+      "profile3": {
+        "title": "Värvipimedus",
+        "description": "Ainulaadne kogemus värvide hindamisel ja eristamisel."
+      }
+    },
+    "mental": {
+      "profile1": {
+        "title": "ASD",
+        "description": "Eripärane keskendumine huvidele, suhtlemisele ja suhetele."
+      },
+      "profile2": {
+        "title": "Downi sündroom",
+        "description": "Isiklik ja väärtuslik viis isikliku ja sotsiaalse arengu kogemiseks."
+      },
+      "profile3": {
+        "title": "Düsleksia",
+        "description": "Eripärane viis tekstide struktuuri tajumiseks ja dekodeerimiseks."
+      },
+      "profile4": {
+        "title": "Epilepsia",
+        "description": "Neuroloogilise funktsiooni ainulaadsed ilmingud, mis esindavad mitmekesisust."
+      },
+      "profile5": {
+        "title": "ADHD",
+        "description": "Eripärane tähelepanu, energia ja stiimulite töötlemise dünaamika."
+      }
+    },
+    "auditory": {
+      "profile1": {
+        "title": "Kurdus",
+        "description": "Eripärased viisid elamiseks ja teistega suhtlemise mõistmiseks."
+      }
+    },
+    "physical": {
+      "profile1": {
+        "title": "Ülakeha liikuvus",
+        "description": "Eripärased liikumis- ja väljendusviisid ülakehas."
+      }
+    },
+    "cognitive": {
+      "profile1": {
+        "title": "Autismi",
+        "description": "Ainulaadne stiil keskkonna ja inimestega tajumiseks, töötlemiseks ja suhtlemiseks."
+      },
+      "profile2": {
+        "title": "ÕKK (obsessiiv-kompulsiivne häire)",
+        "description": "Intensiivne ja struktureeritud mõtete ja tegude korraldamise viisid."
+      }
+    },
+    "custom": {}
+  },
+  "functionalityButtons": {
+    "button1": {
+      "title": "Esiletõsturežiim",
+      "description": "Tõstab esile olulist sisu."
+    },
+    "button2": {
+      "title": "Teksti esiletõstmine",
+      "description": "Tõstab nähtava teksti esile."
+    },
+    "button3": {
+      "title": "Luup",
+      "description": "Suurendab teksti hiirekursoriga üle sõitmisel."
+    },
+    "button4": {
+      "title": "Teksti suurendamine",
+      "description": "Suurendab lehekülje teksti suurust."
+    },
+    "button5": {
+      "title": "Reavahe suurendamine",
+      "description": "Parandab teksti rea-vahet."
+    },
+    "button6": {
+      "title": "Ettelugemine",
+      "description": "Loeb lehekülje teksti hiirekursoriga üle sõitmisel."
+    },
+    "button7": {
+      "title": "Linkide esiletõstmine",
+      "description": "Tõstab leheküljel olevad lingid esile."
+    },
+    "button8": {
+      "title": "Animatsioonide peatamine",
+      "description": "Keelab kõik leheküljel olevad animatsioonid."
+    },
+    "button9": {
+      "title": "Lugemisriba aktiveerimine",
+      "description": "Kuvatakse riba, mis hõlbustab lugemist."
+    },
+    "button10": {
+      "title": "Suur kursor",
+      "description": "Muudab kursori suuremaks."
+    },
+    "button11": {
+      "title": "Loetav font",
+      "description": "Muudab tekstifondi loetavamaks."
+    },
+    "button12": {
+      "title": "Lugemiskiirus",
+      "description": "Seadistab teksti lugemiskiirust."
+    },
+    "button13": {
+      "title": "Esiletõstuvärvid",
+      "description": "Muudab esiletõstuvärve parema nähtavuse tagamiseks."
+    },
+    "button14": {
+      "title": "Helitugevuse reguleerimine",
+      "description": "Seadistab ekraanilugeja helitugevust."
+    },
+    "button15": {
+      "title": "Protanoopia",
+      "description": "Värvide reguleerimine punase värvi nägemispuude korral."
+    },
+    "button16": {
+      "title": "Deuteranoopia",
+      "description": "Värvide reguleerimine rohelise värvi nägemispuude korral."
+    },
+    "button17": {
+      "title": "Tritanoopia",
+      "description": "Värvide reguleerimine sinise värvi nägemispuude korral."
+    },
+    "button18": {
+      "title": "Protanomaloogia",
+      "description": "Osaline punase värvi korrektsioon."
+    },
+    "button19": {
+      "title": "Deuteranomaloogia",
+      "description": "Osaliselt rohelise värvi korrektsioon."
+    },
+    "button20": {
+      "title": "Tritanomaloogia",
+      "description": "Osaline sinise värvi korrektsioon."
+    },
+    "button21": {
+      "title": "Achromatomalia",
+      "description": "Osaline mustvalge värvi reguleerimine."
+    },
+    "button22": {
+      "title": "Achromatopsia",
+      "description": "Täielik halltoonide värvi reguleerimine."
+    },
+    "button23": {
+      "title": "Fookusraam",
+      "description": "Märgib fookuses oleva elemendi."
+    },
+    "button24": {
+      "title": "Selektiivne kontrast",
+      "description": "Lülitab lehe tumedale režiimile."
+    },
+    "button25": {
+      "title": "Lugemine pausil",
+      "description": "Aktiveerib sõna-sõnalt lugemise."
+    },
+    "button26": {
+      "title": "Fookusrežiim",
+      "description": "Eemaldab segavad pildid ja videod."
+    },
+    "button27": {
+      "title": "Heli välja lülitamine",
+      "description": "Lülitab lehe heli välja."
+    },
+    "button28": {
+      "title": "Lugemismask",
+      "description": "Lisab maski lugemise hõlbustamiseks."
+    },
+    "button29": {
+      "title": "Düsleksia fondivorm",
+      "description": "Muudab fondi düsleksia jaoks loodud fondiks."
+    },
+    "button30": {
+      "title": "Kerimise juhtimine",
+      "description": "Juhib lehe kerimist, vältides järsku hüppamist."
+    },
+    "button31": {
+      "title": "Madal kontrast",
+      "description": "Aktiveerib madala kontrastiga režiimi loetavuse parandamiseks."
+    },
+    "button32": {
+      "title": "Silmakontroll",
+      "description": "Aktiveerib hiire navigeerimise silmade jälgimise abil."
+    },
+    "button33": {
+      "title": "Vihkekeele tõlk",
+      "description": "Aktiveerib lehe vihkekeele režiimi."
+    },
+    "button34": {
+      "title": "Ekraaniklaviatuur",
+      "description": "Aktiveerib ekraaniklaviatuuri lihtsamaks kirjutamiseks."
+    },
+    "button35": {
+      "title": "Muuda teksti värvi",
+      "description": "Võimaldab muuta lehe teksti värvi."
+    },
+    "button36": {
+      "title": "Teksti joondamine paremale",
+      "description": "Võimaldab teksti paremale joondada."
+    },
+    "button37": {
+      "title": "Teksti joondamine vasakule",
+      "description": "Võimaldab teksti vasakule joondada."
+    },
+    "button38": {
+      "title": "Teksti joondamine keskele",
+      "description": "Võimaldab teksti keskele joondada."
+    },
+    "button39": {
+      "title": "Reavahe",
+      "description": "Reguleerib teksti reavahet."
+    }
+  },
+  "loginView": {
+    "title": "Logi sisse",
+    "welcome": "Tere tulemast",
+    "subwelcome": "Vali ükskõik milline neist suvanditest sisselogimiseks või konto loomiseks.",
+    "input": {
+      "placeholderEmail": "Sisesta oma e-post",
+      "placeholderPass": "Sisesta oma parool"
+    },
+    "forgotPass": "Unustasid parooli?",
+    "buttonLogin": "Logi sisse",
+    "notAccount": {
+      "subtext1": "Kontot veel pole?",
+      "subtext2": "Registreeru",
+      "subtext3": "Või logi sisse ka läbi"
+    }
+  },
+  "accountView": {
+    "title": "Konto info",
+    "welcome": "Tere tulemast",
+    "subwelcome": "Loo oma konto",
+    "input": {
+      "placeholderEmail": "Sisesta oma e-post",
+      "placeholderConfirmEmail": "Kinnita oma e-post",
+      "placeholderPass": "Sisesta oma parool",
+      "placeholderConfirmPass": "Kinnita oma parool"
+    },
+    "button": "Salvesta ja jätka"
+  },
+  "registerView": {
+    "title": "Profiili info",
+    "welcome": "Tere",
+    "subwelcome": "Palun täida kõik väljad oma profiili loomiseks.",
+    "edit": "Pildi redigeerimine",
+    "subtitle1": "Põhilised isikuandmed",
+    "subtitle2": "Ligipääsetavuse teave",
+    "input": {
+      "labelName": "Täisnimi",
+      "placeholderName": "Sisesta oma täisnimi",
+      "labelDocumentType": "Dokumendi liik",
+      "optionDocumentType": {
+        "option1": "Vali",
+        "option2": "Kodakondsusdokument",
+        "option3": "Isikutunnistus",
+        "option4": "Pass",
+        "option5": "Võõramaa isikutunnistus",
+        "option6": "Muu",
+        "option7": "Isikut tõendav dokument"
+      },
+      "labelNDocument": "Dokumendi number",
+      "placeholderNDocument": "Sisesta oma dokumendi number",
+      "labelEmail": "E-post",
+      "placeholderEmail": "Sisesta oma e-posti aadress",
+      "labelBirthdate": "Sünnikuupäev",
+      "placeholderBirthdate": "Sisesta oma sünnikuupäev",
+      "labelResidenceArea": "Elukoha piirkond",
+      "optionResidenceArea": {
+        "option1": "Valige",
+        "option2": "Linn",
+        "option3": "Maa",
+        "option4": "Linnalähedane"
+      },
+      "labelEducationalLevel": "Haridustase",
+      "optionEducationalLevel": {
+        "option1": "Valige",
+        "option2": "Puudub",
+        "option3": "Algkool",
+        "option4": "Keskkool",
+        "option5": "Ülikool",
+        "option6": "Järgjärguline"
+      },
+      "labelOcupacion": "Töötamine",
+      "optionOcupacion": {
+        "option1": "Valige",
+        "option2": "Töötav",
+        "option3": "Töötu",
+        "option4": "Õpilane",
+        "option5": "Pensionär",
+        "option6": "FIE"
+      },
+      "labelDisability": "Kas teil on erivajadus?",
+      "optionDisability": {
+        "option1": "Valige",
+        "option2": "Jah",
+        "option3": "Ei"
+      },
+      "labelDisabilityType": "Erilise võimekuste liik",
+      "optionDisabilityType": {
+        "option1": "Vali",
+        "option2": "Visuaalne",
+        "option3": "Auditiivne",
+        "option4": "Motoorika",
+        "option5": "Kognitiivne",
+        "option6": "Psühhosotsiaalne",
+        "option7": "Mitmekordne"
+      },
+      "labelDisabilityLevel": "Erilise võimekuste tase",
+      "optionDisabilityLevel": {
+        "option1": "Vali",
+        "option2": "Kerge",
+        "option3": "Mõõdukas",
+        "option4": "Kõrge"
+      }
+    },
+    "button": "Salvesta ja jätka"
+  },
+  "userTermsView": {
+    "title": "Kasutustingimused",
+    "title2": "Isikuandmete töötlemise nõusolek – U platvorm",
+    "intro": "Registreerudes U platvormil, kinnitan ja nõustun vabatahtlikult, teadlikult, konkreetselt ja ühemõtteliselt, et minu isikuandmeid kogutakse, töödeldakse ja säilitatakse vastavalt rahvusvahelistele privaatsuse ja andmekaitsestandarditele, lähtudes järgmistest tingimustest:",
+    "section1Title": "1. Andmehaldur",
+    "section1Text": "201.Dsoft Innovate S.A.S. (edaspidi „U“), mille juriidiline aadress on [juriidiline aadress], andmekontrolörina töötleb minu andmeid käesoleva volituse kohaselt.",
+    "section2Title": "2. Töötluse eesmärk",
+    "section2Text": "Minu isikuandmeid töödeldakse järgmistel eesmärkidel:",
+    "section2List": {
+      "item1": "U vidina juurdepääsetavuse kogemuse isikupärastamiseks.",
+      "item2": "Juurdepääsetavustööriistade kasutamise analüüsimiseks ja koondaruannete koostamiseks (ilma kasutaja individuaalset tuvastamist).",
+      "item3": "Vajadusel tehnilise toe ja isikupärastatud järelteeninduse pakkumiseks.",
+      "item4": "Juurdepääsetavuse, kaasatuse ja mittediskrimineerimisega seotud õiguslike ja reguleerivate kohustuste täitmiseks.",
+      "item5": "Tehnilise, informatiivse või kommertsliku teabe edastamiseks, ainult juhul, kui olen selleks andnud selgesõnalise nõusoleku."
+    },
+    "section3Title": "3. Töötluse õiguslik alus",
+    "section3Text": "U baseerib isikuandmete töötlemist järgmisel:",
+    "section3List": {
+      "item1": "Kasutaja selgesõnaline nõusolek.",
+      "item2": "Õigustatud huvi juurdepääsetavusteenused paremaks muuta, austades alati kasutaja privaatsust.",
+      "item3": "Kohalike ja rahvusvaheliste eeskirjade, sealhulgas GDPR (EL), CCPA (California), LGPD (Brasiilia) ja muude kohaldatavate andmekaitseseaduste järgimine."
+    },
+    "section4Title": "4. Rahvusvaheline andmeedastus",
+    "section4Text": "Andmeid võib edastada ja/või salvestada erinevates riikides asuvates serverites. Unyco garanteerib, et sellisel juhul rakendatakse andmete kaitsmiseks GDPR ja muude kohaldatavate eeskirjade kohaselt standardseid lepingulisi klausleid ja asjakohaseid tehnilisi meetmeid.",
+    "section5Title": "5. Kasutaja õigused",
+    "section5Text": "Andmeomanikuna on mul õigus:",
+    "section5List": {
+      "item1": "Juurdepääsu, parandamisele, piiramisele, kustutamisele või oma isikuandmete teisaldamisele.",
+      "item2": "Oma nõusoleku igal ajal tagasi võtta.",
+      "item3": "Esitada kaebusi kohalikule andmekaitseasutusele (nt SIC Colombias, EDPB ELis või FTC USA-s)."
+    },
+    "section6Title": "6. Andmete säilitamise periood",
+    "section6Text": "Andmeid säilitatakse ainult nii kaua, kui see on eesmärkide saavutamiseks vajalik või kuni konto on aktiivne. Seejärel kustutatakse need või anonüümistatakse vastavalt minimeerimise põhimõtetele.",
+    "section7Title": "7. Õiguste teostamise kontakt",
+    "section7Text1": "Saate oma õigusi teostada, kirjutades aadressile: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>",
+    "section7Text2": "Või külastades vormi aadressil: <a href=\"https://www.u.app/privacy\">www.u.app/privacy</a>",
+    "helperText": "Enne nõustumist palun lugege läbi kogu dokument.",
+    "checkboxLabel": "Deklareerin, et olen siin esitatud isikuandmete töötlemise tingimusi lugenud ja aktsepteerin neid.",
+    "button": "Kinnita"
+  },
+  "userTermsView2": {
+    "title": "Kasutustingimused",
+    "title2": "Informeeritud nõusolek andmete kasutamise kohta – Vidin U",
+    "intro": "U-s austame teie privaatsust ja soovime, et te teaksite täpselt, kuidas me teie andmeid kasutame.",
+    "accept": "Registreerudes meie platvormile ja vidina kasutades nõustute, et me kogume ja kasutame teatud teavet järgmistel eesmärkidel:",
+    "section1Title": "Milliseid andmeid me kogume?",
+    "section1Text": "Me kogume ainult andmeid, mis on vajalikud juurdepääsetava ja isikupärase kogemuse pakkumiseks. See võib hõlmata:",
+    "section1List": {
+      "item1": "Teie kontaktandmed (nimi, e-posti aadress).",
+      "item2": "Teie riik, keel ja vajalik juurdepääsetavustase.",
+      "item3": "Teie puude liik (kui otsustate seda jagada).",
+      "item4": "Vidinas aktiveeritud seaded (näiteks: teksti suurendamine, ekraanilugeja lubamine jne)."
+    },
+    "section1Note": "Me ei kogu pangandusandmeid ega pääse teie isiklikule veebisisule ligi.",
+    "section2Title": "Miks me seda teavet kasutame?",
+    "section2List": {
+      "item1": "Vihmase kohandamiseks teie vajadustele.",
+      "item2": "Anonüümsete ja statistiliste aruannete genereerimiseks, mis aitavad parandada digitaalset ligipääsetavust.",
+      "item3": "Teie ligipääsetavuse õiguste kaitsmiseks vastavalt standarditele, nagu WCAG 2.2, GDPR, CCPA ja muud kohalikud seadused.",
+      "item4": "Kui nõustute uudiste vastuvõtmisega, saadame teile värskendusi vidina uute funktsioonide või täiustuste kohta."
+    },
+    "section3Title": "Kes näeb teie andmeid?",
+    "section3Text1": "Ainult teil ja süsteemil on juurdepääs teie isiklikele seadetele.",
+    "section3Text2": "Kui otsustate oma andmed jagada asutusega (näiteks Unycot rakendav ülikool), saavad nad ainult koondatud ja anonüümseid aruandeid, mitte kunagi individuaalseid andmeid ilma teie loata.",
+    "section4Title": "Milline kontroll teil oma teabe üle on?",
+    "section4List": {
+      "item1": "Saate oma kontot igal ajal muuta või kustutada.",
+      "item2": "Saate taotleda koopia andmetest, mis meil teie kohta on.",
+      "item3": "Saate selle nõusoleku tühistada, kirjutades aadressile: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>"
+    },
+    "helperText": "Enne nõustumist lugege palun läbi kogu dokument.",
+    "checkboxLabel": "Deklareerin, et olen lugenud ja nõustun siin esitatud isikuandmete töötlemise tingimustega.",
+    "button": "Kinnita"
+  },
+  "userProfileView": {
+    "title": "Profiili teave",
+    "editImage": "Muuda pilti",
+    "name": "Nimi",
+    "email": "E-post",
+    "birthDate": "Sünnikuupäev",
+    "id": "Isikutunnistus",
+    "allData": "Kõik andmed",
+    "theme": "Teema",
+    "editProfile": "Muuda profiili",
+    "logout": "Logi välja"
+  },
+  "resetPasswordView": {
+    "title": "Parooli taastamine",
+    "labelEmail": "Sisesta oma e-posti aadress",
+    "placeholderEmail": "Sisesta oma e-posti aadress",
+    "buttonSend": "Saada",
+    "titleCode": "Turvakontroll",
+    "labelCode": "Sisesta e-posti aadressile saadetud kinnituskood",
+    "resend": "Ma ei saanud koodi.",
+    "resendLink": "Saada uuesti",
+    "timer": "Jäänud {{time}} sekundit",
+    "timerExpired": "Kood on aegunud. Palun taotle uut koodi.",
+    "titleNewPass": "Sisesta uus parool",
+    "labelNewPass": "Sisesta oma uus parool",
+    "placeholderNewPass": "Uus parool",
+    "labelConfirmPass": "Kinnita oma uus parool",
+    "placeholderConfirmPass": "Uus parool",
+    "buttonAccept": "Esita",
+    "buttonCancel": "Tühista",
+    "successTitle": "Parooli muutmine",
+    "successMessage": "Teie parool on edukalt uuendatud."
+  },
+  "positionView": {
+    "title": "Vali vidina asukoht",
+    "subtitle": "Palun vali oma eelistatud asukoht."
+  },
+  "languagesView": {
+    "title": "Vali keel",
+    "subtitle": "Vali oma eelistatud või emakeel."
+  },
+  "error": {
+    "helperText": {
+      "emailError1": "Meiliaadressid ei klapi",
+      "emailError2": "Meiliaadress ei ole kehtiv",
+      "passError1": "Paroolid ei klapi",
+      "passError2": "Parool peab olema pikem kui 6 märki"
+    }
+  }
+}

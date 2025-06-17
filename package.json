@@ -9,7 +9,9 @@
     "dev": "webpack --watch"
   },
   "devDependencies": {
+    "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^6.11.0",
+    "dotenv-webpack": "^8.1.0",
     "style-loader": "^3.3.4",
     "webpack": "^5.97.1",
     "webpack-cli": "^4.10.0"
@@ -26,6 +28,10 @@
     "@tailwindcss/vite": "^4.0.12",
     "crypto-browserify": "^3.12.1",
     "dotenv": "^16.4.7",
+    "fabric": "^6.7.0",
+    "i18next": "^25.2.1",
+    "i18next-http-backend": "^3.0.2",
+    "pixi.js": "^8.10.1",
     "sweetalert2": "^11.21.1",
     "tailwindcss": "^4.0.12"
   }

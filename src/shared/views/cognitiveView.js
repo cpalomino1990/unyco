@@ -17,16 +17,25 @@ export function cognitiveView() {
 
   profiles.append(
     createCardProfile({
-      id: "accessibility-btn-autismo",
+      id: "accessibility-btn-autism",
       title: "Autismo",
-      description: "Lorem ipsum dolor sit amet...",
-      onclick: () => ToggleActiveProfiles("accessibility-btn-autism", "Autismo", "accessibility-cognitive-view"),
+      title_i18n: "viewCategory.cognitive.profile1.title",
+      description: "Estilo único de percibir, procesar y relacionarse con el entorno y las personas.",
+      description_i18n: "viewCategory.cognitive.profile1.description",
+      onclick: () => ToggleActiveProfiles("accessibility-btn-autism", "viewCategory.cognitive.profile1.title", "accessibility-cognitive-view"),
     }),
     createCardProfile({
-      id: "accessibility-btn-tco",
-      title: "TCO",
-      description: "Lorem ipsum dolor sit amet...",
-      onclick: () => ToggleActiveProfiles("accessibility-btn-tco", "TCO", "accessibility-cognitive-view"),
+      id: "accessibility-btn-toc",
+      title: "TOC",
+      title_i18n: "viewCategory.cognitive.profile2.title",
+      description: "Formas intensas y estructuradas de organizar pensamientos y acciones.",
+      description_i18n: "viewCategory.cognitive.profile2.description",
+      onclick: () =>
+        ToggleActiveProfiles(
+          "accessibility-btn-toc",
+          "viewCategory.cognitive.profile2.title",
+          "accessibility-cognitive-view"
+        ),
     })
   );
 
@@ -39,6 +48,7 @@ export function cognitiveView() {
     createCardTitle({
       id: "",
       text: "Perfiles de capacidad diversa",
+      text_i18n: "viewCategory.title1",
       btnBack: true,
       collapse: false,
       onclick: () => switchView("view-initial"),
@@ -46,7 +56,15 @@ export function cognitiveView() {
   );
   categoriesView.appendChild(profiles);
   categoriesView.appendChild(contentButtonProfiles);
-  categoriesView.appendChild(createCardTitle({ id: "", text: "Mas configuraciones", btnBack: false, collapse: false }));
+  categoriesView.appendChild(
+    createCardTitle({
+      id: "",
+      text: "Mas configuraciones",
+      text_i18n: "viewCategory.title2",
+      btnBack: false,
+      collapse: false,
+    })
+  );
   // Sección general de botones: muestra todos
   categoriesView.appendChild(allButtons("accessibility-content-others-buttons"));
 

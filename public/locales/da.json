@@ -1,0 +1,484 @@
+{
+  "fullLayout": {
+    "slogan": "Forbundet med dig"
+  },
+  "bannerUser": {
+    "welcome": "Velkommen",
+    "subwelcome": "Vi inviterer dig til at registrere dig for at få en personlig oplevelse"
+  },
+  "category": {
+    "visual": {
+      "title": "Visuel",
+      "description": "Unikke måder at opfatte eller fortolke omgivelserne på gennem synet."
+    },
+    "mental": {
+      "title": "Psykosocial",
+      "description": "Autentiske måder at interagere, føle og relatere til verden på."
+    },
+    "auditory": {
+      "title": "Auditiv",
+      "description": "Forskellige måder at opleve og forbinde sig med omgivelsernes lyde på."
+    },
+    "physical": {
+      "title": "Fysisk",
+      "description": "Personlige stilarter i bevægelse, kropssprog og koordination."
+    },
+    "cognitive": {
+      "title": "Kognitiv",
+      "description": "Unikke processer i tænkning, læring, hukommelse og opmærksomhed."
+    },
+    "custom": {
+      "title": "Tilpasset",
+      "description": "Opret en oplevelse skræddersyet til dine individuelle behov og præferencer."
+    }
+  },
+  "viewCategory": {
+    "title1": "Diverse Evneprofiler",
+    "title2": "Flere Indstillinger",
+    "visual": {
+      "profile1": {
+        "title": "Svagtsynet",
+        "description": "Unik visuel oplevelse, der beriger måden at opfatte omgivelserne på."
+      },
+      "profile2": {
+        "title": "Blindhed",
+        "description": "Opfattelsesform, der prioriterer andre sanser for at fortolke verden."
+      },
+      "profile3": {
+        "title": "Farveblindhed",
+        "description": "Enestående oplevelse i forståelsen og skelnen af farver."
+      }
+    },
+    "mental": {
+      "profile1": {
+        "title": "ASD",
+        "description": "Særprægede måder at fokusere på interesser, kommunikation og relationer."
+      },
+      "profile2": {
+        "title": "Downs syndrom",
+        "description": "Personlig og værdifuld måde at opleve personlig og social udvikling på."
+      },
+      "profile3": {
+        "title": "Dysleksi",
+        "description": "Særlig måde at opfatte og dekode strukturen i tekster på."
+      },
+      "profile4": {
+        "title": "Epilepsi",
+        "description": "Unikke manifestationer af neurologisk funktion, der repræsenterer diversitet."
+      },
+      "profile5": {
+        "title": "ADHD",
+        "description": "Særlig dynamik i opmærksomhed, energi og stimuleringsprocessering."
+      }
+    },
+    "auditory": {
+      "profile1": {
+        "title": "Hørelsetab",
+        "description": "Distinkte måder at leve og forstå kommunikation med andre på."
+      }
+    },
+    "physical": {
+      "profile1": {
+        "title": "Øvre mobilitet",
+        "description": "Særlige måder at bevæge sig og udtrykke sig på i overkroppen."
+      }
+    },
+    "cognitive": {
+      "profile1": {
+        "title": "Autisme",
+        "description": "Unik stil til at opfatte, bearbejde og relatere til omgivelserne og mennesker."
+      },
+      "profile2": {
+        "title": "OCD",
+        "description": "Intensive og strukturerede måder at organisere tanker og handlinger på."
+      }
+    },
+    "custom": {}
+  },
+  "functionalityButtons": {
+    "button1": {
+      "title": "Fremhævningstilstand",
+      "description": "Fremhæver vigtigt indhold."
+    },
+    "button2": {
+      "title": "Fremhæv tekst",
+      "description": "Fremhæver synlig tekst."
+    },
+    "button3": {
+      "title": "Forstørrelsesglas",
+      "description": "Forstørrer tekst ved at holde musen hen over."
+    },
+    "button4": {
+      "title": "Forøg tekststørrelse",
+      "description": "Øger tekststørrelsen på siden."
+    },
+    "button5": {
+      "title": "Øg afstand",
+      "description": "Forbedrer tekstafstanden."
+    },
+    "button6": {
+      "title": "Læs højt",
+      "description": "Læser sideteksten, når musen holdes hen over."
+    },
+    "button7": {
+      "title": "Fremhæv links",
+      "description": "Fremhæver links på siden."
+    },
+    "button8": {
+      "title": "Stop animationer",
+      "description": "Deaktiverer alle animationer på siden."
+    },
+    "button9": {
+      "title": "Aktiver læsebjælke",
+      "description": "Viser en bjælke, der letter læsningen."
+    },
+    "button10": {
+      "title": "Stor markør",
+      "description": "Ændrer markørens størrelse til en større størrelse."
+    },
+    "button11": {
+      "title": "Læsevenlig skrifttype",
+      "description": "Ændrer tekstens skrifttype til en mere læsevenlig."
+    },
+    "button12": {
+      "title": "Læsehastighed",
+      "description": "Justerer tekstens læsehastighed."
+    },
+    "button13": {
+      "title": "Fremhævningsfarver",
+      "description": "Ændrer fremhævningsfarverne for at forbedre synligheden."
+    },
+    "button14": {
+      "title": "Lydstyrke",
+      "description": "Justerer skærmlæserens lydstyrke."
+    },
+    "button15": {
+      "title": "Protanopi",
+      "description": "Farvejustering for rød farveblindhed."
+    },
+    "button16": {
+      "title": "Deuteranopi",
+      "description": "Farvejustering for grøn farveblindhed."
+    },
+    "button17": {
+      "title": "Tritanopi",
+      "description": "Farvejustering for blå farveblindhed."
+    },
+    "button18": {
+      "title": "Protanomali",
+      "description": "Delvis korrektion af rød farve."
+    },
+    "button19": {
+      "title": "Deuteranomali",
+      "description": "Delvis korrektion af grøn farve."
+    },
+    "button20": {
+      "title": "Tritanomali",
+      "description": "Delvis blå farvekorrektion."
+    },
+    "button21": {
+      "title": "Achromatomali",
+      "description": "Delvis sort/hvid farvejustering."
+    },
+    "button22": {
+      "title": "Achromatopsi",
+      "description": "Total gråtone farvejustering."
+    },
+    "button23": {
+      "title": "Fokusramme",
+      "description": "Markerer det element, der er i fokus."
+    },
+    "button24": {
+      "title": "Selektiv Kontrast",
+      "description": "Sætter siden i mørk tilstand."
+    },
+    "button25": {
+      "title": "Pause Læsning",
+      "description": "Aktiverer ord-for-ord læsning."
+    },
+    "button26": {
+      "title": "Fokustilstand",
+      "description": "Fjerner distraherende billeder og videoer."
+    },
+    "button27": {
+      "title": "Dæmp Lyd",
+      "description": "Dæmper sidens lyd."
+    },
+    "button28": {
+      "title": "Læsemaske",
+      "description": "Tilføjer en maske for at lette læsningen."
+    },
+    "button29": {
+      "title": "Dysleksi-skrifttype",
+      "description": "Ændrer skrifttypen til en, der er designet til dysleksi."
+    },
+    "button30": {
+      "title": "Rulning Kontrol",
+      "description": "Styrer sideens scroll for at forhindre pludselige hop."
+    },
+    "button31": {
+      "title": "Lav kontrast",
+      "description": "Aktiverer lavkontrasttilstand for at forbedre læsbarheden."
+    },
+    "button32": {
+      "title": "Øjenstyring",
+      "description": "Aktiverer musenavigation via øjensporing."
+    },
+    "button33": {
+      "title": "Tegnsprogsoversætter",
+      "description": "Aktiverer sidens tegnsprogstilstand."
+    },
+    "button34": {
+      "title": "Skærmtastatur",
+      "description": "Aktiverer skærmtastaturet for nemmere indtastning."
+    },
+    "button35": {
+      "title": "Skift tekstfarve",
+      "description": "Mulighed for at ændre sidetekstens farve."
+    },
+    "button36": {
+      "title": "Højrejuster tekst",
+      "description": "Mulighed for at højrejustere tekst."
+    },
+    "button37": {
+      "title": "Venstrejuster tekst",
+      "description": "Mulighed for at venstrejustere tekst."
+    },
+    "button38": {
+      "title": "Centrer tekst",
+      "description": "Mulighed for at centrere teksten."
+    },
+    "button39": {
+      "title": "Linjeafstand",
+      "description": "Justerer linjeafstanden i teksten."
+    }
+  },
+  "loginView": {
+    "title": "Log ind",
+    "welcome": "Velkommen til",
+    "subwelcome": "Vælg en af ​​følgende muligheder for at logge ind eller oprette en konto.",
+    "input": {
+      "placeholderEmail": "Indtast din e-mail",
+      "placeholderPass": "Indtast din adgangskode"
+    },
+    "forgotPass": "Glemt din adgangskode?",
+    "buttonLogin": "Log ind",
+    "notAccount": {
+      "subtext1": "Har du ikke en konto?",
+      "subtext2": "Tilmeld dig",
+      "subtext3": "Eller du kan logge ind med"
+    }
+  },
+  "accountView": {
+    "title": "Kontooplysninger",
+    "welcome": "Velkommen til",
+    "subwelcome": "Opret din konto",
+    "input": {
+      "placeholderEmail": "Indtast din e-mail",
+      "placeholderConfirmEmail": "Bekræft din e-mail",
+      "placeholderPass": "Indtast din adgangskode",
+      "placeholderConfirmPass": "Bekræft din adgangskode"
+    },
+    "button": "Gem og fortsæt"
+  },
+  "registerView": {
+    "title": "Profiloplysninger",
+    "welcome": "Velkommen",
+    "subwelcome": "Udfyld venligst alle felter for at oprette din profil.",
+    "edit": "Rediger billede",
+    "subtitle1": "Grundlæggende personlige oplysninger",
+    "subtitle2": "Tilgængelighedsoplysninger",
+    "input": {
+      "labelName": "Fulde navn",
+      "placeholderName": "Indtast dit fulde navn",
+      "labelDocumentType": "Dokumenttype",
+      "optionDocumentType": {
+        "option1": "Vælg",
+        "option2": "Borgerskabs-ID",
+        "option3": "Identitetskort",
+        "option4": "Pas",
+        "option5": "Udenlandsk ID",
+        "option6": "Andet",
+        "option7": "Identitetsdokument"
+      },
+      "labelNDocument": "Dokumentnummer",
+      "placeholderNDocument": "Indtast dit dokumentnummer",
+      "labelEmail": "Email",
+      "placeholderEmail": "Indtast din email",
+      "labelBirthdate": "Fødselsdato",
+      "placeholderBirthdate": "Indtast din fødselsdato",
+      "labelResidenceArea": "Bopæl",
+      "optionResidenceArea": {
+        "option1": "Vælg",
+        "option2": "By",
+        "option3": "Landdistrikt",
+        "option4": "Landbyområde"
+      },
+      "labelEducationalLevel": "Uddannelsesniveau",
+      "optionEducationalLevel": {
+        "option1": "Vælg",
+        "option2": "Ingen",
+        "option3": "Grundskole",
+        "option4": "Gymnasium/HF",
+        "option5": "Universitet",
+        "option6": "Postgraduate"
+      },
+      "labelOcupacion": "Beskæftigelsesstatus",
+      "optionOcupacion": {
+        "option1": "Vælg",
+        "option2": "Beskæftiget",
+        "option3": "Arbejdsløs",
+        "option4": "Studerende",
+        "option5": "Pensionist",
+        "option6": "Selvstændig"
+      },
+      "labelDisability": "Har du en funktionsnedsættelse?",
+      "optionDisability": {
+        "option1": "Vælg",
+        "option2": "Ja",
+        "option3": "Nej"
+      },
+      "labelDisabilityType": "Type af funktionsvariation",
+      "optionDisabilityType": {
+        "option1": "Vælg",
+        "option2": "Visuel",
+        "option3": "Auditiv",
+        "option4": "Motorisk",
+        "option5": "Kognitiv",
+        "option6": "Psykosocial",
+        "option7": "Multipel"
+      },
+      "labelDisabilityLevel": "Niveau af funktionsvariation",
+      "optionDisabilityLevel": {
+        "option1": "Vælg",
+        "option2": "Mild",
+        "option3": "Moderat",
+        "option4": "Høj"
+      }
+    },
+    "button": "Gem og fortsæt"
+  },
+  "userTermsView": {
+    "title": "Vilkår og betingelser",
+    "title2": "Samtykke til behandling af personoplysninger – U-platformen",
+    "intro": "Ved registrering på U-platformen anerkender og accepterer jeg frit, informeret, specifikt og utvetydigt, at mine personoplysninger indsamles, behandles og opbevares i overensstemmelse med internationale standarder for beskyttelse af personoplysninger, baseret på følgende betingelser:",
+    "section1Title": "1. Dataansvarlig",
+    "section1Text": "Dsoft Innovate S.A.S. (herefter 'U'), med juridisk adresse på [legal address], som dataansvarlig, vil behandle mine data i henhold til denne autorisation.",
+    "section2Title": "2. Formål med behandling",
+    "section2Text": "Mine personoplysninger vil blive behandlet til følgende formål:",
+    "section2List": {
+      "item1": "Personalisering af brugeroplevelsen i U-widget'en.",
+      "item2": "Muliggørelse af analyse og aggregeret rapportering om brugen af ​​tilgængelighedsværktøjer (uden at identificere brugeren individuelt).",
+      "item3": "At yde teknisk support og personlig opfølgning, når det er nødvendigt.",
+      "item4": "Overholdelse af juridiske og lovmæssige forpligtelser vedrørende tilgængelighed, inklusion og ikke-diskrimination.",
+      "item5": "At sende tekniske, informative eller kommercielle opdateringer, kun hvis jeg har givet specifikt samtykke hertil."
+    },
+    "section3Title": "3. Retsgrundlag for behandling",
+    "section3Text": "U baserer behandlingen af ​​personoplysninger på:",
+    "section3List": {
+      "item1": "Eksplicit brugertilladelse.",
+      "item2": "Berettiget interesse i at forbedre tilgængelighedstjenester, altid under hensyntagen til brugerens privatliv.",
+      "item3": "Overholdelse af lokale og internationale bestemmelser, herunder GDPR (EU), CCPA (Californien), LGPD (Brasilien) og andre gældende databeskyttelseslove."
+    },
+    "section4Title": "4. International dataoverførsel",
+    "section4Text": "Data kan overføres og/eller lagres på servere placeret i forskellige lande. Unyco garanterer, at når dette sker, vil standardkontraktklausuler og passende tekniske foranstaltninger blive anvendt til at beskytte data i overensstemmelse med GDPR og andre gældende bestemmelser.",
+    "section5Title": "5. Brugerrettigheder",
+    "section5Text": "Som dataejer har jeg ret til at:",
+    "section5List": {
+      "item1": "Få adgang til, rette, begrænse, slette eller portere mine personoplysninger.",
+      "item2": "Tilbagekalde mit samtykke til enhver tid.",
+      "item3": "Indgive klager til den lokale databeskyttelsesmyndighed (såsom SIC i Colombia, EDPB i EU eller FTC i USA)."
+    },
+    "section6Title": "6. Opbevaringsperiode",
+    "section6Text": "Data opbevares kun så længe det er nødvendigt til de angivne formål, eller så længe kontoen er aktiv. Derefter slettes eller anonymiseres de i henhold til principperne om dataminimering.",
+    "section7Title": "7. Kontakt vedrørende rettighedsudøvelse",
+    "section7Text1": "Du kan udøve dine rettigheder ved at skrive til: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>",
+    "section7Text2": "Eller ved at besøge formularen, der findes på: <a href=\"https://www.u.app/privacy\">www.u.app/privacy</a>",
+    "helperText": "Læs venligst hele dokumentet, før du accepterer.",
+    "checkboxLabel": "Jeg erklærer, at jeg har læst og accepterer betingelserne for behandling af personoplysninger, som beskrevet her.",
+    "button": "Bekræft"
+  },
+  "userTermsView2": {
+    "title": "Vilkår og betingelser",
+    "title2": "Informeret samtykke til dataanvendelse – Widget U",
+    "intro": "Hos U respekterer vi din privatlivets fred, og vi ønsker, at du præcist ved, hvordan vi bruger dine data.",
+    "accept": "Ved at registrere dig på vores platform og bruge widget'en accepterer du, at vi indsamler og bruger visse oplysninger til følgende formål:",
+    "section1Title": "Hvilke data indsamler vi?",
+    "section1Text": "Vi indsamler kun de data, der er nødvendige for at give dig en tilgængelig og personlig oplevelse. Dette kan omfatte:",
+    "section1List": {
+      "item1": "Dine kontaktoplysninger (navn, e-mailadresse).",
+      "item2": "Dit land, sprog og ønsket tilgængelighedsniveau.",
+      "item3": "Din type handicap (hvis du vælger at dele det).",
+      "item4": "De indstillinger, du aktiverer i widget'en (f.eks.: forstør tekst, aktiver skærmlæser osv.)."
+    },
+    "section1Note": "Vi indsamler ikke bankoplysninger eller får adgang til dit personlige indhold på nettet.",
+    "section2Title": "Hvorfor bruger vi disse oplysninger?",
+    "section2List": {
+      "item1": "Automatisk tilpasning af widget'en til dine behov.",
+      "item2": "Generering af anonyme og statistiske rapporter, der hjælper med at forbedre digital adgang.",
+      "item3": "Beskyttelse af dine rettigheder i henhold til standarder som WCAG 2.2, GDPR, CCPA og andre lokale love.",
+      "item4": "Hvis du accepterer at modtage nyheder, sender vi dig opdateringer om nye funktioner eller forbedringer af widget'en."
+    },
+    "section3Title": "Hvem kan se dine data?",
+    "section3Text1": "Kun du og systemet har adgang til dine personlige indstillinger.",
+    "section3Text2": "Hvis du vælger at dele dine data med en institution (f.eks. et universitet, der implementerer Unyco), modtager de kun aggregerede og anonyme rapporter, aldrig individuelle data uden din tilladelse.",
+    "section4Title": "Hvilken kontrol har du over dine oplysninger?",
+    "section4List": {
+      "item1": "Du kan til enhver tid ændre eller slette din konto.",
+      "item2": "Du kan anmode om en kopi af de data, vi har om dig.",
+      "item3": "Du kan tilbagekalde dette samtykke ved at skrive til: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>"
+    },
+    "helperText": "Læs venligst hele dokumentet, før du accepterer.",
+    "checkboxLabel": "Jeg erklærer, at jeg har læst og accepterer betingelserne for behandling af personoplysninger, som beskrevet her.",
+    "button": "Bekræft"
+  },
+  "userProfileView": {
+    "title": "Profilinformation",
+    "editImage": "Rediger billede",
+    "name": "Navn",
+    "email": "Email",
+    "birthDate": "Fødselsdato",
+    "id": "Identifikation",
+    "allData": "Alle data",
+    "theme": "Tema",
+    "editProfile": "Rediger profil",
+    "logout": "Log ud"
+  },
+  "resetPasswordView": {
+    "title": "Gendan adgangskode",
+    "labelEmail": "Indtast din e-mail",
+    "placeholderEmail": "Indtast din e-mail",
+    "buttonSend": "Send",
+    "titleCode": "Sikkerhedsbekræftelse",
+    "labelCode": "Indtast den bekræftelseskode, der er sendt til din e-mailadresse",
+    "resend": "Jeg modtog ikke koden.",
+    "resendLink": "Send igen",
+    "timer": "{{time}} sekunder tilbage",
+    "timerExpired": "Koden er udløbet. Anmod om en ny.",
+    "titleNewPass": "Indtast ny adgangskode",
+    "labelNewPass": "Indtast din nye adgangskode",
+    "placeholderNewPass": "Ny adgangskode",
+    "labelConfirmPass": "Bekræft din nye adgangskode",
+    "placeholderConfirmPass": "Ny adgangskode",
+    "buttonAccept": "Indsend",
+    "buttonCancel": "Annullér",
+    "successTitle": "Skift adgangskode",
+    "successMessage": "Din adgangskode er blevet opdateret."
+  },
+  "positionView": {
+    "title": "Vælg placering af widget",
+    "subtitle": "Vælg venligst din foretrukne placering."
+  },
+  "languagesView": {
+    "title": "Vælg sprog",
+    "subtitle": "Vælg dit foretrukne eller modersmål."
+  },
+  "error": {
+    "helperText": {
+      "emailError1": "E-mails matcher ikke",
+      "emailError2": "E-mailen er ikke gyldig",
+      "passError1": "Adgangskoder matcher ikke",
+      "passError2": "Adgangskoden skal have mere end 6 tegn"
+    }
+  }
+}

@@ -1,0 +1,484 @@
+{
+  "fullLayout": {
+    "slogan": "Verbonden met U"
+  },
+  "bannerUser": {
+    "welcome": "Welkom",
+    "subwelcome": "We nodigen u uit om u te registreren voor een gepersonaliseerde ervaring"
+  },
+  "category": {
+    "visual": {
+      "title": "Visueel",
+      "description": "Unieke manieren om de omgeving waar te nemen of te interpreteren via het zicht."
+    },
+    "mental": {
+      "title": "Psychosociaal",
+      "description": "Authentieke manieren van interactie, voelen en zich verhouden tot de wereld."
+    },
+    "auditory": {
+      "title": "Auditief",
+      "description": "Diverse manieren om de geluiden van de omgeving te ervaren en mee te verbinden."
+    },
+    "physical": {
+      "title": "Fysiek",
+      "description": "Persoonlijke stijlen van beweging, lichaamstaal en coördinatie."
+    },
+    "cognitive": {
+      "title": "Cognitief",
+      "description": "Unieke processen van denken, leren, geheugen en aandacht."
+    },
+    "custom": {
+      "title": "Aangepast",
+      "description": "Stel een ervaring samen die is afgestemd op uw individuele behoeften en voorkeuren."
+    }
+  },
+  "viewCategory": {
+    "title1": "Diverse Profielen van Mogelijkheden",
+    "title2": "Meer Instellingen",
+    "visual": {
+      "profile1": {
+        "title": "Slechtziendheid",
+        "description": "Unieke visuele ervaring die de manier van waarnemen van de omgeving verrijkt."
+      },
+      "profile2": {
+        "title": "Blindheid",
+        "description": "Vorm van waarneming die andere zintuigen prioriteert bij het interpreteren van de wereld."
+      },
+      "profile3": {
+        "title": "Kleurenblindheid",
+        "description": "Unieke ervaring in het waarderen en onderscheiden van kleuren."
+      }
+    },
+    "mental": {
+      "profile1": {
+        "title": "ASS",
+        "description": "Eigenzinnige manieren van focus op interesses, communicatie en relaties."
+      },
+      "profile2": {
+        "title": "Syndroom van Down",
+        "description": "Persoonlijke en waardevolle manier van het ervaren van persoonlijke en sociale ontwikkeling."
+      },
+      "profile3": {
+        "title": "Dyslexie",
+        "description": "Speciale manier van waarnemen en decoderen van de structuur van teksten."
+      },
+      "profile4": {
+        "title": "Epilepsie",
+        "description": "Unieke manifestaties van neurologische functionering die diversiteit vertegenwoordigen."
+      },
+      "profile5": {
+        "title": "ADHD",
+        "description": "Bijzondere dynamiek van aandacht, energie en prikkelverwerking."
+      }
+    },
+    "auditory": {
+      "profile1": {
+        "title": "Doofheid",
+        "description": "Afwijkende manieren van leven en communicatie met anderen begrijpen."
+      }
+    },
+    "physical": {
+      "profile1": {
+        "title": "Bovenmobiliteit",
+        "description": "Bijzondere manieren van bewegen en expressie in het bovenlichaam."
+      }
+    },
+    "cognitive": {
+      "profile1": {
+        "title": "Autisme",
+        "description": "Unieke stijl van waarnemen, verwerken en relateren aan de omgeving en mensen."
+      },
+      "profile2": {
+        "title": "OCD",
+        "description": "Intense en gestructureerde manieren om gedachten en handelingen te ordenen."
+      }
+    },
+    "custom": {}
+  },
+  "functionalityButtons": {
+    "button1": {
+      "title": "Markeringmodus",
+      "description": "Markeert belangrijke content."
+    },
+    "button2": {
+      "title": "Tekst markeren",
+      "description": "Markeert zichtbare tekst."
+    },
+    "button3": {
+      "title": "Vergrootglas",
+      "description": "Vergroot tekst bij hoveren."
+    },
+    "button4": {
+      "title": "Tekst vergroten",
+      "description": "Vergroot de tekstgrootte op de pagina."
+    },
+    "button5": {
+      "title": "Regelafstand vergroten",
+      "description": "Verbetert de regelafstand van de tekst."
+    },
+    "button6": {
+      "title": "Voorlezen",
+      "description": "Leest de paginatekst voor bij hoveren."
+    },
+    "button7": {
+      "title": "Links markeren",
+      "description": "Markeert links op de pagina."
+    },
+    "button8": {
+      "title": "Animaties stoppen",
+      "description": "Schakelt alle animaties op de pagina uit."
+    },
+    "button9": {
+      "title": "Leesbalk activeren",
+      "description": "Toont een balk die het lezen vergemakkelijkt."
+    },
+    "button10": {
+      "title": "Grote cursor",
+      "description": "Vergroot de cursor."
+    },
+    "button11": {
+      "title": "Leesbaar lettertype",
+      "description": "Wijzigt het lettertype naar een beter leesbaar lettertype."
+    },
+    "button12": {
+      "title": "Leesgemak",
+      "description": "Past de leessnelheid van de tekst aan."
+    },
+    "button13": {
+      "title": "Markering kleuren",
+      "description": "Wijzigt de kleuren van de markeringen voor betere zichtbaarheid."
+    },
+    "button14": {
+      "title": "Volume regeling",
+      "description": "Past het volume van de schermlezer aan."
+    },
+    "button15": {
+      "title": "Protanopie",
+      "description": "Kleurcorrectie voor rood-groen kleurenblindheid (rood)."
+    },
+    "button16": {
+      "title": "Deuteranopie",
+      "description": "Kleurcorrectie voor rood-groen kleurenblindheid (groen)."
+    },
+    "button17": {
+      "title": "Tritanopie",
+      "description": "Kleurcorrectie voor blauw-geel kleurenblindheid."
+    },
+    "button18": {
+      "title": "Protanomalie",
+      "description": "Gedeeltelijke roodkleurencorrectie."
+    },
+    "button19": {
+      "title": "Deuteranomalie",
+      "description": "Gedeeltelijke groenkleurencorrectie."
+    },
+    "button20": {
+      "title": "Tritanomalie",
+      "description": "Gedeeltelijke blauwe kleurcorrectie."
+    },
+    "button21": {
+      "title": "Achromatomalie",
+      "description": "Gedeeltelijke zwart-wit kleuraanpassing."
+    },
+    "button22": {
+      "title": "Achromatopsie",
+      "description": "Volledige grijsschaal kleuraanpassing."
+    },
+    "button23": {
+      "title": "Focuskader",
+      "description": "Markeert het element dat in focus staat."
+    },
+    "button24": {
+      "title": "Selectief Contrast",
+      "description": "Zet de pagina in donkere modus."
+    },
+    "button25": {
+      "title": "Lezen gepauzeerd",
+      "description": "Activeert woord-voor-woord lezen."
+    },
+    "button26": {
+      "title": "Focusmodus",
+      "description": "Verwijdert afleidende afbeeldingen en video's."
+    },
+    "button27": {
+      "title": "Geluid dempen",
+      "description": "Dempt het geluid van de pagina."
+    },
+    "button28": {
+      "title": "Leesmasker",
+      "description": "Voegt een masker toe om het lezen te vergemakkelijken."
+    },
+    "button29": {
+      "title": "Dyslexie lettertype",
+      "description": "Verandert het lettertype in een lettertype dat is ontworpen voor dyslexie."
+    },
+    "button30": {
+      "title": "Scrollbesturing",
+      "description": "Beheert het scrollen van de pagina om plotselinge sprongen te voorkomen."
+    },
+    "button31": {
+      "title": "Laag contrast",
+      "description": "Activeert de modus voor laag contrast om de leesbaarheid te verbeteren."
+    },
+    "button32": {
+      "title": "Oogbesturing",
+      "description": "Activeert muisnavigatie via oogtracking."
+    },
+    "button33": {
+      "title": "Gebarentaalvertaler",
+      "description": "Activeert de gebarentaalmodus van de pagina."
+    },
+    "button34": {
+      "title": "Schermtoetsenbord",
+      "description": "Activeert het schermtoetsenbord voor gemakkelijker typen."
+    },
+    "button35": {
+      "title": "Tekstkleur wijzigen",
+      "description": "Maakt het mogelijk om de tekstkleur van de pagina te wijzigen."
+    },
+    "button36": {
+      "title": "Tekst rechts uitlijnen",
+      "description": "Maakt het mogelijk om tekst rechts uit te lijnen."
+    },
+    "button37": {
+      "title": "Tekst links uitlijnen",
+      "description": "Maakt het mogelijk om tekst links uit te lijnen."
+    },
+    "button38": {
+      "title": "Tekst centreren",
+      "description": "Maakt het mogelijk om de tekst te centreren."
+    },
+    "button39": {
+      "title": "Regelafstand",
+      "description": "Past de regelafstand in tekst aan."
+    }
+  },
+  "loginView": {
+    "title": "Aanmelden",
+    "welcome": "Welkom bij",
+    "subwelcome": "Kies een van deze opties om in te loggen of een account aan te maken.",
+    "input": {
+      "placeholderEmail": "Voer uw e-mailadres in",
+      "placeholderPass": "Voer uw wachtwoord in"
+    },
+    "forgotPass": "Wachtwoord vergeten?",
+    "buttonLogin": "Inloggen",
+    "notAccount": {
+      "subtext1": "Heeft u nog geen account?",
+      "subtext2": "Registreren",
+      "subtext3": "Of log in met"
+    }
+  },
+  "accountView": {
+    "title": "Accountgegevens",
+    "welcome": "Welkom bij",
+    "subwelcome": "Maak uw account aan",
+    "input": {
+      "placeholderEmail": "Voer uw e-mailadres in",
+      "placeholderConfirmEmail": "Bevestig uw e-mailadres",
+      "placeholderPass": "Voer uw wachtwoord in",
+      "placeholderConfirmPass": "Bevestig uw wachtwoord"
+    },
+    "button": "Opslaan en doorgaan"
+  },
+  "registerView": {
+    "title": "Profielgegevens",
+    "welcome": "Welkom",
+    "subwelcome": "Vul alle velden in om uw profiel aan te maken.",
+    "edit": "Afbeelding bewerken",
+    "subtitle1": "Basispersoonlijke gegevens",
+    "subtitle2": "Toegankelijkheidsgegevens",
+    "input": {
+      "labelName": "Volledige naam",
+      "placeholderName": "Voer uw volledige naam in",
+      "labelDocumentType": "Documenttype",
+      "optionDocumentType": {
+        "option1": "Selecteer",
+        "option2": "Burgerservicenummer",
+        "option3": "Identiteitskaart",
+        "option4": "Paspoort",
+        "option5": "Vreemdelingendocument",
+        "option6": "Anders",
+        "option7": "Identiteitsdocument"
+      },
+      "labelNDocument": "Documentnummer",
+      "placeholderNDocument": "Voer uw documentnummer in",
+      "labelEmail": "E-mailadres",
+      "placeholderEmail": "Voer uw e-mailadres in",
+      "labelBirthdate": "Geboortedatum",
+      "placeholderBirthdate": "Voer uw geboortedatum in",
+      "labelResidenceArea": "Woongebied",
+      "optionResidenceArea": {
+        "option1": "Selecteer",
+        "option2": "Stedelijk",
+        "option3": "Landelijk",
+        "option4": "Buitenstedelijk"
+      },
+      "labelEducationalLevel": "Opleidingsniveau",
+      "optionEducationalLevel": {
+        "option1": "Selecteer",
+        "option2": "Geen",
+        "option3": "Basisonderwijs",
+        "option4": "Voortgezet onderwijs",
+        "option5": "Universitair",
+        "option6": "Postuniversitair"
+      },
+      "labelOcupacion": "Beroepssituatie",
+      "optionOcupacion": {
+        "option1": "Selecteer",
+        "option2": "Werknemer",
+        "option3": "Werkeloos",
+        "option4": "Student",
+        "option5": "Gepensioneerd",
+        "option6": "Zelfstandige"
+      },
+      "labelDisability": "Heeft u een diversiteit aan vaardigheden?",
+      "optionDisability": {
+        "option1": "Selecteer",
+        "option2": "Ja",
+        "option3": "Nee"
+      },
+      "labelDisabilityType": "Type Diverse Ability",
+      "optionDisabilityType": {
+        "option1": "Selecteer",
+        "option2": "Visueel",
+        "option3": "Auditief",
+        "option4": "Motorisch",
+        "option5": "Cognitief",
+        "option6": "Psychosociaal",
+        "option7": "Meervoudig"
+      },
+      "labelDisabilityLevel": "Niveau Diverse Ability",
+      "optionDisabilityLevel": {
+        "option1": "Selecteer",
+        "option2": "Mild",
+        "option3": "Matig",
+        "option4": "Hoog"
+      }
+    },
+    "button": "Opslaan en doorgaan"
+  },
+  "userTermsView": {
+    "title": "Voorwaarden",
+    "title2": "Toestemming voor verwerking van persoonsgegevens – U Platform",
+    "intro": "Door me te registreren op het U platform, erken en accepteer ik, vrij, geïnformeerd, specifiek en ondubbelzinnig, dat mijn persoonsgegevens worden verzameld, verwerkt en opgeslagen in overeenstemming met internationale normen voor privacy en gegevensbescherming, op basis van de volgende voorwaarden:",
+    "section1Title": "1. Verwerkingsverantwoordelijke",
+    "section1Text": "Dsoft Innovate S.A.S. (hierna 'U' genoemd), gevestigd op [juridisch adres], handelend als verwerkingsverantwoordelijke, zal mijn gegevens verwerken conform deze autorisatie.",
+    "section2Title": "2. Doel van de Verwerking",
+    "section2Text": "Mijn persoonsgegevens worden verwerkt voor de volgende doeleinden:",
+    "section2List": {
+      "item1": "Het personaliseren van de toegankelijkheidservaring binnen de U-widget.",
+      "item2": "Het mogelijk maken van analyse en geaggregeerde rapportage over het gebruik van toegankelijkheidstools (zonder de gebruiker individueel te identificeren).",
+      "item3": "Het verlenen van technische ondersteuning en gepersonaliseerde opvolging indien nodig.",
+      "item4": "Het voldoen aan wettelijke en regelgevende verplichtingen met betrekking tot toegankelijkheid, inclusie en non-discriminatie.",
+      "item5": "Het verzenden van technische, informatieve of commerciële updates, alleen als ik hiervoor specifieke toestemming heb gegeven."
+    },
+    "section3Title": "3. Rechtsgrond voor de Verwerking",
+    "section3Text": "U baseert de verwerking van persoonsgegevens op:",
+    "section3List": {
+      "item1": "Expliciete toestemming van de gebruiker.",
+      "item2": "Legitiem belang bij het verbeteren van toegankelijkheidsservices, altijd met respect voor de privacy van de gebruiker.",
+      "item3": "Naleving van lokale en internationale regelgeving, waaronder GDPR (EU), CCPA (California), LGPD (Brazilië) en andere toepasselijke wetten inzake gegevensbescherming."
+    },
+    "section4Title": "4. Internationale Datatransfer",
+    "section4Text": "Gegevens kunnen worden overgedragen en/of opgeslagen op servers die zich in verschillende landen bevinden. Unyco garandeert dat wanneer dit gebeurt, standaard contractuele clausules en passende technische maatregelen worden toegepast om de gegevens te beschermen in overeenstemming met de GDPR en andere toepasselijke regelgeving.",
+    "section5Title": "5. Rechten van de Gebruiker",
+    "section5Text": "Als gegevenseigenaar heb ik het recht om:",
+    "section5List": {
+      "item1": "Toegang te krijgen tot, te rectificeren, te beperken, te verwijderen of te porteren van mijn persoonsgegevens.",
+      "item2": "Mijn toestemming op elk moment in te trekken.",
+      "item3": "Klachten in te dienen bij de lokale toezichthoudende autoriteit voor gegevensbescherming (zoals de SIC in Colombia, EDPB in de EU of FTC in de VS)."
+    },
+    "section6Title": "6. Bewaartermijn",
+    "section6Text": "Gegevens worden alleen bewaard zolang als nodig is voor de vermelde doeleinden of zolang het account actief blijft. Daarna worden ze verwijderd of geanonimiseerd volgens de principes van minimalisering.",
+    "section7Title": "7. Contact voor het uitoefenen van rechten",
+    "section7Text1": "U kunt uw rechten uitoefenen door te schrijven naar: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>",
+    "section7Text2": "Of door het formulier te bezoeken dat beschikbaar is op: <a href=\"https://www.u.app/privacy\">www.u.app/privacy</a>",
+    "helperText": "Lees het hele document alstublieft voordat u akkoord gaat.",
+    "checkboxLabel": "Ik verklaar dat ik de hier uiteengezette voorwaarden voor de verwerking van persoonsgegevens heb gelezen en accepteer.",
+    "button": "Bevestig"
+  },
+  "userTermsView2": {
+    "title": "Voorwaarden",
+    "title2": "Geïnformeerde toestemming voor gegevensgebruik – Widget U",
+    "intro": "Bij U respecteren we uw privacy en willen we dat u precies weet hoe we uw gegevens gebruiken.",
+    "accept": "Door u te registreren op ons platform en de widget te gebruiken, accepteert u dat we bepaalde informatie verzamelen en gebruiken voor de volgende doeleinden:",
+    "section1Title": "Welke gegevens verzamelen we?",
+    "section1Text": "We verzamelen alleen de gegevens die nodig zijn om u een toegankelijke en gepersonaliseerde ervaring te bieden. Dit kan omvatten:",
+    "section1List": {
+      "item1": "Uw contactgegevens (naam, e-mailadres).",
+      "item2": "Uw land, taal en vereist toegankelijkheidsniveau.",
+      "item3": "Uw type handicap (als u ervoor kiest om dit te delen).",
+      "item4": "De instellingen die u in de widget activeert (bijvoorbeeld: tekst vergroten, schermlezer inschakelen, enz.)."
+    },
+    "section1Note": "We verzamelen geen bankgegevens of toegang tot uw persoonlijke content op het web.",
+    "section2Title": "Waarom gebruiken we deze informatie?",
+    "section2List": {
+      "item1": "Om de widget automatisch aan uw behoeften aan te passen.",
+      "item2": "Om anonieme en statistische rapporten te genereren die helpen de digitale toegankelijkheid te verbeteren.",
+      "item3": "Om uw rechten op toegankelijkheid te beschermen, conform standaarden zoals WCAG 2.2, GDPR, CCPA en andere lokale wetgeving.",
+      "item4": "Als u akkoord gaat met het ontvangen van nieuws, sturen we u updates over nieuwe functies of verbeteringen aan de widget."
+    },
+    "section3Title": "Wie kan uw gegevens zien?",
+    "section3Text1": "Alleen u en het systeem hebben toegang tot uw persoonlijke instellingen.",
+    "section3Text2": "Als u besluit uw gegevens te delen met een instelling (bijvoorbeeld een universiteit die Unyco implementeert), ontvangen zij alleen geaggregeerde en anonieme rapporten, nooit individuele gegevens zonder uw toestemming.",
+    "section4Title": "Welke controle heeft u over uw informatie?",
+    "section4List": {
+      "item1": "U kunt uw account op elk moment wijzigen of verwijderen.",
+      "item2": "U kunt een kopie aanvragen van de gegevens die we over u hebben.",
+      "item3": "U kunt deze toestemming intrekken door te schrijven naar: <a href=\"mailto:privacy@u.app\">privacy@u.app</a>"
+    },
+    "helperText": "Lees het hele document alstublieft voordat u het accepteert.",
+    "checkboxLabel": "Ik verklaar dat ik de hier uiteengezette voorwaarden voor de verwerking van persoonsgegevens heb gelezen en accepteer.",
+    "button": "Bevestig"
+  },
+  "userProfileView": {
+    "title": "Profielinformatie",
+    "editImage": "Afbeelding bewerken",
+    "name": "Naam",
+    "email": "E-mail",
+    "birthDate": "Geboortedatum",
+    "id": "Identificatie",
+    "allData": "Alle gegevens",
+    "theme": "Thema",
+    "editProfile": "Profiel bewerken",
+    "logout": "Uitloggen"
+  },
+  "resetPasswordView": {
+    "title": "Wachtwoord herstellen",
+    "labelEmail": "Voer uw e-mailadres in",
+    "placeholderEmail": "Voer uw e-mailadres in",
+    "buttonSend": "Verzenden",
+    "titleCode": "Beveiligingsverificatie",
+    "labelCode": "Voer de verificatiecode in die naar uw e-mailadres is verzonden",
+    "resend": "Ik heb de code niet ontvangen.",
+    "resendLink": "Opnieuw verzenden",
+    "timer": "Nog {{time}} seconden resterend",
+    "timerExpired": "De code is verlopen. Vraag een nieuwe aan.",
+    "titleNewPass": "Nieuw wachtwoord invoeren",
+    "labelNewPass": "Voer uw nieuwe wachtwoord in",
+    "placeholderNewPass": "Nieuw wachtwoord",
+    "labelConfirmPass": "Bevestig uw nieuwe wachtwoord",
+    "placeholderConfirmPass": "Nieuw wachtwoord",
+    "buttonAccept": "Verzenden",
+    "buttonCancel": "Annuleren",
+    "successTitle": "Wachtwoord wijzigen",
+    "successMessage": "Uw wachtwoord is succesvol bijgewerkt."
+  },
+  "positionView": {
+    "title": "Selecteer de widgetlocatie",
+    "subtitle": "Selecteer uw gewenste locatie."
+  },
+  "languagesView": {
+    "title": "Selecteer uw taal",
+    "subtitle": "Selecteer uw voorkeurstaal of moedertaal."
+  },
+  "error": {
+    "helperText": {
+      "emailError1": "E-mailadressen komen niet overeen",
+      "emailError2": "Het e-mailadres is ongeldig",
+      "passError1": "Wachtwoorden komen niet overeen",
+      "passError2": "Het wachtwoord moet meer dan 6 tekens bevatten"
+    }
+  }
+}

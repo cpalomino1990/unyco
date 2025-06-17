@@ -1,19 +1,22 @@
-a {
+#my-widget a {
   color: var(--primaryColor);
   cursor: pointer;
 }
-a:hover {
+#my-widget a:hover {
   text-decoration: underline;
 }
 
 #view-initial {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
   padding: 10px;
   overflow: auto;
   height: calc(100% - 20px);
+  font-size: 1em !important;
+}
+
+#view-initial #accessibility-banner-user {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .accessibility-view-buttons-container {
@@ -22,13 +25,15 @@ a:hover {
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
+  font-size: 1em;
 }
 
 #accessibility-content-profiles {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 10px 4px;
+  justify-content: flex-start;
+  font-size: 1em;
+  gap: 10px 6px;
 }
 
 #accessibility-buttons-active {
@@ -45,21 +50,25 @@ a:hover {
 #accessibility-custom-view,
 #accessibility-user-login-view,
 #accessibility-user-profile-view,
+#accessibility-user-account-view,
 #accessibility-user-register-view,
 #accessibility-user-image-view,
 #accessibility-user-terms-view-1,
 #accessibility-user-terms-view-2,
-#accessibility-languages-view {
+#accessibility-languages-view,
+#accessibility-position-view {
   padding: 10px;
   overflow: auto;
   height: calc(100% - 20px);
+  font-size: 1em !important;
 }
 
 #accessibility-content-others-buttons {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 10px 4px;
+  justify-content: start;
+  gap: 10px 6px;
+  font-size: 1em;
 }
 
 /* ESTILOS DE LA VISTA DE USUAIROS - LOGIN - REGISTER */
@@ -109,7 +118,7 @@ a:hover {
   margin: 0;
   margin-bottom: 30px;
   font-weight: 700;
-  font-size: 50px;
+  font-size: 3em;
   line-height: 45px;
   color: var(--textColor);
   text-align: center;
@@ -121,15 +130,16 @@ a:hover {
 .accessibility-user-login-view-content-text .accessibility-title-card-text span {
   margin-left: 10px;
 }
+
 .accessibility-user-login-view-content-text .accessibility-title-card-text span img {
-  width: 45px;
+  width: 1em;
 }
 
 .accessibility-user-login-view-content-text .accessibility-description-card-text {
   margin: 0;
   margin-bottom: 20px;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 1em;
   color: var(--textColor);
   text-align: center;
 }
@@ -186,6 +196,13 @@ a:hover {
 /* ESTILOS DE LA VISTA DE REGISTRO DE USUARIOS */
 .accessibility-user-register-view-content {
   margin-top: 20px;
+}
+
+.accessibility-user-register-view-title {
+  font-size: 2em !important;
+  font-weight: bold !important;
+  line-height: 100% !important;
+  margin: 10px 0 !important;
 }
 
 .accessibility-user-button-edit-img {
@@ -301,6 +318,11 @@ a:hover {
   border-radius: 50%;
 }
 
+.accessibility-alert-message-icon svg {
+  width: 80px;
+  height: 80px;
+}
+
 .accessibility-alert-message-title {
   font-weight: 700;
   font-size: 32px;
@@ -373,14 +395,17 @@ a:hover {
   height: calc(100% - 50px);
 }
 .accessibility-languages-view-content .accessibility-languages-view-body .title {
-  font-weight: 800;
-  font-size: 32px;
+  font-weight: 800 !important;
+  font-size: 2em !important;
+  line-height: 100% !important;
+  color: #000 !important ;
 }
 
 .accessibility-languages-view-content .accessibility-languages-view-body .subtitle {
-  font-weight: 600;
-  font-size: 20px;
-  color: #707070;
+  font-weight: 600 !important;
+  font-size: 1.2em !important;
+  line-height: 100% !important;
+  color: #707070 !important;
 }
 
 .accessibility-languages-view-list {
@@ -430,7 +455,7 @@ a:hover {
 .accessibility-languages-view-list .accessibility-languages-view-item p {
   /* width: 100%; */
   text-align: center;
-  font-weight: 600;
+  font-weight: bold;
   font-size: 20px;
   margin: 0 auto;
 }
@@ -487,3 +512,93 @@ a:hover {
   height: 17px;
 }
 
+/* ESRTILOS DE LA VISTA DE CABIAR POSICION DEL WIDGET */
+.accessibility-postion-view-options {
+  width: 400px;
+  height: 240px;
+  max-width: 100%;
+  position: relative;
+  border: 2px solid var(--primaryColor);
+  border-radius: 25px;
+  margin: 40px auto;
+  user-select: none;
+}
+.accessibility-postion-view-options .accessibility-position-option {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--primaryColor);
+  cursor: pointer;
+}
+
+.accessibility-postion-view-options .accessibility-position-option.active {
+  background-color: var(--primaryColor);
+}
+
+.accessibility-postion-view-options .accessibility-position-option:hover {
+  background: color-mix(in srgb, var(--primaryColor) 50%, transparent);
+}
+
+.accessibility-position-option.top-left {
+  top: 10px;
+  left: 10px;
+}
+
+.accessibility-position-option.top-center {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.accessibility-position-option.top-right {
+  top: 10px;
+  right: 10px;
+}
+
+.accessibility-position-option.center-left {
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.accessibility-position-option.center-right {
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.accessibility-position-option.bottom-left {
+  bottom: 10px;
+  left: 10px;
+}
+
+.accessibility-position-option.bottom-center {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.accessibility-position-option.bottom-right {
+  bottom: 10px;
+  right: 10px;
+}
+
+@media (max-width: 500px) {
+  .accessibility-user-login-view-content-text .accessibility-title-card-text {
+    font-size: 2em;
+  }
+
+  .accessibility-user-login-view-content-text .accessibility-description-card-text {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 400px) {
+  .accessibility-user-login-view-content-text .accessibility-title-card-text {
+    font-size: 1.5em;
+  }
+  .accessibility-user-login-view-content-text .accessibility-description-card-text {
+    font-size: 0.7em;
+  }
+}

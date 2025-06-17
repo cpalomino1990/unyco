@@ -1,9 +1,10 @@
 import { toggleCheckButton } from "../../shared/components/allButtons/allButtons";
+import { host } from "../../shared/constants/enviroments";
 
 
-const cursorManito = "http://127.0.0.1:5502/public/07.svg";
+const cursorManito = `${host}/public/07.svg`;
 // const cursorGrande = "http://127.0.0.1:5501/public/01.svg"
-const cursorGrande = "http://127.0.0.1:5502/public/10.svg"
+const cursorGrande = `${host}/public/10.svg`
 
 
 export function toggleLargeCursor() {

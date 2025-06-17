@@ -20,18 +20,16 @@ export function loadOutlineSetting() {
 const outlineStyle = document.createElement("style");
 outlineStyle.innerHTML = `
   
-    .outline-mode button,
-    .outline-mode a,
-    .outline-mode input,
-    .outline-mode select,
-    .outline-mode textarea,
-    .outline-mode h1,
-    .outline-mode h2,
+   
+ 
+  
     .outline-mode h3,
     .outline-mode h4,
     .outline-mode p,
+    .outline-mode span,
+   
     .outline-mode img {
-      outline: 3px solid #FF00FF !important;
+      outline: 2px solid #FF00FF !important;
       outline-offset: 2px;
       border-radius: 4px;
     }
