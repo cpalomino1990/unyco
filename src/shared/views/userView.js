@@ -1196,7 +1196,7 @@ export function userImageView() {
   `;
 
   // Creación del botón "atrás"
-  const buttonBack = createButton("back", "", () => switchView("accessibility-user-register-view"));
+  const buttonBack = createButton("back", "", () => switchView(-1));
   buttonBack.classList.add("accessibility-circle-button");
   buttonBack.innerHTML = `${DynamicIcon({ icon: "left" })}`; // Icono de flecha hacia atrás
 
@@ -1697,7 +1697,7 @@ export function userProfileView() {
     themes: [
       { color: "blue", hex: "#1e67e7", active: true },
       { color: "purple", hex: "#5d04d8", active: false },
-      { color: "custom", hex: "#ff5733", active: false },
+      { color: "custom", hex: "#9c1618", active: false },
     ],
   };
 

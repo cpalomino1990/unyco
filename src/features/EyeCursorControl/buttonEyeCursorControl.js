@@ -347,7 +347,7 @@ function getClosestInteractiveElement(x, y, radius = 80) {
   const elements = document.querySelectorAll('button, a, input, textarea, [role="button"], [tabindex]');
   let closest = null;
   let minDistance = radius;
-
+toggleCheckButton({ id: "eye-loading-overlay", checked: false, option: null });
   elements.forEach(el => {
     const rect = el.getBoundingClientRect();
     const cx = rect.left + rect.width / 2;
@@ -410,4 +410,3 @@ function startAutoRecalibration() {
     }
   }, 1000);
 }
-

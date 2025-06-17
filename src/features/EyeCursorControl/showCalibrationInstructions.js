@@ -1,5 +1,5 @@
 import { toggleCheckButton } from "../../shared/components/allButtons/allButtons";
-import { releaseWakeLock, startCalibration } from "./startCalibration";
+import { startCalibration } from "./startCalibration";
 import "../../shared/styles/loading.css";
 import { stopEyeCursorControl } from "./buttonEyeCursorControl";
 
@@ -62,7 +62,6 @@ function createCalibrationModal() {
   document.getElementById("cancelCalibrationNow").addEventListener("click", () => {
     console.log("entro yo 1")
     modal.remove();
-    releaseWakeLock(); 
     document.body.classList.remove("calibration-instructions-modal");
     localStorage.setItem("calibration-instructions-modal", "false");
     stopEyeCursorControl();

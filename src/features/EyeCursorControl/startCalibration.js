@@ -14,34 +14,6 @@ let lostFaceTimeout = null;
 let hasLookedAway = false;
 
 export async function startCalibration() {
- await requestWakeLock();
-  let wakeLock = null;
-
- async function requestWakeLock() {
-  try {
-    if ('wakeLock' in navigator) {
-      wakeLock = await navigator.wakeLock.request('screen');
-      console.log("🔒 Wake Lock activado");
-
-      document.addEventListener('visibilitychange', async () => {
-        if (wakeLock !== null && document.visibilityState === 'visible') {
-          try {
-            wakeLock = await navigator.wakeLock.request('screen');
-            console.log("🔄 Wake Lock restaurado");
-          } catch (err) {
-            console.warn("⚠️ No se pudo restaurar el Wake Lock:", err);
-          }
-        }
-      });
-    } else {
-      console.warn("Wake Lock no soportado, usando video oculto");
-      startIOSKeepAwake();
-    }
-  } catch (err) {
-    console.error("Error al activar Wake Lock:", err);
-    startIOSKeepAwake(); // fallback para iOS o si algo falla
-  }
-}
   if (calibrationInProgress) return;
 
   calibrationInProgress = true;
@@ -136,7 +108,7 @@ export async function startCalibration() {
   });
 
  let gazeAwayStartTime = null;
-let gazeAwayTimeout = isMobileDevice() ? 5000 : 3000; // ms
+let gazeAwayTimeout = 3000; // ms
 let recalibrationScheduled = false;
 
 faceMesh.onResults(results => {
@@ -262,96 +234,4 @@ export function applyCalibration(iris) {
 export function resetCalibration() {
   isCalibrated = false;
   calibrationOffset = { x: 0, y: 0 };
-}
-
-function isMobileDevice() {
-  return /Mobi|Android|iPhone|iPad|iPod|Tablet/i.test(navigator.userAgent);
-}
-
-function startAutoRecalibration() {
-  const warning = document.createElement("div");
-  warning.id = "recalibration-warning";
-  warning.textContent = "Has dejado de mirar la pantalla. Recalibrando el cursor ocular...";
-  Object.assign(warning.style, {
-    position: "fixed",
-    top: "20%",
-    left: "50%",
-    transform: "translateX(-50%)",
-    backgroundColor: "#c62828",
-    color: "#fff",
-    padding: "20px 30px",
-    borderRadius: "12px",
-    zIndex: 100001,
-    fontSize: "1.2rem",
-    textAlign: "center",
-    boxShadow: "0 0 20px rgba(0,0,0,0.5)"
-  });
-  document.body.appendChild(warning);
-
-  setTimeout(() => {
-    warning.remove();
-    resetCalibration();
-    startCalibration();
-  }, 3000);
-}
-
-function showReturnedMessage() {
-  const returnedMessage = document.createElement("div");
-  returnedMessage.textContent = "Has vuelto a mirar la pantalla. Continuamos.";
-  Object.assign(returnedMessage.style, {
-    position: "fixed",
-    top: "10%",
-    left: "50%",
-    transform: "translateX(-50%)",
-    backgroundColor: "#4caf50",
-    color: "#fff",
-    padding: "12px 20px",
-    borderRadius: "8px",
-    zIndex: 100001,
-    fontSize: "1rem",
-    boxShadow: "0 0 15px rgba(0,0,0,0.3)"
-  });
-  document.body.appendChild(returnedMessage);
-  setTimeout(() => returnedMessage.remove(), 2500);
-}
-
-//funcion para matener la pantalla activa
-let iosVideo = null;
-
-function startIOSKeepAwake() {
-  iosVideo = document.createElement("video");
-  iosVideo.src = "data:video/mp4;base64,AAAAHGZ0eXBtcDQyAAAAAG1wNDFtcDQxaXNvbWF2YzEAAAAMbXNnAAAAAA==";
-  iosVideo.loop = true;
-  iosVideo.muted = true;
-  iosVideo.playsInline = true;
-  iosVideo.style.position = "fixed";
-  iosVideo.style.width = "1px";
-  iosVideo.style.height = "1px";
-  iosVideo.style.opacity = "0";
-  iosVideo.style.pointerEvents = "none";
-  document.body.appendChild(iosVideo);
-
-  iosVideo.play().then(() => {
-    console.log("▶️ Video iOS oculto en reproducción para evitar suspensión");
-  }).catch(err => {
-    console.warn("⚠️ No se pudo iniciar el video oculto:", err);
-  });
-}
-
-function stopIOSKeepAwake() {
-  if (iosVideo) {
-    iosVideo.pause();
-    iosVideo.remove();
-    iosVideo = null;
-    console.log("⏹️ Video iOS oculto detenido");
-  }
-}
-export function releaseWakeLock() {
-  if (wakeLock !== null) {
-    wakeLock.release().then(() => {
-      wakeLock = null;
-      console.log("🔓 Wake Lock liberado");
-    });
-  }
-  stopIOSKeepAwake();
 }

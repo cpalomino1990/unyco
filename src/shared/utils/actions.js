@@ -6,7 +6,6 @@ import { createCardTitle } from "./createElements";
 export async function ChangeTheme(value, customColor) {
   document.documentElement.setAttribute("data-theme", value);
   document.documentElement.setAttribute("data-theme-hex", customColor);
-
   updateLogoAndIcons(value);
   filterForInitIcons();
   document.documentElement.style.setProperty("--primaryColor", customColor);

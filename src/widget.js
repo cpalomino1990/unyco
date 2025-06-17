@@ -289,6 +289,7 @@ export async function initWidget(accountId) {
   //   return null;
   // }
   document.documentElement.setAttribute("data-theme", "blue"); // Establecer el tema del widget
+  document.documentElement.setAttribute("data-theme-hex", "#1e67e7");
   const widgetContainer = document.createElement("div"); // Crear el contenedor del widget
   widgetContainer.id = "my-widget"; // Asignar un id único al contenedor del widget
   widgetContainer.className = "widget-container"; // Asignar una clase para el estilo del widget

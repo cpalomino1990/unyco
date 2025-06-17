@@ -18,12 +18,38 @@ function hexToRgbArray(hex) {
 
 async function createPixiCanvasWithColorTint(containerId, imageUrl, hexColor) {
   const container = document.getElementById(containerId);
-  container.style.display = "flex"
-  container.style.justifyContent = "center"
-  container.style.alignItems = "center"
+  container.style.display = "flex";
+  container.style.justifyContent = "center";
+  container.style.alignItems = "center";
+
+  // Destruir el canvas Pixi anterior si existe y está en el DOM
+  if (container._pixiApp) {
+    if (container._pixiApp._lastImageUrl) {
+      await PIXI.Assets.unload(container._pixiApp._lastImageUrl);
+      container._pixiApp._lastImageUrl = null;
+    }
+
+    // Destruir sprites manualmente
+    container._pixiApp.stage.removeChildren().forEach((child) => {
+      if (child instanceof PIXI.Sprite) {
+        child.destroy({ children: true, texture: true, baseTexture: true });
+      }
+    });
+
+    if (container._pixiApp.canvas && container.contains(container._pixiApp.canvas)) {
+      container.removeChild(container._pixiApp.canvas);
+    }
+
+    container._pixiApp.destroy(true, {
+      children: true,
+      texture: false,
+      baseTexture: false,
+    });
+
+    container._pixiApp = null;
+  }
 
   const app = new PIXI.Application();
-
   await app.init({
     width: 90,
     height: 90,
@@ -31,9 +57,11 @@ async function createPixiCanvasWithColorTint(containerId, imageUrl, hexColor) {
   });
 
   container.appendChild(app.canvas);
+  container._pixiApp = app; // Guardar referencia para destruir luego
 
   const texture = await PIXI.Assets.load(imageUrl);
   const sprite = new PIXI.Sprite(texture);
+  container._pixiApp._lastImageUrl = imageUrl; // Guardar la url para liberar la textura después
 
   // Ajusta el tamaño del sprite al 100% del canvas
   sprite.width = app.renderer.width;
@@ -55,13 +83,15 @@ export function filterForInitIcons() {
     canvasElem.innerHTML = "";
     const iconUrl = canvasElem.getAttribute("data-icon");
     const icons = {
-      "1": icon1,
-      "2": icon2,
-      "3": icon3,
-      "4": icon4,
-      "5": icon5,
-      "6": icon6,
+      1: icon1,
+      2: icon2,
+      3: icon3,
+      4: icon4,
+      5: icon5,
+      6: icon6,
+    };
+    if (icons[iconUrl]) {
+      createPixiCanvasWithColorTint(canvasElem.id, icons[iconUrl], color ?? "#1e67e7");
     }
-    createPixiCanvasWithColorTint(canvasElem.id, icons[iconUrl], color ?? "#1e67e7");
   });
 }

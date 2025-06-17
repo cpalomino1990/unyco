@@ -1,6 +1,7 @@
 import { createButton, getDynamicTranslation, switchView } from "../../widget";
 import { DynamicIcon } from "/public/icons/generals/dinamicIcons";
 import { host, isMobile } from "../constants/enviroments";
+import * as PIXI from "pixi.js";
 
 // Función para crear un botón tipo tarjeta (card) para categorías
 export function createButtonCard(props = { id, text, text_i18n, view, icon, description, description_i18n }) {
@@ -129,15 +130,15 @@ export function createBannerUser() {
   const userImageBase64 = localStorage.getItem("inputFileFormImage_user-image");
 
   // Imagen por defecto si no hay imagen personalizada
-  const defaultImage = `${host}/public/images/perfil.svg`; 
+  const defaultImage = `${host}/public/images/perfil.svg`;
 
   card.innerHTML = `
     <div class="accessibility-banner-user-top">
       <div class="accessibility-banner-user-top-image">
         <div class="accessibility-banner-user-top-image-internal">
         <img class="u-accessibility-profile-img" src="${
-            userImageBase64 || defaultImage
-          }" alt="Imagen de perfil del usuario">
+          userImageBase64 || defaultImage
+        }" alt="Imagen de perfil del usuario">
 
         </div>
       </div>
@@ -503,157 +504,204 @@ export function createSelectForm(props = { id, options, label, i18n_label, oncha
 // Creacion de input file forms
 export function createInputFileForm(props = { id, accept, onchange, targetWidth: 500, targetHeight: 500 }) {
   const container = document.createElement("div");
-container.id = `inputFileForm_${props.id}`;
-container.classList.add("accessibility-input-file-form-container");
-
+  container.id = `inputFileForm_${props.id}`;
+  container.classList.add("accessibility-input-file-form-container");
 
   const dropabbleContainer = document.createElement("div");
   dropabbleContainer.classList.add("accessibility-dropabble-container");
   dropabbleContainer.innerHTML = `
-    <div class="accessibility-dropabble-container-text">
-      <p>${DynamicIcon({ icon: "image" })}</p>
-      <p>Arrastra y suelta el archivo aquí</p>
-      <p>o selecciona uno de tu galeria</p>
-    </div>
-    <div class="accessibility-dropabble-container-img hidden">
-      <div class="accessibility-dropabble-container-img-delete">${DynamicIcon({ icon: "x" })}</div>
-      <img src="" alt="Imagen de usuario">
-    </div>
+    <button id="u-uploadBtn" class="accessibility-button-theme" >Cargar nueva imagen</button>
+    <input type="file" id="u-imageLoader" accept="image/*" style="display:none;" />
+    <div id="u-accessibility-editor"></div>
   `;
 
-  const input = document.createElement("input");
-  input.id = props.id;
-  input.type = "file";
-  input.hidden = true;
-  input.accept = props.accept || "image/*";
-
-  const processAndShowImage = (file) => {
-    if (!file) {
-      alert("Por favor, selecciona un archivo válido.");
-      return;
-    }
-
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      console.log("Resultado del reader:", e.target.result);
-      const img = new Image();
-      img.onload = () => {
-        const canvas = document.createElement("canvas");
-        const ctx = canvas.getContext("2d");
-        const targetWidth = props.targetWidth || 300;
-        const targetHeight = props.targetHeight || 290;
-
-        const aspectRatio = img.width / img.height;
-        const targetAspectRatio = targetWidth / targetHeight;
-
-        let sx = 0,
-          sy = 0,
-          sWidth = img.width,
-          sHeight = img.height;
-        if (aspectRatio > targetAspectRatio) {
-          sHeight = img.height;
-          sWidth = img.height * targetAspectRatio;
-          sx = (img.width - sWidth) / 2;
-        } else {
-          sWidth = img.width;
-          sHeight = img.width / targetAspectRatio;
-          sy = (img.height - sHeight) / 2;
-        }
-
-        canvas.width = targetWidth;
-        canvas.height = targetHeight;
-        ctx.drawImage(img, sx, sy, sWidth, sHeight, 0, 0, targetWidth, targetHeight);
-
-        const resizedBase64 = canvas.toDataURL("image/png");
-
-        // Mostrar imagen
-        const displayImg = dropabbleContainer.querySelector(".accessibility-dropabble-container-img img");
-        displayImg.src = resizedBase64;
-        dropabbleContainer.querySelector(".accessibility-dropabble-container-text")?.classList.add("hidden");
-        dropabbleContainer.querySelector(".accessibility-dropabble-container-img")?.classList.remove("hidden");
-
-        // Guardar y notificar
-        if (props.id) {
-          localStorage.setItem(`inputFileFormImage_${props.id}`, resizedBase64);
-          const profileImgs = document.querySelectorAll(".u-accessibility-register-profile-img  ");
-          profileImgs.forEach((imgEl) => {
-            imgEl.src = resizedBase64;
-          });
-        }
-        if (props.onchange) {
-          props.onchange(resizedBase64);
-        }
-      };
-
-      img.onerror = () => {
-        alert("El archivo seleccionado no es una imagen válida.");
-        console.error("Error al cargar imagen:", file.name);
-      };
-
-      img.src = e.target.result;
-    };
-    reader.readAsDataURL(file);
-  };
-
-  // Cargar imagen guardada
-  if (props.id) {
-    const savedImage = localStorage.getItem(`inputFileFormImage_${props.id}`);
-    if (savedImage) {
-      dropabbleContainer.querySelector(".accessibility-dropabble-container-text")?.classList.add("hidden");
-      dropabbleContainer.querySelector(".accessibility-dropabble-container-img")?.classList.remove("hidden");
-
-      const img = dropabbleContainer.querySelector(".accessibility-dropabble-container-img img");
-      img.src = savedImage;
-    }
-  }
-
-  input.addEventListener("change", (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      processAndShowImage(file);
-    }
-  });
-
-  dropabbleContainer.querySelector(".accessibility-dropabble-container-text")?.addEventListener("click", () => {
+  const button = dropabbleContainer.querySelector("#u-uploadBtn");
+  const input = dropabbleContainer.querySelector("#u-imageLoader");
+  const canvasContainer = dropabbleContainer.querySelector("#u-accessibility-editor");
+  button.addEventListener("click", () => {
     input.click();
   });
 
-  dropabbleContainer.addEventListener("dragover", (event) => {
-    event.preventDefault();
-    dropabbleContainer.classList.add("drag-over");
-  });
+  let imageSprite = null;
+  let dragging = false;
+  let lastPosition = null;
+  let mask = null;
+  let app = null;
 
-  dropabbleContainer.addEventListener("dragleave", (event) => {
-    event.preventDefault();
-    dropabbleContainer.classList.remove("drag-over");
-  });
-
-  dropabbleContainer.addEventListener("drop", (event) => {
-    event.preventDefault();
-    dropabbleContainer.classList.remove("drag-over");
-    const file = event.dataTransfer.files[0];
-    if (file) {
-      processAndShowImage(file);
-    }
-  });
-
-  dropabbleContainer
-    .querySelector(".accessibility-dropabble-container-img-delete")
-    ?.addEventListener("click", (event) => {
-      event.preventDefault();
-      dropabbleContainer.querySelector(".accessibility-dropabble-container-text")?.classList.remove("hidden");
-      dropabbleContainer.querySelector(".accessibility-dropabble-container-img")?.classList.add("hidden");
-
-      if (props.id) {
-        localStorage.removeItem(`inputFileFormImage_${props.id}`);
+  // Inicializar color con el valor actual del atributo
+  let color = document.documentElement.getAttribute("data-theme-hex");
+  // Observar cambios en el atributo data-theme-hex y actualizar la variable color
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === "attributes" && mutation.attributeName === "data-theme-hex") {
+        color = document.documentElement.getAttribute("data-theme-hex");
+        // Si necesitas actualizar el fondo del renderer en caliente:
+        if (app && app.renderer) {
+          app.renderer.background.color = color;
+          app.renderer.background.alpha = 0.7;
+        }
       }
-
-      if (props.onchange) {
-        props.onchange(null);
-      }
-
-      input.value = null;
     });
+  });
+  observer.observe(document.documentElement, { attributes: true });
+
+  async function init() {
+    // Crear la aplicación PIXI
+    app = new PIXI.Application();
+
+    await app.init({
+      width: 300,
+      height: 300,
+      backgroundAlpha: 0,
+    });
+
+    // Agregar el canvas al DOM
+    canvasContainer.appendChild(app.canvas);
+
+    // Crear una máscara circular
+    mask = new PIXI.Graphics();
+    mask.beginFill(0xffffff);
+    mask.drawCircle(150, 150, 140); // centro (150,150) radio 140
+    mask.endFill();
+    app.renderer.background.color = color;
+    app.renderer.background.alpha = 0.7;
+    app.stage.addChild(mask);
+  }
+
+  // Cargar y mostrar imagen
+  // Agregar slider de zoom
+  let zoomSlider = dropabbleContainer.querySelector("#u-zoomSlider");
+  if (!zoomSlider) {
+    zoomSlider = document.createElement("input");
+    zoomSlider.type = "range";
+    zoomSlider.id = "u-zoomSlider";
+    zoomSlider.min = 1;
+    zoomSlider.max = 3;
+    zoomSlider.step = 0.01;
+    zoomSlider.value = 1;
+    zoomSlider.style.width = "300px";
+    zoomSlider.style.margin = "1rem auto";
+    canvasContainer.appendChild(zoomSlider);
+  }
+
+  async function loadImage(url) {
+    if (imageSprite) app.stage.removeChild(imageSprite);
+
+    const texture = await PIXI.Assets.load(url);
+    imageSprite = new PIXI.Sprite(texture);
+    imageSprite.anchor.set(0.5);
+    imageSprite.x = 150;
+    imageSprite.y = 150;
+    imageSprite.interactive = true;
+    imageSprite.cursor = "grab";
+    imageSprite.mask = mask;
+
+    // COVER: Escalar para cubrir el círculo (300x300)
+    const tw = texture.width;
+    const th = texture.height;
+    const baseScale = Math.max(300 / tw, 300 / th);
+    let currentScale = baseScale;
+    imageSprite.width = tw * currentScale;
+    imageSprite.height = th * currentScale;
+
+    // Configurar slider de zoom
+    zoomSlider.min = baseScale;
+    zoomSlider.max = baseScale * 3;
+    zoomSlider.step = 0.01;
+    zoomSlider.value = baseScale;
+
+    zoomSlider.oninput = function () {
+      currentScale = parseFloat(zoomSlider.value);
+      imageSprite.width = tw * currentScale;
+      imageSprite.height = th * currentScale;
+      clampPosition();
+    };
+
+    // Limitar el arrastre para que los bordes no sean menores al borde del círculo
+    function clampPosition() {
+      const radius = 140;
+      const left = imageSprite.x - imageSprite.width / 2;
+      const right = imageSprite.x + imageSprite.width / 2;
+      const top = imageSprite.y - imageSprite.height / 2;
+      const bottom = imageSprite.y + imageSprite.height / 2;
+
+      // Limitar horizontal
+      if (left > 150 - radius) imageSprite.x = 150 - radius + imageSprite.width / 2;
+      if (right < 150 + radius) imageSprite.x = 150 + radius - imageSprite.width / 2;
+      // Limitar vertical
+      if (top > 150 - radius) imageSprite.y = 150 - radius + imageSprite.height / 2;
+      if (bottom < 150 + radius) imageSprite.y = 150 + radius - imageSprite.height / 2;
+    }
+
+    // Manejar eventos de arrastre
+    imageSprite
+      .on("pointerdown", (event) => {
+        dragging = true;
+        lastPosition = event.data.getLocalPosition(app.stage);
+      })
+      .on("pointerup", () => {
+        dragging = false;
+      })
+      .on("pointerupoutside", () => {
+        dragging = false;
+      })
+      .on("pointermove", (event) => {
+        if (!dragging) return;
+        const newPosition = event.data.getLocalPosition(app.stage);
+        const dx = newPosition.x - lastPosition.x;
+        const dy = newPosition.y - lastPosition.y;
+        imageSprite.x += dx;
+        imageSprite.y += dy;
+        clampPosition();
+        lastPosition = newPosition;
+      });
+
+    app.stage.addChild(imageSprite);
+  }
+
+  const getCroppedImage = () => {
+    // Crear un canvas HTML
+    const outputCanvas = document.createElement("canvas");
+    outputCanvas.width = 300;
+    outputCanvas.height = 300;
+    const ctx = outputCanvas.getContext("2d");
+
+    // Dibujar la máscara circular
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(150, 150, 140, 0, Math.PI * 2, true);
+    ctx.closePath();
+    ctx.clip();
+
+    // Dibujar la imagen con la posición y escala actual
+    if (imageSprite && imageSprite.texture.baseTexture.resource.source) {
+      // Obtener la imagen original
+      const img = imageSprite.texture.baseTexture.resource.source;
+      // Calcular escala y posición
+      const scale = imageSprite.width / img.width;
+      const dx = imageSprite.x - (img.width * scale) / 2;
+      const dy = imageSprite.y - (img.height * scale) / 2;
+      ctx.drawImage(img, dx, dy, img.width * scale, img.height * scale);
+    }
+
+    ctx.restore();
+
+    // Obtener el resultado como base64
+    return outputCanvas.toDataURL("image/png");
+  };
+
+  // Leer archivo cargado
+  input.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function (event) {
+      loadImage(event.target.result);
+    };
+    reader.readAsDataURL(file);
+  });
+  init();
 
   dropabbleContainer.appendChild(input);
   container.appendChild(dropabbleContainer);

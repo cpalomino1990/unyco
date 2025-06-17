@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Editor de Perfil Circular</title>
+    <style>
+      body {
+        background-color: #222;
+        color: white;
+        font-family: sans-serif;
+        text-align: center;
+        padding: 2rem;
+      }
+      #editor canvas {
+        border-radius: 50%;
+        display: block;
+        margin: 1rem auto;
+        box-shadow: 0 0 15px #000;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Sube tu imagen de perfil</h2>
+    <button id="uploadBtn">Cargar nueva imagen</button>
+    <input type="file" id="imageLoader" accept="image/*" style="display:none;" />
+    <script>
+      document.getElementById("uploadBtn").onclick = function() {
+      document.getElementById("imageLoader").click();
+      };
+    </script>
+    <div id="editor"></div>
+
+    <script src="https://pixijs.download/release/pixi.min.js"></script>
+    <script>
+      let imageSprite = null;
+      let dragging = false;
+      let lastPosition = null;
+      let mask = null;
+      let app = null;
+
+      async function init() {
+        // Crear la aplicación PIXI
+        app = new PIXI.Application();
+
+        await app.init({
+          width: 300,
+          height: 300,
+          backgroundAlpha: 0,
+        });
+
+        // Agregar el canvas al DOM
+        document.getElementById("editor")?.appendChild(app.canvas);
+
+        // Crear una máscara circular
+        mask = new PIXI.Graphics();
+        mask.beginFill(0xffffff);
+        mask.drawCircle(150, 150, 140); // centro (150,150) radio 140
+        mask.endFill();
+        app.stage.addChild(mask);
+      }
+
+      // Cargar y mostrar imagen
+      // Agregar slider de zoom
+      let zoomSlider = document.getElementById("zoomSlider");
+      if (!zoomSlider) {
+        zoomSlider = document.createElement("input");
+        zoomSlider.type = "range";
+        zoomSlider.id = "zoomSlider";
+        zoomSlider.min = 1;
+        zoomSlider.max = 3;
+        zoomSlider.step = 0.01;
+        zoomSlider.value = 1;
+        zoomSlider.style.width = "300px";
+        zoomSlider.style.margin = "1rem auto";
+        document.getElementById("editor")?.appendChild(zoomSlider);
+      }
+
+      async function loadImage(url) {
+        if (imageSprite) app.stage.removeChild(imageSprite);
+
+        const texture = await PIXI.Assets.load(url);
+        imageSprite = new PIXI.Sprite(texture);
+        imageSprite.anchor.set(0.5);
+        imageSprite.x = 150;
+        imageSprite.y = 150;
+        imageSprite.interactive = true;
+        imageSprite.cursor = "grab";
+        imageSprite.mask = mask;
+
+        // COVER: Escalar para cubrir el círculo (300x300)
+        const tw = texture.width;
+        const th = texture.height;
+        const baseScale = Math.max(300 / tw, 300 / th);
+        let currentScale = baseScale;
+        imageSprite.width = tw * currentScale;
+        imageSprite.height = th * currentScale;
+
+        // Configurar slider de zoom
+        zoomSlider.min = baseScale;
+        zoomSlider.max = baseScale * 3;
+        zoomSlider.step = 0.01;
+        zoomSlider.value = baseScale;
+
+        zoomSlider.oninput = function () {
+        currentScale = parseFloat(zoomSlider.value);
+        imageSprite.width = tw * currentScale;
+        imageSprite.height = th * currentScale;
+        clampPosition();
+        };
+
+        // Limitar el arrastre para que los bordes no sean menores al borde del círculo
+        function clampPosition() {
+        const radius = 140;
+        const left = imageSprite.x - imageSprite.width / 2;
+        const right = imageSprite.x + imageSprite.width / 2;
+        const top = imageSprite.y - imageSprite.height / 2;
+        const bottom = imageSprite.y + imageSprite.height / 2;
+
+        // Limitar horizontal
+        if (left > 150 - radius) imageSprite.x = 150 - radius + imageSprite.width / 2;
+        if (right < 150 + radius) imageSprite.x = 150 + radius - imageSprite.width / 2;
+        // Limitar vertical
+        if (top > 150 - radius) imageSprite.y = 150 - radius + imageSprite.height / 2;
+        if (bottom < 150 + radius) imageSprite.y = 150 + radius - imageSprite.height / 2;
+        }
+
+        // Manejar eventos de arrastre
+        imageSprite
+        .on("pointerdown", (event) => {
+          dragging = true;
+          lastPosition = event.data.getLocalPosition(app.stage);
+        })
+        .on("pointerup", () => {
+          dragging = false;
+        })
+        .on("pointerupoutside", () => {
+          dragging = false;
+        })
+        .on("pointermove", (event) => {
+          if (!dragging) return;
+          const newPosition = event.data.getLocalPosition(app.stage);
+          const dx = newPosition.x - lastPosition.x;
+          const dy = newPosition.y - lastPosition.y;
+          imageSprite.x += dx;
+          imageSprite.y += dy;
+          clampPosition();
+          lastPosition = newPosition;
+        });
+
+        app.stage.addChild(imageSprite);
+      }
+
+      // Leer archivo cargado
+      document.getElementById("imageLoader").addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function (event) {
+          loadImage(event.target.result);
+        };
+        reader.readAsDataURL(file);
+      });
+      init();
+    </script>
+  </body>
+</html>
