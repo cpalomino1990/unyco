@@ -17,28 +17,31 @@ export async function startCalibration() {
  await requestWakeLock();
   let wakeLock = null;
 
-async function requestWakeLock() {
+ async function requestWakeLock() {
   try {
     if ('wakeLock' in navigator) {
       wakeLock = await navigator.wakeLock.request('screen');
-      console.log("🔒 Pantalla activa: Wake Lock activado");
+      console.log("🔒 Wake Lock activado");
 
-      // Si se libera el wake lock por pérdida de visibilidad, vuelve a solicitarlo
-      document.addEventListener("visibilitychange", async () => {
-        if (wakeLock !== null && document.visibilityState === "visible") {
-          wakeLock = await navigator.wakeLock.request('screen');
-          console.log("🔄 Wake Lock restaurado");
+      document.addEventListener('visibilitychange', async () => {
+        if (wakeLock !== null && document.visibilityState === 'visible') {
+          try {
+            wakeLock = await navigator.wakeLock.request('screen');
+            console.log("🔄 Wake Lock restaurado");
+          } catch (err) {
+            console.warn("⚠️ No se pudo restaurar el Wake Lock:", err);
+          }
         }
       });
     } else {
-      console.warn("Wake Lock API no soportada en este navegador.");
+      console.warn("Wake Lock no soportado, usando video oculto");
+      startIOSKeepAwake();
     }
   } catch (err) {
     console.error("Error al activar Wake Lock:", err);
+    startIOSKeepAwake(); // fallback para iOS o si algo falla
   }
-  await requestWakeLock();
 }
-
   if (calibrationInProgress) return;
 
   calibrationInProgress = true;
